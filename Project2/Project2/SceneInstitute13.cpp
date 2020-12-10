@@ -6,6 +6,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -71,6 +72,15 @@ void CSceneInstitute13::InitScene()
 		//マップ図
 	CObjMap* objm = new CObjMap();//マップ図
 	Objs::InsertObj(objm, OBJ_MAP, 6);
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"game_maoudamashii_7_event45.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.0 - v);
+
+	Audio::Start(0);//音楽スタート
 }
 
 

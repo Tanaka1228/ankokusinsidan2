@@ -37,19 +37,8 @@ void CObjRooftopBoss::Action()
 	//•a‰@‚Ì‰®ã‚Ìî•ñ
 	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);
 
-	m_time++;
 	m_timeboss++;
-	if (m_time > 50)
-	{
-
-		m_time = 0;
-
-		//—U“±’eŠÛì¬
-		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x, m_y); //—U“±’eƒIƒuƒWƒFƒNƒgì¬
-		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 4); //—U“±’eŠÛ“o˜^
-
-
-	}
+	
 	if (m_timeboss > 100)
 	{
 		m_timeboss = 0;

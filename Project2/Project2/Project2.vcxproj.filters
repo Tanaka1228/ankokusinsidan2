@@ -564,6 +564,60 @@
     <ClCompile Include="SceneDrugCampanyRoom24.cpp">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
     </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom10.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom11.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom12.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom13.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom14.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom15.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom16.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom17.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDrugCampanyRoom18.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom10.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom11.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom12.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom13.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom14.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom15.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom16.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom17.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDrugCampanyRoom18.cpp">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -1020,6 +1074,60 @@
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
     </ClInclude>
     <ClInclude Include="SceneDrugCampanyRoom24.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom10.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom11.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom12.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom13.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom14.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom15.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom16.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom17.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDrugCampanyRoom18.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom10.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom11.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom12.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom13.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom14.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom15.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom16.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom17.h">
+      <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDrugCampanyRoom18.h">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
     </ClInclude>
   </ItemGroup>

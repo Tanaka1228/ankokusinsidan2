@@ -6,7 +6,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
-
+#include"GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 

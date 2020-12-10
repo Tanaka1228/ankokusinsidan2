@@ -6,6 +6,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -58,14 +59,19 @@ void CSceneChinaTown::InitScene()
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 7, TEX_SIZE_512);
 
-
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"マップa.png", 15, TEX_SIZE_512);
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"game_maoudamashii_7_event23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	//バックミュージックスタート
+	float Volume = Audio::VolumeMaster(-0.8f);//マスターボリュームを下げる
+	Audio::Start(0);//音楽スタート
+
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 5); //作った主人公オブジェクトをオブジェクトマネージャーに登録
-
 
 	//チャイナタウンオブジェクト作成
 	CObjChinaTown* objc = new CObjChinaTown(); //チャイナタウンオブジェクト作成

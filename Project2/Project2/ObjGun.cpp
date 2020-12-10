@@ -48,7 +48,7 @@ void CObjGun::Draw()
 
 	if (obj->Get_Gun()== 1)//ハンドガン
 	{
-		Font::StrDraw(L"構えている", obj->GetX(), -32 + obj->GetY(), 16, c);
+		//Font::StrDraw(L"構えている", obj->GetX(), -32 + obj->GetY(), 16, c);
 
 		if (m_ani_frame == 2)
 		{
@@ -105,12 +105,12 @@ void CObjGun::Draw()
 	}
 	else if (obj->Get_Gun() == 0)
 	{
-		Font::StrDraw(L"構えていない", obj->GetX(), -32 + obj->GetY(), 16, c);
+		//Font::StrDraw(L"構えていない", obj->GetX(), -32 + obj->GetY(), 16, c);
 
-		if (Input::GetVKey('Z') == true)
-		{
-			Font::StrDraw(L"キックテスト", obj->GetX(), 32 + obj->GetY(), 16, c);
-		}
+		//if (Input::GetVKey('Z') == true)
+		//{
+		//	Font::StrDraw(L"キックテスト", obj->GetX(), 32 + obj->GetY(), 16, c);
+		//}
 	}
 
 	//リボルバー

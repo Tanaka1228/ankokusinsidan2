@@ -25,6 +25,11 @@ void CObjHospital2::Init()
 		mx_scroll = -10.0f;
 		my_scroll = -70.0f;
 	}
+	if (Hos_Hero_x == 3)
+	{
+		mx_scroll = -420.0f;
+		my_scroll = 0.0f;
+	}
 	if (Hos_Hero_x == 1) {
 		mx_scroll = -420.0f;
 		my_scroll = 0.0f;

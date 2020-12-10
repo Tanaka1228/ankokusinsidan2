@@ -11,13 +11,15 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern int Inst_Hero_x;
+extern int Drug_Hero_x;
 
 //イニシャライズ
 void CObjDrugCampanyRoom20::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
+
+	Drug_Hero_x = 21;
 
 	//マップ情報
 	int block_data[200][200] =

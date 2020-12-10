@@ -11,11 +11,23 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Drug_Hero_x;
 //イニシャライズ
 void CObjDrugCampany3::Init()
 {
-	mx_scroll = -1130.0f;
-	my_scroll = -2600.0f;
+	if (Drug_Hero_x == 26)
+	{
+		mx_scroll = -495.0f;
+		my_scroll = +130.0f;
+	}
+	else
+	{
+		mx_scroll = -1130.0f;
+		my_scroll = -2600.0f;
+	}
+	
+
+	Drug_Hero_x = 25;
 
 	//マップ情報
 	int block_data[200][200] =

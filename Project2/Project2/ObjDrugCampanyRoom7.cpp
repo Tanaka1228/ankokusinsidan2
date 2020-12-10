@@ -18,6 +18,8 @@ void CObjDrugCampanyRoom7::Init()
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
 
+	Drug_Hero_x = 7;
+
 	//ƒ}ƒbƒvî•ñ
 	int block_data[200][200] =
 	{

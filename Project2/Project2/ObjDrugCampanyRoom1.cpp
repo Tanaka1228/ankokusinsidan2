@@ -11,6 +11,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+int Inst_Hero_x;
+
 //イニシャライズ
 void CObjDrugCampanyRoom1::Init()
 {

@@ -14,7 +14,7 @@ using namespace GameL;
 #include"GameHead.h"
 #include "SceneDrugCampanyRoom1.h"
 
-
+extern int Drug_Hero_x;
 
 //コンストラクタ
 CSceneDrugCampanyRoom1::CSceneDrugCampanyRoom1()

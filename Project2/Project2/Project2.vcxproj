@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c8672bec-aba6-4dfd-879a-9d8563fe195d}</ProjectGuid>
+    <RootNamespace>Project2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CObjAngleBullet.cpp" />
+    <ClCompile Include="CObjAssBullet.cpp" />
+    <ClCompile Include="CObjBullet.cpp" />
+    <ClCompile Include="CObjBulletEnemy.cpp" />
+    <ClCompile Include="CObjChinaAtkEnemy.cpp" />
+    <ClCompile Include="CObjChinaTownBossBoss.cpp" />
+    <ClCompile Include="CObjHomingBullet.cpp" />
+    <ClCompile Include="CObjHomingEnemy.cpp" />
+    <ClCompile Include="CObjInstituteBossBoss.cpp" />
+    <ClCompile Include="CObjRooftopBoss.cpp" />
+    <ClCompile Include="CObjSinEnemy.cpp" />
+    <ClCompile Include="GameL\Audio.cpp" />
+    <ClCompile Include="GameL\DirectXDevice.cpp" />
+    <ClCompile Include="GameL\Draw2DTex_Source.cpp" />
+    <ClCompile Include="GameL\DrawFont.cpp" />
+    <ClCompile Include="GameL\DrawTexture.cpp" />
+    <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="GameL\HitBoxManager.cpp" />
+    <ClCompile Include="GameL\MultiThread.cpp" />
+    <ClCompile Include="GameL\SceneManager.cpp" />
+    <ClCompile Include="GameL\SceneObjManager.cpp" />
+    <ClCompile Include="GameL\SetWindow.cpp" />
+    <ClCompile Include="GameL\UserData.cpp" />
+    <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="ObjAttackEnemy.cpp" />
+    <ClCompile Include="ObjBlock.cpp" />
+    <ClCompile Include="ObjChinaEvent.cpp" />
+    <ClCompile Include="ObjChinaMob.cpp" />
+    <ClCompile Include="ObjChinaTown.cpp" />
+    <ClCompile Include="ObjChinaTownBoss.cpp" />
+    <ClCompile Include="ObjChinaTown_b.cpp" />
+    <ClCompile Include="ObjChinaTown_c.cpp" />
+    <ClCompile Include="ObjChinaTown_d.cpp" />
+    <ClCompile Include="ObjDiffusionEnemy.cpp" />
+    <ClCompile Include="ObjDrugCampany.cpp" />
+    <ClCompile Include="ObjDrugCampany2.cpp" />
+    <ClCompile Include="ObjDrugCampany3.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom1.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom2.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom3.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom4.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom5.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom6.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom7.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom8.cpp" />
+    <ClCompile Include="ObjDrugCampanyRoom9.cpp" />
+    <ClCompile Include="ObjDrugMob.cpp" />
+    <ClCompile Include="ObjEnd.cpp" />
+    <ClCompile Include="ObjEnemy.cpp" />
+    <ClCompile Include="ObjEventRoom.cpp" />
+    <ClCompile Include="ObjExRoom.cpp" />
+    <ClCompile Include="ObjFin.cpp" />
+    <ClCompile Include="ObjGameOver.cpp" />
+    <ClCompile Include="ObjGun.cpp" />
+    <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="Objheroine.cpp" />
+    <ClCompile Include="ObjHosMob.cpp" />
+    <ClCompile Include="ObjHospital.cpp" />
+    <ClCompile Include="ObjHospital2.cpp" />
+    <ClCompile Include="ObjHospital3.cpp" />
+    <ClCompile Include="ObjInstitute.cpp" />
+    <ClCompile Include="ObjInstitute1.cpp" />
+    <ClCompile Include="ObjInstitute10.cpp" />
+    <ClCompile Include="ObjInstitute11.cpp" />
+    <ClCompile Include="ObjInstitute12.cpp" />
+    <ClCompile Include="ObjInstitute13.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute13A.cpp" />
+    <ClCompile Include="ObjInstitute14.cpp" />
+    <ClCompile Include="ObjInstitute2.cpp" />
+    <ClCompile Include="ObjInstitute3.cpp" />
+    <ClCompile Include="ObjInstitute4.cpp" />
+    <ClCompile Include="ObjInstitute5.cpp" />
+    <ClCompile Include="ObjInstitute6.cpp" />
+    <ClCompile Include="ObjInstitute7.cpp" />
+    <ClCompile Include="ObjInstitute8.cpp" />
+    <ClCompile Include="ObjInstitute9.cpp" />
+    <ClCompile Include="ObjInstituteBoss.cpp" />
+    <ClCompile Include="ObjInstMob.cpp" />
+    <ClCompile Include="ObjMain.cpp" />
+    <ClCompile Include="ObjMap.cpp" />
+    <ClCompile Include="ObjMenu.cpp" />
+    <ClCompile Include="ObjOpeRoom.cpp" />
+    <ClCompile Include="ObjRooftop.cpp" />
+    <ClCompile Include="ObjSpBack.cpp" />
+    <ClCompile Include="ObjTemplateRoom.cpp" />
+    <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="ObjTitleBackground.cpp" />
+    <ClCompile Include="ObjXRayRoom.cpp" />
+    <ClCompile Include="SceneBlock.cpp" />
+    <ClCompile Include="SceneChinaEvent.cpp" />
+    <ClCompile Include="SceneChinaTown _b.cpp" />
+    <ClCompile Include="SceneChinaTown.cpp" />
+    <ClCompile Include="SceneChinaTownBoss.cpp" />
+    <ClCompile Include="SceneChinaTown_c.cpp" />
+    <ClCompile Include="SceneChinaTown_d.cpp" />
+    <ClCompile Include="SceneDrugCampany.cpp" />
+    <ClCompile Include="SceneDrugCampany2.cpp" />
+    <ClCompile Include="SceneDrugCampany3.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom1.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom2.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom3.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom4.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom5.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom6.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom7.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom8.cpp" />
+    <ClCompile Include="SceneDrugCampanyRoom9.cpp" />
+    <ClCompile Include="SceneEnd.cpp" />
+    <ClCompile Include="SceneEventRoom.cpp" />
+    <ClCompile Include="SceneExRoom.cpp" />
+    <ClCompile Include="SceneFin.cpp" />
+    <ClCompile Include="SceneGameOver.cpp" />
+    <ClCompile Include="SceneHospital.cpp" />
+    <ClCompile Include="SceneHospital2.cpp" />
+    <ClCompile Include="SceneHospital3.cpp" />
+    <ClCompile Include="SceneInstitute.cpp" />
+    <ClCompile Include="SceneInstitute1.cpp" />
+    <ClCompile Include="SceneInstitute10.cpp" />
+    <ClCompile Include="SceneInstitute11.cpp" />
+    <ClCompile Include="SceneInstitute12.cpp" />
+    <ClCompile Include="SceneInstitute13.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute13A.cpp" />
+    <ClCompile Include="SceneInstitute14.cpp" />
+    <ClCompile Include="SceneInstitute2.cpp" />
+    <ClCompile Include="SceneInstitute3.cpp" />
+    <ClCompile Include="SceneInstitute4.cpp" />
+    <ClCompile Include="SceneInstitute5.cpp" />
+    <ClCompile Include="SceneInstitute6.cpp" />
+    <ClCompile Include="SceneInstitute7.cpp" />
+    <ClCompile Include="SceneInstitute8.cpp" />
+    <ClCompile Include="SceneInstitute9.cpp" />
+    <ClCompile Include="SceneInstituteBoss.cpp" />
+    <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneOpeRoom.cpp" />
+    <ClCompile Include="SceneRooftop.cpp" />
+    <ClCompile Include="SceneTemplateRoom.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="SceneXRayRoom.cpp" />
+    <ClCompile Include="UtilityModule.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CObjAngleBullet.h" />
+    <ClInclude Include="CObjAssBullet.h" />
+    <ClInclude Include="CObjBullet.h" />
+    <ClInclude Include="CObjBulletEnemy.h" />
+    <ClInclude Include="CObjChinaAtkEnemy.h" />
+    <ClInclude Include="CObjChinaTownBossBoss.h" />
+    <ClInclude Include="CObjHomingBullet.h" />
+    <ClInclude Include="CObjHomingEnemy.h" />
+    <ClInclude Include="CObjInstituteBossBoss.h" />
+    <ClInclude Include="CObjRooftopBoss.h" />
+    <ClInclude Include="CObjSinEnemy.h" />
+    <ClInclude Include="GameHead.h" />
+    <ClInclude Include="GameL\Audio.h" />
+    <ClInclude Include="GameL\DirectXDevice.h" />
+    <ClInclude Include="GameL\DrawFont.h" />
+    <ClInclude Include="GameL\DrawTexture.h" />
+    <ClInclude Include="GameL\GameHead.h" />
+    <ClInclude Include="GameL\HitBoxManager.h" />
+    <ClInclude Include="GameL\MultiThread.h" />
+    <ClInclude Include="GameL\SceneManager.h" />
+    <ClInclude Include="GameL\SceneObjManager.h" />
+    <ClInclude Include="GameL\SetWindow.h" />
+    <ClInclude Include="GameL\UserData.h" />
+    <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="ObjAttackEnemy.h" />
+    <ClInclude Include="ObjBlock.h" />
+    <ClInclude Include="ObjChinaEvent.h" />
+    <ClInclude Include="ObjChinaMob.h" />
+    <ClInclude Include="ObjChinaTown.h" />
+    <ClInclude Include="ObjChinaTownBoss.h" />
+    <ClInclude Include="ObjChinaTown_b.h" />
+    <ClInclude Include="ObjChinaTown_c.h" />
+    <ClInclude Include="ObjChinaTown_d.h" />
+    <ClInclude Include="ObjDiffusionEnemy.h" />
+    <ClInclude Include="ObjDrugCampany.h" />
+    <ClInclude Include="ObjDrugCampany2.h" />
+    <ClInclude Include="ObjDrugCampany3.h" />
+    <ClInclude Include="ObjDrugCampanyRoom1.h" />
+    <ClInclude Include="ObjDrugCampanyRoom2.h" />
+    <ClInclude Include="ObjDrugCampanyRoom3.h" />
+    <ClInclude Include="ObjDrugCampanyRoom4.h" />
+    <ClInclude Include="ObjDrugCampanyRoom5.h" />
+    <ClInclude Include="ObjDrugCampanyRoom6.h" />
+    <ClInclude Include="ObjDrugCampanyRoom7.h" />
+    <ClInclude Include="ObjDrugCampanyRoom8.h" />
+    <ClInclude Include="ObjDrugCampanyRoom9.h" />
+    <ClInclude Include="ObjDrugMob.h" />
+    <ClInclude Include="ObjEnd.h" />
+    <ClInclude Include="ObjEnemy.h" />
+    <ClInclude Include="ObjEventRoom.h" />
+    <ClInclude Include="ObjExRoom.h" />
+    <ClInclude Include="ObjFin.h" />
+    <ClInclude Include="ObjGameOver.h" />
+    <ClInclude Include="ObjGun.h" />
+    <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="Objheroine.h" />
+    <ClInclude Include="ObjHosMob.h" />
+    <ClInclude Include="ObjHospital.h" />
+    <ClInclude Include="ObjHospital2.h" />
+    <ClInclude Include="ObjHospital3.h" />
+    <ClInclude Include="ObjInstitute.h" />
+    <ClInclude Include="ObjInstitute1.h" />
+    <ClInclude Include="ObjInstitute10.h" />
+    <ClInclude Include="ObjInstitute11.h" />
+    <ClInclude Include="ObjInstitute12.h" />
+    <ClInclude Include="ObjInstitute13.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute13A.h" />
+    <ClInclude Include="ObjInstitute14.h" />
+    <ClInclude Include="ObjInstitute2.h" />
+    <ClInclude Include="ObjInstitute3.h" />
+    <ClInclude Include="ObjInstitute4.h" />
+    <ClInclude Include="ObjInstitute5.h" />
+    <ClInclude Include="ObjInstitute6.h" />
+    <ClInclude Include="ObjInstitute7.h" />
+    <ClInclude Include="ObjInstitute8.h" />
+    <ClInclude Include="ObjInstitute9.h" />
+    <ClInclude Include="ObjInstituteBoss.h" />
+    <ClInclude Include="ObjInstMob.h" />
+    <ClInclude Include="ObjMain.h" />
+    <ClInclude Include="ObjMap.h" />
+    <ClInclude Include="ObjMenu.h" />
+    <ClInclude Include="ObjOpeRoom.h" />
+    <ClInclude Include="ObjRooftop.h" />
+    <ClInclude Include="ObjSpBack.h" />
+    <ClInclude Include="ObjTemplateRoom.h" />
+    <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="ObjTitleBackground.h" />
+    <ClInclude Include="ObjXRayRoom.h" />
+    <ClInclude Include="SceneBlock.h" />
+    <ClInclude Include="SceneChinaEvent.h" />
+    <ClInclude Include="SceneChinaTown.h" />
+    <ClInclude Include="SceneChinaTownBoss.h" />
+    <ClInclude Include="SceneChinaTown_b.h" />
+    <ClInclude Include="SceneChinaTown_c.h" />
+    <ClInclude Include="SceneChinaTown_d.h" />
+    <ClInclude Include="SceneDrugCampany.h" />
+    <ClInclude Include="SceneDrugCampany2.h" />
+    <ClInclude Include="SceneDrugCampany3.h" />
+    <ClInclude Include="SceneDrugCampanyRoom1.h" />
+    <ClInclude Include="SceneDrugCampanyRoom2.h" />
+    <ClInclude Include="SceneDrugCampanyRoom3.h" />
+    <ClInclude Include="SceneDrugCampanyRoom4.h" />
+    <ClInclude Include="SceneDrugCampanyRoom5.h" />
+    <ClInclude Include="SceneDrugCampanyRoom6.h" />
+    <ClInclude Include="SceneDrugCampanyRoom7.h" />
+    <ClInclude Include="SceneDrugCampanyRoom8.h" />
+    <ClInclude Include="SceneDrugCampanyRoom9.h" />
+    <ClInclude Include="SceneEnd.h" />
+    <ClInclude Include="SceneEventRoom.h" />
+    <ClInclude Include="SceneExRoom.h" />
+    <ClInclude Include="SceneFin.h" />
+    <ClInclude Include="SceneGameOver.h" />
+    <ClInclude Include="SceneHospital.h" />
+    <ClInclude Include="SceneHospital2.h" />
+    <ClInclude Include="SceneHospital3.h" />
+    <ClInclude Include="SceneInstitute.h" />
+    <ClInclude Include="SceneInstitute1.h" />
+    <ClInclude Include="SceneInstitute10.h" />
+    <ClInclude Include="SceneInstitute11.h" />
+    <ClInclude Include="SceneInstitute12.h" />
+    <ClInclude Include="SceneInstitute13.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute13A.h" />
+    <ClInclude Include="SceneInstitute14.h" />
+    <ClInclude Include="SceneInstitute2.h" />
+    <ClInclude Include="SceneInstitute3.h" />
+    <ClInclude Include="SceneInstitute4.h" />
+    <ClInclude Include="SceneInstitute5.h" />
+    <ClInclude Include="SceneInstitute6.h" />
+    <ClInclude Include="SceneInstitute7.h" />
+    <ClInclude Include="SceneInstitute8.h" />
+    <ClInclude Include="SceneInstitute9.h" />
+    <ClInclude Include="SceneInstituteBoss.h" />
+    <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneOpeRoom.h" />
+    <ClInclude Include="SceneRooftop.h" />
+    <ClInclude Include="SceneTemplateRoom.h" />
+    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="SceneXRayRoom.h" />
+    <ClInclude Include="UtilityModule.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

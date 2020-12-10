@@ -6,6 +6,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -48,6 +49,16 @@ void CSceneDrugCampany2::InitScene()
 
 	//外部グラフィックファイルを読み込み7番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"製薬会社２階マップ.png", 6, TEX_SIZE_512);
+
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber19.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.0 - v);
+
+	Audio::Start(0);//音楽スタート
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

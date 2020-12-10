@@ -10,12 +10,15 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Hos_Hero_x;
+
 //イニシャライズ
 void CObjRooftop::Init()
 {
 	mx_scroll = -850.0f;//主人公の初期位置
 	my_scroll = -400.0f;
 
+	Hos_Hero_x = 14;
 	
 	//マップ情報
 	int block_data[38][83] =

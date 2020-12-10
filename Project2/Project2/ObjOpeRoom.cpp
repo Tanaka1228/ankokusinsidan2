@@ -11,11 +11,15 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Hos_Hero_x;
+
 //イニシャライズ
 void CObjOpeRoom::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
+
+	Hos_Hero_x = 13;
 
 	//マップ情報
 	int block_data[25][25] =

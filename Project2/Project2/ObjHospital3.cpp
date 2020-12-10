@@ -16,8 +16,31 @@ extern int Hos_Hero_x;
 //イニシャライズ
 void CObjHospital3::Init()
 {
-	mx_scroll = -420.0f;
-	my_scroll = 0.0f;
+	if (Hos_Hero_x == 11)//レントゲン
+	{
+		mx_scroll = 320.0f;
+		my_scroll = 100.0f;
+	}
+	if (Hos_Hero_x == 12)//診察
+	{
+		mx_scroll = 200.0f;
+		my_scroll = -100.0f;
+	}
+	if (Hos_Hero_x == 13)//手術室
+	{
+		mx_scroll = -1100.0f;
+		my_scroll = 90.0f;
+	}
+	if (Hos_Hero_x == 14)//病院の屋上
+	{
+		mx_scroll = -420.0f;
+		my_scroll = 0.0f;
+	}
+	if (Hos_Hero_x == 2)
+	{
+		mx_scroll = -420.0f;
+		my_scroll = 0.0f;
+	}
 
 	Hos_Hero_x =3;
 

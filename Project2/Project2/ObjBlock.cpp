@@ -20,6 +20,9 @@ extern int ChinaTown_Hero_x;
 //イニシャライズ
 void CObjBlock::Init()
 {
+	mx_scroll = 0.0f;
+	my_scroll = 20.0f;
+
 	ChinaTown_Hero_x = 0;
 	//マップ情報
 	int block_data[25][25] =
@@ -63,14 +66,59 @@ void CObjBlock::Action()
 	float hx = hero->GetX2();
 	float hy = hero->GetY2();
 
+	
+
+	//踏んでいるblockの種類を初期化
+	hero->SetBT(0);
+
+
+	if (hero->GetRight() == false)
+	{
+		//後方スクロールライン　←
+		if (hx < 400)
+		{
+			hero->SetX2(400); //主人公はラインを超えないようにする
+			mx_scroll -= -6.0f + hero->GetVX(); //主人公は本来動くべき分の値をm_scrollに加える
+		}
+	}
+
+	if (hero->GetLeft() == false)
+	{
+		//前方スクロールライン →
+		if (hx > 400)
+		{
+			hero->SetX2(400); //主人公はラインを超えないようにする
+			mx_scroll -= 6.0f + hero->GetVX(); //主人公は本来動くべき分の値をm_scrollに加える
+
+		}
+	}
+
+	if (hero->GetDown() == false)
+	{
+		//スクロールライン　↑
+		if (hy > 300)
+		{
+			hero->SetY2(300); //主人公はラインを超えないようにする
+			my_scroll -= 6.0f + hero->GetVY(); //主人公は本来動くべき分の値をm_scrollに加える
+
+		}
+	}
+
+	if (hero->GetUp() == false)
+	{
+		//スクロールライン　↓
+		if (hy < 300)
+		{
+			hero->SetY2(300); //主人公はラインを超えないようにする
+			my_scroll -= -6.0f + hero->GetVY(); //主人公は本来動くべき分の値をm_scrollに加える
+		}
+	}
+
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
 	hero->SetDown(false);
 	hero->SetLeft(false);
 	hero->SetRight(false);
-
-	//踏んでいるblockの種類を初期化
-	hero->SetBT(0);
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 25; i++)
@@ -87,13 +135,12 @@ void CObjBlock::Action()
 				float y = i * 32.0f;
 
 				//主人公とブロックの当たり判定
-				if ((hx + 32.0f > x) && (hx < x + 32.0f) && (hy + 32.0f > y) && (hy < y + 32.0f))
+				if ((hx + (-mx_scroll) + 64.0f > x) && (hx + (-mx_scroll) < x + 64.0f) && (hy + (-my_scroll) + 64.0f > y) && (hy + (-my_scroll) < y +64.0f))
 				{
-					//上下左右判定
-
-					//vectorの作成
-					float vx = hx - x;
-					float vy = hy - y;
+	 				//上下左右判定
+	                //vectorの作成
+					float vx = (hx + (-mx_scroll)) - x;
+					float vy = (hy + (-my_scroll)) - y;
 
 					//長さを求める
 					float len = sqrt(vx * vx + vy * vy);//sqrt関数は、平方根を返す
@@ -116,7 +163,7 @@ void CObjBlock::Action()
 						{
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
-							hero->SetX2(x + 32.0f);//ブロックの位置+主人公の幅
+							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
 							if(m_map[i][j]==17)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
@@ -125,7 +172,7 @@ void CObjBlock::Action()
 						{
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
-							hero->SetY2(y - 32.0f);//ブロックの位置-主人公の幅
+							hero->SetY2(y - 40.0f + (my_scroll));//ブロックの位置-主人公の幅
 							if (m_map[i][j] == 17)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
@@ -135,7 +182,7 @@ void CObjBlock::Action()
 						{
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
-							hero->SetX2(x - 32.0f);//ブロックの位置-主人公の幅
+							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
 							if (m_map[i][j] == 17)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
@@ -144,7 +191,7 @@ void CObjBlock::Action()
 						{
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
-							hero->SetY2(y + 32.0f);//ブロックの位置+主人公の幅
+							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
 							if (m_map[i][j] == 17)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
@@ -209,10 +256,10 @@ void CObjBlock::Draw()
 	src.m_right = 500.0f;
 	src.m_bottom = 500.0f;
 
-	dst.m_top = 85.0f;
-	dst.m_left = 96.0f;
-	dst.m_right = 704.0f;
-	dst.m_bottom = 514.0f;
+	dst.m_top = 85.0f + my_scroll;
+	dst.m_left = 96.0f + mx_scroll;
+	dst.m_right = 704.0f + mx_scroll;
+	dst.m_bottom = 514.0f + my_scroll;
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置
@@ -231,10 +278,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 215.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f;
-				dst.m_right = dst.m_left+32.0;
-				dst.m_bottom = dst.m_top+32.0;
+				dst.m_top = i*32.0f + my_scroll;
+				dst.m_left = j*32.0f + mx_scroll;
+				dst.m_right = j*32.0f+32.0f + mx_scroll;
+				dst.m_bottom =i* 32.0f+32.0f + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);			
@@ -248,10 +295,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 60.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0f+ mx_scroll;
+				dst.m_bottom = i * 32.0f+ 32.0f + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -265,10 +312,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 115.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -282,10 +329,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 45.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -299,10 +346,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 45.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i* 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -316,10 +363,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 80.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -333,10 +380,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 80.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -350,10 +397,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 315.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom=  i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -367,10 +414,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 205.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i* 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -384,10 +431,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 205.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i* 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -401,10 +448,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 295.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -418,10 +465,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 295.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -435,10 +482,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 360.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0f + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0f + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0f + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -452,10 +499,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 365.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0f + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0f + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0f+ my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -469,10 +516,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 405.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f+ my_scroll;
+				dst.m_left = j * 32.0f + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0f + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0f + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -486,10 +533,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 255.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i*32.0f;//y
-				dst.m_left = j*32.0f;//x
-				dst.m_right = dst.m_left+32.0f;//x
-				dst.m_bottom = dst.m_top+32.0f; //y
+				dst.m_top = i*32.0f + my_scroll;//y
+				dst.m_left = j*32.0f + mx_scroll;//x
+				dst.m_right = j * 32.0f +32.0f + mx_scroll;//x
+				dst.m_bottom = i * 32.0f +32.0f + my_scroll; //y
 
 				//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
 				Draw::Draw(5, &src, &dst, c, 0.0f);
@@ -503,10 +550,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 32.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;//y
-				dst.m_left = j * 32.0f;//x
-				dst.m_right = dst.m_left + 32.0f;//x
-				dst.m_bottom = dst.m_top + 32.0f; //y
+				dst.m_top = i * 32.0f + my_scroll;//y
+				dst.m_left = j * 32.0f + mx_scroll;//x
+				dst.m_right = j * 32.0f + 32.0f + mx_scroll;//x
+				dst.m_bottom = i* 32.0f + 32.0f + my_scroll; //y
 
 				//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
 				Draw::Draw(11, &src, &dst, c, 0.0f);
@@ -520,10 +567,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 466.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;//y
-				dst.m_left = j * 32.0f;//x
-				dst.m_right = dst.m_left + 32.0f;//x
-				dst.m_bottom = dst.m_top + 64.0f; //y
+				dst.m_top = i * 32.0f + my_scroll;//y
+				dst.m_left = j * 32.0f + mx_scroll;//x
+				dst.m_right = j * 32.0f + 32.0f + mx_scroll;//x
+				dst.m_bottom =i * 32.0f + 64.0f + my_scroll; //y
 
 				//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);
@@ -537,10 +584,10 @@ void CObjBlock::Draw()
 				src.m_bottom = 360.0f; //y
 
 				//表示位置の設定
-				dst.m_top = i * 32.0f;
-				dst.m_left = j * 32.0;
-				dst.m_right = dst.m_left + 32.0;
-				dst.m_bottom = dst.m_top + 32.0;
+				dst.m_top = i * 32.0f + my_scroll;
+				dst.m_left = j * 32.0 + mx_scroll;
+				dst.m_right = j * 32.0f + 32.0 + mx_scroll;
+				dst.m_bottom = i * 32.0f + 32.0 + my_scroll;
 
 				//描画
 				Draw::Draw(8, &src, &dst, c, 0.0f);

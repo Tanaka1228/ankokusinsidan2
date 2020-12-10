@@ -6,14 +6,15 @@
 #include"GameL\SceneObjManager.h"
 
 #include"GameHead.h"
-#include "ObjDrugCampanyRoom1.h"
+#include "ObjDrugCampanyRoom19.h"
 
 //使用するネームスペース
 using namespace GameL;
 
+extern int Inst_Hero_x;
 
 //イニシャライズ
-void CObjDrugCampanyRoom1::Init()
+void CObjDrugCampanyRoom19::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
@@ -35,7 +36,7 @@ void CObjDrugCampanyRoom1::Init()
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 
-		
+
 
 	};
 	//マップデータをコピー
@@ -43,7 +44,7 @@ void CObjDrugCampanyRoom1::Init()
 
 }
 //アクション
-void CObjDrugCampanyRoom1::Action()
+void CObjDrugCampanyRoom19::Action()
 {
 	//主人公の位置を取得
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
@@ -176,7 +177,7 @@ void CObjDrugCampanyRoom1::Action()
 							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
-						if (m_map[i][j] == 5 )//ドアに入ると拠点に移動
+						if (m_map[i][j] == 5)//ドアに入ると拠点に移動
 						{
 							Scene::SetScene(new CSceneDrugCampany());
 						}
@@ -214,7 +215,7 @@ void CObjDrugCampanyRoom1::Action()
 
 }
 //ドロー
-void CObjDrugCampanyRoom1::Draw()
+void CObjDrugCampanyRoom19::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -521,7 +522,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 16)//レントゲン（手）
 			{
 				//切り取り位置の設定
@@ -540,7 +541,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 17)//レントゲン（上半身）
 			{
 				//切り取り位置の設定
@@ -559,7 +560,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 18)//レントゲン（頭）
 			{
 				//切り取り位置の設定
@@ -578,7 +579,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 19)//テーブル
 			{
 				//切り取り位置の設定
@@ -597,7 +598,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 20)//テーブル
 			{
 				//切り取り位置の設定
@@ -616,7 +617,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 21)//機械１
 			{
 				//切り取り位置の設定
@@ -635,7 +636,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 22)//試験管１
 			{
 				//切り取り位置の設定
@@ -654,7 +655,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 23)//試験管２
 			{
 				//切り取り位置の設定
@@ -673,7 +674,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 24)//本棚１
 			{
 				//切り取り位置の設定
@@ -711,7 +712,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 26)//棚
 			{
 				//切り取り位置の設定
@@ -730,7 +731,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 27)//本棚３
 			{
 				//切り取り位置の設定
@@ -749,7 +750,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 28)//薬品棚
 			{
 				//切り取り位置の設定
@@ -768,7 +769,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 29)//ＣＤ
 			{
 				//切り取り位置の設定
@@ -787,7 +788,7 @@ void CObjDrugCampanyRoom1::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 
 			}
-			
+
 			if (m_map[i][j] == 30)//ゴミ箱
 			{
 				//切り取り位置の設定

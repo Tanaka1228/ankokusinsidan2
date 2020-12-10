@@ -123,6 +123,12 @@ enum OBJ_NAME
 					OBJ_DRUG_CAMPANY_ROOM16,
 					OBJ_DRUG_CAMPANY_ROOM17,
 					OBJ_DRUG_CAMPANY_ROOM18,
+                    OBJ_DRUG_CAMPANY_ROOM19,
+					OBJ_DRUG_CAMPANY_ROOM20,
+					OBJ_DRUG_CAMPANY_ROOM21,
+					OBJ_DRUG_CAMPANY_ROOM22,
+					OBJ_DRUG_CAMPANY_ROOM23,
+					OBJ_DRUG_CAMPANY_ROOM24,
 					//-------------------------------------
 };
 //------------------------------------------------
@@ -214,6 +220,12 @@ struct UserData
 #include"ObjDrugCampanyRoom16.h"
 #include"ObjDrugCampanyRoom17.h"
 #include"ObjDrugCampanyRoom18.h"
+#include"ObjDrugCampanyRoom19.h"
+#include"ObjDrugCampanyRoom20.h"
+#include"ObjDrugCampanyRoom21.h"
+#include"ObjDrugCampanyRoom22.h"
+#include"ObjDrugCampanyRoom23.h"
+#include"ObjDrugCampanyRoom24.h"
 
 #include"ObjHospital.h"
 #include"ObjHospital2.h"
@@ -308,6 +320,12 @@ struct UserData
 #include"SceneDrugCampanyRoom16.h"
 #include"SceneDrugCampanyRoom17.h"
 #include"SceneDrugCampanyRoom18.h"
+#include"SceneDrugCampanyRoom19.h"
+#include"SceneDrugCampanyRoom20.h"
+#include"SceneDrugCampanyRoom21.h"
+#include"SceneDrugCampanyRoom22.h"
+#include"SceneDrugCampanyRoom23.h"
+#include"SceneDrugCampanyRoom24.h"
 #include"SceneHospital.h"
 #include"SceneHospital2.h"
 #include"SceneHospital3.h"

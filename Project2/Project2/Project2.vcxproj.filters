@@ -13,6 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Bullet">
+      <UniqueIdentifier>{e1679116-376e-4c13-9612-0f69923b606b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター">
+      <UniqueIdentifier>{8c5cabdb-cf31-41fe-8dc2-8a14bcee30ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\チャイナタウンのモブ">
+      <UniqueIdentifier>{fc4b72ce-c440-4e7d-a8f7-9d19110e6919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\会話の背景">
+      <UniqueIdentifier>{7edcbfdd-4675-4534-b740-4ee78480a60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\研究所のモブ">
+      <UniqueIdentifier>{9ec300d0-b14a-40fe-98a9-4fc9eed9c2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\製薬会社のモブ">
+      <UniqueIdentifier>{24d479c8-10c3-427a-b5c1-4554423c1292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\病院のモブ">
+      <UniqueIdentifier>{bf504d35-c9de-4eb5-9cfe-eb820c6a9f9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\敵">
+      <UniqueIdentifier>{3d7c7f8d-ae5d-42ea-9f21-18a780723d1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\ボス">
+      <UniqueIdentifier>{e891d962-85b7-499f-a946-5d1cfa7bc9d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -54,42 +81,6 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="CObjAngleBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjAssBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBulletEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjChinaAtkEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjChinaTownBossBoss.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjHomingBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjHomingEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjInstituteBossBoss.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjRooftopBoss.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjSinEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAttackEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -112,9 +103,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjChinaTownBoss.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjDiffusionEnemy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjDrugCampany.cpp">
@@ -157,9 +145,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjEnd.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjEnemy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjEventRoom.cpp">
@@ -432,6 +417,48 @@
     <ClCompile Include="UtilityModule.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="CObjAngleBullet.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjAssBullet.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBullet.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletEnemy.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjHomingBullet.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjChinaAtkEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjChinaTownBossBoss.cpp">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjHomingEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjInstituteBossBoss.cpp">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjRooftopBoss.cpp">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjSinEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAttackEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDiffusionEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -470,46 +497,10 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="CObjAngleBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjAssBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBulletEnemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjChinaAtkEnemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjChinaTownBossBoss.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjHomingBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjHomingEnemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjInstituteBossBoss.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjRooftopBoss.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjSinEnemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameHead.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="main.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjAttackEnemy.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
@@ -534,9 +525,6 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjChinaTownBoss.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjDiffusionEnemy.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjDrugCampany.h">
@@ -579,9 +567,6 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjEnd.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEnemy.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjEventRoom.h">
@@ -853,6 +838,48 @@
     </ClInclude>
     <ClInclude Include="UtilityModule.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjAngleBullet.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjAssBullet.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBullet.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletEnemy.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjHomingBullet.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjChinaAtkEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjChinaTownBossBoss.h">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjHomingEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjInstituteBossBoss.h">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjRooftopBoss.h">
+      <Filter>ソース ファイル\キャラクター\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjSinEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAttackEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDiffusionEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

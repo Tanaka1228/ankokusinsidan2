@@ -11,6 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Drug_Hero_x;
 //イニシャライズ
 void CObjDrugCampanyRoom7::Init()
 {

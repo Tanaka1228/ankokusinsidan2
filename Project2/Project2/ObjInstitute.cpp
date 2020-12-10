@@ -19,31 +19,38 @@ extern int Inst_Hero_x;
 
 void CObjInstitute::Init()
 {
-	if (ChinaTown_Hero_x == 7)
+	
+	if (Inst_Hero_x == 5)
+	{
+		mx_scroll = -495.0f;
+		my_scroll = +130.0f;
+	}
+	else if (Inst_Hero_x == 1)
+	{
+		mx_scroll = +110.0f;
+		my_scroll = +130.0f;
+	}
+	else if (Inst_Hero_x == 2)
+	{
+		mx_scroll = -150.0f;
+		my_scroll = +130.0f;
+	}
+	else if (Inst_Hero_x == 3)
+	{
+		mx_scroll = -1000.0f;
+		my_scroll = +130.0f;
+	}
+	else if (Inst_Hero_x == 4)
+	{
+		mx_scroll = -1160.0f;
+		my_scroll = +130.0f;
+	}
+	else
 	{
 		mx_scroll = +300.0f;
 		my_scroll = -100.0f;
 	}
-	if (Inst_Hero_x == 1)
-	{
-		mx_scroll = -100.0f;
-		my_scroll = -100.0f;
-	}
-	if (Inst_Hero_x == 2)
-	{
-		mx_scroll = +300.0f;
-		my_scroll = -100.0f;
-	}
-	if (Inst_Hero_x == 3)
-	{
-		mx_scroll = +300.0f;
-		my_scroll = -100.0f;
-	}
-	if (Inst_Hero_x == 4)
-	{
-		mx_scroll = +300.0f;
-		my_scroll = -100.0f;
-	}
+
 	
 
 	ChinaTown_Hero_x = 8;

@@ -28,8 +28,8 @@ void CObjChinaTown_b::Init()
 	}
 	if (ChinaTown_Hero_x == 5)
 	{
-		mx_scroll = -300.0f;
-		my_scroll = -600.0f;
+		mx_scroll = -600.0f;
+		my_scroll = -550.0f;
 	}
 
 	ChinaTown_Hero_x = 3;

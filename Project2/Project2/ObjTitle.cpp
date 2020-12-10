@@ -70,13 +70,21 @@ void CObjTitle::Action()
 		 if (m_key_enter == true)
 		 {
 			 Save::Open();
-			 if (((UserData*)Save::GetData())->mStage == 0)//チャイナタウン
+			 if (((UserData*)Save::GetData())->mStage == 0)//拠点ニューゲーム
 			 {
 				 Scene::SetScene(new CSceneBlock());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 1)//チャイナタウン
 			 {
 				 Scene::SetScene(new CSceneChinaTown());
+			 }
+			 if (((UserData*)Save::GetData())->mStage == 2)//病院1階
+			 {
+				 Scene::SetScene(new CSceneHospital());
+			 }
+			 if (((UserData*)Save::GetData())->mStage == 3)//製薬会社一階
+			 {
+				 Scene::SetScene(new CSceneDrugCampany());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 8)//研究所
 			 {

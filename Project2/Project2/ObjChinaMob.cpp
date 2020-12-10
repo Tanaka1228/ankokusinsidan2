@@ -3,6 +3,7 @@
 #include"GameL\HitBoxManager.h"
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
+#include"GameL/UserData.h"
 
 #include"GameHead.h"
 #include"ObjChinaMob.h"
@@ -24,6 +25,8 @@ CObjChinaMob::CObjChinaMob()
 	m_time = 0;
 	mob_flag = 0;
 	m_save_sp = 0;
+
+	Save_sp=true;
 }
 
 
@@ -109,20 +112,29 @@ void CObjChinaMob::Action()
 
 	if (chinatown != nullptr)
 	{
-		//セーブしました
-		if (chinatown->GetSaveSp() == false)
+	
+		if (hero->GetBT() == 83)
 		{
 			mob_flag = 5;
-			m_save_sp = 1;
-			sp_flag = true;
-		
-		}
-		if (chinatown->GetSaveSp() == true)
-		{
-			m_save_sp = 2;
-			sp_flag = false;
-		}
 
+			if (Input::GetVKey(VK_RETURN) == true)
+			{
+				if (Save_sp == true)
+				{
+					((UserData*)Save::GetData())->mStage = 1;
+					Save::Seve();
+					Save_sp = false;
+					m_save_sp = 1;
+					sp_flag = true;
+				}
+			}
+			else
+			{
+				Save_sp = true;
+				m_save_sp = 2;
+
+			}
+		}
 		
 	}
 
@@ -403,6 +415,11 @@ void CObjChinaMob::Draw()
 		}
 
 
+		
+	}
+
+	if (chinatown != nullptr) 
+	{
 		if (m_save_sp == 1 && mob_flag == 5)
 		{
 			sp_flag = true;
@@ -413,10 +430,6 @@ void CObjChinaMob::Draw()
 			sp_flag = false;
 		}
 	}
-
-	
-
-	
 
 
 	//ケビン

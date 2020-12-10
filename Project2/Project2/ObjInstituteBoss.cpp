@@ -10,12 +10,15 @@
 //�g�p����l�[���X�y�[�X
 using namespace GameL;
 
+extern int Inst_Hero_x;
+
 //�C�j�V�����C�Y
 void CObjInstituteBoss::Init()
 {
 	mx_scroll = -990.0f;
 	my_scroll = 200.0f;
 
+	Inst_Hero_x = 15;
 	//�}�b�v���
 	int block_data[50][51] =
 	{

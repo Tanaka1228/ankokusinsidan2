@@ -14,7 +14,7 @@ using namespace GameL;
 #include"GameHead.h"
 #include "SceneHospital.h"
 
-
+extern int Hos_Hero_x;
 
 //コンストラクタ
 CSceneHospital::CSceneHospital()
@@ -60,6 +60,9 @@ void CSceneHospital::InitScene()
 
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png",9, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み4番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"チャイナタウン.png",10, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

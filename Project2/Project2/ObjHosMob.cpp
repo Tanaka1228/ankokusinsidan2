@@ -9,6 +9,7 @@
 #include"GameHead.h"
 #include"ObjHosMob.h"
 #include"UtilityModule.h"
+#include"GameL/UserData.h"
 #include<fstream>
 
 
@@ -24,6 +25,8 @@ CObjHosMob::CObjHosMob()
 	sp_flag = false;
 	m_key_control = true;
 	mob_flag = 0;
+	Save_sp = true;
+	m_save_sp = 0;
 }
 
 
@@ -157,6 +160,33 @@ void CObjHosMob::Action()
 
 
 
+	if (hospital != nullptr)
+	{
+
+		if (hero->GetBT() == 83)
+		{
+			mob_flag = 5;
+
+			if (Input::GetVKey(VK_RETURN) == true)
+			{
+				if (Save_sp == true)
+				{
+					((UserData*)Save::GetData())->mStage = 2;
+					Save::Seve();
+					Save_sp = false;
+					m_save_sp = 1;
+					sp_flag = true;
+				}
+			}
+			else
+			{
+				Save_sp = true;
+				m_save_sp = 2;
+
+			}
+		}
+
+	}
 
 
 
@@ -478,6 +508,18 @@ void CObjHosMob::Draw()
 		}
 	}
 
+	if (hospital != nullptr && mob_flag == 5)
+	{
+		if (m_save_sp == 1 )
+		{
+			sp_flag = true;
+			Font::StrDraw(L"ÉZÅ[ÉuÇµÇ‹ÇµÇΩ", 100.0f, 490, 40, c);// X  Y  ëÂÇ´Ç≥     
+		}
+		if (m_save_sp == 2)
+		{
+			sp_flag = false;
+		}
+	}
 
 	
 	

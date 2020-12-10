@@ -16,10 +16,13 @@ public:
 	bool Sp_Flag() { return sp_flag; }
 private:
 	int m_sp;//会話
+	int m_save_sp;//セーブ制御
 	int key_flag;//会話のフラグ
 	bool sp_flag;//会話のグラフィックのフラグ
 
 	bool m_key_control;//会話キー制御
 
 	int mob_flag;
+
+	bool Save_sp;
 };

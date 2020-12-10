@@ -41,7 +41,7 @@ void CSceneTitle::InitScene()
 	Draw::LoadImage(L"女の子正面.png", 5, TEX_SIZE_512);//カーソル	
 	
 	//音楽情報の読み込み
-	//Audio::LoadAudio(0, L".wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	//Audio::LoadAudio(0, L"bgm_maoudamashii_ethnic23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
 	//float Volume = Audio::VolumeMaster(-0.8f);//マスターボリュームを下げる

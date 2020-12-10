@@ -106,7 +106,7 @@ void CObjChinaTown::Init()
 	memcpy(m_map, block_data, sizeof(int) * (65 * 54));
 	map_flag = true;
 	map_flag2 = false;
-	Save_sp = true;
+
 }
 
 //アクション
@@ -221,7 +221,7 @@ void CObjChinaTown::Action()
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
 							hero->SetX2(x + 39.0f + (mx_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 99)
+							if (m_map[i][j] == 99 || m_map[i][j] == 83)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -230,7 +230,7 @@ void CObjChinaTown::Action()
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
 							hero->SetY2(y - 39.0f + (my_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 99)
+							if (m_map[i][j] == 99 || m_map[i][j] == 83)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 
@@ -240,7 +240,7 @@ void CObjChinaTown::Action()
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
 							hero->SetX2(x - 39.0f + (mx_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 99)
+							if (m_map[i][j] == 99||m_map[i][j]==83)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -249,7 +249,7 @@ void CObjChinaTown::Action()
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
 							hero->SetY2(y + 39.0f + (my_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 99)
+							if (m_map[i][j] == 99 || m_map[i][j] == 83)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
@@ -259,22 +259,6 @@ void CObjChinaTown::Action()
 							
 						}
 
-						if (m_map[i][j] == 83)//公衆電話でエンターをおすとセーブ
-						{
-							if (Input::GetVKey(VK_RETURN) == true)
-							{
-								if (Save_sp==true) 
-								{
-									((UserData*)Save::GetData())->mStage = 1;
-									Save::Seve();
-									SetSaveSp(false);
-								}
-							}
-							else
-							{
-								SetSaveSp(true);
-							}
-						}
 					}
 				}
 

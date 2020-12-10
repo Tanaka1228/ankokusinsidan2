@@ -5,6 +5,7 @@
 #include"GameL\HitBoxManager.h"
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
+#include"GameL/UserData.h"
 
 #include"GameHead.h"
 #include"ObjDrugMob.h"
@@ -24,6 +25,9 @@ CObjDrugMob::CObjDrugMob()
 	sp_flag = false;
 	m_key_control = true;
 	mob_flag = 0;
+
+	Save_sp = true;
+	m_save_sp = 0;
 }
 
 
@@ -103,6 +107,34 @@ void CObjDrugMob::Action()
 
 
 
+	if (drug != nullptr)
+	{
+
+		if (hero->GetBT() == 83)
+		{
+			mob_flag = 5;
+
+			if (Input::GetVKey(VK_RETURN) == true)
+			{
+				if (Save_sp == true)
+				{
+					((UserData*)Save::GetData())->mStage = 3;
+					Save::Seve();
+					Save_sp = false;
+					m_save_sp = 1;
+					sp_flag = true;
+				}
+			}
+			else
+			{
+				Save_sp = true;
+				m_save_sp = 2;
+
+			}
+		}
+
+	}
+
 
 
 
@@ -148,6 +180,19 @@ void CObjDrugMob::Draw()
 			key_flag = 1;
 		}
 	}
-	
+
+	if(drug != nullptr)
+	{
+		if (m_save_sp == 1 && mob_flag == 5)
+		{
+			sp_flag = true;
+			Font::StrDraw(L"ƒZ[ƒu‚µ‚Ü‚µ‚½", 100.0f, 490, 40, c);// X  Y  ‘å‚«‚³     
+		}
+		if (m_save_sp == 2 && mob_flag == 5)
+		{
+			sp_flag = false;
+		}
+	}
+
 }
 

@@ -81,6 +81,22 @@ enum OBJ_NAME
 					OBJ_OPE_ROOM,//病院の手術室
 					OBJ_EX_ROOM,//病院の診察室
 					OBJ_XRAY_ROOM,//病院のレントゲン室
+					OBJ_HOSPITAL_ROOM1,
+					OBJ_HOSPITAL_ROOM2,
+					OBJ_HOSPITAL_ROOM3,
+					OBJ_HOSPITAL_ROOM4,
+					OBJ_HOSPITAL_ROOM5,
+					OBJ_HOSPITAL_ROOM6,
+					OBJ_HOSPITAL_ROOM7,
+					OBJ_HOSPITAL_ROOM8,
+					OBJ_Hospitalroom1cpp,
+					OBJ_Hospitalroom2cpp,
+					OBJ_Hospitalroom3cpp,
+					OBJ_Hospitalroom4cpp,
+					OBJ_Hospitalroom5cpp,
+					OBJ_Hospitalroom6cpp,
+					OBJ_Hospitalroom7cpp,
+					OBJ_Hospitalroom8cpp,
 
 					//----------------------------------------
 
@@ -98,7 +114,15 @@ enum OBJ_NAME
 					OBJ_DRUG_CAMPANY_ROOM7,//製薬会社部屋7
 					OBJ_DRUG_CAMPANY_ROOM8,//製薬会社部屋8
 					OBJ_DRUG_CAMPANY_ROOM9,//製薬会社部屋9
-
+					OBJ_DRUG_CAMPANY_ROOM10,
+					OBJ_DRUG_CAMPANY_ROOM11,
+					OBJ_DRUG_CAMPANY_ROOM12,
+					OBJ_DRUG_CAMPANY_ROOM13,
+		            OBJ_DRUG_CAMPANY_ROOM14,
+		            OBJ_DRUG_CAMPANY_ROOM15,
+					OBJ_DRUG_CAMPANY_ROOM16,
+					OBJ_DRUG_CAMPANY_ROOM17,
+					OBJ_DRUG_CAMPANY_ROOM18,
 					//-------------------------------------
 };
 //------------------------------------------------
@@ -181,6 +205,16 @@ struct UserData
 #include"ObjDrugCampanyRoom7.h"
 #include"ObjDrugCampanyRoom8.h"
 #include"ObjDrugCampanyRoom9.h"
+#include"ObjDrugCampanyRoom10.h"
+#include"ObjDrugCampanyRoom11.h"
+#include"ObjDrugCampanyRoom12.h"
+#include"ObjDrugCampanyRoom13.h"
+#include"ObjDrugCampanyRoom14.h"
+#include"ObjDrugCampanyRoom15.h"
+#include"ObjDrugCampanyRoom16.h"
+#include"ObjDrugCampanyRoom17.h"
+#include"ObjDrugCampanyRoom18.h"
+
 #include"ObjHospital.h"
 #include"ObjHospital2.h"
 #include"ObjHospital3.h"
@@ -223,6 +257,24 @@ struct UserData
 #include"ObjDrugMob.h"
 #include"ObjSpBack.h"
 
+#include"ObjHospitalRoom1.h"
+#include"ObjHospitalRoom2.h"
+#include"ObjHospitalRoom3.h"
+#include"ObjHospitalRoom4.h"
+#include"ObjHospitalRoom5.h"
+#include"ObjHospitalRoom6.h"
+#include"ObjHospitalRoom7.h"
+#include"ObjHospitalRoom8.h"
+
+#include"ObjHospitalroom1.h"
+#include"ObjHospitalroom2.h"
+#include"ObjHospitalroom3.h"
+#include"ObjHospitalroom4.h"
+#include"ObjHospitalroom5.h"
+#include"ObjHospitalroom6.h"
+#include"ObjHospitalroom7.h"
+#include"ObjHospitalroom8.h"
+
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -247,6 +299,15 @@ struct UserData
 #include"SceneDrugCampanyRoom7.h"
 #include"SceneDrugCampanyRoom8.h"
 #include"SceneDrugCampanyRoom9.h"
+#include"SceneDrugCampanyRoom10.h"
+#include"SceneDrugCampanyRoom11.h"
+#include"SceneDrugCampanyRoom12.h"
+#include"SceneDrugCampanyRoom13.h"
+#include"SceneDrugCampanyRoom14.h"
+#include"SceneDrugCampanyRoom15.h"
+#include"SceneDrugCampanyRoom16.h"
+#include"SceneDrugCampanyRoom17.h"
+#include"SceneDrugCampanyRoom18.h"
 #include"SceneHospital.h"
 #include"SceneHospital2.h"
 #include"SceneHospital3.h"
@@ -275,6 +336,23 @@ struct UserData
 #include"SceneChinaTown_c.h"
 #include"SceneChinaTown_d.h"
 #include"SceneChinaEvent.h"
+#include"SceneHospitalRoom1.h"
+#include"SceneHospitalRoom2.h"
+#include"SceneHospitalRoom3.h"
+#include"SceneHospitalRoom4.h"
+#include"SceneHospitalRoom5.h"
+#include"SceneHospitalRoom6.h"
+#include"SceneHospitalRoom7.h"
+#include"SceneHospitalRoom8.h"
+
+#include"SceneHospitalroom1.h"
+#include"SceneHospitalroom2.h"
+#include"SceneHospitalroom3.h"
+#include"SceneHospitalroom4.h"
+#include"SceneHospitalroom5.h"
+#include"SceneHospitalroom6.h"
+#include"SceneHospitalroom7.h"
+#include"SceneHospitalroom8.h"
 
 //-----------------------------------------------
 
@@ -283,6 +361,7 @@ struct UserData
 //#define SET_GAME_START CSceneGameOver
 #define SET_GAME_START CSceneTitle
 //#define SET_GAME_START CSceneRooftop
+//#define SET_GAME_START CSceneInstitute14
 //#define SET_GAME_START CSceneEnd 
 //#define SET_GAME_START CSceneFin
 //#define SET_GAME_START CSceneMain

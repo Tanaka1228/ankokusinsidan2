@@ -27,4 +27,6 @@ private:
 	bool m_key_control;//‰ï˜bƒL[§Œä
 
 	int m_time;//ŠÔ
+
+	bool Save_sp;
 };

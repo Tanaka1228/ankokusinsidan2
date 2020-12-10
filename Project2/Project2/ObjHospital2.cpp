@@ -10,12 +10,23 @@
 
 //使用するネームスペース
 using namespace GameL;
+extern int Hos_Hero_x;
 
 //イニシャライズ
 void CObjHospital2::Init()
 {
-	mx_scroll = -420.0f;
-	my_scroll = 0.0f;
+	if (Hos_Hero_x == 6)
+	{
+		mx_scroll = -220.0f;
+		my_scroll = 0.0f;
+	}
+
+	if (Hos_Hero_x == 1) {
+		mx_scroll = -420.0f;
+		my_scroll = 0.0f;
+	}
+
+	Hos_Hero_x = 2;
 
 	//マップ情報
 	int block_data[MAP_Y_MAX][MAP_X_MAX] =
@@ -104,20 +115,11 @@ void CObjHospital2::Action()
 		}
 	}
 
-
-
-
-
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
 	hero->SetDown(false);
 	hero->SetLeft(false);
 	hero->SetRight(false);
-
-
-
-
-
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < MAP_Y_MAX; i++)

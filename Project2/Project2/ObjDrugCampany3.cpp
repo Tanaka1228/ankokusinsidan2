@@ -17,8 +17,8 @@ void CObjDrugCampany3::Init()
 {
 	if (Drug_Hero_x == 26)
 	{
-		mx_scroll = -495.0f;
-		my_scroll = +130.0f;
+		mx_scroll = -1130.0f;
+		my_scroll = +30.0f;
 	}
 	else
 	{

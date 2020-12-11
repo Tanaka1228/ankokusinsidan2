@@ -11,12 +11,14 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Drug_Hero_x;
 //イニシャライズ
 void CObjDrugCampanyRoom16::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
 
+	Drug_Hero_x = 17;
 	//マップ情報
 	int block_data[200][200] =
 	{
@@ -176,7 +178,7 @@ void CObjDrugCampanyRoom16::Action()
 						}
 						if (m_map[i][j] == 6)//移動
 						{
-							Scene::SetScene(new CSceneDrugCampany());
+							Scene::SetScene(new CSceneDrugCampany2());
 						}
 					}
 				}

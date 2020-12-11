@@ -180,7 +180,7 @@ void CObjDrugCampanyRoom6::Action()
 						}
 						if (m_map[i][j] == 5)//ƒhƒA‚É“ü‚é‚ÆˆÚ“®
 						{
-							Scene::SetScene(new CSceneDrugCampany2());
+							Scene::SetScene(new CSceneDrugCampany());
 						}
 					}
 				}

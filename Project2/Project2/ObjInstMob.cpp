@@ -3,6 +3,7 @@
 #include"GameL\HitBoxManager.h"
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
+#include"GameL/UserData.h"
 
 #include"GameHead.h"
 #include"ObjInstMob.h"
@@ -23,6 +24,8 @@ CObjInstMob::CObjInstMob()
 	m_key_control = true;
 	mob_flag = 0;
 	m_save_sp = 0;
+
+	Save_sp = true;
 }
 
 
@@ -96,25 +99,33 @@ void CObjInstMob::Action()
 
 		if (inst != nullptr)
 		{
-			//セーブしました
-			if (inst->GetSaveSp() == false)
+			if (hero->GetBT() == 83)
 			{
 				mob_flag = 5;
-				m_save_sp = 1;
-				sp_flag = true;
+
+				if (Input::GetVKey(VK_RETURN) == true)
+				{
+					if (Save_sp == true)
+					{
+						((UserData*)Save::GetData())->mStage = 8;
+						Save::Seve();
+						Save_sp = false;
+						m_save_sp = 1;
+					}sp_flag = true;
+				}
+				else
+				{
+					Save_sp = true;
+					m_save_sp = 2;
+				}
+
 
 			}
-			if (inst->GetSaveSp() == true)
-			{
-				m_save_sp = 2;
-				sp_flag = false;
-			}
-
 
 		}
+	}
+
 	
-
-
 
 	//----------地下2階の会話フラグ----------------------------------
 	if (inst13a != nullptr)
@@ -171,6 +182,8 @@ void CObjInstMob::Action()
 
 		
 	}
+
+
 	//---------------------------------------------------------------
 	if (instituteboss != nullptr)
 	{
@@ -228,7 +241,7 @@ void CObjInstMob::Action()
 			}
 		}
 
-	}
+	
 	}
 }
 

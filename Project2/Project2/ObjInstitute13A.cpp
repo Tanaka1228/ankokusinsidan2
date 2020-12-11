@@ -100,6 +100,8 @@ void CObjInstitute13A::Action()
 	float hx = hero->GetX2();//スクロール
 	float hy = hero->GetY2();
 
+	//踏んでいるblockの種類を初期化
+	hero->SetBT(0);
 
 	if (hero->GetRight() == false)
 	{
@@ -202,7 +204,8 @@ void CObjInstitute13A::Action()
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
 							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
-							hero->SetBT(m_map[i][j]);
+							if (m_map[i][j] == 70)
+								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
 						if (r > 45 && r < 135)
@@ -210,7 +213,8 @@ void CObjInstitute13A::Action()
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
 							hero->SetY2(y - 40.0f + (my_scroll));//ブロックの位置-主人公の幅
-							hero->SetBT(m_map[i][j]);
+							if (m_map[i][j] == 70)
+								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 
 						}
@@ -219,7 +223,8 @@ void CObjInstitute13A::Action()
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
 							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
-							hero->SetBT(m_map[i][j]);
+							if (m_map[i][j] == 70)
+								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
 						if (r > 225 && r < 315)
@@ -227,7 +232,8 @@ void CObjInstitute13A::Action()
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
 							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
-							hero->SetBT(m_map[i][j]);
+							if (m_map[i][j] == 70)
+								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
 						if (m_map[i][j] == 4)//������14
@@ -800,7 +806,7 @@ void CObjInstitute13A::Draw()
 
 				//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
 
-				Draw::Draw(7, &src, &dst, c, -1.0f);
+				Draw::Draw(7, &src, &dst, c, 0.0f);
 			}
 		}
 	}

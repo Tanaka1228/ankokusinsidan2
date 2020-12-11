@@ -36,7 +36,7 @@ void CObjHospital::Init()
 		{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,31,31,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0},
 		{0,1,1,1,1,1,1,1,1,1.1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,31,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1},
 		{0,1,2,2,2,2,2,2,2,31,31,2,2,2,2,2,2,2,2,9,0,0,2,2,31,31,0,2,2,2,2,2,2,2,2,2,2,2,2,2,31,31,31,31,31,31,31,2,2,1},
-		{0,1,2,2,2,2,2,2,2,31,31,2,2,2,2,2,2,2,2,0,0,0,2,2,31,31,0,2,2,2,2,2,2,2,2,2,2,2,2,2,31,31,31,31,31,31,31,2,2,1},
+		{0,1,2,2,2,2,2,2,2,31,31,2,2,2,2,2,2,2,2,39,0,0,2,2,31,31,0,2,2,2,2,2,2,2,2,2,2,2,2,2,31,31,31,31,31,31,31,2,2,1},
 		{0,1,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,1},
 		{0,1,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,1},
 		{0,1,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,1},
@@ -177,7 +177,7 @@ void CObjHospital::Action()
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
 							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83)
+							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83 || m_map[i][j] == 39)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -186,7 +186,7 @@ void CObjHospital::Action()
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
 							hero->SetY2(y - 40.0f + (my_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83)
+							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83 || m_map[i][j] == 39)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 
@@ -196,7 +196,7 @@ void CObjHospital::Action()
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
 							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83)
+							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83 || m_map[i][j] == 39)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -205,7 +205,7 @@ void CObjHospital::Action()
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
 							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83)
+							if (m_map[i][j] == 36 || m_map[i][j] == 37 || m_map[i][j] == 83 || m_map[i][j] == 39)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
@@ -226,53 +226,6 @@ void CObjHospital::Action()
 		}
 	}
 
-	if (hero->GetBT() == 9)//受付のオブジェクトの前でエンター
-	{
-		if (Input::GetVKey(VK_RETURN) == true) {
-
-			if (m_key_control == true)
-			{
-				if (key_flag == 1)
-				{
-					m_sp = 1;
-
-				}
-
-				if (key_flag == 2)
-				{
-					m_sp = 2;
-
-				}
-				if ((key_flag == 3))
-				{
-
-					m_sp = 3;
-
-				}
-				if ((key_flag == 4))
-				{
-					m_sp = 4;
-
-				}
-				if ((key_flag == 5))
-				{
-					m_sp = 5;
-
-				}
-				if ((key_flag == 6))
-				{
-					m_sp = 6;
-
-				}
-				m_key_control = false;
-			}
-
-		}
-		else
-		{
-			m_key_control = true;
-		}
-	}
 	
 	if (Input::GetVKey('X') == true)
 	{
@@ -319,46 +272,7 @@ void CObjHospital::Draw()
 	Draw::Draw(6, &src, &dst, c, 0.0f);//病院の床
 
 
-	if (m_sp == 1)//エンターキーを一回押したとき
-	{
-
-		ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
-		char str1[64];//ただの配列
-		wchar_t wstr1[64];
-		fin.seekg(0, ios::cur);//0バイト数進める
-		fin >> str1;//str1にテキストを入れる
-
-		sprintf_s(str1, "%s", str1);//出力
-		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-		Font::StrDraw(wstr1, 200.0f, 50, 25, c);// X  Y  大きさ     
-
-
-		key_flag = 2;
-		fin.close();//ファイルを閉じる
-	}
-	if (m_sp == 1)//エンターキーを一回押したとき
-	{
-
-		ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
-		char str1[64];//ただの配列
-		wchar_t wstr1[64];
-		fin.seekg(10, ios::cur);//0バイト数進める
-		fin >> str1;//str1にテキストを入れる
-
-		sprintf_s(str1, "%s", str1);//出力
-		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-		Font::StrDraw(wstr1, 200.0f, 70, 25, c);// X  Y  大きさ     
-
-
-		key_flag = 2;
-		fin.close();//ファイルを閉じる
-	}
-	if (m_sp==2)//エンターキーを一回押したとき
-	{
-		Font::StrDraw(L"", 200.0f, 70, 25, c);// X  Y  大きさ     
-
-		key_flag = 1;
-	}
+	
 
 	//マップチップによるblock設置
 	for (int i = 0; i < MAP_Y_MAX_1F; i++)
@@ -1004,6 +918,10 @@ void CObjHospital::Draw()
 				dst.m_bottom = i * 32.0f + 64.0f + my_scroll;
 
 				Draw::Draw(7, &src, &dst, c, 0.0f);
+			}
+			if (m_map[i][j] == 39)//当たり判定
+			{
+				;
 			}
 			if (m_map[i][j] == 83)//公衆電話 セーブ
 			{

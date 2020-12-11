@@ -252,22 +252,6 @@ void CObjInstitute::Action()
 						{
 							Scene::SetScene(new CSceneChinaTown_d());
 						}
-
-						if (m_map[i][j] == 83)//公衆電話でエンターをおすとセーブ
-						{
-							if (Input::GetVKey(VK_RETURN) == true)
-							{
-								if (Save_sp == true) {
-									((UserData*)Save::GetData())->mStage = 8;
-									Save::Seve();
-									SetSaveSp(false);
-								}
-							}
-							else
-							{
-								SetSaveSp(true);
-							}
-						}
 		
 					}
 				}

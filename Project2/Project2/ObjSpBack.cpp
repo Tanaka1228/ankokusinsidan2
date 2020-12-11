@@ -153,6 +153,26 @@ void CObjSpBack::Draw()
 			Draw::Draw(8, &src, &dst, c, 0.0f);
 		}
 	}
+	//研究所の会話の背景
+	if (instituteboss != nullptr)
+	{
+		if (instmob->Sp_Flag() == true)
+		{
+			//切り取り位置の設定
+			src.m_top = 372.0f;   //y
+			src.m_left = 18.0f; //x
+			src.m_right = 781.0f; //x
+			src.m_bottom = 581.0f; //y
+
+			//表示位置の設定
+			dst.m_top = 450.0f;
+			dst.m_left = 2.0f;
+			dst.m_right = 798.0f;
+			dst.m_bottom = 600.0f;
+
+			Draw::Draw(7, &src, &dst, c, 0.0f);
+		}
+	}
 	//製薬会社の会話の背景
 	if (drug != nullptr)
 	{

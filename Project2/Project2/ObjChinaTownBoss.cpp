@@ -291,7 +291,7 @@ void CObjChinaTownBoss::Action()
 		}
 	}
 	//“GoŒ»ƒ‰ƒCƒ“
-	float xline = hx + (-mx_scroll) -230;
+	float xline = hx + (-mx_scroll) -210;
 	float yline = hy + (my_scroll) +200;
 
 	float xline2 = hx + (-mx_scroll) + 500;

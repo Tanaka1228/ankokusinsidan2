@@ -1183,7 +1183,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="LibraryR.lib">
+    <Library Include="GameL\LibraryR.lib">
       <Filter>リソース ファイル</Filter>
     </Library>
   </ItemGroup>

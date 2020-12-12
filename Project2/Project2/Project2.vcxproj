@@ -538,7 +538,7 @@
     <ClInclude Include="UtilityModule.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="LibraryR.lib" />
+    <Library Include="GameL\LibraryR.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

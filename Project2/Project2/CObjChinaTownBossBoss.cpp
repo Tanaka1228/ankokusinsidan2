@@ -116,8 +116,8 @@ void CObjChinaTownBossBoss::Draw()
 
 	//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
 	src.m_top = 0.0f; //y
-	src.m_left = 0.0f; //x
-	src.m_right = 131.0f; //x
+	src.m_left = 9.0f; //x
+	src.m_right = 141.0f; //x
 	src.m_bottom = 139.0f; //y
 
 	dst.m_top = 0.0f + m_y + chinatownboss->GetScroll2();

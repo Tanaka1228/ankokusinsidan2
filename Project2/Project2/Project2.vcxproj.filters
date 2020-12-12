@@ -1131,4 +1131,9 @@
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="LibraryR.lib">
+      <Filter>リソース ファイル</Filter>
+    </Library>
+  </ItemGroup>
 </Project>

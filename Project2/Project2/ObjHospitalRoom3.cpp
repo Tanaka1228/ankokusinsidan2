@@ -11,11 +11,16 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Hos_Hero_x;
+
+
 //イニシャライズ
 void CObjHospitalRoom3::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
+
+     Hos_Hero_x = 9;
 
 	//マップ情報
 	int block_data[25][25] =
@@ -179,7 +184,7 @@ void CObjHospitalRoom3::Action()
 						}
 						if (m_map3[i][j] == 34)//ドアに入ると病院3階に移動
 						{
-							Scene::SetScene(new CSceneHospital3());
+							Scene::SetScene(new CSceneHospital2());
 						}
 
 					}
@@ -222,8 +227,6 @@ void CObjHospitalRoom3::Draw()
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
-	Font::StrDraw(L"病院：手術室", 600, 10, 32, c);
 
 	//背景表示
 	src.m_top = 0.0f;   // Y

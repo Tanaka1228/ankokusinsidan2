@@ -11,11 +11,16 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Hos_Hero_x;
+
 //イニシャライズ
 void CObjHospitalRoom2::Init()
 {
+	
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
+
+	Hos_Hero_x = 8;
 
 	//マップ情報
 	int block_data[25][25] =
@@ -179,7 +184,7 @@ void CObjHospitalRoom2::Action()
 						}
 						if (m_map3[i][j] == 34)//ドアに入ると病院3階に移動
 						{
-							Scene::SetScene(new CSceneHospital3());
+							Scene::SetScene(new CSceneHospital2());
 						}
 
 					}
@@ -191,29 +196,6 @@ void CObjHospitalRoom2::Action()
 		}
 	}
 
-	//敵出現ライン
-	//float Xline = hx + (-mx_scroll) + 400;
-	//float Yline = hy + (my_scroll)-100;
-
-	//int ex = ((int)Xline) / 32;
-	//int ey = ((int)Yline) / 32;
-
-	//for (int i = 0; i < 25; i++)
-	//{
-	//	for (int j = 0; j < 25; j++)
-
-	//		if (m_map[i][ex] == 15)
-	//		{
-	//			//誘導敵機オブジェクト作成
-	//			CObjRooftopBoss* obj_rooftop_boss = new CObjRooftopBoss(ex * 32, i * 32); //誘導敵機オブジェクト作成
-	//			Objs::InsertObj(obj_rooftop_boss, OBJ_ROOF_TOP_BOSS, 4); //誘導敵機オブジェクトをオブジェクトマネージャーに登録
-
-	//			m_map[i][ex] = 0;
-	//		}
-
-
-	//}
-
 }
 //ドロー
 void CObjHospitalRoom2::Draw()
@@ -222,8 +204,6 @@ void CObjHospitalRoom2::Draw()
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
-	Font::StrDraw(L"病院：手術室", 600, 10, 32, c);
 
 	//背景表示
 	src.m_top = 0.0f;   // Y

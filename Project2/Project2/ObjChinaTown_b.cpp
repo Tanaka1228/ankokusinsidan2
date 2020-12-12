@@ -12,6 +12,7 @@
 using namespace GameL;
 
 extern int ChinaTown_Hero_x;
+extern int Hos_Hero_x;
 
 //イニシャライズ
 void CObjChinaTown_b::Init()
@@ -33,6 +34,7 @@ void CObjChinaTown_b::Init()
 	}
 
 	ChinaTown_Hero_x = 3;
+	Hos_Hero_x = 0;
 
 	//マップ情報
 	int block_data[65][54] =

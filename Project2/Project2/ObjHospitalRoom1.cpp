@@ -11,11 +11,15 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern int Hos_Hero_x;
+
 //イニシャライズ
 void CObjHospitalRoom1::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
+
+	Hos_Hero_x=15;
 
 	//マップ情報
 	int block_data[25][25] =
@@ -179,7 +183,7 @@ void CObjHospitalRoom1::Action()
 						}
 						if (m_map3[i][j] == 34)//ドアに入ると病院屋上に移動
 						{
-							Scene::SetScene(new CSceneHospital3());
+							Scene::SetScene(new CSceneHospital());
 						}
 
 					}

@@ -5,7 +5,7 @@
 #include"GameHead.h"
 #include"CObjInstituteBossBoss.h"
 #include"UtilityModule.h"
-
+#include"GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -93,6 +93,7 @@ void CObjInstituteBossBoss::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Audio::Start(2);
 		Sleep(400);
 		Scene::SetScene(new CSceneFin());
 	}

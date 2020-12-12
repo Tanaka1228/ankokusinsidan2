@@ -64,6 +64,9 @@ void CSceneRooftop::InitScene()
 	//　銃　音楽情報の読み込み
 	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
 
+	//　敵爆発　音楽情報の読み込み
+	Audio::LoadAudio(2, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
+
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_1_battle23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 

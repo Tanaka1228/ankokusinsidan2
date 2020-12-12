@@ -5,6 +5,7 @@
 #include"GameHead.h"
 #include"CObjChinaAtkEnemy.h"
 #include"UtilityModule.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -65,6 +66,7 @@ void CObjChinaAtkEnemy::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Audio::Start(2);
 	}
 }
 

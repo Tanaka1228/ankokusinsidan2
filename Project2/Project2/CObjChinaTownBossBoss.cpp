@@ -5,7 +5,7 @@
 #include"GameHead.h"
 #include"CObjChinaTownBossBoss.h"
 #include"UtilityModule.h"
-
+#include"GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -97,6 +97,7 @@ void CObjChinaTownBossBoss::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Audio::Start(2);
 		Sleep(400);
 	}
 }

@@ -39,19 +39,21 @@ void CObjChinaTownBossBoss::Action()
 
 
 	m_timeboss++;
-	if (m_timeboss > 100)
+	if (m_timeboss > 50)
 	{
 		m_timeboss = 0;
 
 		//19”­“®Žž”­ŽË
 		CObjAngleBullet* obj_b;
-		for (int i = 0; i < 360; i += 20)
+		for (int i = 0; i < 360; i += 10)
 		{
 			//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
 			obj_b = new CObjAngleBullet(m_x, m_y, i, 5.0f);
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 4);
 		}
+
 	}
+	
 
 
 	//ˆÚ“®•ûŒü

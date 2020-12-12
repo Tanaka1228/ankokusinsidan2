@@ -65,7 +65,7 @@ void CSceneChinaTown::InitScene()
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_7_event23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(-0.8f);//マスターボリュームを下げる
+	float Volume = Audio::VolumeMaster(1.0f);//マスターボリュームを下げる
 	Audio::Start(0);//音楽スタート
 
 
@@ -75,7 +75,7 @@ void CSceneChinaTown::InitScene()
 
 	//チャイナタウンオブジェクト作成
 	CObjChinaTown* objc = new CObjChinaTown(); //チャイナタウンオブジェクト作成
-	Objs::InsertObj(objc, OBJ_CHINA_TOWN, 4); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(objc, OBJ_CHINA_TOWN,1); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
@@ -83,7 +83,7 @@ void CSceneChinaTown::InitScene()
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 6);
+	Objs::InsertObj(objg, OBJ_GUN,8);
 
 	//チャイナタウンモブオブジェクト作成
 	CObjChinaMob* objm = new CObjChinaMob(); //チャイナタウンモブオブジェクト作成

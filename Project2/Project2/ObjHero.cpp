@@ -109,55 +109,59 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
+
+
 	//移動ベクトルの破棄
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	if (Input::GetVKey('A') == true)
-	{
-		if (gun_Kama == 1)
+	if (!block) {
+		if (Input::GetVKey('A') == true)
 		{
-
-			if (m_gun == 1)
+			if (gun_Kama == 1)
 			{
-				m_gun = 0;//構えていない
-			}
-			else if (m_gun == 0)
-			{
-				m_gun = 1;//構えている
+
+				if (m_gun == 1)
+				{
+					m_gun = 0;//構えていない
+				}
+				else if (m_gun == 0)
+				{
+					m_gun = 1;//構えている
+				}
+
+				gun_Kama = 0;
 			}
 
-			gun_Kama = 0;
+
+		}
+		else
+		{
+			gun_Kama = 1;
 		}
 
-		
-	}
-	else
-	{
-		gun_Kama = 1;
-	}
-
-	if (Input::GetVKey('Q') == true&&m_gun==1)//武器の種類を変える
-	{
-		if (gun_type_flag == 1)
+		if (Input::GetVKey('Q') == true && m_gun == 1)//武器の種類を変える
 		{
-			//リボルバー
-			if (gun_type == 0)
+			if (gun_type_flag == 1)
 			{
-				gun_type = 1;
+				//リボルバー
+				if (gun_type == 0)
+				{
+					gun_type = 1;
+				}
+				//アサルト
+				else if (gun_type == 1)
+				{
+					gun_type = 0;
+				}
+				gun_type_flag = 0;
 			}
-			//アサルト
-			else if (gun_type == 1)
-			{
-				gun_type = 0;
-			}
-			gun_type_flag = 0;
+		}
+		else
+		{
+			gun_type_flag = 1;
 		}
 	}
-	else
-	{
-		gun_type_flag = 1;
-	}
-	
 
 	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
 	{

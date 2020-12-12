@@ -33,7 +33,7 @@ CSceneBlock::~CSceneBlock()
 void CSceneBlock::InitScene()
 {
 	//音楽情報の読み込み
-	Audio::LoadAudio(0, L"拠点BGM.wav",BACK_MUSIC);//Loop
+	Audio::LoadAudio(0, L"bgm_maoudamashii_ethnic23 (online-audio-converter.com).wav",BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(1.5f);//マスターボリュームを下げる

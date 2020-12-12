@@ -83,7 +83,7 @@ void CSceneInstituteBoss::InitScene()
 	Objs::InsertObj(objm, OBJ_MAP, 10);
 
 	//音楽情報の読み込み
-	Audio::LoadAudio(0, L"game_maoudamashii_7_event45.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	Audio::LoadAudio(0, L"game_maoudamashii_1_battle23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる

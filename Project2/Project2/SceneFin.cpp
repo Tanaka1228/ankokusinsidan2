@@ -32,13 +32,13 @@ CSceneFin::~CSceneFin()
 void CSceneFin::InitScene()
 {
 	//音楽情報の読み込み
-	//Audio::LoadAudio(0, L".wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	Audio::LoadAudio(0, L"game_maoudamashii_3_theme12 (online-audio-converter.com).wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
-	//float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	//v = Audio::VolumeMaster(1.0 - v);
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.0 - v);
 
-	//Audio::Start(0);//音楽スタート
+	Audio::Start(0);//音楽スタート
 
 	//タイトルオブジェクト作成
 	CObjFin* obj = new CObjFin();

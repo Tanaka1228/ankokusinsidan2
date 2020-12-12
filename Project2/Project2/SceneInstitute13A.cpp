@@ -81,7 +81,7 @@ void CSceneInstitute13A::InitScene()
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
 		//音楽情報の読み込み
-	Audio::LoadAudio(0, L"game_maoudamashii_7_event45.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber22.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる

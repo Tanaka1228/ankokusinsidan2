@@ -68,7 +68,7 @@ void CSceneInstitute14::InitScene()
 	Objs::InsertObj(obji, OBJ_INSTITUTE14, 4); //作った研究所オブジェクトをオブジェクトマネージャーに登録
 
 		//音楽情報の読み込み
-	Audio::LoadAudio(0, L"game_maoudamashii_7_event45.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber22.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる

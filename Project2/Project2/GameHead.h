@@ -273,19 +273,8 @@ struct UserData
 #include"ObjHospitalRoom2.h"
 #include"ObjHospitalRoom3.h"
 #include"ObjHospitalRoom4.h"
-#include"ObjHospitalRoom5.h"
-#include"ObjHospitalRoom6.h"
-#include"ObjHospitalRoom7.h"
-#include"ObjHospitalRoom8.h"
 
-#include"ObjHospitalroom1.h"
-#include"ObjHospitalroom2.h"
-#include"ObjHospitalroom3.h"
-#include"ObjHospitalroom4.h"
-#include"ObjHospitalroom5.h"
-#include"ObjHospitalroom6.h"
-#include"ObjHospitalroom7.h"
-#include"ObjHospitalroom8.h"
+
 
 //------------------------------------------------
 
@@ -358,19 +347,7 @@ struct UserData
 #include"SceneHospitalRoom2.h"
 #include"SceneHospitalRoom3.h"
 #include"SceneHospitalRoom4.h"
-#include"SceneHospitalRoom5.h"
-#include"SceneHospitalRoom6.h"
-#include"SceneHospitalRoom7.h"
-#include"SceneHospitalRoom8.h"
 
-#include"SceneHospitalroom1.h"
-#include"SceneHospitalroom2.h"
-#include"SceneHospitalroom3.h"
-#include"SceneHospitalroom4.h"
-#include"SceneHospitalroom5.h"
-#include"SceneHospitalroom6.h"
-#include"SceneHospitalroom7.h"
-#include"SceneHospitalroom8.h"
 
 //-----------------------------------------------
 

@@ -59,6 +59,9 @@ void CSceneInstitute::InitScene()
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 8, TEX_SIZE_512);
 
+	//　銃　音楽情報の読み込み
+	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
+
 	//モブオブジェクト追加
 	CObjInstMob* objinstmob = new CObjInstMob();//モブ
 	Objs::InsertObj(objinstmob, OBJ_INST_MOB, 6);

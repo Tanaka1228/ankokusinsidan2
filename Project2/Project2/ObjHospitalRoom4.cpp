@@ -6,13 +6,13 @@
 #include"GameL\SceneObjManager.h"
 
 #include"GameHead.h"
-#include "ObjHospitalroom4.h"
+#include "ObjHospitalRoom4.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //イニシャライズ
-void CObjHospitalroom4::Init()
+void CObjHospitalRoom4::Init()
 {
 	mx_scroll = 0.0f;
 	my_scroll = 0.0f;
@@ -53,7 +53,7 @@ void CObjHospitalroom4::Init()
 
 }
 //アクション
-void CObjHospitalroom4::Action()
+void CObjHospitalRoom4::Action()
 {
 	//主人公の位置を取得
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
@@ -216,7 +216,7 @@ void CObjHospitalroom4::Action()
 
 }
 //ドロー
-void CObjHospitalroom4::Draw()
+void CObjHospitalRoom4::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 

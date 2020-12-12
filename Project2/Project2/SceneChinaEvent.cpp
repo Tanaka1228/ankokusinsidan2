@@ -6,6 +6,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -61,6 +62,9 @@ void CSceneChinaEvent::InitScene()
 
 	//外部グラフィックファイルを読み込み13番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"病院の屋上の素材.png", 7, TEX_SIZE_512);
+
+	//　銃　音楽情報の読み込み
+	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

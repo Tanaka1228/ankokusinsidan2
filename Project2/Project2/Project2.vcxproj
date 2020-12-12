@@ -226,6 +226,10 @@
     <ClCompile Include="ObjHospital.cpp" />
     <ClCompile Include="ObjHospital2.cpp" />
     <ClCompile Include="ObjHospital3.cpp" />
+    <ClCompile Include="ObjHospitalRoom1.cpp" />
+    <ClCompile Include="ObjHospitalRoom2.cpp" />
+    <ClCompile Include="ObjHospitalRoom3.cpp" />
+    <ClCompile Include="ObjHospitalRoom4.cpp" />
     <ClCompile Include="ObjInstitute.cpp" />
     <ClCompile Include="ObjInstitute1.cpp" />
     <ClCompile Include="ObjInstitute10.cpp" />
@@ -300,6 +304,10 @@
     <ClCompile Include="SceneHospital.cpp" />
     <ClCompile Include="SceneHospital2.cpp" />
     <ClCompile Include="SceneHospital3.cpp" />
+    <ClCompile Include="SceneHospitalroom1.cpp" />
+    <ClCompile Include="SceneHospitalroom2.cpp" />
+    <ClCompile Include="SceneHospitalroom3.cpp" />
+    <ClCompile Include="SceneHospitalroom4.cpp" />
     <ClCompile Include="SceneInstitute.cpp" />
     <ClCompile Include="SceneInstitute1.cpp" />
     <ClCompile Include="SceneInstitute10.cpp" />
@@ -418,6 +426,10 @@
     <ClInclude Include="ObjHospital.h" />
     <ClInclude Include="ObjHospital2.h" />
     <ClInclude Include="ObjHospital3.h" />
+    <ClInclude Include="ObjHospitalRoom1.h" />
+    <ClInclude Include="ObjHospitalRoom2.h" />
+    <ClInclude Include="ObjHospitalRoom3.h" />
+    <ClInclude Include="ObjHospitalRoom4.h" />
     <ClInclude Include="ObjInstitute.h" />
     <ClInclude Include="ObjInstitute1.h" />
     <ClInclude Include="ObjInstitute10.h" />
@@ -492,6 +504,10 @@
     <ClInclude Include="SceneHospital.h" />
     <ClInclude Include="SceneHospital2.h" />
     <ClInclude Include="SceneHospital3.h" />
+    <ClInclude Include="SceneHospitalroom1.h" />
+    <ClInclude Include="SceneHospitalroom2.h" />
+    <ClInclude Include="SceneHospitalroom3.h" />
+    <ClInclude Include="SceneHospitalroom4.h" />
     <ClInclude Include="SceneInstitute.h" />
     <ClInclude Include="SceneInstitute1.h" />
     <ClInclude Include="SceneInstitute10.h" />

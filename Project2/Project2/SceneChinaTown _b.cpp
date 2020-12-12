@@ -66,6 +66,9 @@ void CSceneChinaTown_b::InitScene()
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"マップb.png", 18, TEX_SIZE_512);
 
+	//　銃　音楽情報の読み込み
+	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
+
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_7_event23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
@@ -85,11 +88,11 @@ void CSceneChinaTown_b::InitScene()
 
 	//チャイナタウンオブジェクト作成
 	CObjChinaTown_b* objc = new CObjChinaTown_b(); //チャイナタウンオブジェクト作成
-	Objs::InsertObj(objc, OBJ_CHINA_TOWN, 4); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(objc, OBJ_CHINA_TOWN, 1); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 6);
+	Objs::InsertObj(objg, OBJ_GUN,8);
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成

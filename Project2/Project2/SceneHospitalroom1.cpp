@@ -6,30 +6,31 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
 #include"GameL/DrawTexture.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //使用するヘッダー
 #include"GameHead.h"
-#include "SceneHospitalroom1.h"
+#include "SceneHospitalRoom1.h"
 
 
 
 //コンストラクタ
-CSceneHospitalroom1::CSceneHospitalroom1()
+CSceneHospitalRoom1::CSceneHospitalRoom1()
 {
 }
 
 //デストラクタ
-CSceneHospitalroom1::~CSceneHospitalroom1()
+CSceneHospitalRoom1::~CSceneHospitalRoom1()
 {
 }
 
 
 
 //ゲームステージ初期化メソッド
-void CSceneHospitalroom1::InitScene()
+void CSceneHospitalRoom1::InitScene()
 {
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
@@ -49,6 +50,16 @@ void CSceneHospitalroom1::InitScene()
 	//外部グラフィックファイルを読み込み6番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"病院床.png", 6, TEX_SIZE_512);
 
+	//　銃　音楽情報の読み込み
+	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"bgm_maoudamashii_healing06.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.0 - v);
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 2); //作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -58,12 +69,12 @@ void CSceneHospitalroom1::InitScene()
 	Objs::InsertObj(objg, OBJ_GUN, 3);
 
 	//病院オブジェクト作成
-	CObjHospitalroom1* objo = new CObjHospitalroom1(); //病院オブジェクト作成
+	CObjHospitalRoom1* objo = new CObjHospitalRoom1(); //病院オブジェクト作成
 	Objs::InsertObj(objo, OBJ_OPE_ROOM, 1); //作った病院オブジェクトをオブジェクトマネージャーに登録
 }
 
 
 //ゲームステージ実行中メソッド
-void CSceneHospitalroom1::Scene()
+void CSceneHospitalRoom1::Scene()
 {
 }

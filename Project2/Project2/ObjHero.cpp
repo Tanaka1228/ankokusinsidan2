@@ -7,7 +7,7 @@
 #include"CObjBullet.h"
 #include"UtilityModule.h"
 #include"GameL/DrawFont.h"
-
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -181,24 +181,32 @@ void CObjHero::Action()
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 3)//左
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 1)//後ろ
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 0)//前
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+
+					Audio::Start(1);
 				}
 
 

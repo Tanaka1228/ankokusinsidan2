@@ -91,9 +91,6 @@
     <Filter Include="ソース ファイル\ステージマップ\製薬会社\部屋">
       <UniqueIdentifier>{3f7e4e23-038e-4767-bc41-464a6c8342f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\ステージマップ\製薬会社\マップ図">
-      <UniqueIdentifier>{bf5d2b7d-acd0-4615-ba11-aef982be0cd7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\END">
       <UniqueIdentifier>{5efb7678-67a3-44ac-b8a5-6710594fd3ce}</UniqueIdentifier>
     </Filter>
@@ -108,6 +105,12 @@
     </Filter>
     <Filter Include="ソース ファイル\使わない">
       <UniqueIdentifier>{863b35e7-ba37-494f-8fe2-0fadd2c0dd0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\マップ図">
+      <UniqueIdentifier>{bf5d2b7d-acd0-4615-ba11-aef982be0cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\病院\部屋\多い部屋">
+      <UniqueIdentifier>{993a1360-5ec0-43b5-bdc3-cf1b1bf0d458}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -436,7 +439,7 @@
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
     <ClCompile Include="ObjMap.cpp">
-      <Filter>ソース ファイル\ステージマップ\製薬会社\マップ図</Filter>
+      <Filter>ソース ファイル\ステージマップ\マップ図</Filter>
     </ClCompile>
     <ClCompile Include="ObjHospital.cpp">
       <Filter>ソース ファイル\ステージマップ\病院\１階</Filter>
@@ -617,6 +620,30 @@
     </ClCompile>
     <ClCompile Include="SceneDrugCampanyRoom18.cpp">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHospitalRoom1.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHospitalRoom2.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHospitalRoom3.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHospitalRoom4.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneHospitalroom1.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneHospitalroom2.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneHospitalroom3.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneHospitalroom4.cpp">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -948,7 +975,7 @@
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
     <ClInclude Include="ObjMap.h">
-      <Filter>ソース ファイル\ステージマップ\製薬会社\マップ図</Filter>
+      <Filter>ソース ファイル\ステージマップ\マップ図</Filter>
     </ClInclude>
     <ClInclude Include="ObjHospital.h">
       <Filter>ソース ファイル\ステージマップ\病院\１階</Filter>
@@ -1129,6 +1156,30 @@
     </ClInclude>
     <ClInclude Include="SceneDrugCampanyRoom18.h">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHospitalRoom1.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHospitalRoom2.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHospitalRoom3.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHospitalRoom4.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneHospitalroom1.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneHospitalroom2.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneHospitalroom3.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneHospitalroom4.h">
+      <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

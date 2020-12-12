@@ -58,6 +58,9 @@ void CSceneDrugCampany::InitScene()
 	//外部グラフィックファイルを読み込み4番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"チャイナタウン.png", 9, TEX_SIZE_512);
 
+	//　銃　音楽情報の読み込み
+	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
+
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber19.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 

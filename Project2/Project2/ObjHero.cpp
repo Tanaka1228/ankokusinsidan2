@@ -115,7 +115,7 @@ void CObjHero::Action()
 	//ˆÚ“®ƒxƒNƒgƒ‹‚Ì”jŠü
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	if (block == NULL) {
+	if (!block) {
 		if (Input::GetVKey('A') == true)
 		{
 			if (gun_Kama == 1)

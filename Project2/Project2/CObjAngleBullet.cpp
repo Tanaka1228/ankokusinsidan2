@@ -82,7 +82,7 @@ void CObjAngleBullet::Action()
 
 
 			//敵機が完全に領域外に出たら敵機を破棄する
-			bool check = CheckWindow(m_x, m_y, 1000.0f, 1000.0f, 3000.0f, 2500.0f);
+			bool check = CheckWindow(m_x, m_y, 1000.0f, 1000.0f, 2000.0f, 1900.0f);
 			if (check == false)
 			{
 				this->SetStatus(false);//自身に削除命令

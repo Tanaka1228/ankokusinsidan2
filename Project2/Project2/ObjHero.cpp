@@ -46,6 +46,10 @@ CObjHero::CObjHero(float x, float y)
 {
 	m_x = x;
 	m_y = y;
+
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(3, L"足音.wav", EFFECT);//単発
 }
 
 //イニシャライズ
@@ -236,24 +240,28 @@ void CObjHero::Action()
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 3)//左
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 1)//後ろ
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+					Audio::Start(1);
 				}
 				if (m_ani_frame == 0)//前
 				{
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+					Audio::Start(1);
 				}
 			
 			
@@ -570,6 +578,7 @@ void CObjHero::Action()
 	}
 	if (m_ani_frame3 == 2)
 	{
+		Audio::Start(3);
 		m_ani_frame3 = 0;
 	}
 	//--------------------------------------------------------------------
@@ -602,6 +611,7 @@ void CObjHero::Action()
 	}
 	if (m_ani_frame4 == 2)
 	{
+		Audio::Start(3);
 		m_ani_frame4= 0;
 	}
 	//-------------------------------------------------------------------
@@ -632,6 +642,7 @@ void CObjHero::Action()
 	}
 	if (m_ani_frame2 == 3)
 	{
+		Audio::Start(3);
 		m_ani_frame2 = 0;
 	}
 	//---------------------------------------------------------------
@@ -662,6 +673,7 @@ void CObjHero::Action()
 	}
 	if (m_ani_frame1 == 3)
 	{
+		Audio::Start(3);
 		m_ani_frame1 = 0;
 	}
 	//--------------------------------------------------------------------

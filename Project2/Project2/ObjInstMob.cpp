@@ -4,6 +4,7 @@
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
 #include"GameL/UserData.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjInstMob.h"
@@ -26,6 +27,9 @@ CObjInstMob::CObjInstMob()
 	m_save_sp = 0;
 
 	Save_sp = true;
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
 }
 
 
@@ -54,6 +58,7 @@ void CObjInstMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -105,8 +110,10 @@ void CObjInstMob::Action()
 
 				if (Input::GetVKey(VK_RETURN) == true)
 				{
+				
 					if (Save_sp == true)
 					{
+						Audio::Start(2);
 						((UserData*)Save::GetData())->mStage = 8;
 						Save::Seve();
 						Save_sp = false;
@@ -138,6 +145,7 @@ void CObjInstMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -195,6 +203,7 @@ void CObjInstMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;

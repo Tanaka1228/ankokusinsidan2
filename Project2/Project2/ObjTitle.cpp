@@ -3,6 +3,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawFont.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjTitle.h"
@@ -54,9 +55,12 @@ void CObjTitle::Action()
 	 //カーソルの位置とプッシュする場所で当たり判定
 	 if (m_x > 200 && m_x < 550 && m_y>330 && m_y < 360)
 	 {
+		
 		 //エンターキーが押されたらメインに還移
 		 if (m_key_enter == true)
 		 {
+			 Audio::Start(1);
+			 Sleep(500);
 		    ((UserData*)Save::GetData())->mStage=0;
 			Save::Seve();
 			 Scene::SetScene(new CSceneBlock());
@@ -72,22 +76,32 @@ void CObjTitle::Action()
 			 Save::Open();
 			 if (((UserData*)Save::GetData())->mStage == 0)//拠点ニューゲーム
 			 {
+				 Audio::Start(1);
+				 Sleep(500);
 				 Scene::SetScene(new CSceneBlock());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 1)//チャイナタウン
 			 {
+				 Audio::Start(1);
+				 Sleep(500);
 				 Scene::SetScene(new CSceneChinaTown());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 2)//病院1階
 			 {
+				 Audio::Start(1);
+				 Sleep(500);
 				 Scene::SetScene(new CSceneHospital());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 3)//製薬会社一階
 			 {
+				 Audio::Start(1);
+				 Sleep(500);
 				 Scene::SetScene(new CSceneDrugCampany());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 8)//研究所
 			 {
+				 Audio::Start(1);
+				 Sleep(500);
 				 Scene::SetScene(new CSceneInstitute());
 			 }
 		 }
@@ -98,6 +112,8 @@ void CObjTitle::Action()
 		 //エンターキーが押されたらシャットダウンに還移
 		 if (m_key_enter == true)
 		 {
+			 Audio::Start(1);
+			 Sleep(500);
 			 Scene::SetScene(nullptr);
 		 }
 	 }
@@ -184,9 +200,9 @@ void CObjTitle::Draw()
 
 	
 	//仮矢印のボタンの状態
-	if (m_key_enter == true)
+	/*if (m_key_enter == true)
 		Font::StrDraw(L"決定=押している", 20, 20, 12, c);
 	else
-		Font::StrDraw(L"決定=押していない", 20, 20, 12, c);
+		Font::StrDraw(L"決定=押していない", 20, 20, 12, c);*/
 
 }

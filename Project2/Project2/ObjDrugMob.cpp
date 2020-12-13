@@ -6,6 +6,7 @@
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
 #include"GameL/UserData.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjDrugMob.h"
@@ -28,6 +29,9 @@ CObjDrugMob::CObjDrugMob()
 
 	Save_sp = true;
 	m_save_sp = 0;
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
 }
 
 
@@ -53,6 +57,7 @@ void CObjDrugMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -116,8 +121,10 @@ void CObjDrugMob::Action()
 
 			if (Input::GetVKey(VK_RETURN) == true)
 			{
+				
 				if (Save_sp == true)
 				{
+					Audio::Start(2);
 					((UserData*)Save::GetData())->mStage = 3;
 					Save::Seve();
 					Save_sp = false;

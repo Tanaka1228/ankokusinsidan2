@@ -4,6 +4,7 @@
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
 #include"GameL/UserData.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjChinaMob.h"
@@ -27,6 +28,9 @@ CObjChinaMob::CObjChinaMob()
 	m_save_sp = 0;
 
 	Save_sp=true;
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
 }
 
 
@@ -55,8 +59,10 @@ void CObjChinaMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
+						
 						m_sp = 1;
 						sp_flag = true;
 					}
@@ -104,6 +110,7 @@ void CObjChinaMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -156,8 +163,10 @@ void CObjChinaMob::Action()
 
 			if (Input::GetVKey(VK_RETURN) == true)
 			{
+			
 				if (Save_sp == true)
 				{
+					Audio::Start(2);
 					((UserData*)Save::GetData())->mStage = 1;
 					Save::Seve();
 					Save_sp = false;
@@ -182,9 +191,10 @@ void CObjChinaMob::Action()
 		{
 			mob_flag = 1;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+				
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -232,9 +242,10 @@ void CObjChinaMob::Action()
 		{
 			mob_flag = 2;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+				
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -282,9 +293,10 @@ void CObjChinaMob::Action()
 		{
 			mob_flag = 3;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+			
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -336,9 +348,10 @@ void CObjChinaMob::Action()
 			{
 				mob_flag == 1;
 				if (Input::GetVKey(VK_RETURN) == true) {
-
+					
 					if (m_key_control == true)
 					{
+						Audio::Start(2);
 						if (key_flag == 1)
 						{
 							m_sp = 1;
@@ -404,7 +417,7 @@ void CObjChinaMob::Draw()
 	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
 
-	if (chinatown != nullptr)
+	if (chinatown != nullptr && mob_flag == 4)
 	{
 		if (m_sp == 1&&mob_flag==4)//エンターキーを一回押したとき
 		{
@@ -451,7 +464,9 @@ void CObjChinaMob::Draw()
 			key_flag = 1;
 		}
 	}
-	if (chinatown != nullptr)//車
+
+
+	if (chinatown != nullptr && mob_flag == 1)//車
 	{
 		if (m_sp == 1 && mob_flag == 1)//エンターキーを一回押したとき
 		{

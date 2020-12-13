@@ -5,6 +5,7 @@
 #include"GameL\HitBoxManager.h"
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjHosMob.h"
@@ -27,6 +28,9 @@ CObjHosMob::CObjHosMob()
 	mob_flag = 0;
 	Save_sp = true;
 	m_save_sp = 0;
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
 }
 
 
@@ -53,6 +57,7 @@ void CObjHosMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -105,9 +110,10 @@ void CObjHosMob::Action()
 		{
 			mob_flag = 2;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+			
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -161,9 +167,11 @@ void CObjHosMob::Action()
 		{
 			mob_flag = 3;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+			
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
+
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -218,8 +226,10 @@ void CObjHosMob::Action()
 
 			if (Input::GetVKey(VK_RETURN) == true)
 			{
+			
 				if (Save_sp == true)
 				{
+					Audio::Start(2);
 					((UserData*)Save::GetData())->mStage = 2;
 					Save::Seve();
 					Save_sp = false;
@@ -248,6 +258,7 @@ void CObjHosMob::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -298,9 +309,10 @@ void CObjHosMob::Action()
 		if (hero->GetBT() == 9)
 		{
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+				
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;
@@ -358,9 +370,10 @@ void CObjHosMob::Action()
 		{
 			mob_flag = 1;
 			if (Input::GetVKey(VK_RETURN) == true) {
-
+		
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;

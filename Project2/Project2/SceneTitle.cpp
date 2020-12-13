@@ -40,6 +40,9 @@ void CSceneTitle::InitScene()
 	Draw::LoadImage(L"メニュー画面 - コピー - コピー.png", 6, TEX_SIZE_512);//カーソル	
 	Draw::LoadImage(L"女の子正面.png", 5, TEX_SIZE_512);//カーソル	
 	
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(1, L"決定.wav", EFFECT);//単発
+
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber35.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 

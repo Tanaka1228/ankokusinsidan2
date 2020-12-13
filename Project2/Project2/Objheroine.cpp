@@ -3,6 +3,7 @@
 #include"GameL\HitBoxManager.h"
 #include"GameL/DrawFont.h"
 #include"GameL/WinInputs.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjHeroine.h"
@@ -21,6 +22,9 @@ CObjHeroine::CObjHeroine()
 	key_flag = 1;
 	sp_flag = false;
 	m_key_control = true;
+
+	//　選択　音楽情報の読み込み
+	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
 }
 
 
@@ -44,6 +48,7 @@ void CObjHeroine::Action()
 
 				if (m_key_control == true)
 				{
+					Audio::Start(2);
 					if (key_flag == 1)
 					{
 						m_sp = 1;

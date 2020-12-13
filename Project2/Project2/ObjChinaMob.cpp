@@ -489,7 +489,61 @@ void CObjChinaMob::Draw()
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp == 3 && mob_flag == 1)//エンターキーを3回押したとき
+		if (m_sp == 3 && mob_flag == 1)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(146, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+
+
+			key_flag =4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==4 && mob_flag == 1)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(164, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 480, 25, c);// X  Y  大きさ     
+
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 4 && mob_flag == 1)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(200, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 110.0f, 510, 25, c);// X  Y  大きさ     
+
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 5 && mob_flag == 1)//エンターキーを3回押したとき
 		{
 			sp_flag = false;
 

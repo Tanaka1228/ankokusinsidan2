@@ -68,7 +68,7 @@ void CSceneChinaTown::InitScene()
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_7_event23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(0.8f);//マスターボリュームを下げる
+	float Volume = Audio::VolumeMaster(1.0f);//マスターボリュームを下げる
 	Audio::Start(0);//音楽スタート
 
 

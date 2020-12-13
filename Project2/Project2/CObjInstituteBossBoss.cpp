@@ -93,7 +93,7 @@ void CObjInstituteBossBoss::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-		Audio::Start(2);
+		Audio::Start(5);
 		Sleep(400);
 		Scene::SetScene(new CSceneFin());
 	}

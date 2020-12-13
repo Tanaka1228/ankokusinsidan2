@@ -63,7 +63,7 @@ void CSceneInstituteBoss::InitScene()
 	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
 
 	//　敵爆発　音楽情報の読み込み
-	Audio::LoadAudio(2, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
+	Audio::LoadAudio(5, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

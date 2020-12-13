@@ -4,6 +4,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL/Audio.h"
 #include<fstream>
 
 #include"GameHead.h"
@@ -223,16 +224,20 @@ void CObjHospital::Action()
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
-						if (m_map[i][j] == 32)//ドアに入ると拠点に移動
+						if (m_map[i][j] == 32)//ドアに入ると2階に移動
 						{
 							Scene::SetScene(new CSceneHospital2());
 						}
 						if (m_map[i][j] == 38)//ドアに入るとチャイナタウンb
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneChinaTown_b());
 						}
 						if (m_map[i][j] == 40)//ドアに入ると部屋1
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneHospitalRoom1());
 						}
 					}

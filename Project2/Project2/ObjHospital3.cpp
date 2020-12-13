@@ -4,6 +4,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include "ObjHospital3.h"
@@ -219,18 +220,26 @@ void CObjHospital3::Action()
 						}
 						if (m_map3[i][j] == 34)//下ドアに入ると手術室に移動
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneOpeRoom());
 						}
 						if (m_map3[i][j] == 35)//下ドアに入るとレントゲン室に移動
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneXRayRoom());
 						}
 						if (m_map3[i][j] == 36)//下ドアに入ると診察室に移動
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneExRoom());
 						}
 						if (m_map3[i][j] == 37)//下ドアに入ると診察室2に移動
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneHospitalRoom4());
 						}
 					}

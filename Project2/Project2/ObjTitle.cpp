@@ -60,7 +60,7 @@ void CObjTitle::Action()
 		 if (m_key_enter == true)
 		 {
 			 Audio::Start(1);
-			 Sleep(500);
+			 Sleep(300);
 		    ((UserData*)Save::GetData())->mStage=0;
 			Save::Seve();
 			 Scene::SetScene(new CSceneBlock());
@@ -77,31 +77,31 @@ void CObjTitle::Action()
 			 if (((UserData*)Save::GetData())->mStage == 0)//拠点ニューゲーム
 			 {
 				 Audio::Start(1);
-				 Sleep(500);
+				 Sleep(300);
 				 Scene::SetScene(new CSceneBlock());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 1)//チャイナタウン
 			 {
 				 Audio::Start(1);
-				 Sleep(500);
+				 Sleep(300);
 				 Scene::SetScene(new CSceneChinaTown());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 2)//病院1階
 			 {
 				 Audio::Start(1);
-				 Sleep(500);
+				 Sleep(300);
 				 Scene::SetScene(new CSceneHospital());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 3)//製薬会社一階
 			 {
 				 Audio::Start(1);
-				 Sleep(500);
+				 Sleep(300);
 				 Scene::SetScene(new CSceneDrugCampany());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 8)//研究所
 			 {
 				 Audio::Start(1);
-				 Sleep(500);
+				 Sleep(300);
 				 Scene::SetScene(new CSceneInstitute());
 			 }
 		 }
@@ -113,7 +113,7 @@ void CObjTitle::Action()
 		 if (m_key_enter == true)
 		 {
 			 Audio::Start(1);
-			 Sleep(500);
+			 Sleep(300);
 			 Scene::SetScene(nullptr);
 		 }
 	 }

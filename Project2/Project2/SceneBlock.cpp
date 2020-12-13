@@ -38,6 +38,9 @@ void CSceneBlock::InitScene()
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(1.5f);//マスターボリュームを下げる
 
+	//　ドア　音楽情報の読み込み
+	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発
+
 	Audio::Start(0);//音楽スタート
 
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい

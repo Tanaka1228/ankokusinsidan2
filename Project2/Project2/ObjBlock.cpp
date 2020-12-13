@@ -5,6 +5,7 @@
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL/HitBoxManager.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include"ObjBlock.h"
@@ -200,19 +201,12 @@ void CObjBlock::Action()
 
 					}
 
-					
-					
-					
-					
 					if (m_map[i][j] == 24)//外に移動するとチャイナタウン
 					{
+						Audio::Start(4);
+						Sleep(300);
 						Scene::SetScene(new CSceneChinaTown());
 					}
-					
-					
-					
-					
-					
 					
 				}
 				

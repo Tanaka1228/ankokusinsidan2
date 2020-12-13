@@ -360,7 +360,6 @@
     <ClInclude Include="GameL\DirectXDevice.h" />
     <ClInclude Include="GameL\DrawFont.h" />
     <ClInclude Include="GameL\DrawTexture.h" />
-    <ClInclude Include="GameL\GameHead.h" />
     <ClInclude Include="GameL\HitBoxManager.h" />
     <ClInclude Include="GameL\MultiThread.h" />
     <ClInclude Include="GameL\SceneManager.h" />

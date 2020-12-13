@@ -659,9 +659,6 @@
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameL\GameHead.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameL\HitBoxManager.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>

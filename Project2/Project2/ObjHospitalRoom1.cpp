@@ -4,6 +4,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL/Audio.h"
 
 #include"GameHead.h"
 #include "ObjHospitalRoom1.h"
@@ -183,6 +184,8 @@ void CObjHospitalRoom1::Action()
 						}
 						if (m_map3[i][j] == 34)//ƒhƒA‚É“ü‚é‚Æ•a‰@‰®ã‚ÉˆÚ“®
 						{
+							Audio::Start(4);
+							Sleep(300);
 							Scene::SetScene(new CSceneHospital());
 						}
 

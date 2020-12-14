@@ -95,8 +95,8 @@ void CObjHero::Init()
 	m_bullet_held = 30;//弾丸の所持数
 	gun_Kama = 1;//銃を構えるフラグ
 	gun_type_flag = 1;//銃の種類フラグ
-	ass_bullet = 30;//アサルト弾丸数
-	ass_bullet_held = 150;//アサルト弾丸所持数
+	//ass_bullet = 30;//アサルト弾丸数
+	//ass_bullet_held = 150;//アサルト弾丸所持数
 
 	//---------------------------------------------------------------
 
@@ -151,27 +151,27 @@ void CObjHero::Action()
 			gun_Kama = 1;
 		}
 
-		if (Input::GetVKey('Q') == true && m_gun == 1)//武器の種類を変える
-		{
-			if (gun_type_flag == 1)
-			{
-				//リボルバー
-				if (gun_type == 0)
-				{
-					gun_type = 1;
-				}
-				//アサルト
-				else if (gun_type == 1)
-				{
-					gun_type = 0;
-				}
-				gun_type_flag = 0;
-			}
-		}
-		else
-		{
-			gun_type_flag = 1;
-		}
+		//if (Input::GetVKey('Q') == true && m_gun == 1)//武器の種類を変える
+		//{
+		//	if (gun_type_flag == 1)
+		//	{
+		//		//リボルバー
+		//		if (gun_type == 0)
+		//		{
+		//			gun_type = 1;
+		//		}
+		//		//アサルト
+		//		else if (gun_type == 1)
+		//		{
+		//			gun_type = 0;
+		//		}
+		//		gun_type_flag = 0;
+		//	}
+		//}
+		//else
+		//{
+		//	gun_type_flag = 1;
+		//}
 	}
 
 	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
@@ -233,49 +233,49 @@ void CObjHero::Action()
 
 
 
-	if (ass_bullet > 0)//弾数が0以上なら   ------------アサルト-------------------------------------------------------
-	{
-		//主人公の弾丸発射
-		if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 1)
-		{
+	//if (ass_bullet > 0)//弾数が0以上なら   ------------アサルト-------------------------------------------------------
+	//{
+	//	//主人公の弾丸発射
+	//	if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 1)
+	//	{
 
 
-			ass_bullet -= 1;
+	//		ass_bullet -= 1;
 
-			if (m_ani_frame == 2)//右
-			{
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-				Audio::Start(1);
-			}
-			if (m_ani_frame == 3)//左
-			{
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-				Audio::Start(1);
-			}
-			if (m_ani_frame == 1)//後ろ
-			{
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-				Audio::Start(1);
-			}
-			if (m_ani_frame == 0)//前
-			{
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-				Audio::Start(1);
-			}
-
-
-		}
+	//		if (m_ani_frame == 2)//右
+	//		{
+	//			//弾丸オブジェクト作成
+	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+	//			Audio::Start(1);
+	//		}
+	//		if (m_ani_frame == 3)//左
+	//		{
+	//			//弾丸オブジェクト作成
+	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+	//			Audio::Start(1);
+	//		}
+	//		if (m_ani_frame == 1)//後ろ
+	//		{
+	//			//弾丸オブジェクト作成
+	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+	//			Audio::Start(1);
+	//		}
+	//		if (m_ani_frame == 0)//前
+	//		{
+	//			//弾丸オブジェクト作成
+	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+	//			Audio::Start(1);
+	//		}
 
 
-	}//------------------------------------------------------------------------------------------------------
+	//	}
+
+
+	//}//------------------------------------------------------------------------------------------------------
 
 	//リボルバーのリロード
 	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held > 0)//リロード
@@ -334,227 +334,227 @@ void CObjHero::Action()
 
 	}
 	//アサルトのリロード
-	if (Input::GetVKey(VK_SPACE) == true && ass_bullet_held > 0)//リロードアサルト
-	{
-		if (ass_bullet == 30)
-		{
-			ass_bullet_held -= 0;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 0;
-			}
-		}
-		if (ass_bullet == 29)
-		{
-			ass_bullet_held -= 1;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 1;
-			}
-		}
-		if (ass_bullet == 28)
-		{
-			ass_bullet_held -= 2;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 2;
-			}
-		}
-		if (ass_bullet == 27)
-		{
-			ass_bullet_held -= 3;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 3;
-			}
-		}
-		if (ass_bullet == 26)
-		{
-			ass_bullet_held -= 4;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 4;
-			}
-		}
-		if (ass_bullet == 25)
-		{
-			ass_bullet_held -= 5;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 5;
-			}
-		}
-		if (ass_bullet == 24)
-		{
-			ass_bullet_held -= 6;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 6;
-			}
-		}
-		if (ass_bullet == 23)
-		{
-			ass_bullet_held -= 7;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 7;
-			}
-		}
-		if (ass_bullet == 22)
-		{
-			ass_bullet_held -= 8;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 8;
-			}
-		}
-		if (ass_bullet == 21)
-		{
-			ass_bullet_held -= 9;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 9;
-			}
-		}
-		if (ass_bullet == 20)
-		{
-			ass_bullet_held -= 10;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 10;
-			}
-		}
-		if (ass_bullet == 19)
-		{
-			ass_bullet_held -= 11;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 11;
-			}
-		}
-		if (ass_bullet == 18)
-		{
-			ass_bullet_held -= 12;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 12;
-			}
-		}
-		if (ass_bullet == 17)
-		{
-			ass_bullet_held -= 13;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 13;
-			}
-		}
-		if (ass_bullet == 16)
-		{
-			ass_bullet_held -= 14;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 14;
-			}
-		}
-		if (ass_bullet == 15)
-		{
-			ass_bullet_held -= 15;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 15;
-			}
-		}
-		if (ass_bullet == 14)
-		{
-			ass_bullet_held -= 16;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 16;
-			}
-		}
-		if (ass_bullet == 13)
-		{
-			ass_bullet_held -= 17;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 17;
-			}
-		}
-		if (ass_bullet == 12)
-		{
-			ass_bullet_held -= 18;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 18;
-			}
-		}
-		if (ass_bullet == 11)
-		{
-			ass_bullet_held -= 19;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 19;
-			}
-		}
-		if (ass_bullet == 10)
-		{
-			ass_bullet_held -= 20;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 20;
-			}
-		}
-		if (ass_bullet == 9)
-		{
-			ass_bullet_held -= 21;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 21;
-			}
-		}
-		if (ass_bullet == 8)
-		{
-			ass_bullet_held -= 22;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 22;
-			}
-		}
-		if (ass_bullet == 7)
-		{
-			ass_bullet_held -= 23;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 23;
-			}
-		}
-		if (ass_bullet == 6)
-		{
-			ass_bullet_held -= 24;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 24;
-			}
-		}
-		if (ass_bullet == 5)
-		{
-			ass_bullet_held -= 25;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 25;
-			}
-		}
-		if (ass_bullet == 4)
-		{
-			ass_bullet_held -= 26;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 26;
-			}
-		}
-		if (ass_bullet == 3)
-		{
-			ass_bullet_held -= 27;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 27;
-			}
-		}
-		if (ass_bullet == 2)
-		{
-			ass_bullet_held -= 28;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 28;
-			}
-		}
-		if (ass_bullet == 1)
-		{
-			ass_bullet_held -= 29;
-			if (ass_bullet_held > 0) {
-				ass_bullet += 29;
-			}
-		}
-		if (ass_bullet == 0)
-		{
-			ass_bullet_held -= 30;
-			if (ass_bullet_held >= 0) {
-				ass_bullet += 30;
-			}
-		}
+	//if (Input::GetVKey(VK_SPACE) == true && ass_bullet_held > 0)//リロードアサルト
+	//{
+	//	if (ass_bullet == 30)
+	//	{
+	//		ass_bullet_held -= 0;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 0;
+	//		}
+	//	}
+	//	if (ass_bullet == 29)
+	//	{
+	//		ass_bullet_held -= 1;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 1;
+	//		}
+	//	}
+	//	if (ass_bullet == 28)
+	//	{
+	//		ass_bullet_held -= 2;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 2;
+	//		}
+	//	}
+	//	if (ass_bullet == 27)
+	//	{
+	//		ass_bullet_held -= 3;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 3;
+	//		}
+	//	}
+	//	if (ass_bullet == 26)
+	//	{
+	//		ass_bullet_held -= 4;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 4;
+	//		}
+	//	}
+	//	if (ass_bullet == 25)
+	//	{
+	//		ass_bullet_held -= 5;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 5;
+	//		}
+	//	}
+	//	if (ass_bullet == 24)
+	//	{
+	//		ass_bullet_held -= 6;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 6;
+	//		}
+	//	}
+	//	if (ass_bullet == 23)
+	//	{
+	//		ass_bullet_held -= 7;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 7;
+	//		}
+	//	}
+	//	if (ass_bullet == 22)
+	//	{
+	//		ass_bullet_held -= 8;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 8;
+	//		}
+	//	}
+	//	if (ass_bullet == 21)
+	//	{
+	//		ass_bullet_held -= 9;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 9;
+	//		}
+	//	}
+	//	if (ass_bullet == 20)
+	//	{
+	//		ass_bullet_held -= 10;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 10;
+	//		}
+	//	}
+	//	if (ass_bullet == 19)
+	//	{
+	//		ass_bullet_held -= 11;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 11;
+	//		}
+	//	}
+	//	if (ass_bullet == 18)
+	//	{
+	//		ass_bullet_held -= 12;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 12;
+	//		}
+	//	}
+	//	if (ass_bullet == 17)
+	//	{
+	//		ass_bullet_held -= 13;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 13;
+	//		}
+	//	}
+	//	if (ass_bullet == 16)
+	//	{
+	//		ass_bullet_held -= 14;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 14;
+	//		}
+	//	}
+	//	if (ass_bullet == 15)
+	//	{
+	//		ass_bullet_held -= 15;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 15;
+	//		}
+	//	}
+	//	if (ass_bullet == 14)
+	//	{
+	//		ass_bullet_held -= 16;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 16;
+	//		}
+	//	}
+	//	if (ass_bullet == 13)
+	//	{
+	//		ass_bullet_held -= 17;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 17;
+	//		}
+	//	}
+	//	if (ass_bullet == 12)
+	//	{
+	//		ass_bullet_held -= 18;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 18;
+	//		}
+	//	}
+	//	if (ass_bullet == 11)
+	//	{
+	//		ass_bullet_held -= 19;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 19;
+	//		}
+	//	}
+	//	if (ass_bullet == 10)
+	//	{
+	//		ass_bullet_held -= 20;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 20;
+	//		}
+	//	}
+	//	if (ass_bullet == 9)
+	//	{
+	//		ass_bullet_held -= 21;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 21;
+	//		}
+	//	}
+	//	if (ass_bullet == 8)
+	//	{
+	//		ass_bullet_held -= 22;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 22;
+	//		}
+	//	}
+	//	if (ass_bullet == 7)
+	//	{
+	//		ass_bullet_held -= 23;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 23;
+	//		}
+	//	}
+	//	if (ass_bullet == 6)
+	//	{
+	//		ass_bullet_held -= 24;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 24;
+	//		}
+	//	}
+	//	if (ass_bullet == 5)
+	//	{
+	//		ass_bullet_held -= 25;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 25;
+	//		}
+	//	}
+	//	if (ass_bullet == 4)
+	//	{
+	//		ass_bullet_held -= 26;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 26;
+	//		}
+	//	}
+	//	if (ass_bullet == 3)
+	//	{
+	//		ass_bullet_held -= 27;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 27;
+	//		}
+	//	}
+	//	if (ass_bullet == 2)
+	//	{
+	//		ass_bullet_held -= 28;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 28;
+	//		}
+	//	}
+	//	if (ass_bullet == 1)
+	//	{
+	//		ass_bullet_held -= 29;
+	//		if (ass_bullet_held > 0) {
+	//			ass_bullet += 29;
+	//		}
+	//	}
+	//	if (ass_bullet == 0)
+	//	{
+	//		ass_bullet_held -= 30;
+	//		if (ass_bullet_held >= 0) {
+	//			ass_bullet += 30;
+	//		}
+	//	}
 
-	}
+	//}
 
 
 	if (g_sp_stop == false)

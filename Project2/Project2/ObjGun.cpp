@@ -126,16 +126,16 @@ void CObjGun::Draw()
 		Font::StrDraw(strb0, 300.0f, 560, 22, c);// X  Y  大きさ 
 
 	}
-	//アサルト
-	if (obj->Get_GunType() == 1)
-	{
-		wchar_t guntype1[32];
-		swprintf_s(guntype1, L"アサルト : %d / 30", obj->Get_M_Ass_Bullet());
-		Font::StrDraw(guntype1, 10, 560, 22, c);// X  Y 大きさ 
+	////アサルト
+	//if (obj->Get_GunType() == 1)
+	//{
+	//	wchar_t guntype1[32];
+	//	swprintf_s(guntype1, L"アサルト : %d / 30", obj->Get_M_Ass_Bullet());
+	//	Font::StrDraw(guntype1, 10, 560, 22, c);// X  Y 大きさ 
 
-		wchar_t strb1[64];
-		swprintf_s(strb1, L"弾丸所持数 : %d発", obj->Get_M_Ass_Bullet_Held());
-		Font::StrDraw(strb1, 300.0f, 560, 22, c);// X  Y  大きさ 
+	//	wchar_t strb1[64];
+	//	swprintf_s(strb1, L"弾丸所持数 : %d発", obj->Get_M_Ass_Bullet_Held());
+	//	Font::StrDraw(strb1, 300.0f, 560, 22, c);// X  Y  大きさ 
 
-	}
+	//}
 }

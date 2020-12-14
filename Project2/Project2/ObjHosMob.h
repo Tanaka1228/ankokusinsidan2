@@ -16,6 +16,7 @@ public:
 	bool Sp_Flag() { return sp_flag; }
 private:
 	int m_sp;//会話
+	int m_sp2;//会話2
 	int m_save_sp;//セーブ制御
 	int key_flag;//会話のフラグ
 	bool sp_flag;//会話のグラフィックのフラグ

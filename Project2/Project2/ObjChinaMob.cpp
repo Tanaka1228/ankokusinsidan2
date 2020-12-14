@@ -459,7 +459,7 @@ void CObjChinaMob::Draw()
 		{
 			sp_flag = false;
 
-			Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
+			//Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
 
 			key_flag = 1;
 		}
@@ -562,7 +562,7 @@ void CObjChinaMob::Draw()
 		{
 			sp_flag = false;
 
-			Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
+			//Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
 
 			key_flag = 1;
 		}
@@ -663,7 +663,7 @@ void CObjChinaMob::Draw()
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
 
 
 			key_flag = 1;
@@ -731,7 +731,7 @@ void CObjChinaMob::Draw()
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
 			key_flag = 1;
 
 		}
@@ -798,7 +798,7 @@ void CObjChinaMob::Draw()
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
 			key_flag = 1;
 
 		}

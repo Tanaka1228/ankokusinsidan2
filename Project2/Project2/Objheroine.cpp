@@ -227,7 +227,7 @@ void CObjHeroine::Draw()
 		if (m_sp == 5)
 		{
 			sp_flag == false;
-			Font::StrDraw(L"", 100, 500, 30, c);
+			//Font::StrDraw(L"", 100, 500, 30, c);
 			key_flag = 1;
 
 		}

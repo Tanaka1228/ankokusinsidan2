@@ -176,7 +176,7 @@ void CObjDrugCampanyRoom14::Action()
 							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
-						if (m_map[i][j] == 6)//移動
+						if (m_map[i][j] == 5)//移動
 						{
 							Scene::SetScene(new CSceneDrugCampany2());
 						}

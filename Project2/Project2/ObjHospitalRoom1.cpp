@@ -18,7 +18,7 @@ extern int Hos_Hero_x;
 void CObjHospitalRoom1::Init()
 {
 	mx_scroll = 0.0f;
-	my_scroll = 0.0f;
+	my_scroll = -140.0f;
 
 	Hos_Hero_x=15;
 

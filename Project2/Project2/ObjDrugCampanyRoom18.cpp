@@ -16,7 +16,7 @@ extern int Drug_Hero_x;
 void CObjDrugCampanyRoom18::Init()
 {
 	mx_scroll = +340.0f;
-	my_scroll = +120.0f;
+	my_scroll = +100.0f;
 
 	Drug_Hero_x = 19;
 	//ƒ}ƒbƒvî•ñ

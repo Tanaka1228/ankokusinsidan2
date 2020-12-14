@@ -231,7 +231,7 @@ void CObjChinaTownBoss::Action()
 						r = 360.0f - abs(r);
 
 					//len‚ª‚ ‚éˆê’è‚Ì’·‚³‚Ì‚æ‚è’Z‚¢ê‡”»’è‚É“ü‚é
-					if (len < 45.4f)
+					if (len < 44.4f)
 					{
 
 						//Šp“x‚Åã‰º¶‰E‚ð”»’è

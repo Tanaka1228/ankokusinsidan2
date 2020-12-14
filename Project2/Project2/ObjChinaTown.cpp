@@ -212,7 +212,7 @@ void CObjChinaTown::Action()
 						r = 360.0f - abs(r);
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 45.4f)
+					if (len < 44.4f)
 					{
 
 						//角度で上下左右を判定
@@ -220,7 +220,7 @@ void CObjChinaTown::Action()
 						{
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
-							hero->SetX2(x + 39.0f + (mx_scroll));//ブロックの位置+主人公の幅
+							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
 							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
@@ -229,7 +229,7 @@ void CObjChinaTown::Action()
 						{
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
-							hero->SetY2(y - 39.0f + (my_scroll));//ブロックの位置-主人公の幅
+							hero->SetY2(y - 40.0f + (my_scroll));//ブロックの位置-主人公の幅
 							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
@@ -239,7 +239,7 @@ void CObjChinaTown::Action()
 						{
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
-							hero->SetX2(x - 39.0f + (mx_scroll));//ブロックの位置-主人公の幅
+							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
 							if (m_map[i][j] == 99 || m_map[i][j] == 100 ||m_map[i][j]==83 || m_map[i][j] == 34)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
@@ -248,7 +248,7 @@ void CObjChinaTown::Action()
 						{
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
-							hero->SetY2(y + 39.0f + (my_scroll));//ブロックの位置+主人公の幅
+							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
 							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数

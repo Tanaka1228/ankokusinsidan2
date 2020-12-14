@@ -30,4 +30,5 @@ private:
 	int m_time;//時間
 
 	bool Save_sp;
+	//int m_sp[5];//キャラクターの識別
 };

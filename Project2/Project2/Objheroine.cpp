@@ -14,6 +14,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+bool g_sp_stop;
+
 //コンストラクタ
 CObjHeroine::CObjHeroine()
 {
@@ -22,6 +24,7 @@ CObjHeroine::CObjHeroine()
 	key_flag = 1;
 	sp_flag = false;
 	m_key_control = true;
+	g_sp_stop = false;
 
 	//　選択　音楽情報の読み込み
 	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
@@ -140,6 +143,7 @@ void CObjHeroine::Draw()
 
 
 			key_flag = 2;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 1)
@@ -158,6 +162,7 @@ void CObjHeroine::Draw()
 
 
 			key_flag = 2;
+			g_sp_stop = true;
 			fin.close();
 		}
 
@@ -175,6 +180,7 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 40.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
+			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 2)
@@ -191,6 +197,7 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 40.0f, 510, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
+			g_sp_stop = true;
 			fin.close();
 		}
 
@@ -207,6 +214,7 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 4;
+			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 4)
@@ -222,6 +230,7 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 5;
+			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 5)
@@ -230,6 +239,7 @@ void CObjHeroine::Draw()
 			//Font::StrDraw(L"", 100, 500, 30, c);
 			key_flag = 1;
 
+			g_sp_stop = false;
 		}
 	}
 

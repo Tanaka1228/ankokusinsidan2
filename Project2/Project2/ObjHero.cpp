@@ -12,6 +12,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool g_sp_stop;
+
 //位置情報X変更用
 void CObjHero::SetX(float x) 
 {
@@ -555,23 +557,21 @@ void CObjHero::Action()
 	}
 
 
-	//if (!(heroine->Sp_Flag() == true))
-	//{                        
-		// && !(chinamob->Sp_Flag() == false) || !(instmob->Sp_Flag() == false)|| !(hosmob->Sp_Flag() == false) || !(drugmob->Sp_Flag() == false) || !(instmob->Sp_Flag() == false))
-
+	if (g_sp_stop == false)
+	{
 		//----------主人公右移動(アニメーション)-----------------------
 		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
 		{
 			m_x += 5.0f;
-				m_vx += m_x;
-				m_posture = 0.0f;
-				m_ani_frame = 2;
-				m_ani_time3 += 1;
-				if (m_gun == 1)//武器を構えたら移動速度低下
-				{
-					m_x -= 2;
-					m_vx -= m_x;
-				}
+			m_vx += m_x;
+			m_posture = 0.0f;
+			m_ani_frame = 2;
+			m_ani_time3 += 1;
+			if (m_gun == 1)//武器を構えたら移動速度低下
+			{
+				m_x -= 2;
+				m_vx -= m_x;
+			}
 
 
 		}
@@ -685,9 +685,8 @@ void CObjHero::Action()
 			Audio::Start(3);
 			m_ani_frame1 = 0;
 		}
-		//--------------------------------------------------------------------
-	//}
-
+	
+	}
 
 		//移動ベクトルの正規化
 		UnitVec(&m_vy, &m_vx);

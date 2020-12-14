@@ -17,6 +17,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool g_sp_stop;
+
 //コンストラクタ
 CObjDrugMob::CObjDrugMob()
 {
@@ -175,7 +177,7 @@ void CObjDrugMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -183,7 +185,7 @@ void CObjDrugMob::Draw()
 		if (m_sp == 2)
 		{
 			sp_flag = false;
-			Font::StrDraw(L"", 200.0f, 530, 25, c);// X  Y  大きさ    
+			g_sp_stop =false;
 			key_flag = 1;
 		}
 	}

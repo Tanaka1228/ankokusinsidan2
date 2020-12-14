@@ -15,6 +15,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool g_sp_stop;
+
 //コンストラクタ
 CObjChinaMob::CObjChinaMob()
 {
@@ -489,6 +491,7 @@ void CObjChinaMob::Draw()
 
 
 			key_flag = 2;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp2 == 2 && mob_flag == 1)//エンターキーを2回押したとき
@@ -507,6 +510,7 @@ void CObjChinaMob::Draw()
 
 
 			key_flag = 3;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp2 == 3 && mob_flag == 1)//エンターキーを2回押したとき
@@ -525,6 +529,7 @@ void CObjChinaMob::Draw()
 
 
 			key_flag = 4;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp2 == 4 && mob_flag == 1)//エンターキーを2回押したとき
@@ -543,6 +548,7 @@ void CObjChinaMob::Draw()
 
 
 			key_flag = 5;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp2 == 4 && mob_flag == 1)//エンターキーを2回押したとき
@@ -561,14 +567,14 @@ void CObjChinaMob::Draw()
 
 
 			key_flag = 5;
+			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp2 == 5 && mob_flag == 1)//エンターキーを3回押したとき
 		{
 			sp_flag = false;
 
-			//Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
-
+			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
@@ -588,7 +594,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -606,7 +612,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -615,7 +621,7 @@ void CObjChinaMob::Draw()
 			sp_flag = false;
 
 			//Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
-
+			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
@@ -637,7 +643,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -663,7 +669,7 @@ void CObjChinaMob::Draw()
 		{
 			sp_flag = false;
 
-			//Font::StrDraw(L"", 50.0f, 500, 25, c);// X  Y  大きさ     
+			g_sp_stop =false;
 
 			key_flag = 1;
 		}
@@ -705,7 +711,7 @@ void CObjChinaMob::Draw()
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 				Font::StrDraw(wstr1, 50.0f, 490, 30, c);// X  Y  大きさ     
 
-
+				g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -723,7 +729,7 @@ void CObjChinaMob::Draw()
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 				Font::StrDraw(wstr1, 50.0f, 490, 30, c);// X  Y  大きさ     
 
-
+				g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -741,7 +747,7 @@ void CObjChinaMob::Draw()
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 				Font::StrDraw(wstr1, 50.0f, 520, 30, c);// X  Y  大きさ     
 
-
+				g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -759,14 +765,14 @@ void CObjChinaMob::Draw()
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 				Font::StrDraw(wstr1, 50.0f, 490, 30, c);// X  Y  大きさ     
 
-
+				g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			g_sp_stop =false;
 
 
 			key_flag = 1;
@@ -791,7 +797,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -809,7 +815,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -827,14 +833,14 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			g_sp_stop = false;
 			key_flag = 1;
 
 		}
@@ -858,7 +864,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -876,7 +882,7 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -894,14 +900,14 @@ void CObjChinaMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+			g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			//Font::StrDraw(L"", 50.0f, 500, 30, c);// X  Y  大きさ     
+			g_sp_stop = false;
 			key_flag = 1;
 
 		}
@@ -929,7 +935,7 @@ if (chinatown_b != nullptr && mob_flag == 1)
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 		Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-
+		g_sp_stop = true;
 		key_flag = 2;
 		fin.close();//ファイルを閉じる
 	}
@@ -947,7 +953,7 @@ if (chinatown_b != nullptr && mob_flag == 1)
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-
+		g_sp_stop = true;
 		key_flag =2;
 		fin.close();//ファイルを閉じる
 
@@ -966,7 +972,7 @@ if (chinatown_b != nullptr && mob_flag == 1)
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-
+		g_sp_stop = true;
 		key_flag = 2;
 		fin.close();//ファイルを閉じる
 

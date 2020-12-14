@@ -4,6 +4,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool g_sp_stop;//会話したら主人公を止める
+
 //オブジェクト : 敵機
 class CObjHeroine : public CObj
 {

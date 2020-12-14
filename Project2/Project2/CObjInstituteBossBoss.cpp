@@ -24,7 +24,7 @@ void CObjInstituteBossBoss::Init()
 	m_vy = 0.0f;
 	m_timeboss = 0;
 	m_hp = 18;
-
+	m_time = 0;
 
 	//“–‚½‚è”»’è—pHitBox‚ğì¬
 	Hits::SetHitBox(this, m_x, m_y, 264, 264, ELEMENT_ENEMY, OBJ_INSTITUTE_BOSS_BOSS, 1);

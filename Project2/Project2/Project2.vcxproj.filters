@@ -645,6 +645,9 @@
     <ClCompile Include="SceneHospitalroom4.cpp">
       <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
     </ClCompile>
+    <ClCompile Include="CObjChinaAtkEnemy2.cpp">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -1177,6 +1180,9 @@
     </ClInclude>
     <ClInclude Include="SceneHospitalroom4.h">
       <Filter>ソース ファイル\ステージマップ\病院\部屋\多い部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjChinaAtkEnemy2.h">
+      <Filter>ソース ファイル\キャラクター\敵</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

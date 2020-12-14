@@ -31,9 +31,6 @@ CObjBullet::CObjBullet(float x, float y)//コンストラクタで受け取った情報を変数に
 //イニシャライズ
 void CObjBullet::Init()
 {
-	m_vx = 0.0f;
-	m_vy = 0.0f;
-
 	m_eff.m_top = 32;
 	m_eff.m_left = 0;
 	m_eff.m_right = 32;

@@ -24,6 +24,7 @@ void CObjGun::Init()
 	m_ani_frame = 2;
 	m_bullet = 6;
 	m_bullet_held = 30;
+	m_gun = 0;
 	m_f =true;
 }
 

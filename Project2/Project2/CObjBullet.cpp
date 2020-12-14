@@ -126,21 +126,26 @@ void CObjBullet::Action()
 		return;
 	}
 
-	//敵機オブジェクトと接触したら弾丸削除
-	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+	//当たり判定を行うオブジェクト情報群
+	int data_base[4] =
 	{
-		this->SetStatus(false);   //自身に削除命令を出す。
-		Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
-	}
-	//オブジェクト情報群と当たり判定行い、当たっていれば削除
-   /*  for (int i = 0; i < 6; i++)
-     {
-		 if (hit->CheckObjNameHit(data_base[i]) != nullptr)
-		 {
-			 m_del = true;
-			 hit->SetInvincibility(true);
+		OBJ_CHINA_ATK_ENEMY,
+		OBJ_CHINA_TOWN_BOSS_BOSS,
+		OBJ_INSTITUTE_BOSS_BOSS,
+		OBJ_ROOF_TOP_BOSS,
+
+	};
+
+
+	//オブジェクト情報群当たり判定を行いと接触したら弾丸削除
+	for (int i = 0; i < 4; i++)
+	{
+		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
+		{
+			this->SetStatus(false);   //自身に削除命令を出す。
+			Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
 		}
-    }*/
+	}
 
 }
 

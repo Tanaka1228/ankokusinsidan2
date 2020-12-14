@@ -123,6 +123,7 @@ void CObjBullet::Action()
 	{
 		this->SetStatus(false);//自身に削除命令
 		Hits::DeleteHitBox(this);
+		return;
 	}
 
 	//敵機オブジェクトと接触したら弾丸削除

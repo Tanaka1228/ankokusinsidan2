@@ -101,11 +101,22 @@ void CSceneChinaTownBoss::InitScene()
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
-	
+	//タイム初期化
+	m_time = 0;
 }
 
 
 //ゲームステージ実行中メソッド
 void CSceneChinaTownBoss::Scene()
 {
+	CObjChinaTownBoss* chinaboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
+
+	m_time++;
+	if (m_time == 50) {
+		//誘導敵機オブジェクト作成
+		CObjChinaTownBossBoss* objc = new CObjChinaTownBossBoss(2550.0f + chinaboss->GetScroll(), 1500.0f + chinaboss->GetScroll2()); //誘導敵機オブジェクト作成
+		Objs::InsertObj(objc, OBJ_CHINA_TOWN_BOSS_BOSS, 5); //誘導敵機オブジェクトをオブジェクトマネージャーに登録
+	}
+
+
 }

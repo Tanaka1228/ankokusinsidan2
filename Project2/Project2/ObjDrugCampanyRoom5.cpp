@@ -179,7 +179,7 @@ void CObjDrugCampanyRoom5::Action()
 						}
 						if (m_map[i][j] == 6)//ドアに入ると拠点に移動
 						{
-							Scene::SetScene(new CSceneInstitute());
+							//Scene::SetScene(new CSceneInstitute());
 						}
 					}
 				}
@@ -230,8 +230,8 @@ void CObjDrugCampanyRoom5::Draw()
 
 	dst.m_top = 0.0f + my_scroll;
 	dst.m_left = 0.0f + mx_scroll;
-	dst.m_right = 4400.0f + mx_scroll;
-	dst.m_bottom = 4400.0 + my_scroll;
+	dst.m_right =1024.0f + mx_scroll;
+	dst.m_bottom = 400.0 + my_scroll;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置
@@ -254,7 +254,7 @@ void CObjDrugCampanyRoom5::Draw()
 				dst.m_bottom = i * 32.0f + 32.0f + my_scroll;
 
 				//描画
-				Draw::Draw(4, &src, &dst, c, 0.0f);
+				Draw::Draw(6, &src, &dst, c, 0.0f);
 
 			}
 
@@ -392,7 +392,7 @@ void CObjDrugCampanyRoom5::Draw()
 				dst.m_bottom = i * 32.0f + 32.0f + my_scroll;
 
 				//描画
-				Draw::Draw(4, &src, &dst, c, 0.0f);
+				Draw::Draw(6, &src, &dst, c, 0.0f);
 			}
 			}
 		}

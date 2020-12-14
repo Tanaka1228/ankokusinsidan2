@@ -195,7 +195,7 @@ void CObjInstitute13A::Action()
 						r = 360.0f - abs(r);
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 44.0f)
+					if (len < 45.4f)
 					{
 
 						//角度で上下左右を判定

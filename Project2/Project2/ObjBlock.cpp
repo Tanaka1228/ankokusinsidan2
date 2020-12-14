@@ -156,7 +156,7 @@ void CObjBlock::Action()
 						r = 360.0f - abs(r);
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 44.0f)
+					if (len < 45.4f)
 					{
 
 						//角度で上下左右を判定
@@ -165,7 +165,7 @@ void CObjBlock::Action()
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
 							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
-							if(m_map[i][j]==17)
+							if(m_map[i][j]==0)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -184,7 +184,7 @@ void CObjBlock::Action()
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
 							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 17)
+							if (m_map[i][j] == 0)
 							hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}

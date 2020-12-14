@@ -178,7 +178,7 @@ void CObjChinaTown_d::Action()
 						r = 360.0f - abs(r);
 
 					//len��������̒����̂��Z���ꍇ����ɓ���
-					if (len < 44.0f)
+					if (len < 45.4f)
 					{
 
 						//�p�x�ŏ㉺���E�𔻒�

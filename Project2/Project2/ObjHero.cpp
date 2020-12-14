@@ -114,6 +114,11 @@ void CObjHero::Init()
 void CObjHero::Action()
 {
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
+	CObjChinaMob* chinamob = (CObjChinaMob*)Objs::GetObj(OBJ_CHINA_MOB);//チャイナタウンのモブ
+	CObjInstMob* instmob = (CObjInstMob*)Objs::GetObj(OBJ_INST_MOB);//研究所のモブ
+	CObjHosMob* hosmob = (CObjHosMob*)Objs::GetObj(OBJ_HOS_MOB);//病院のモブ
+	CObjDrugMob* drugmob = (CObjDrugMob*)Objs::GetObj(OBJ_DRUG_MOB);//チャイナタウンのモブ
+	CObjHeroine* heroine = (CObjHeroine*)Objs::GetObj(OBJ_HEROINE);//ヒロイン
 
 
 	//移動ベクトルの破棄
@@ -170,13 +175,13 @@ void CObjHero::Action()
 	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
 	{
 		//主人公の弾丸発射
-		if (Input::GetVKey('Z') == true && m_gun == 1&&gun_type==0)
+		if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 0)
 		{
-			
+
 
 			if (m_f == true)
 			{
-			
+
 
 				m_bullet -= 1;
 
@@ -216,7 +221,7 @@ void CObjHero::Action()
 
 
 				m_f = false;
-	       	}
+			}
 		}
 		else
 		{
@@ -231,42 +236,42 @@ void CObjHero::Action()
 		//主人公の弾丸発射
 		if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 1)
 		{
-			
 
-				ass_bullet -= 1;
 
-				if (m_ani_frame == 2)//右
-				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-					Audio::Start(1);
-				}
-				if (m_ani_frame == 3)//左
-				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-					Audio::Start(1);
-				}
-				if (m_ani_frame == 1)//後ろ
-				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-					Audio::Start(1);
-				}
-				if (m_ani_frame == 0)//前
-				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-					Audio::Start(1);
-				}
-			
-			
+			ass_bullet -= 1;
+
+			if (m_ani_frame == 2)//右
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+				Audio::Start(1);
+			}
+			if (m_ani_frame == 3)//左
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+				Audio::Start(1);
+			}
+			if (m_ani_frame == 1)//後ろ
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+				Audio::Start(1);
+			}
+			if (m_ani_frame == 0)//前
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 4);
+				Audio::Start(1);
+			}
+
+
 		}
-		
+
 
 	}//------------------------------------------------------------------------------------------------------
 
@@ -274,7 +279,7 @@ void CObjHero::Action()
 	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held > 0)//リロード
 	{
 
-		if ( m_bullet== 6)
+		if (m_bullet == 6)
 		{
 			m_bullet_held -= 0;
 			if (m_bullet_held >= 0) {
@@ -487,7 +492,7 @@ void CObjHero::Action()
 		{
 			ass_bullet_held -= 22;
 			if (ass_bullet_held > 0) {
-				ass_bullet +=22;
+				ass_bullet += 22;
 			}
 		}
 		if (ass_bullet == 7)
@@ -550,160 +555,164 @@ void CObjHero::Action()
 	}
 
 
-	//----------主人公右移動(アニメーション)-----------------------
-	if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
-	{
-		m_x += 5.0f;
-		m_vx += m_x;
-		m_posture = 0.0f;
-		m_ani_frame = 2;
-		m_ani_time3 += 1;
-		if (m_gun == 1)//武器を構えたら移動速度低下
+	//if (!(heroine->Sp_Flag() == true))
+	//{                        
+		// && !(chinamob->Sp_Flag() == false) || !(instmob->Sp_Flag() == false)|| !(hosmob->Sp_Flag() == false) || !(drugmob->Sp_Flag() == false) || !(instmob->Sp_Flag() == false))
+
+		//----------主人公右移動(アニメーション)-----------------------
+		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
 		{
-			m_x -= 2;
+			m_x += 5.0f;
+				m_vx += m_x;
+				m_posture = 0.0f;
+				m_ani_frame = 2;
+				m_ani_time3 += 1;
+				if (m_gun == 1)//武器を構えたら移動速度低下
+				{
+					m_x -= 2;
+					m_vx -= m_x;
+				}
+
+
+		}
+		else
+		{
+			m_ani_time3 = 0;
+			m_ani_frame3 = 0;
+		}
+		if (m_ani_time3 > 2)
+		{
+			m_ani_frame3 += 1;
+			m_ani_time3 = 0;
+		}
+		if (m_ani_frame3 == 2)
+		{
+			Audio::Start(3);
+			m_ani_frame3 = 0;
+		}
+		//--------------------------------------------------------------------
+
+		//----------主人公左移動(アニメーション)-----------------------
+		if (Input::GetVKey(VK_LEFT) == true) //主人公移動キー 左
+		{
+			m_x -= 5.0f;
 			m_vx -= m_x;
-		}
-		
-		
-	}
-	else
-	{
-		m_ani_time3= 0;
-		m_ani_frame3 = 0;
-	}
-	if (m_ani_time3 > 2)
-	{
-		m_ani_frame3+= 1;
-		m_ani_time3 = 0;
-	}
-	if (m_ani_frame3 == 2)
-	{
-		Audio::Start(3);
-		m_ani_frame3 = 0;
-	}
-	//--------------------------------------------------------------------
+			m_posture = 1.0f;
+			m_ani_frame = 3;
+			m_ani_time4 += 1;
+			if (m_gun == 1)//武器を構えたら移動速度低下
+			{
+				m_x += 2;
+				m_vx -= m_x;
+			}
 
-	//----------主人公左移動(アニメーション)-----------------------
-	if (Input::GetVKey(VK_LEFT) == true) //主人公移動キー 左
-	{
-		m_x -= 5.0f;
-		m_vx -= m_x;
-		m_posture = 1.0f;
-		m_ani_frame = 3;
-		m_ani_time4 += 1;
-		if (m_gun == 1)//武器を構えたら移動速度低下
-		{
-			m_x += 2;
-			m_vx -= m_x;
-		}
-		
-		
-	}
-	else
-	{
-		m_ani_time4 = 0;
-		m_ani_frame4 = 0;
-	}
-	if (m_ani_time4 > 2)
-	{
-		m_ani_frame4 += 1;
-		m_ani_time4 = 0;
-	}
-	if (m_ani_frame4 == 2)
-	{
-		Audio::Start(3);
-		m_ani_frame4= 0;
-	}
-	//-------------------------------------------------------------------
 
-	//----------主人公上移動(アニメーション)-----------------------
-	if (Input::GetVKey(VK_UP) == true) //主人公移動キー ↑
-	{
-		m_y -= 5.0f;
-		m_vy -= m_y;
-		m_ani_frame = 1;
-		m_ani_time2 += 1;
-		if (m_gun == 1)//武器を構えたら移動速度低下
+		}
+		else
 		{
-			m_y += 2;
+			m_ani_time4 = 0;
+			m_ani_frame4 = 0;
+		}
+		if (m_ani_time4 > 2)
+		{
+			m_ani_frame4 += 1;
+			m_ani_time4 = 0;
+		}
+		if (m_ani_frame4 == 2)
+		{
+			Audio::Start(3);
+			m_ani_frame4 = 0;
+		}
+		//-------------------------------------------------------------------
+
+		//----------主人公上移動(アニメーション)-----------------------
+		if (Input::GetVKey(VK_UP) == true) //主人公移動キー ↑
+		{
+			m_y -= 5.0f;
 			m_vy -= m_y;
-		}
-	
-	}
-	else
-	{
-		m_ani_time2 = 0;
-		m_ani_frame2 = 0;
-	}
-	if (m_ani_time2 > 3)
-	{
-		m_ani_frame2 += 1;
-		m_ani_time2 = 0;
-	}
-	if (m_ani_frame2 == 3)
-	{
-		Audio::Start(3);
-		m_ani_frame2 = 0;
-	}
-	//---------------------------------------------------------------
+			m_ani_frame = 1;
+			m_ani_time2 += 1;
+			if (m_gun == 1)//武器を構えたら移動速度低下
+			{
+				m_y += 2;
+				m_vy -= m_y;
+			}
 
-	//----------主人公下移動(アニメーション)-----------------------
-	if (Input::GetVKey(VK_DOWN) == true) //主人公移動キー ↓
-	{
-		m_y+= 5.0f;
-		m_vy += m_y;
-		m_ani_frame = 0;
-		m_ani_time1 += 1;
-		if (m_gun == 1)//武器を構えたら移動速度低下
+		}
+		else
 		{
-			m_y -= 2;
-			m_vy -= m_y;
+			m_ani_time2 = 0;
+			m_ani_frame2 = 0;
 		}
-		
-	}
-	else
-	{
-		m_ani_time1 = 0;
-		m_ani_frame1 = 0;
-	}
-	if (m_ani_time1 > 3)
-	{
-		m_ani_frame1 += 1;
-		m_ani_time1 = 0;
-	}
-	if (m_ani_frame1 == 3)
-	{
-		Audio::Start(3);
-		m_ani_frame1 = 0;
-	}
-	//--------------------------------------------------------------------
+		if (m_ani_time2 > 3)
+		{
+			m_ani_frame2 += 1;
+			m_ani_time2 = 0;
+		}
+		if (m_ani_frame2 == 3)
+		{
+			Audio::Start(3);
+			m_ani_frame2 = 0;
+		}
+		//---------------------------------------------------------------
+
+		//----------主人公下移動(アニメーション)-----------------------
+		if (Input::GetVKey(VK_DOWN) == true) //主人公移動キー ↓
+		{
+			m_y += 5.0f;
+			m_vy += m_y;
+			m_ani_frame = 0;
+			m_ani_time1 += 1;
+			if (m_gun == 1)//武器を構えたら移動速度低下
+			{
+				m_y -= 2;
+				m_vy -= m_y;
+			}
+
+		}
+		else
+		{
+			m_ani_time1 = 0;
+			m_ani_frame1 = 0;
+		}
+		if (m_ani_time1 > 3)
+		{
+			m_ani_frame1 += 1;
+			m_ani_time1 = 0;
+		}
+		if (m_ani_frame1 == 3)
+		{
+			Audio::Start(3);
+			m_ani_frame1 = 0;
+		}
+		//--------------------------------------------------------------------
+	//}
 
 
+		//移動ベクトルの正規化
+		UnitVec(&m_vy, &m_vx);
 
-	//移動ベクトルの正規化
-	UnitVec(&m_vy, &m_vx);
-
-	//HitBoxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this); //作成したHitBox更新用の入り口を取り出す
-	hit->SetPos(m_x, m_y);                //入り口から新しい位置(主人公機の位置)情報に置き換える
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this); //作成したHitBox更新用の入り口を取り出す
+		hit->SetPos(m_x, m_y);                //入り口から新しい位置(主人公機の位置)情報に置き換える
 
 
-	//敵機オブジェクトと接触したら主人公機削除
-	if (hit->CheckElementHit(ELEMENT_ENEMY) ==true)
-	{
-		m_hp -= 1;
+		//敵機オブジェクトと接触したら主人公機削除
+		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+		{
+			m_hp -= 1;
+
+		}
+
+		if (m_hp <= 0)//HPが０になったら破棄
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+			//主人公消滅でゲームオーバーに移行する
+			Scene::SetScene(new CSceneGameOver());
+		}
 	
-	}
-	
-	if (m_hp <= 0)//HPが０になったら破棄
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-
-		//主人公消滅でゲームオーバーに移行する
-		Scene::SetScene(new CSceneGameOver());
-	}
-
 }
 
 //ドロー

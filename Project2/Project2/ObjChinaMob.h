@@ -17,6 +17,7 @@ public:
 	bool Sp_Flag() { return sp_flag; }
 private:
 	int m_sp;//会話
+	int m_sp2;//会話二体目モブ
 	int m_save_sp;//セーブ制御
 	int key_flag;//会話のフラグ
 	int mob_flag;//ケビン,マイケル、トーマス

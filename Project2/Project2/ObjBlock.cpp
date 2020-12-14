@@ -204,7 +204,7 @@ void CObjBlock::Action()
 					if (m_map[i][j] == 24)//外に移動するとチャイナタウン
 					{
 						Audio::Start(4);
-						Sleep(300);
+						Sleep(300);//0.3処理止める
 						Scene::SetScene(new CSceneChinaTown());
 					}
 					

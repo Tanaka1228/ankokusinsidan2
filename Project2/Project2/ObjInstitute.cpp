@@ -297,8 +297,8 @@ void CObjInstitute::Draw()
 
 	dst.m_top = 0.0f + my_scroll;
 	dst.m_left = 0.0f + mx_scroll;
-	dst.m_right = 1990.0f + mx_scroll;
-	dst.m_bottom = 900.0 + my_scroll;
+	dst.m_right = 1890.0f + mx_scroll;
+	dst.m_bottom = 750.0 + my_scroll;
 	Draw::Draw(30, &src, &dst, c, 0.0f);
 
 	//�}�b�v�`�b�v�ɂ��block�ݒu

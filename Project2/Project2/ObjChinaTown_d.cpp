@@ -283,7 +283,7 @@ void CObjChinaTown_d::Draw()
 	dst.m_top = 0.0f + my_scroll;
 	dst.m_left = 0.0f + mx_scroll;
 	dst.m_right = 1090.0f + mx_scroll;
-	dst.m_bottom = 2100.0f + my_scroll;
+	dst.m_bottom = 1000.0f + my_scroll;
 	Draw::Draw(16, &src, &dst, c, 0.0f);
 
 

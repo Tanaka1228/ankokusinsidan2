@@ -56,6 +56,9 @@ CObjHero::CObjHero(float x, float y)
 	//　銃を構える　音楽情報の読み込み
 	Audio::LoadAudio(7, L"構え.wav", EFFECT);//単発
 
+	//　敵の弾丸が主人公に接触SE　音楽情報の読み込み
+	Audio::LoadAudio(8, L"主人公ダメージ.wav", EFFECT);//単発
+
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"HP.png", 50, TEX_SIZE_512);//主人公グラフィック
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
@@ -709,8 +712,8 @@ void CObjHero::Action()
 		//敵機オブジェクトと接触したら主人公機削除
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
+			Audio::Start(8);
 			m_hp -= 25.6;
-
 		}
 
 		if (m_hp <= 0)//HPが０になったら破棄

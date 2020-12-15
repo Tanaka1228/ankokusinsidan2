@@ -67,10 +67,12 @@ void CSceneChinaTown::InitScene()
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_7_event23.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+	
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(1.0f);//マスターボリュームを下げる
-	Audio::Start(0);//音楽スタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.7 - v);
 
+	Audio::Start(0);//音楽スタート
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

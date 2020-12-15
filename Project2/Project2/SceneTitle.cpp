@@ -47,7 +47,9 @@ void CSceneTitle::InitScene()
 	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber35.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(-0.8f);//マスターボリュームを下げる
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(1.7 - v);
+
 	Audio::Start(0);//音楽スタート
 
 	//オブジェクト作成

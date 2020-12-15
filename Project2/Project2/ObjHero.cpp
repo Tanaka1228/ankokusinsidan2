@@ -52,6 +52,9 @@ CObjHero::CObjHero(float x, float y)
 
 	//　選択　音楽情報の読み込み
 	Audio::LoadAudio(3, L"足音.wav", EFFECT);//単発
+
+	//　銃を構える　音楽情報の読み込み
+	Audio::LoadAudio(7, L"構え.wav", EFFECT);//単発
 }
 
 //イニシャライズ
@@ -131,6 +134,7 @@ void CObjHero::Action()
 		{
 			if (gun_Kama == 1)
 			{
+			     Audio::Start(7);
 
 				if (m_gun == 1)
 				{

@@ -97,7 +97,7 @@ private:
 
 	//----------------------------------------------------
 
-	int m_hp;//ålŒö‚ÌHP
+	float m_hp;//ålŒö‚ÌHP
 	int m_gun;//e‚ÌŒü‚«
 	int gun_type;//e‚Ìí—Ş
 	int gun_Kama;//e‚ğ\‚¦‚é

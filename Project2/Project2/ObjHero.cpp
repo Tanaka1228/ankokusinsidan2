@@ -55,6 +55,12 @@ CObjHero::CObjHero(float x, float y)
 
 	//　銃を構える　音楽情報の読み込み
 	Audio::LoadAudio(7, L"構え.wav", EFFECT);//単発
+
+	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"HP.png", 50, TEX_SIZE_512);//主人公グラフィック
+	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"HP字.png", 51, TEX_SIZE_512);//主人公グラフィック
+
 }
 
 //イニシャライズ
@@ -88,7 +94,7 @@ void CObjHero::Init()
 	m_ani_frame4= 0; //静止フレームを初期にする
 
 	//------------------------------------------------------------------
-	m_hp = 10;//主人公のHP
+	m_hp =256.0f;//主人公のHP
 	//--------------------------------------------------------------------
 	m_f = true; //弾丸発射制御
 	m_ass_f = true;
@@ -703,7 +709,7 @@ void CObjHero::Action()
 		//敵機オブジェクトと接触したら主人公機削除
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
-			m_hp -= 1;
+			m_hp -= 25.6;
 
 		}
 
@@ -741,6 +747,9 @@ void CObjHero::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;
 	RECT_F dst;
+	
+	
+
 
 	//主人公
 	if (m_ani_frame == 2) //右
@@ -790,14 +799,47 @@ void CObjHero::Draw()
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 
-	//wchar_t str[32];
-	//swprintf_s(str, L"弾数 : %d / 6", m_bullet);
-	//Font::StrDraw(str, 10, 560, 22, c);// X  Y 大きさ 
-	
+	//---HP------------------
+	//切り取り位置の設定
+	src.m_top = 107.0f;   //y
+	src.m_left = 0.0f; //x
+	src.m_right = 256.0f; //x
+	src.m_bottom = 151.0f; //y
+
+	//表示位置の設定
+	dst.m_top = 24.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 0.0f + m_hp;
+	dst.m_bottom = 64.0f;
+
+	Draw::Draw(50, &src, &dst, c, 0.0f);
+	//------------------------------------
+	//---HP字------------------
+	//切り取り位置の設定
+	src.m_top = 21.0f;   //y
+	src.m_left =9.0f; //x
+	src.m_right = 52.0f; //x
+	src.m_bottom = 39.0f; //y
+
+	//表示位置の設定
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 32.0f;
+	dst.m_bottom = 25.0f;
+
+	Draw::Draw(51, &src, &dst, c, 0.0f);
+	//------------------------------------
+
+
+
+
+
+
+
 	//主人公のHP表示
-	wchar_t strHP[32];
-	swprintf_s(strHP, L"HP : %d", m_hp);
-	Font::StrDraw(strHP, 10, 5, 28, c);// X  Y 大きさ 
+	//wchar_t strHP[32];
+	//swprintf_s(strHP, L"HP : %f", m_hp);
+	//Font::StrDraw(strHP, 10, 5, 28, c);// X  Y 大きさ 
 
 	
 }

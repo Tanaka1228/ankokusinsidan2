@@ -26,6 +26,8 @@ void CObjChinaTownBossBoss::Init()
 	m_timeboss = 0;
 	m_hp = 18;
 
+	//@’eŠÛ‚ª“G‚É“–‚½‚Á‚½@‰¹Šyî•ñ‚Ì“Ç‚Ýž‚Ý
+	Audio::LoadAudio(6, L"‹à‘®.wav", EFFECT);//’P”­
 
 	//“–‚½‚è”»’è—pHitBox‚ðì¬
 	Hits::SetHitBox(this, m_x, m_y, 464, 464, ELEMENT_ENEMY, OBJ_CHINA_TOWN_BOSS_BOSS, 1);
@@ -90,7 +92,7 @@ void CObjChinaTownBossBoss::Action()
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
-
+		Audio::Start(6);
 		m_hp -= 1;
 	}
 	if (m_hp < 0)//HP‚ª‚O‚É‚È‚Á‚½‚ç”jŠü

@@ -25,6 +25,9 @@ void CObjChinaAtkEnemy::Init()
 	m_vy = 0.0f;
 	m_time = 0.0f;
 
+	//　弾丸が敵に当たった　音楽情報の読み込み
+	Audio::LoadAudio(6, L"金属.wav", EFFECT);//単発
+
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 }

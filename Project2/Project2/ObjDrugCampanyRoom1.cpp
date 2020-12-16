@@ -15,7 +15,7 @@ int Drug_Hero_x;
 //?C?j?V?????C?Y
 void CObjDrugCampanyRoom1::Init()
 {
-	mx_scroll = 0.0f;
+	mx_scroll = -20.0f;
 	my_scroll = 0.0f;
 
 	Drug_Hero_x = 1;

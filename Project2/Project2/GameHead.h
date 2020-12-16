@@ -365,8 +365,8 @@ struct UserData
 //#define SET_GAME_START CSceneStage
 //#define SET_GAME_START CSceneHospital2
 //#define SET_GAME_START CSceneInstitute13
-#define SET_GAME_START CSceneDrugCampany3
-//#define SET_GAME_START CSceneDrugCampany
+//#define SET_GAME_START CSceneDrugCampany3
+#define SET_GAME_START CSceneDrugCampany
 //#define SET_GAME_START CSceneDrugCampanyRoom5
 
 //-----------------------------------------------

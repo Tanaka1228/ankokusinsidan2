@@ -15,7 +15,7 @@ extern int Drug_Hero_x;
 //イニシャライズ
 void CObjDrugCampanyRoom12::Init()
 {
-	mx_scroll = 0.0f;
+	mx_scroll = -20.0f;
 	my_scroll = +220.0f;
 
 	Drug_Hero_x = 12;

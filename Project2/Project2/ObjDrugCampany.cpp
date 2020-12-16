@@ -60,7 +60,7 @@ void CObjDrugCampany::Init()
 	else if (Drug_Hero_x == 8)
 	{
 		mx_scroll = 0.0f;
-		my_scroll = -920.0f;
+		my_scroll = -1530.0f;
 	}
 	else if (Drug_Hero_x == 9)
 	{

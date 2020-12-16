@@ -63,7 +63,7 @@ void CObjTitle::Action()
 			 Sleep(300);
 		    ((UserData*)Save::GetData())->mStage=0;
 			Save::Seve();
-			 Scene::SetScene(new CSceneBlock());
+			 Scene::SetScene(new CSceneChinaEvent());
 		 }
 	 }
 
@@ -78,7 +78,7 @@ void CObjTitle::Action()
 			 {
 				 Audio::Start(1);
 				 Sleep(300);
-				 Scene::SetScene(new CSceneBlock());
+				 Scene::SetScene(new CSceneChinaEvent());
 			 }
 			 if (((UserData*)Save::GetData())->mStage == 1)//チャイナタウン
 			 {

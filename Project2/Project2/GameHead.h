@@ -47,6 +47,7 @@ enum OBJ_NAME
 					OBJ_CHINA_TOWN_BOSS_BOSS,//チャイナタウンのボス戦フィールドBOSS
 					OBJ_CHINA_EVENT,//チャイナタウンのEvent
 					OBJ_CHINA_ATK_ENEMY,//チャイナタウン雑魚
+					OBJ_CHINA_ATK_ENEMY2,//チャイナタウン雑魚
 					//OBJ_CHINA_ATK_ENEMY2,//チャイナタウン雑魚
 					//---------------------------------------------------------
 
@@ -243,7 +244,7 @@ struct UserData
 #include"ObjInstitute3.h"  
 #include"CObjChinaTownBossBoss.h"
 #include"CObjChinaAtkEnemy.h"
-//#include"CObjChinaAtkEnemy2.h"
+#include"CObjChinaAtkEnemy2.h"
 
 #include"ObjInstitute4.h"
 #include"ObjInstitute5.h"

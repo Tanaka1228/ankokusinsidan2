@@ -5,11 +5,11 @@
 using namespace GameL;
 
 //オブジェクト : 攻撃する敵機
-class CObjChinaAtkEnemy : public CObj
+class CObjChinaAtkEnemy2 : public CObj
 {
 public:
-	CObjChinaAtkEnemy(float x, float y);
-	~CObjChinaAtkEnemy() {};
+	CObjChinaAtkEnemy2(float x, float y);
+	~CObjChinaAtkEnemy2() {};
 	void Init(); //イニシャライズ
 	void Action(); //アクション
 	void Draw(); //ドロー

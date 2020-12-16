@@ -3,7 +3,7 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"CObjChinaAtkEnemy.h"
+#include"CObjChinaAtkEnemy2.h"
 #include"UtilityModule.h"
 #include"GameL/Audio.h"
 
@@ -11,14 +11,14 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjChinaAtkEnemy::CObjChinaAtkEnemy(float x, float y)
+CObjChinaAtkEnemy2::CObjChinaAtkEnemy2(float x, float y)
 {
 	m_x = x;
 	m_y = y;
 }
 
 //イニシャライズ
-void CObjChinaAtkEnemy::Init()
+void CObjChinaAtkEnemy2::Init()
 {
 
 	m_vx = 0.0f;
@@ -26,11 +26,11 @@ void CObjChinaAtkEnemy::Init()
 	m_time = 0.0f;
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY2, 1);
 }
 
 //アクション
-void CObjChinaAtkEnemy::Action()
+void CObjChinaAtkEnemy2::Action()
 {
 	//チャイナタウンボス戦フィールドの情報
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
@@ -71,7 +71,7 @@ void CObjChinaAtkEnemy::Action()
 }
 
 //ドロー
-void CObjChinaAtkEnemy::Draw()
+void CObjChinaAtkEnemy2::Draw()
 {
 	//チャイナタウンボス戦フィールドの情報
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);

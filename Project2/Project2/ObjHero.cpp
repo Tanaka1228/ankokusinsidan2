@@ -566,7 +566,6 @@ void CObjHero::Action()
 	//			ass_bullet += 30;
 	//		}
 	//	}
-
 	//}
 
 

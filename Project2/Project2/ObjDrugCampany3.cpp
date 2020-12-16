@@ -15,7 +15,7 @@ extern int Drug_Hero_x;
 //イニシャライズ
 void CObjDrugCampany3::Init()
 {
-	if (Drug_Hero_x == 26)
+	if (Drug_Hero_x == 5)
 	{
 		mx_scroll = -1130.0f;
 		my_scroll = +30.0f;

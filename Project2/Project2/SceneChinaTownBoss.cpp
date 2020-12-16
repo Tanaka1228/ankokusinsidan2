@@ -79,7 +79,7 @@ void CSceneChinaTownBoss::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 4); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 7); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//マップ図
 	CObjMap* objma = new CObjMap();//マップ図

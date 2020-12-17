@@ -117,11 +117,11 @@ void CObjGun::Draw()
 	//リボルバー
 	if (obj->Get_GunType() == 0)
 	{
-		wchar_t guntype0[32];
+		static wchar_t guntype0[32];
 		swprintf_s(guntype0, L"リボルバー : %d / 6", obj->Get_M_Bullet());
 		Font::StrDraw(guntype0, 10, 560, 22, c);// X  Y 大きさ 
 
-		wchar_t strb0[64];
+		static wchar_t strb0[64];
 		swprintf_s(strb0, L"弾丸所持数 : %d発", obj->Get_M_Bullet_Held());
 		Font::StrDraw(strb0, 300.0f, 560, 22, c);// X  Y  大きさ 
 

@@ -103,7 +103,7 @@ void CObjHero::Init()
 	m_ass_f = true;
 	m_gun = 0;//銃の構えているか　0が構えていない 　1が構えている
 	gun_type = 0;//　0がリボルバー 1がアサルト
-	m_bullet = 6;//弾丸の弾数　リボルバー
+	
 	m_bullet_held = 30;//弾丸の所持数
 	gun_Kama = 1;//銃を構えるフラグ
 	gun_type_flag = 1;//銃の種類フラグ
@@ -112,9 +112,6 @@ void CObjHero::Init()
 
 	//---------------------------------------------------------------
 
-	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 34, 34, ELEMENT_PLAYER, OBJ_HERO, 1);
-
 	//blockとの衝突状態確認用
 	m_hit_up = false;
 	m_hit_down = false;
@@ -122,7 +119,13 @@ void CObjHero::Init()
 	m_hit_right = false;
 
 	m_block_type = 0; //踏んでいるblockの種類を確認用
+
+
+	//当たり判定用HitBoxを作成
+	Hits::SetHitBox(this, m_x, m_y, 34, 34, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
+
+int CObjHero::m_bullet = 6;//弾丸の弾数　リボルバー
 
 //アクション
 void CObjHero::Action()

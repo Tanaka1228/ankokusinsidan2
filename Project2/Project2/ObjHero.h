@@ -50,7 +50,7 @@ public:
 
 	int Get_AniFlame() { return m_ani_frame; }
 
-	int Get_M_Bullet() { return m_bullet; }//弾丸数　リボルバー
+	static int Get_M_Bullet() { return m_bullet; }//弾丸数　リボルバー
 	int Get_M_Bullet_Held() { return m_bullet_held; }//弾丸所持数
 
 	//int Get_M_Ass_Bullet() { return ass_bullet; }//弾丸数　アサルト
@@ -107,7 +107,7 @@ private:
 
 	//int ass_bullet;//アサルト弾丸の弾数
 	//int ass_bullet_held;//アサルト弾丸の所持数
-	int m_bullet;//弾丸の弾数 リボルバー
+	static int m_bullet;//弾丸の弾数 リボルバー
 	int m_bullet_held;//弾丸の所持数　リボルバー
 
 	//---------------------------------------------------

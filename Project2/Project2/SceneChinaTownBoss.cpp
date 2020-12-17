@@ -122,7 +122,7 @@ void CSceneChinaTownBoss::Scene()
 		Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
 
 		//誘導敵機オブジェクト作成
-		CObjChinaAtkEnemy2* obja2 = new CObjChinaAtkEnemy2(2000.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
+		CObjChinaAtkEnemy2* obja2 = new CObjChinaAtkEnemy2(3000.0f + chinaboss->GetScroll(), 2000.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
 		Objs::InsertObj(obja2, OBJ_CHINA_ATK_ENEMY2, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
 	}
 

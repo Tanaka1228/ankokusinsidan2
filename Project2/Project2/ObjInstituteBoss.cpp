@@ -70,6 +70,8 @@ void CObjInstituteBoss::Action()
 	float hx = hero->GetX2();//�X�N���[��
 	float hy = hero->GetY2();
 
+	//踏んでいるblockの種類を初期化
+	hero->SetBT(0);
 
 	if (hero->GetRight() == false)
 	{

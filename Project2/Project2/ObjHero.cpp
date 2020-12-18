@@ -814,7 +814,22 @@ void CObjHero::Draw()
 	//表示位置の設定
 	dst.m_top = 24.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 0.0f + m_hp;
+	dst.m_right = 0.0f+m_hp;
+	dst.m_bottom = 64.0f;
+
+	Draw::Draw(50, &src, &dst, c, 0.0f);
+	//------------------------------------
+	//---HP枠------------------
+	//切り取り位置の設定
+	src.m_top = 107.0f;   //y
+	src.m_left = 256.0f; //x
+	src.m_right = 512.0f; //x
+	src.m_bottom = 151.0f; //y
+
+	//表示位置の設定
+	dst.m_top = 24.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 0.0f+256.0f;
 	dst.m_bottom = 64.0f;
 
 	Draw::Draw(50, &src, &dst, c, 0.0f);

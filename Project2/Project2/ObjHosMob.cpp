@@ -445,6 +445,11 @@ void CObjHosMob::Draw()
 
 	if (hospital != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -504,6 +509,11 @@ void CObjHosMob::Draw()
 	}
 	if (hospital != nullptr && mob_flag == 2)
 	{
+		if (m_sp == 0 && mob_flag ==2)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -564,6 +574,11 @@ void CObjHosMob::Draw()
 
 	if (hospital != nullptr && mob_flag == 3)
 	{
+		if (m_sp == 0 && mob_flag == 3)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -676,6 +691,11 @@ void CObjHosMob::Draw()
 	//ハリス
 	if (rooftop != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;

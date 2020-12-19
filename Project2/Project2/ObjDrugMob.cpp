@@ -162,6 +162,12 @@ void CObjDrugMob::Draw()
 
 	if (drug != nullptr && mob_flag == 1)
 	{
+
+		if (m_sp == 0 && mob_flag ==1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;

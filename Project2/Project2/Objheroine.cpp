@@ -121,6 +121,12 @@ void CObjHeroine::Draw()
 	//二行テキストを出すときは、2行目のY軸を30上げるといい感じになる
 	
 	if (block != nullptr) {
+
+		if (m_sp == 0)//キャラクターが移動したらここにクル
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;

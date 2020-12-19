@@ -472,6 +472,11 @@ void CObjChinaMob::Draw()
 
 	if (chinatown != nullptr && mob_flag == 1)//車
 	{
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1 && mob_flag == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -570,6 +575,11 @@ void CObjChinaMob::Draw()
 	}
 	if (chinatown != nullptr && mob_flag == 4)
 	{
+		if (m_sp == 0 && mob_flag == 4)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1&&mob_flag==4)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -616,6 +626,11 @@ void CObjChinaMob::Draw()
 	//モブ2体目
 	if (chinatown != nullptr && mob_flag == 2)
 	{
+		if (m_sp == 0 && mob_flag == 2)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1 && mob_flag == 2)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -680,8 +695,11 @@ void CObjChinaMob::Draw()
 	//ケビン
 	if (chinatownboss != nullptr && mob_flag == 1)
 	{
-
-
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを0回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -763,6 +781,11 @@ void CObjChinaMob::Draw()
 	//マイケル
 	if (chinatownboss != nullptr && mob_flag == 2)
 	{
+		if (m_sp == 0 && mob_flag ==2)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -826,6 +849,11 @@ void CObjChinaMob::Draw()
 	//トーマス
 	if (chinatownboss != nullptr && mob_flag == 3)
 	{
+		if (m_sp == 0 && mob_flag == 3)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -893,6 +921,11 @@ void CObjChinaMob::Draw()
 
 if (chinatown_b != nullptr && mob_flag == 1)
 {
+	if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+	{
+		sp_flag = false;//背景
+		key_flag = 1;//会話の順番
+	}
 	if (m_sp == 1)//エンターキーを一回押したとき
 	{
 		sp_flag == true;

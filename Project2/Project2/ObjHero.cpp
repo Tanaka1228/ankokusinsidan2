@@ -596,7 +596,7 @@ void CObjHero::Action()
 			m_ani_time3 += 1;
 
 			//動くと会話終了--------
-			if (chinatown != nullptr)
+			if (chinatown != nullptr||chinatownboss!=nullptr)
 			{
 				chinamob->SetSp_flag(false);
 				chinamob->SetM_sp(0);
@@ -657,7 +657,7 @@ void CObjHero::Action()
 
 
 			//動くと会話終了--------
-			if (chinatown != nullptr)
+			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
 				chinamob->SetSp_flag(false);
 				chinamob->SetM_sp(0);
@@ -715,7 +715,7 @@ void CObjHero::Action()
 			m_ani_time2 += 1;
 
 			//動くと会話終了--------
-			if (chinatown != nullptr)
+			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
 				chinamob->SetSp_flag(false);
 				chinamob->SetM_sp(0);
@@ -771,7 +771,7 @@ void CObjHero::Action()
 			m_ani_time1 += 1;
 
 			//動くと会話終了--------
-			if (chinatown != nullptr)
+			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
 				chinamob->SetSp_flag(false);
 				chinamob->SetM_sp(0);

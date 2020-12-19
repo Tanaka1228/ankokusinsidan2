@@ -4,8 +4,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern bool g_sp_stop;//会話したら主人公を止める
-
 //オブジェクト : 敵機
 class CObjHeroine : public CObj
 {
@@ -15,7 +13,13 @@ public:
 	void Init(); //イニシャライズ
 	void Action(); //アクション
 	void Draw(); //ドロー
-	bool Sp_Flag() { return sp_flag; }
+
+	bool Sp_Flag() { return sp_flag; }//会話の背景
+	void SetSp_flag(int s) { sp_flag = s; }
+
+	bool GetM_sp() { return  m_sp; }//会話の順番
+	void SetM_sp(int m) { m_sp = m; }
+
 private:
 	int m_sp;//会話
 	int key_flag;//会話のフラグ

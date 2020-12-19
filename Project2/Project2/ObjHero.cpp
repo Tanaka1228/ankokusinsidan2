@@ -12,7 +12,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern bool g_sp_stop;
 
 //位置情報X変更用
 void CObjHero::SetX(float x) 
@@ -137,6 +136,21 @@ void CObjHero::Action()
 	CObjDrugMob* drugmob = (CObjDrugMob*)Objs::GetObj(OBJ_DRUG_MOB);//チャイナタウンのモブ
 	CObjHeroine* heroine = (CObjHeroine*)Objs::GetObj(OBJ_HEROINE);//ヒロイン
 
+
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
+	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
+	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
+	CObjChinaEvent* chinaevent = (CObjChinaEvent*)Objs::GetObj(OBJ_CHINA_EVENT);//チャイナタウンのイベント
+
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstituteBoss* instituteboss = (CObjInstituteBoss*)Objs::GetObj(OBJ_INSTITUTE_BOSS);//研究所BOSS
+
+	CObjHospital* hospital = (CObjHospital*)Objs::GetObj(OBJ_HOSPITAL);//病院の一階
+	CObjHospital2* hospital2 = (CObjHospital2*)Objs::GetObj(OBJ_HOSPITAL2);//病院の二階
+	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);//病院の屋上
+
+	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 
 	//移動ベクトルの破棄
 	m_vx = 0.0f;
@@ -572,8 +586,6 @@ void CObjHero::Action()
 	//}
 
 
-	if (g_sp_stop == false)
-	{
 		//----------主人公右移動(アニメーション)-----------------------
 		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
 		{
@@ -582,6 +594,33 @@ void CObjHero::Action()
 			m_posture = 0.0f;
 			m_ani_frame = 2;
 			m_ani_time3 += 1;
+
+			//動くと会話終了--------
+			if (chinatown != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
+
+
 			if (m_gun == 1)//武器を構えたら移動速度低下
 			{
 				m_x -= 2;
@@ -615,6 +654,33 @@ void CObjHero::Action()
 			m_posture = 1.0f;
 			m_ani_frame = 3;
 			m_ani_time4 += 1;
+
+
+			//動くと会話終了--------
+			if (chinatown != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
+
 			if (m_gun == 1)//武器を構えたら移動速度低下
 			{
 				m_x += 2;
@@ -647,6 +713,31 @@ void CObjHero::Action()
 			m_vy -= m_y;
 			m_ani_frame = 1;
 			m_ani_time2 += 1;
+
+			//動くと会話終了--------
+			if (chinatown != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
 			if (m_gun == 1)//武器を構えたら移動速度低下
 			{
 				m_y += 2;
@@ -678,6 +769,31 @@ void CObjHero::Action()
 			m_vy += m_y;
 			m_ani_frame = 0;
 			m_ani_time1 += 1;
+
+			//動くと会話終了--------
+			if (chinatown != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
 			if (m_gun == 1)//武器を構えたら移動速度低下
 			{
 				m_y -= 2;
@@ -700,8 +816,6 @@ void CObjHero::Action()
 			Audio::Start(3);
 			m_ani_frame1 = 0;
 		}
-	
-	}
 
 		//移動ベクトルの正規化
 		UnitVec(&m_vy, &m_vx);

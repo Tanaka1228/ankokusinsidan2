@@ -18,9 +18,17 @@ using namespace GameL;
 //コンストラクタ
 CObjItem::CObjItem(float x, float y)
 {
-	m_x = x;
-	m_y = y;
-
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
+	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
+	if (chinatown != nullptr) {
+		m_x = x;
+		m_y = y;
+	}
+	if (chinatownboss != nullptr)
+	{
+		m_x = x;
+		m_y = y;
+	}
 	//　主人公がアイテム接触SE　音楽情報の読み込み
 	Audio::LoadAudio(9, L"弾丸アイテム.wav", EFFECT);//単発
 }

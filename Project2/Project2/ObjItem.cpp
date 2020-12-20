@@ -23,13 +23,13 @@ CObjItem::CObjItem()
 
 
 //イニシャライズ
-void CObjChinaMob::Init()
+void CObjItem::Init()
 {
 
 }
 
 //アクション
-void CObjChinaMob::Action()
+void CObjItem::Action()
 {
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
@@ -40,7 +40,7 @@ void CObjChinaMob::Action()
 }
 
 //ドロー
-void CObjChinaMob::Draw()
+void CObjItem::Draw()
 {
 	////描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

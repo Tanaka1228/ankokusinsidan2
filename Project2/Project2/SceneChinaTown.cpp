@@ -20,6 +20,7 @@ extern int ChinaTown_Hero_x;
 //コンストラクタ
 CSceneChinaTown::CSceneChinaTown()
 {
+	m_time = 0;
 }
 
 //デストラクタ
@@ -61,6 +62,9 @@ void CSceneChinaTown::InitScene()
 
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 7, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"マップa.png", 15, TEX_SIZE_512);
@@ -105,4 +109,13 @@ void CSceneChinaTown::InitScene()
 //ゲームステージ実行中メソッド
 void CSceneChinaTown::Scene()
 {
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
+
+	m_time++;
+	if (m_time == 10)
+	{
+		//Itemオブジェクト作成
+		CObjItem* objitem = new CObjItem(500.0f + chinatown->GetScroll(), 100.0f + chinatown->GetScroll2());//アイテム
+		Objs::InsertObj(objitem, OBJ_ITEM, 3);
+	}
 }

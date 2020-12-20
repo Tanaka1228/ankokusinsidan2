@@ -20,6 +20,7 @@ using namespace GameL;
 //コンストラクタ
 CSceneBlock::CSceneBlock()
 {
+	m_time = 0;
 }
 
 //デストラクタ
@@ -68,7 +69,11 @@ void CSceneBlock::InitScene()
 	Draw::LoadImage(L"武器商売ロボット.png", 11, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"拠点のマップ.png", 15, TEX_SIZE_512);
+
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
@@ -90,6 +95,7 @@ void CSceneBlock::InitScene()
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
+	//マップオブジェクト作成
 	CObjMap* objm = new CObjMap();//マップ図
 	Objs::InsertObj(objm, OBJ_MAP, 7);
 
@@ -99,4 +105,13 @@ void CSceneBlock::InitScene()
 //ゲームステージ実行中メソッド
 void CSceneBlock::Scene()
 {
+	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
+
+	m_time++;
+	if (m_time == 10)
+	{
+		//Itemオブジェクト作成
+		CObjItem* objitem = new CObjItem(32.0f + block->GetScroll(), 32.0f + block->GetScroll2());//アイテム
+		Objs::InsertObj(objitem, OBJ_ITEM, 3);
+	}
 }

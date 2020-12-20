@@ -15,5 +15,5 @@ public:
 	void InitScene();//ゲームステージ初期化メソッド
 	void Scene();//ゲームステージ実行中メソッド
 private:
-
+	int m_time;
 };

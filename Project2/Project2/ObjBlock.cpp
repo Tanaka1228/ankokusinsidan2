@@ -601,6 +601,7 @@ void CObjBlock::Draw()
 			{
 
 			}
+			
 		}
 	}
 }

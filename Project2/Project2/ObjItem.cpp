@@ -30,6 +30,8 @@ void CObjItem::Init()
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
 }
 
+int CObjItem::m_bullet_item = 0;//’eŠÛ‚ÌŠŽ”
+
 //ƒAƒNƒVƒ‡ƒ“
 void CObjItem::Action()
 {
@@ -64,6 +66,8 @@ void CObjItem::Action()
 		//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
+			Set_M_Bullet_Item(12);
+
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 			//Audio::Start(5);

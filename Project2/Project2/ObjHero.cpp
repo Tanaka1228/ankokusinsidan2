@@ -103,12 +103,9 @@ void CObjHero::Init()
 	m_gun = 0;//銃の構えているか　0が構えていない 　1が構えている
 	gun_type = 0;//　0がリボルバー 1がアサルト
 	
-	m_bullet_held = 30;//弾丸の所持数
 	gun_Kama = 1;//銃を構えるフラグ
 	gun_type_flag = 1;//銃の種類フラグ
-	//ass_bullet = 30;//アサルト弾丸数
-	//ass_bullet_held = 150;//アサルト弾丸所持数
-
+	
 	//---------------------------------------------------------------
 
 	//blockとの衝突状態確認用
@@ -125,6 +122,7 @@ void CObjHero::Init()
 }
 
 int CObjHero::m_bullet = 6;//弾丸の弾数　リボルバー
+int CObjHero::m_bullet_held =30;//弾丸の所持数
 
 //アクション
 void CObjHero::Action()

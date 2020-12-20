@@ -20,7 +20,6 @@ using namespace GameL;
 //コンストラクタ
 CSceneBlock::CSceneBlock()
 {
-	m_time = 0;
 }
 
 //デストラクタ
@@ -105,13 +104,4 @@ void CSceneBlock::InitScene()
 //ゲームステージ実行中メソッド
 void CSceneBlock::Scene()
 {
-	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
-
-	m_time++;
-	if (m_time == 10)
-	{
-		//Itemオブジェクト作成
-		CObjItem* objitem = new CObjItem(32.0f + block->GetScroll(), 32.0f + block->GetScroll2());//アイテム
-		Objs::InsertObj(objitem, OBJ_ITEM, 3);
-	}
 }

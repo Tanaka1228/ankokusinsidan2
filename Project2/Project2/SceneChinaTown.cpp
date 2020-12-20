@@ -112,7 +112,7 @@ void CSceneChinaTown::Scene()
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
 
 	m_time++;
-	if (m_time == 10)
+	if (m_time == 1)
 	{
 		//Itemオブジェクト作成
 		CObjItem* objitem = new CObjItem(500.0f + chinatown->GetScroll(), 100.0f + chinatown->GetScroll2());//アイテム

@@ -20,6 +20,9 @@ CObjItem::CObjItem(float x, float y)
 {
 	m_x = x;
 	m_y = y;
+
+	//　主人公がアイテム接触SE　音楽情報の読み込み
+	Audio::LoadAudio(9, L"弾丸アイテム.wav", EFFECT);//単発
 }
 
 
@@ -41,18 +44,21 @@ void CObjItem::Action()
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
 	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
-	if (block != nullptr) 
+	if (chinatownboss != nullptr) 
 	{
 		//HitBoxの内容を更新
 		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_x + block->GetScroll(), m_y + block->GetScroll2());
+		hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
 
 		//弾丸と接触してるかどうか調べる
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
+			Set_M_Bullet_Item(12);
+			Audio::Start(9);
+
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-			//Audio::Start(5);
+			
 		}
 	}
 
@@ -67,10 +73,10 @@ void CObjItem::Action()
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
 			Set_M_Bullet_Item(12);
+			Audio::Start(9);
 
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-			//Audio::Start(5);
 		}
 	}
 }
@@ -90,7 +96,7 @@ void CObjItem::Draw()
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
-	if (block!=nullptr)//弾丸アイテム
+	if (chinatownboss!=nullptr)//弾丸アイテム
 	{
 		//切り取り位置の設定
 		src.m_top = 24.0f;   //y
@@ -99,10 +105,10 @@ void CObjItem::Draw()
 		src.m_bottom = 222.0f; //y
 
 		//表示位置の設定
-		dst.m_top =32.0f + block->GetScroll2();
-		dst.m_left =32.0f + block->GetScroll();
-		dst.m_right =32.0f + 32.0f+block->GetScroll();
-		dst.m_bottom =32.0f+ 32.0f + block->GetScroll2();
+		dst.m_top =0.0f + m_y + chinatownboss->GetScroll2();
+		dst.m_left =0.0f + m_x + chinatownboss->GetScroll();
+		dst.m_right =32.0f + m_x + chinatownboss->GetScroll();
+		dst.m_bottom =32.0f + m_y + chinatownboss->GetScroll2();
 
 		//描画
 		Draw::Draw(12, &src, &dst, c, 0.0f);

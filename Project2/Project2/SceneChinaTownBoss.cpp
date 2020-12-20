@@ -19,6 +19,8 @@ using namespace GameL;
 //コンストラクタ
 CSceneChinaTownBoss::CSceneChinaTownBoss()
 {
+
+	m_time = 0;
 }
 
 //デストラクタ

@@ -29,8 +29,18 @@ CObjItem::CObjItem(float x, float y)
 //イニシャライズ
 void CObjItem::Init()
 {
-	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
+	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
+	if (chinatown != nullptr)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
+	}
+	if (chinatownboss != nullptr)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
+	}
 }
 
 int CObjItem::m_bullet_item = 0;//弾丸の所持数
@@ -44,23 +54,6 @@ void CObjItem::Action()
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
 	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
-	if (chinatownboss != nullptr) 
-	{
-		//HitBoxの内容を更新
-		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
-
-		//弾丸と接触してるかどうか調べる
-		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
-		{
-			Set_M_Bullet_Item(12);
-			Audio::Start(9);
-
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			
-		}
-	}
 
 
 	if (chinatown != nullptr)
@@ -77,6 +70,23 @@ void CObjItem::Action()
 
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+		}
+	}
+	if (chinatownboss != nullptr) 
+	{
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
+
+		//弾丸と接触してるかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+		{
+			Set_M_Bullet_Item(12);
+			Audio::Start(9);
+
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			
 		}
 	}
 }

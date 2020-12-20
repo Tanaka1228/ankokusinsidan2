@@ -20,7 +20,6 @@ using namespace GameL;
 CSceneChinaTownBoss::CSceneChinaTownBoss()
 {
 
-	m_time = 0;
 }
 
 //デストラクタ
@@ -125,7 +124,7 @@ void CSceneChinaTownBoss::Scene()
 		Objs::InsertObj(objitem, OBJ_ITEM, 5);
 	}
 
-	if (m_time == 50) {
+	else if (m_time == 50) {
 		//誘導敵機オブジェクト作成
 		CObjChinaTownBossBoss* objc = new CObjChinaTownBossBoss(2590.0f + chinaboss->GetScroll(), 1500.0f + chinaboss->GetScroll2()); //誘導敵機オブジェクト作成
 		Objs::InsertObj(objc, OBJ_CHINA_TOWN_BOSS_BOSS, 5); //誘導敵機オブジェクトをオブジェクトマネージャーに登録

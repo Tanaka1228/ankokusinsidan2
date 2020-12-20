@@ -20,7 +20,7 @@ extern int ChinaTown_Hero_x;
 //コンストラクタ
 CSceneChinaTown::CSceneChinaTown()
 {
-	m_time = 0;
+	
 }
 
 //デストラクタ
@@ -103,6 +103,9 @@ void CSceneChinaTown::InitScene()
 
 	CObjMap* objma = new CObjMap();//マップ図
 	Objs::InsertObj(objma, OBJ_MAP, 7);
+
+	//タイム初期化
+	m_time = 0;
 }
 
 

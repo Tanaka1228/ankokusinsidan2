@@ -117,14 +117,14 @@ void CSceneChinaTownBoss::Scene()
 	CObjChinaTownBoss* chinaboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 
 	m_time++;
-	if (m_time == 5)
-	{
-		//Itemオブジェクト作成
-		CObjItem* objitem = new CObjItem(3000.0f + chinaboss->GetScroll(), 100.0f + chinaboss->GetScroll2());//アイテム
-		Objs::InsertObj(objitem, OBJ_ITEM, 5);
-	}
+	//if (m_time == 5)
+	//{
+	//	//Itemオブジェクト作成
+	//	CObjItem* objitem = new CObjItem(3000.0f + chinaboss->GetScroll(), 100.0f + chinaboss->GetScroll2());//アイテム
+	//	Objs::InsertObj(objitem, OBJ_ITEM, 5);
+	//}
 
-	else if (m_time == 50) {
+	if (m_time == 50) {
 		//誘導敵機オブジェクト作成
 		CObjChinaTownBossBoss* objc = new CObjChinaTownBossBoss(2590.0f + chinaboss->GetScroll(), 1500.0f + chinaboss->GetScroll2()); //誘導敵機オブジェクト作成
 		Objs::InsertObj(objc, OBJ_CHINA_TOWN_BOSS_BOSS, 5); //誘導敵機オブジェクトをオブジェクトマネージャーに登録

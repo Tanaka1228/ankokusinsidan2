@@ -291,25 +291,22 @@ void CObjChinaTownBoss::Action()
 		}
 	}
 	//敵出現ライン
-	//float xline = hx + (-mx_scroll) -210;
-	//float yline = hy + (my_scroll) +200;
+	float xline = hx + (-mx_scroll)+ 210;
 
+	int ex = ((int)xline) / 32;
 
-	//int ex = ((int)xline) / 32;
-	//int ey = ((int)yline) / 32;
+	for (int i = 0; i < 100; i++)
+	{
+		if (m_map[i][ex] == 81)
+		{
+			//Itemオブジェクト作成
+			CObjItem* objitem = new CObjItem(ex*32.0f,i*32.0f);//アイテム
+			Objs::InsertObj(objitem, OBJ_ITEM, 5);
 
-	//for (int i = 0; i < 100; i++)
-	//{
-	//	if (m_map[i][ex] == 81)
-	//	{
-	//		//Itemオブジェクト作成
-	//		CObjItem* objitem = new CObjItem(ex*32.0f,i*32.0f);//アイテム
-	//		Objs::InsertObj(objitem, OBJ_ITEM, 5);
-
-	//		m_map[i][ex] = 0;
-	//	}
-	//	
-	//}
+			m_map[i][ex] = 0;
+		}
+		
+	}
 
 
 	if (Input::GetVKey('X') == true)

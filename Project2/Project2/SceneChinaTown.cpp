@@ -105,7 +105,7 @@ void CSceneChinaTown::InitScene()
 	Objs::InsertObj(objma, OBJ_MAP, 7);
 
 	//タイム初期化
-	m_time = 0;
+	//m_time = 0;
 }
 
 
@@ -114,12 +114,12 @@ void CSceneChinaTown::Scene()
 {
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
 
-	m_time++;
+	//m_time++;
 
-	if (m_time == 5)
-	{
-		//Itemオブジェクト作成
-		CObjItem* objitem = new CObjItem(500.0f + chinatown->GetScroll(), 100.0f + chinatown->GetScroll2());//アイテム
-		Objs::InsertObj(objitem, OBJ_ITEM, 3);
-	}
+	//if (m_time == 5)
+	//{
+	//	//Itemオブジェクト作成
+	//	CObjItem* objitem = new CObjItem(500.0f + chinatown->GetScroll(), 100.0f + chinatown->GetScroll2());//アイテム
+	//	Objs::InsertObj(objitem, OBJ_ITEM, 3);
+	//}
 }

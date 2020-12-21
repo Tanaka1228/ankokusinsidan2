@@ -247,62 +247,67 @@ void CObjHero::Action()
 
 
 	//リボルバーのリロード
-	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held >= 0)//リロード
+	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held > 0)//リロード
 	{
 
 		if (m_bullet == 6)
 		{
-			m_bullet_held -= 0;
 			if (m_bullet_held >= 0) {
 				m_bullet += 0;
 			}
+			m_bullet_held -= 0;
 
 		}
 		if (m_bullet == 5)
 		{
-			m_bullet_held -= 1;
 			if (m_bullet_held >= 0) {
 				m_bullet += 1;
 			}
+			m_bullet_held -= 1;
+
 		}
 		if (m_bullet == 4)
 		{
-			m_bullet_held -= 2;
 			if (m_bullet_held >= 0) {
 				m_bullet += 2;
 			}
+			m_bullet_held -= 2;
 		}
 		if (m_bullet == 3)
 		{
-			m_bullet_held -= 3;
 			if (m_bullet_held >= 0) {
 				m_bullet += 3;
 			}
+			m_bullet_held -= 3;
 		}
 		if (m_bullet == 2)
 		{
-			m_bullet_held -= 4;
 			if (m_bullet_held >= 0) {
 				m_bullet += 4;
 			}
+			m_bullet_held -= 4;
 		}
 		if (m_bullet == 1)
 		{
-			m_bullet_held -= 5;
 			if (m_bullet_held >= 0) {
 				m_bullet += 5;
 			}
+			m_bullet_held -= 5;
 		}
 		if (m_bullet == 0)
 		{
-			m_bullet_held -= 6;
 			if (m_bullet_held >= 0) {
 				m_bullet += 6;
-			}
+			} 
+			m_bullet_held -= 6;
 		}
 
+		if (m_bullet_held < 0)
+		{
+			m_bullet_held = 0;
+		}
 	}
-	
+
 
 		//----------主人公右移動(アニメーション)-----------------------
 		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右

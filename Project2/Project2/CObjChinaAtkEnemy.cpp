@@ -45,7 +45,7 @@ void CObjChinaAtkEnemy::Action()
 		m_time = 0;
 
 		//弾丸敵機オブジェクト
-		CObjBulletEnemy* obj_bullte_enemy = new CObjBulletEnemy(m_x, m_y);
+		CObjBulletEnemy* obj_bullte_enemy = new CObjBulletEnemy(m_x, m_y,1);
 		Objs::InsertObj(obj_bullte_enemy, OBJ_BULLET_ENEMY, 4);
 	}
 

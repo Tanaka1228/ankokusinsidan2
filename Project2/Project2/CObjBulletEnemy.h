@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjBulletEnemy : public CObj
 {
 public:
-	CObjBulletEnemy(float x,float y);
+	CObjBulletEnemy(float x,float y,int id);
 	~CObjBulletEnemy(){};
 	void Init();     //イニシャライズ
 	void Action();  //アクション
@@ -18,5 +18,7 @@ private:
 	float m_y;  //オブジェクトの位置Y
 	float m_vx; //オブジェクトの移動用ベクトルX
 	float m_vy; //オブジェクトの移動用ベクトルY
+
+	int m_id;
 };
 

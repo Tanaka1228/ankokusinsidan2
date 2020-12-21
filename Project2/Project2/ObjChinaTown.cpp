@@ -282,7 +282,7 @@ void CObjChinaTown::Action()
 		if (m_map[i][ex] ==103)
 		{
 			//Itemオブジェクト作成
-			CObjItem* objitem = new CObjItem(ex * 32.0f, i * 32.0f);//アイテム
+			CObjItem* objitem = new CObjItem(ex * 32.0f, i * 32.0f,1);//アイテム
 			Objs::InsertObj(objitem, OBJ_ITEM, 3);
 
 			m_map[i][ex] = 0;

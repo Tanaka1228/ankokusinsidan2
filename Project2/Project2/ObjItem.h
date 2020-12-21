@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjItem : public CObj
 {
 public:
-	CObjItem(float x, float y);//コンストラクタ位置情報	をもらう
+	CObjItem(float x, float y,int id);//コンストラクタ位置情報	をもらう
 	~CObjItem() {};
 	void Init(); //イニシャライズ
 	void Action(); //アクション
@@ -23,4 +23,5 @@ private:
 
 	static int m_bullet_item;//弾丸の所持数　リボルバー
 
+	int m_id;
 };

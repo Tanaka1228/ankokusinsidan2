@@ -16,15 +16,16 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjItem::CObjItem(float x, float y)
+CObjItem::CObjItem(float x, float y,int id)
 {
-	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
-	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
-	if (chinatown != nullptr) {
+	m_id = id;
+
+	if (m_id ==1) //チャイナA
+	{
 		m_x = x;
 		m_y = y;
 	}
-	if (chinatownboss != nullptr)
+	if (m_id==2)//チャイナボス
 	{
 		m_x = x;
 		m_y = y;
@@ -37,14 +38,15 @@ CObjItem::CObjItem(float x, float y)
 //イニシャライズ
 void CObjItem::Init()
 {
-	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
-	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
-	if (chinatown != nullptr)
+
+
+	if (m_id == 1) //チャイナA
 	{
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
 	}
-	if (chinatownboss != nullptr)
+
+	if (m_id == 2) //チャイナボス
 	{
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
@@ -64,7 +66,8 @@ void CObjItem::Action()
 
 
 
-	if (chinatown != nullptr)
+
+	if (m_id == 1) //チャイナA
 	{
 		//HitBoxの内容を更新
 		CHitBox* hit = Hits::GetHitBox(this);
@@ -80,7 +83,8 @@ void CObjItem::Action()
 			Hits::DeleteHitBox(this);
 		}
 	}
-	if (chinatownboss != nullptr) 
+
+	if (m_id == 2) //チャイナボス
 	{
 		//HitBoxの内容を更新
 		CHitBox* hit = Hits::GetHitBox(this);
@@ -108,11 +112,9 @@ void CObjItem::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
-	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
 	if (chinatownboss!=nullptr)//弾丸アイテム
 	{

@@ -9,8 +9,9 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBulletEnemy::CObjBulletEnemy(float x, float y)//コンストラクタで受け取った情報を変数に送る
+CObjBulletEnemy::CObjBulletEnemy(float x, float y,int id)//コンストラクタで受け取った情報を変数に送る
 {
+	m_id = id;
 	m_x = x;
 	m_y = y;
 	m_vx = 0;
@@ -20,42 +21,31 @@ CObjBulletEnemy::CObjBulletEnemy(float x, float y)//コンストラクタで受け取った情
 //イニシャライズ
 void CObjBulletEnemy::Init()
 {
-	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
-	CObjChinaAtkEnemy* chinaAtkEnemy = (CObjChinaAtkEnemy*)Objs::GetObj(OBJ_CHINA_ATK_ENEMY);
-	CObjChinaAtkEnemy2* chinaAtkEnemy2 = (CObjChinaAtkEnemy2*)Objs::GetObj(OBJ_CHINA_ATK_ENEMY2);
-	if (chinatownboss != nullptr)
-	{
+	
 		
-	if (chinaAtkEnemy !=nullptr)
-	{
-		m_vx = -1.0f;
-		m_vy = -1.0f;
-		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
-	}
-	if (chinaAtkEnemy2 != nullptr)
-	{
-		m_vx = +1.0f;
-		m_vy = -1.0f;
-		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
-	}
-}
-	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		if (m_id==1)
+		{
+			m_vx = -1.0f;
+			m_vy = -1.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id==2)
+		{
+			m_vx = +1.0f;
+			m_vy = -1.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+	
+	
 }
 
 //アクション
 void CObjBulletEnemy::Action()
 {
-	//チャイナタウンBOSSの情報
-	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンBOSSの情報
-	CObjChinaAtkEnemy* chinaAtkEnemy = (CObjChinaAtkEnemy*)Objs::GetObj(OBJ_CHINA_ATK_ENEMY);
-	CObjChinaAtkEnemy2* chinaAtkEnemy2 = (CObjChinaAtkEnemy2*)Objs::GetObj(OBJ_CHINA_ATK_ENEMY2);
-
-	if (chinatownboss != nullptr)
-	{
-		if (chinaAtkEnemy != nullptr)
+	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
+		if (m_id == 1)
 		{
 			//移動
 			m_x += m_vx * 5.0f;
@@ -67,7 +57,7 @@ void CObjBulletEnemy::Action()
 
 
 			//敵機が完全に領域外に出たら敵機を破棄する
-			bool check = CheckWindow(m_x, m_y, 1700.0f, -32.0f, 3000.0f, 2500.0f);
+			bool check = CheckWindow(m_x, m_y, 1600.0f, -32.0f, 3000.0f, 2500.0f);
 			if (check == false)
 			{
 				this->SetStatus(false);//自身に削除命令
@@ -81,8 +71,9 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
 			}
 		}
-		if (chinaAtkEnemy2 != nullptr)
+		if (m_id == 2)
 		{
+
 			//移動
 			m_x += m_vx * 5.0f;
 			m_y += m_vy * 5.0f;
@@ -93,7 +84,7 @@ void CObjBulletEnemy::Action()
 
 
 			//敵機が完全に領域外に出たら敵機を破棄する
-			bool check = CheckWindow(m_x, m_y, 1700.0f, -32.0f, 3000.0f, 2500.0f);
+			bool check = CheckWindow(m_x, m_y, 0.0f, -32.0f, 3000.0f, 2500.0f);
 			if (check == false)
 			{
 				this->SetStatus(false);//自身に削除命令
@@ -107,7 +98,6 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
 			}
 		}
-	}
 	
 }
 

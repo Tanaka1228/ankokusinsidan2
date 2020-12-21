@@ -94,6 +94,8 @@ void CObjChinaTown_c::Action()
 	float hx = hero->GetX2();//スクロール
 	float hy = hero->GetY2();
 
+	//踏んでいるblockの種類を初期化
+	hero->SetBT(0);
 
 	if (hero->GetRight() == false)
 	{
@@ -221,10 +223,10 @@ void CObjChinaTown_c::Action()
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
 						
-						if (m_map[i][j] == 9)//上に行くと病院一階
-						{
-							Scene::SetScene(new CSceneHospital());
-						}
+						//if (m_map[i][j] == 9)//上に行くと病院一階
+						//{
+						//	Scene::SetScene(new CSceneHospital());
+						//}
 						if (m_map[i][j] == 1000)//右に行くとマップd
 						{
 							Scene::SetScene(new CSceneChinaTown_d());

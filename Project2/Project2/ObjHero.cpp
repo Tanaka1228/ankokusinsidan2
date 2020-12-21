@@ -183,7 +183,7 @@ void CObjHero::Action()
 	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
 	{
 		//主人公の弾丸発射
-		if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 0)
+		if (Input::GetVKey('Z') == true && m_gun == 1)
 		{
 
 
@@ -226,8 +226,6 @@ void CObjHero::Action()
 					Audio::Start(1);
 				}
 
-
-
 				m_f = false;
 			}
 		}
@@ -239,7 +237,7 @@ void CObjHero::Action()
 
 
 	//リボルバーのリロード
-	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held > 0)//リロード
+	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held >= 0)//リロード
 	{
 
 		if (m_bullet == 6)
@@ -307,29 +305,47 @@ void CObjHero::Action()
 			m_ani_time3 += 1;
 
 			//動くと会話終了--------
-			if (chinatown != nullptr||chinatownboss!=nullptr)
+			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
-				chinamob->SetSp_flag(false);
-				chinamob->SetM_sp(0);
+				if (chinamob != nullptr)
+				{
+					chinamob->SetSp_flag(false);
+					chinamob->SetM_sp(0);
+				}
 			}
-			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
-				hosmob->SetSp_flag(false);
-				hosmob->SetM_sp(0);
+			if (hospital != nullptr || rooftop != nullptr)
+			{
+				if (hosmob != nullptr)
+				{
+					hosmob->SetSp_flag(false);
+					hosmob->SetM_sp(0);
+				}
 			}
-			if (drug != nullptr) {
-				drugmob->SetSp_flag(false);
-				drugmob->SetM_sp(0);
+			if (drug != nullptr)
+			{
+				if (drugmob != nullptr)
+				{
+					drugmob->SetSp_flag(false);
+					drugmob->SetM_sp(0);
+				}
 			}
 			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
 			{
-				instmob->SetSp_flag(false);
-				instmob->SetM_sp(0);
+				if (instmob != nullptr)
+				{
+					instmob->SetSp_flag(false);
+					instmob->SetM_sp(0);
+				}
 			}
-			if (block != nullptr) {
-				heroine->SetSp_flag(false);
-				heroine->SetM_sp(0);
+			if (block != nullptr)
+			{
+				if (heroine != nullptr)
+				{
+					heroine->SetSp_flag(false);
+					heroine->SetM_sp(0);
+				}
 			}
-			//----------------------------
+			//-----------------------------
 		}
 		else
 		{
@@ -361,25 +377,43 @@ void CObjHero::Action()
 			//動くと会話終了--------
 			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
-				chinamob->SetSp_flag(false);
-				chinamob->SetM_sp(0);
+				if (chinamob != nullptr)
+				{
+					chinamob->SetSp_flag(false);
+					chinamob->SetM_sp(0);
+				}
 			}
-			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
-				hosmob->SetSp_flag(false);
-				hosmob->SetM_sp(0);
+			if (hospital != nullptr || rooftop != nullptr)
+			{
+				if (hosmob != nullptr)
+				{
+					hosmob->SetSp_flag(false);
+					hosmob->SetM_sp(0);
+				}
 			}
-			if (drug != nullptr) {
-				drugmob->SetSp_flag(false);
-				drugmob->SetM_sp(0);
+			if (drug != nullptr)
+			{
+				if (drugmob != nullptr)
+				{
+					drugmob->SetSp_flag(false);
+					drugmob->SetM_sp(0);
+				}
 			}
 			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
 			{
-				instmob->SetSp_flag(false);
-				instmob->SetM_sp(0);
+				if (instmob != nullptr)
+				{
+					instmob->SetSp_flag(false);
+					instmob->SetM_sp(0);
+				}
 			}
-			if (block != nullptr) {
-				heroine->SetSp_flag(false);
-				heroine->SetM_sp(0);
+			if (block != nullptr)
+			{
+				if (heroine != nullptr)
+				{
+					heroine->SetSp_flag(false);
+					heroine->SetM_sp(0);
+				}
 			}
 			//-----------------------------
 
@@ -408,29 +442,46 @@ void CObjHero::Action()
 			m_vy -= m_y;
 			m_ani_frame = 1;
 			m_ani_time2 += 1;
-
 			//動くと会話終了--------
 			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
-				chinamob->SetSp_flag(false);
-				chinamob->SetM_sp(0);
+				if (chinamob != nullptr)
+				{
+					chinamob->SetSp_flag(false);
+					chinamob->SetM_sp(0);
+				}
 			}
-			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
-				hosmob->SetSp_flag(false);
-				hosmob->SetM_sp(0);
+			if (hospital != nullptr || rooftop != nullptr)
+			{
+				if (hosmob != nullptr)
+				{
+					hosmob->SetSp_flag(false);
+					hosmob->SetM_sp(0);
+				}
 			}
-			if (drug != nullptr) {
-				drugmob->SetSp_flag(false);
-				drugmob->SetM_sp(0);
+			if (drug != nullptr)
+			{
+				if (drugmob != nullptr)
+				{
+					drugmob->SetSp_flag(false);
+					drugmob->SetM_sp(0);
+				}
 			}
 			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
 			{
-				instmob->SetSp_flag(false);
-				instmob->SetM_sp(0);
+				if (instmob != nullptr)
+				{
+					instmob->SetSp_flag(false);
+					instmob->SetM_sp(0);
+				}
 			}
-			if (block != nullptr) {
-				heroine->SetSp_flag(false);
-				heroine->SetM_sp(0);
+			if (block != nullptr)
+			{
+				if (heroine != nullptr)
+				{
+					heroine->SetSp_flag(false);
+					heroine->SetM_sp(0);
+				}
 			}
 			//-----------------------------
 		
@@ -463,25 +514,43 @@ void CObjHero::Action()
 			//動くと会話終了--------
 			if (chinatown != nullptr || chinatownboss != nullptr)
 			{
-				chinamob->SetSp_flag(false);
-				chinamob->SetM_sp(0);
+				if (chinamob != nullptr)
+				{
+					chinamob->SetSp_flag(false);
+					chinamob->SetM_sp(0);
+				}
 			}
-			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
-				hosmob->SetSp_flag(false);
-				hosmob->SetM_sp(0);
+			if (hospital != nullptr || rooftop != nullptr)
+			{
+				if (hosmob != nullptr)
+				{
+					hosmob->SetSp_flag(false);
+					hosmob->SetM_sp(0);
+				}
 			}
-			if (drug != nullptr) {
-				drugmob->SetSp_flag(false);
-				drugmob->SetM_sp(0);
+			if (drug != nullptr) 
+			{
+				if (drugmob != nullptr)
+				{
+					drugmob->SetSp_flag(false);
+					drugmob->SetM_sp(0);
+				}
 			}
 			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
 			{
-				instmob->SetSp_flag(false);
-				instmob->SetM_sp(0);
+				if (instmob != nullptr)
+				{
+					instmob->SetSp_flag(false);
+					instmob->SetM_sp(0);
+				}
 			}
-			if (block != nullptr) {
-				heroine->SetSp_flag(false);
-				heroine->SetM_sp(0);
+			if (block != nullptr)
+			{ 
+				if (heroine != nullptr)
+				{
+					heroine->SetSp_flag(false);
+					heroine->SetM_sp(0);
+				}
 			}
 			//-----------------------------
 		}

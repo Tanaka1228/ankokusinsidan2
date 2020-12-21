@@ -15,9 +15,9 @@ public:
 	void Draw(); //ドロー
 
 	bool Sp_Flag() { return sp_flag; }//会話の背景
-	void SetSp_flag(int s) { sp_flag=s; }
+	void SetSp_flag(bool s) { sp_flag=s; }
 
-	bool GetM_sp() { return  m_sp; }//会話の順番
+	int GetM_sp() { return  m_sp; }//会話の順番
 	void SetM_sp(int m) { m_sp = m; }
 
 private:

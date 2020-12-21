@@ -21,7 +21,7 @@ using namespace GameL;
 CObjHosMob::CObjHosMob()
 {
 	//Heroine‚Ìƒwƒbƒ_[‚ğŒ©‚½‚ç‚í‚©‚é
-	m_sp = false;
+	m_sp = 0;
 	key_flag = 1;
 	sp_flag = false;
 	m_key_control = true;

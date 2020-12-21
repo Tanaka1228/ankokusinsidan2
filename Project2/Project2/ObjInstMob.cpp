@@ -15,8 +15,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern bool g_sp_stop;
-
 //コンストラクタ
 CObjInstMob::CObjInstMob()
 {
@@ -276,6 +274,11 @@ void CObjInstMob::Draw()
 	//------------地上1階の一体目----------------------------------------------------------------------------
 	if (inst != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -290,7 +293,6 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 470, 30, c);// X  Y  大きさ     ---------------〇-------------------
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -308,7 +310,6 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 250.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -326,14 +327,12 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 470, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 3)
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
@@ -417,6 +416,11 @@ void CObjInstMob::Draw()
 	//------地下2階--------------------------------------------------------------------------------------------------
 	if (inst13a != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0)//エンターキーを0回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -431,7 +435,6 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 40.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -449,7 +452,6 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -457,7 +459,6 @@ void CObjInstMob::Draw()
 		if (m_sp == 3)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
@@ -478,7 +479,6 @@ void CObjInstMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 40.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -486,7 +486,6 @@ void CObjInstMob::Draw()
 		if (m_sp == 2)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}

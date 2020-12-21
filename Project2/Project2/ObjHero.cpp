@@ -12,7 +12,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern bool g_sp_stop;
 
 //位置情報X変更用
 void CObjHero::SetX(float x) 
@@ -103,17 +102,11 @@ void CObjHero::Init()
 	m_ass_f = true;
 	m_gun = 0;//銃の構えているか　0が構えていない 　1が構えている
 	gun_type = 0;//　0がリボルバー 1がアサルト
-	m_bullet = 6;//弾丸の弾数　リボルバー
-	m_bullet_held = 30;//弾丸の所持数
+	
 	gun_Kama = 1;//銃を構えるフラグ
 	gun_type_flag = 1;//銃の種類フラグ
-	//ass_bullet = 30;//アサルト弾丸数
-	//ass_bullet_held = 150;//アサルト弾丸所持数
-
+	
 	//---------------------------------------------------------------
-
-	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 34, 34, ELEMENT_PLAYER, OBJ_HERO, 1);
 
 	//blockとの衝突状態確認用
 	m_hit_up = false;
@@ -122,7 +115,14 @@ void CObjHero::Init()
 	m_hit_right = false;
 
 	m_block_type = 0; //踏んでいるblockの種類を確認用
+
+
+	//当たり判定用HitBoxを作成
+	Hits::SetHitBox(this, m_x, m_y, 34, 34, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
+
+int CObjHero::m_bullet = 6;//弾丸の弾数　リボルバー
+int CObjHero::m_bullet_held =30;//弾丸の所持数
 
 //アクション
 void CObjHero::Action()
@@ -135,6 +135,21 @@ void CObjHero::Action()
 	CObjHeroine* heroine = (CObjHeroine*)Objs::GetObj(OBJ_HEROINE);//ヒロイン
 
 
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
+	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
+	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
+	CObjChinaEvent* chinaevent = (CObjChinaEvent*)Objs::GetObj(OBJ_CHINA_EVENT);//チャイナタウンのイベント
+
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstituteBoss* instituteboss = (CObjInstituteBoss*)Objs::GetObj(OBJ_INSTITUTE_BOSS);//研究所BOSS
+
+	CObjHospital* hospital = (CObjHospital*)Objs::GetObj(OBJ_HOSPITAL);//病院の一階
+	CObjHospital2* hospital2 = (CObjHospital2*)Objs::GetObj(OBJ_HOSPITAL2);//病院の二階
+	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);//病院の屋上
+
+	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
+
 	//移動ベクトルの破棄
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -143,7 +158,7 @@ void CObjHero::Action()
 		{
 			if (gun_Kama == 1)
 			{
-			     Audio::Start(7);
+				Audio::Start(7);
 
 				if (m_gun == 1)
 				{
@@ -163,28 +178,6 @@ void CObjHero::Action()
 		{
 			gun_Kama = 1;
 		}
-
-		//if (Input::GetVKey('Q') == true && m_gun == 1)//武器の種類を変える
-		//{
-		//	if (gun_type_flag == 1)
-		//	{
-		//		//リボルバー
-		//		if (gun_type == 0)
-		//		{
-		//			gun_type = 1;
-		//		}
-		//		//アサルト
-		//		else if (gun_type == 1)
-		//		{
-		//			gun_type = 0;
-		//		}
-		//		gun_type_flag = 0;
-		//	}
-		//}
-		//else
-		//{
-		//	gun_type_flag = 1;
-		//}
 	}
 
 	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
@@ -245,51 +238,6 @@ void CObjHero::Action()
 	}//------------------------------------------------------------------------------------------------------
 
 
-
-	//if (ass_bullet > 0)//弾数が0以上なら   ------------アサルト-------------------------------------------------------
-	//{
-	//	//主人公の弾丸発射
-	//	if (Input::GetVKey('Z') == true && m_gun == 1 && gun_type == 1)
-	//	{
-
-
-	//		ass_bullet -= 1;
-
-	//		if (m_ani_frame == 2)//右
-	//		{
-	//			//弾丸オブジェクト作成
-	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-	//			Audio::Start(1);
-	//		}
-	//		if (m_ani_frame == 3)//左
-	//		{
-	//			//弾丸オブジェクト作成
-	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-	//			Audio::Start(1);
-	//		}
-	//		if (m_ani_frame == 1)//後ろ
-	//		{
-	//			//弾丸オブジェクト作成
-	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-	//			Audio::Start(1);
-	//		}
-	//		if (m_ani_frame == 0)//前
-	//		{
-	//			//弾丸オブジェクト作成
-	//			CObjBullet* obj_b = new CObjBullet(m_x + 0.0f, m_y + 0.0f); //弾丸オブジェクト作成
-	//			Objs::InsertObj(obj_b, OBJ_BULLET, 4);
-	//			Audio::Start(1);
-	//		}
-
-
-	//	}
-
-
-	//}//------------------------------------------------------------------------------------------------------
-
 	//リボルバーのリロード
 	if (Input::GetVKey(VK_SPACE) == true && m_bullet_held > 0)//リロード
 	{
@@ -346,246 +294,42 @@ void CObjHero::Action()
 		}
 
 	}
-	//アサルトのリロード
-	//if (Input::GetVKey(VK_SPACE) == true && ass_bullet_held > 0)//リロードアサルト
-	//{
-	//	if (ass_bullet == 30)
-	//	{
-	//		ass_bullet_held -= 0;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 0;
-	//		}
-	//	}
-	//	if (ass_bullet == 29)
-	//	{
-	//		ass_bullet_held -= 1;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 1;
-	//		}
-	//	}
-	//	if (ass_bullet == 28)
-	//	{
-	//		ass_bullet_held -= 2;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 2;
-	//		}
-	//	}
-	//	if (ass_bullet == 27)
-	//	{
-	//		ass_bullet_held -= 3;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 3;
-	//		}
-	//	}
-	//	if (ass_bullet == 26)
-	//	{
-	//		ass_bullet_held -= 4;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 4;
-	//		}
-	//	}
-	//	if (ass_bullet == 25)
-	//	{
-	//		ass_bullet_held -= 5;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 5;
-	//		}
-	//	}
-	//	if (ass_bullet == 24)
-	//	{
-	//		ass_bullet_held -= 6;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 6;
-	//		}
-	//	}
-	//	if (ass_bullet == 23)
-	//	{
-	//		ass_bullet_held -= 7;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 7;
-	//		}
-	//	}
-	//	if (ass_bullet == 22)
-	//	{
-	//		ass_bullet_held -= 8;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 8;
-	//		}
-	//	}
-	//	if (ass_bullet == 21)
-	//	{
-	//		ass_bullet_held -= 9;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 9;
-	//		}
-	//	}
-	//	if (ass_bullet == 20)
-	//	{
-	//		ass_bullet_held -= 10;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 10;
-	//		}
-	//	}
-	//	if (ass_bullet == 19)
-	//	{
-	//		ass_bullet_held -= 11;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 11;
-	//		}
-	//	}
-	//	if (ass_bullet == 18)
-	//	{
-	//		ass_bullet_held -= 12;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 12;
-	//		}
-	//	}
-	//	if (ass_bullet == 17)
-	//	{
-	//		ass_bullet_held -= 13;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 13;
-	//		}
-	//	}
-	//	if (ass_bullet == 16)
-	//	{
-	//		ass_bullet_held -= 14;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 14;
-	//		}
-	//	}
-	//	if (ass_bullet == 15)
-	//	{
-	//		ass_bullet_held -= 15;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 15;
-	//		}
-	//	}
-	//	if (ass_bullet == 14)
-	//	{
-	//		ass_bullet_held -= 16;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 16;
-	//		}
-	//	}
-	//	if (ass_bullet == 13)
-	//	{
-	//		ass_bullet_held -= 17;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 17;
-	//		}
-	//	}
-	//	if (ass_bullet == 12)
-	//	{
-	//		ass_bullet_held -= 18;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 18;
-	//		}
-	//	}
-	//	if (ass_bullet == 11)
-	//	{
-	//		ass_bullet_held -= 19;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 19;
-	//		}
-	//	}
-	//	if (ass_bullet == 10)
-	//	{
-	//		ass_bullet_held -= 20;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 20;
-	//		}
-	//	}
-	//	if (ass_bullet == 9)
-	//	{
-	//		ass_bullet_held -= 21;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 21;
-	//		}
-	//	}
-	//	if (ass_bullet == 8)
-	//	{
-	//		ass_bullet_held -= 22;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 22;
-	//		}
-	//	}
-	//	if (ass_bullet == 7)
-	//	{
-	//		ass_bullet_held -= 23;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 23;
-	//		}
-	//	}
-	//	if (ass_bullet == 6)
-	//	{
-	//		ass_bullet_held -= 24;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 24;
-	//		}
-	//	}
-	//	if (ass_bullet == 5)
-	//	{
-	//		ass_bullet_held -= 25;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 25;
-	//		}
-	//	}
-	//	if (ass_bullet == 4)
-	//	{
-	//		ass_bullet_held -= 26;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 26;
-	//		}
-	//	}
-	//	if (ass_bullet == 3)
-	//	{
-	//		ass_bullet_held -= 27;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 27;
-	//		}
-	//	}
-	//	if (ass_bullet == 2)
-	//	{
-	//		ass_bullet_held -= 28;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 28;
-	//		}
-	//	}
-	//	if (ass_bullet == 1)
-	//	{
-	//		ass_bullet_held -= 29;
-	//		if (ass_bullet_held > 0) {
-	//			ass_bullet += 29;
-	//		}
-	//	}
-	//	if (ass_bullet == 0)
-	//	{
-	//		ass_bullet_held -= 30;
-	//		if (ass_bullet_held >= 0) {
-	//			ass_bullet += 30;
-	//		}
-	//	}
-	//}
+	
 
-
-	if (g_sp_stop == false)
-	{
 		//----------主人公右移動(アニメーション)-----------------------
 		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
 		{
+
 			m_x += 5.0f;
 			m_vx += m_x;
 			m_posture = 0.0f;
 			m_ani_frame = 2;
 			m_ani_time3 += 1;
-			if (m_gun == 1)//武器を構えたら移動速度低下
+
+			//動くと会話終了--------
+			if (chinatown != nullptr||chinatownboss!=nullptr)
 			{
-				m_x -= 2;
-				m_vx -= m_x;
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
 			}
-
-
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//----------------------------
 		}
 		else
 		{
@@ -612,12 +356,32 @@ void CObjHero::Action()
 			m_posture = 1.0f;
 			m_ani_frame = 3;
 			m_ani_time4 += 1;
-			if (m_gun == 1)//武器を構えたら移動速度低下
-			{
-				m_x += 2;
-				m_vx -= m_x;
-			}
 
+
+			//動くと会話終了--------
+			if (chinatown != nullptr || chinatownboss != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
 
 		}
 		else
@@ -644,12 +408,32 @@ void CObjHero::Action()
 			m_vy -= m_y;
 			m_ani_frame = 1;
 			m_ani_time2 += 1;
-			if (m_gun == 1)//武器を構えたら移動速度低下
-			{
-				m_y += 2;
-				m_vy -= m_y;
-			}
 
+			//動くと会話終了--------
+			if (chinatown != nullptr || chinatownboss != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
+		
 		}
 		else
 		{
@@ -675,12 +459,31 @@ void CObjHero::Action()
 			m_vy += m_y;
 			m_ani_frame = 0;
 			m_ani_time1 += 1;
-			if (m_gun == 1)//武器を構えたら移動速度低下
-			{
-				m_y -= 2;
-				m_vy -= m_y;
-			}
 
+			//動くと会話終了--------
+			if (chinatown != nullptr || chinatownboss != nullptr)
+			{
+				chinamob->SetSp_flag(false);
+				chinamob->SetM_sp(0);
+			}
+			if (hospital != nullptr || hospital2 != nullptr || rooftop != nullptr) {
+				hosmob->SetSp_flag(false);
+				hosmob->SetM_sp(0);
+			}
+			if (drug != nullptr) {
+				drugmob->SetSp_flag(false);
+				drugmob->SetM_sp(0);
+			}
+			if (inst != nullptr || inst13a != nullptr || instituteboss != nullptr)
+			{
+				instmob->SetSp_flag(false);
+				instmob->SetM_sp(0);
+			}
+			if (block != nullptr) {
+				heroine->SetSp_flag(false);
+				heroine->SetM_sp(0);
+			}
+			//-----------------------------
 		}
 		else
 		{
@@ -697,8 +500,6 @@ void CObjHero::Action()
 			Audio::Start(3);
 			m_ani_frame1 = 0;
 		}
-	
-	}
 
 		//移動ベクトルの正規化
 		UnitVec(&m_vy, &m_vx);
@@ -723,7 +524,6 @@ void CObjHero::Action()
 			//主人公消滅でゲームオーバーに移行する
 			Scene::SetScene(new CSceneGameOver());
 		}
-	
 }
 
 //ドロー
@@ -811,7 +611,22 @@ void CObjHero::Draw()
 	//表示位置の設定
 	dst.m_top = 24.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 0.0f + m_hp;
+	dst.m_right = 0.0f+m_hp;
+	dst.m_bottom = 64.0f;
+
+	Draw::Draw(50, &src, &dst, c, 0.0f);
+	//------------------------------------
+	//---HP枠------------------
+	//切り取り位置の設定
+	src.m_top = 107.0f;   //y
+	src.m_left = 256.0f; //x
+	src.m_right = 512.0f; //x
+	src.m_bottom = 151.0f; //y
+
+	//表示位置の設定
+	dst.m_top = 24.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 0.0f+256.0f;
 	dst.m_bottom = 64.0f;
 
 	Draw::Draw(50, &src, &dst, c, 0.0f);
@@ -832,22 +647,4 @@ void CObjHero::Draw()
 	Draw::Draw(51, &src, &dst, c, 0.0f);
 	//------------------------------------
 
-
-
-
-
-
-
-	//主人公のHP表示
-	//wchar_t strHP[32];
-	//swprintf_s(strHP, L"HP : %f", m_hp);
-	//Font::StrDraw(strHP, 10, 5, 28, c);// X  Y 大きさ 
-
-	
 }
-
-////表示位置の設定
-//dst.m_top = 0.0f + m_y;
-//dst.m_left = (64.0f * m_posture) + m_x;
-//dst.m_right = (64.0f - 64.0f * m_posture) + m_x;
-//dst.m_bottom = 32.0f + 50.0f + m_y;

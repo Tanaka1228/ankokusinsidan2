@@ -19,6 +19,7 @@ using namespace GameL;
 //コンストラクタ
 CSceneChinaTownBoss::CSceneChinaTownBoss()
 {
+
 }
 
 //デストラクタ
@@ -43,11 +44,6 @@ void CSceneChinaTownBoss::InitScene()
 	//外部グラフィックファイルを読み込み3番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"弾丸＿右.png", 3, TEX_SIZE_512);//弾丸グラフィック
 
-	//外部グラフィックファイルを読み込み16番に登録(512×512ピクセル)あまり関係ないらしい
-	Draw::LoadImage(L"チャイナタウンのボス戦フィールド.png",16 , TEX_SIZE_512);
-
-	//外部グラフィックファイルを読み込み17番に登録(512×512ピクセル)あまり関係ないらしい
-	Draw::LoadImage(L"チャイナタウンボス戦フィールドの素材.png", 17, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"武器商売ロボット.png", 6, TEX_SIZE_512);
@@ -58,6 +54,15 @@ void CSceneChinaTownBoss::InitScene()
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 8, TEX_SIZE_512);
 
+
+	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み16番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"チャイナタウンのボス戦フィールド.png",16 , TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み17番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"チャイナタウンボス戦フィールドの素材.png", 17, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"研究室のマップ.png", 15, TEX_SIZE_512);
@@ -91,7 +96,7 @@ void CSceneChinaTownBoss::InitScene()
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 5);
+	Objs::InsertObj(objg, OBJ_GUN, 8);
 
 	//チャイナタウンオブジェクト作成
 	CObjChinaMob* objm = new CObjChinaMob(); //チャイナタウンモブオブジェクト作成
@@ -112,6 +117,13 @@ void CSceneChinaTownBoss::Scene()
 	CObjChinaTownBoss* chinaboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 
 	m_time++;
+	//if (m_time == 5)
+	//{
+	//	//Itemオブジェクト作成
+	//	CObjItem* objitem = new CObjItem(3000.0f + chinaboss->GetScroll(), 100.0f + chinaboss->GetScroll2());//アイテム
+	//	Objs::InsertObj(objitem, OBJ_ITEM, 5);
+	//}
+
 	if (m_time == 50) {
 		//誘導敵機オブジェクト作成
 		CObjChinaTownBossBoss* objc = new CObjChinaTownBossBoss(2590.0f + chinaboss->GetScroll(), 1500.0f + chinaboss->GetScroll2()); //誘導敵機オブジェクト作成
@@ -122,8 +134,9 @@ void CSceneChinaTownBoss::Scene()
 		Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
 
 		//誘導敵機オブジェクト作成
-		CObjChinaAtkEnemy2* obja2 = new CObjChinaAtkEnemy2(2000.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
+		CObjChinaAtkEnemy2* obja2 = new CObjChinaAtkEnemy2(3000.0f + chinaboss->GetScroll(), 2000.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
 		Objs::InsertObj(obja2, OBJ_CHINA_ATK_ENEMY2, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
+
 	}
 
 

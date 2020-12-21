@@ -261,6 +261,7 @@
     <ClCompile Include="ObjInstitute9.cpp" />
     <ClCompile Include="ObjInstituteBoss.cpp" />
     <ClCompile Include="ObjInstMob.cpp" />
+    <ClCompile Include="ObjItem.cpp" />
     <ClCompile Include="ObjMain.cpp" />
     <ClCompile Include="ObjMap.cpp" />
     <ClCompile Include="ObjMenu.cpp" />
@@ -469,6 +470,7 @@
     <ClInclude Include="ObjInstitute9.h" />
     <ClInclude Include="ObjInstituteBoss.h" />
     <ClInclude Include="ObjInstMob.h" />
+    <ClInclude Include="ObjItem.h" />
     <ClInclude Include="ObjMain.h" />
     <ClInclude Include="ObjMap.h" />
     <ClInclude Include="ObjMenu.h" />

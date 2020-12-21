@@ -112,6 +112,9 @@
     <Filter Include="ソース ファイル\ステージマップ\病院\部屋\多い部屋">
       <UniqueIdentifier>{993a1360-5ec0-43b5-bdc3-cf1b1bf0d458}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\アイテム">
+      <UniqueIdentifier>{aea0aa9c-93c1-470b-b962-a9c415a91e1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -648,6 +651,9 @@
     <ClCompile Include="CObjChinaAtkEnemy2.cpp">
       <Filter>ソース ファイル\キャラクター\敵</Filter>
     </ClCompile>
+    <ClCompile Include="ObjItem.cpp">
+      <Filter>ソース ファイル\アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -1183,6 +1189,9 @@
     </ClInclude>
     <ClInclude Include="CObjChinaAtkEnemy2.h">
       <Filter>ソース ファイル\キャラクター\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjItem.h">
+      <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

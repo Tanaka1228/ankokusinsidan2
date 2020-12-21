@@ -20,6 +20,7 @@ extern int ChinaTown_Hero_x;
 //コンストラクタ
 CSceneChinaTown::CSceneChinaTown()
 {
+	
 }
 
 //デストラクタ
@@ -34,6 +35,9 @@ void CSceneChinaTown::InitScene()
 {
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
+
+	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"Enemy1.png", 1, TEX_SIZE_512);//敵グラフィック
 
 	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"ハンドガン.png", 2, TEX_SIZE_512);//ハンドガングラフィック
@@ -58,6 +62,9 @@ void CSceneChinaTown::InitScene()
 
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 7, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"マップa.png", 15, TEX_SIZE_512);
@@ -96,10 +103,23 @@ void CSceneChinaTown::InitScene()
 
 	CObjMap* objma = new CObjMap();//マップ図
 	Objs::InsertObj(objma, OBJ_MAP, 7);
+
+	//タイム初期化
+	//m_time = 0;
 }
 
 
 //ゲームステージ実行中メソッド
 void CSceneChinaTown::Scene()
 {
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
+
+	//m_time++;
+
+	//if (m_time == 5)
+	//{
+	//	//Itemオブジェクト作成
+	//	CObjItem* objitem = new CObjItem(500.0f + chinatown->GetScroll(), 100.0f + chinatown->GetScroll2());//アイテム
+	//	Objs::InsertObj(objitem, OBJ_ITEM, 3);
+	//}
 }

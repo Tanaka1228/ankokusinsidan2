@@ -17,14 +17,11 @@
 //使用するネームスペース
 using namespace GameL;
 
-extern bool g_sp_stop;
-
 //コンストラクタ
 CObjHosMob::CObjHosMob()
 {
 	//Heroineのヘッダーを見たらわかる
 	m_sp = false;
-	m_sp2 = false;
 	key_flag = 1;
 	sp_flag = false;
 	m_key_control = true;
@@ -177,34 +174,34 @@ void CObjHosMob::Action()
 
 					if (key_flag == 1)
 					{
-						m_sp2 = 1;
+						m_sp = 1;
 						sp_flag = true;
 					}
 
 					if (key_flag == 2)
 					{
-						m_sp2 = 2;
+						m_sp= 2;
 						sp_flag = true;
 					}
 					if ((key_flag == 3))
 					{
 
-						m_sp2 = 3;
+						m_sp = 3;
 						sp_flag = true;
 					}
 					if ((key_flag == 4))
 					{
-						m_sp2 = 4;
+						m_sp= 4;
 						sp_flag = true;
 					}
 					if ((key_flag == 5))
 					{
-						m_sp2 = 5;
+						m_sp = 5;
 						sp_flag = true;
 					}
 					if ((key_flag == 6))
 					{
-						m_sp2 = 6;
+						m_sp = 6;
 						sp_flag = true;
 					}
 					m_key_control = false;
@@ -448,6 +445,11 @@ void CObjHosMob::Draw()
 
 	if (hospital != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -462,7 +464,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -480,7 +481,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -498,19 +498,22 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 530, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 3)
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
 	if (hospital != nullptr && mob_flag == 2)
 	{
+		if (m_sp == 0 && mob_flag ==2)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -525,7 +528,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -543,7 +545,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -561,21 +562,24 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 40.0f, 500, 22, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 4)
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 		}
 	}
 
 	if (hospital != nullptr && mob_flag == 3)
 	{
-		if (m_sp2 == 1)//エンターキーを一回押したとき
+		if (m_sp == 0 && mob_flag == 3)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
+		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 			ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
@@ -588,11 +592,10 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 480, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp2 == 1)//エンターキーを一回押したとき
+		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 			ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
@@ -605,11 +608,10 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp2 == 2)//エンターキーを一回押したとき
+		if (m_sp == 2)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 			ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
@@ -622,11 +624,10 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 480, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp2 == 2)//エンターキーを一回押したとき
+		if (m_sp == 2)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 			ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
@@ -639,12 +640,11 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 510, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
 
-		if (m_sp2 == 3)//エンターキーを一回押したとき
+		if (m_sp == 3)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 			ifstream fin("病院1階.txt", ios::in);//テキストデータをを読み込み
@@ -657,14 +657,12 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 200.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp2 == 4)//エンターキーを一回押したとき
+		if (m_sp == 4)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 
 		}
@@ -693,6 +691,11 @@ void CObjHosMob::Draw()
 	//ハリス
 	if (rooftop != nullptr && mob_flag == 1)
 	{
+		if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -707,7 +710,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
@@ -725,7 +727,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
@@ -743,7 +744,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
@@ -761,7 +761,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 1;
 			fin.close();//ファイルを閉じる
 		}
@@ -779,7 +778,6 @@ void CObjHosMob::Draw()
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
 			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
-			g_sp_stop = true;
 			key_flag = 5;
 			fin.close();//ファイルを閉じる
 		}
@@ -787,7 +785,6 @@ void CObjHosMob::Draw()
 		{
 			
 			sp_flag = false;
-			g_sp_stop = false;
 			key_flag = 1;
 			
 		}

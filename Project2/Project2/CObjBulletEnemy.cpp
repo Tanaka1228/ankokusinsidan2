@@ -13,7 +13,8 @@ CObjBulletEnemy::CObjBulletEnemy(float x, float y)//コンストラクタで受け取った情
 {
 	m_x = x;
 	m_y = y;
-	
+	m_vx = 0;
+	m_vy = 0;
 }
 
 //イニシャライズ
@@ -39,8 +40,9 @@ void CObjBulletEnemy::Init()
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
 	}
-	}
-
+}
+	//当たり判定用HitBoxを作成
+	Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
 }
 
 //アクション

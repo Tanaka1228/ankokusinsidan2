@@ -50,11 +50,10 @@ public:
 
 	int Get_AniFlame() { return m_ani_frame; }
 
-	int Get_M_Bullet() { return m_bullet; }//弾丸数　リボルバー
-	int Get_M_Bullet_Held() { return m_bullet_held; }//弾丸所持数
+	static int Get_M_Bullet() { return m_bullet; }//弾丸数　リボルバー
 
-	//int Get_M_Ass_Bullet() { return ass_bullet; }//弾丸数　アサルト
-	//int Get_M_Ass_Bullet_Held() { return ass_bullet_held; }//弾丸所持数
+	static int Get_M_Bullet_Held() { return m_bullet_held; }//弾丸所持数
+	void Set_M_Bullet_Held(int b) { m_bullet_held = b; };
 
 	int GetBT() { return m_block_type; }//主人公が踏んでいるブロックの種類
 	void SetBT(int t) { m_block_type = t; }
@@ -107,8 +106,8 @@ private:
 
 	//int ass_bullet;//アサルト弾丸の弾数
 	//int ass_bullet_held;//アサルト弾丸の所持数
-	int m_bullet;//弾丸の弾数 リボルバー
-	int m_bullet_held;//弾丸の所持数　リボルバー
+	static int m_bullet;//弾丸の弾数 リボルバー
+	static int m_bullet_held;//弾丸の所持数　リボルバー
 
 	//---------------------------------------------------
 	//blockとの衝突状態確認用

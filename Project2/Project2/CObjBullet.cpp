@@ -38,7 +38,7 @@ void CObjBullet::Init()
 	m_ani = 0;
 	m_ani_time = 0;
 	m_del = false;
-	
+	bx = 0;
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 25, 22, ELEMENT_PLAYER, OBJ_BULLET, 1);
@@ -48,7 +48,7 @@ void CObjBullet::Init()
 void CObjBullet::Action()
 {
 	CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
-	float bx = obj->GetB();
+	bx = obj->GetB();
 
 	if (m_del == true)
 	{
@@ -85,30 +85,33 @@ void CObjBullet::Action()
 	}
 
 
-
+	//右
 	if (bx == 2)
 	{
-		m_vx += 6.0f;
+		m_vx += 7.0f;
 		m_x += m_vx;
 		m_Xpos = 0.0f;
 	}
-	else if (bx == 3)
+	//左
+	if (bx == 3)
 	{
-		m_vx -= 6.0f;
+		m_vx -= 7.0f;
 		m_x   += m_vx;
 		m_Xpos = 1.0f;
 	}
-	else if (bx == 1)
+	//上
+	if (bx == 1)
 	{
-		m_vy -= 6.0f;
+		m_vy -= 7.0f;
+		m_y += m_vy;
+		m_Ypos =1.0f;
+	}
+	//下
+	if (bx == 0)
+	{
+		m_vy += 7.0f;
 		m_y += m_vy;
 		m_Ypos = 0.0f;
-	}
-	else if (bx == 0)
-	{
-		m_vy += 6.0f;
-		m_y += m_vy;
-		m_Ypos = 1.0f;
 	}
 
 	//弾丸のHitBox更新用ポインター取得
@@ -158,31 +161,40 @@ void CObjBullet::Draw()
 
 	CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
-	//表示位置の設定
-	dst.m_top = (32.0f - 32.0f * m_Ypos) + m_y;//縦の位置変更
-	dst.m_left = (32.0f * m_Xpos) + m_x;
-	dst.m_right = (32.0f - 32.0f * m_Xpos) + m_x;
-	dst.m_bottom = (32.0f * m_Ypos) + m_y;
-		
-
-		if (m_del == true)
-		{
-			//着弾アニメーション描画
-			Draw::Draw(14, &m_eff, &dst, c, 0.0f);
-		}
-		else
-		{
-		 
-
+	if (bx == 2 ||bx == 3) 
+	{
 			//切り取り位置の設定　
 			src.m_top = 0.0f;   //y
 			src.m_left = 0.0f;  //x
 			src.m_right = 32.0f; //x 
 			src.m_bottom = 32.0f; //y
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
-		}
+			//表示位置の設定
+			dst.m_top = (32.0f - 32.0f) + m_y;//縦の位置変更
+			dst.m_left = (32.0f * m_Xpos) + m_x;
+			dst.m_right = (32.0f - 32.0f * m_Xpos) + m_x;
+			dst.m_bottom = 32.0f + m_y;
 
+			Draw::Draw(3, &src, &dst, c, 0.0f);
 		
-	
+	}
+	if (bx == 0 || bx == 1)
+	{
+		
+			//切り取り位置の設定　
+			src.m_top = 0.0f;   //y
+			src.m_left = 32.0f;  //x
+			src.m_right = 64.0f; //x 
+			src.m_bottom =32.0f; //y
+
+
+			//表示位置の設定
+			dst.m_top = (32.0f - 32.0f * m_Ypos) + m_y;//縦の位置変更
+			dst.m_left = 32.0f + m_x;
+			dst.m_right = (32.0f - 32.0f) + m_x;
+			dst.m_bottom = (32.0f * m_Ypos) + m_y;
+
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		
+	}
 }

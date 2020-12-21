@@ -14,8 +14,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-bool g_sp_stop;
-
 //コンストラクタ
 CObjHeroine::CObjHeroine()
 {
@@ -24,7 +22,6 @@ CObjHeroine::CObjHeroine()
 	key_flag = 1;
 	sp_flag = false;
 	m_key_control = true;
-	g_sp_stop = false;
 
 	//　選択　音楽情報の読み込み
 	Audio::LoadAudio(2, L"会話.wav", EFFECT);//単発
@@ -75,9 +72,6 @@ void CObjHeroine::Action()
 						sp_flag = true;
 					}
 
-
-
-
 					if ((key_flag == 5))
 					{
 						m_sp = 5;
@@ -127,6 +121,12 @@ void CObjHeroine::Draw()
 	//二行テキストを出すときは、2行目のY軸を30上げるといい感じになる
 	
 	if (block != nullptr) {
+
+		if (m_sp == 0)//キャラクターが移動したらここにクル
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -143,7 +143,6 @@ void CObjHeroine::Draw()
 
 
 			key_flag = 2;
-			g_sp_stop = true;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 1)
@@ -162,7 +161,6 @@ void CObjHeroine::Draw()
 
 
 			key_flag = 2;
-			g_sp_stop = true;
 			fin.close();
 		}
 
@@ -180,7 +178,6 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 40.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
-			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 2)
@@ -197,7 +194,6 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 40.0f, 510, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
-			g_sp_stop = true;
 			fin.close();
 		}
 
@@ -214,7 +210,6 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 4;
-			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 4)
@@ -230,7 +225,6 @@ void CObjHeroine::Draw()
 			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
 
 			key_flag = 5;
-			g_sp_stop = true;
 			fin.close();
 		}
 		if (m_sp == 5)
@@ -238,8 +232,6 @@ void CObjHeroine::Draw()
 			sp_flag == false;
 			//Font::StrDraw(L"", 100, 500, 30, c);
 			key_flag = 1;
-
-			g_sp_stop = false;
 		}
 	}
 

@@ -116,7 +116,7 @@ void CObjGun::Draw()
 		Font::StrDraw(guntype0, 10, 560, 22, c);// X  Y ‘å‚«‚³ 
 
 		static wchar_t strb0[64];
-		swprintf_s(strb0, L"’eŠÛŠŽ” : %d”­", obj->Get_M_Bullet_Held()+objitem->Get_M_Bullet_Item());
+		swprintf_s(strb0, L"’eŠÛŠŽ” : %d”­", obj->Get_M_Bullet_Held());
 		Font::StrDraw(strb0, 300.0f, 560, 22, c);// X  Y  ‘å‚«‚³ 
 
 	}

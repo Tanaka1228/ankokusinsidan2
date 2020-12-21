@@ -104,8 +104,6 @@ private:
 
 	//---------------------------------------------------
 
-	//int ass_bullet;//アサルト弾丸の弾数
-	//int ass_bullet_held;//アサルト弾丸の所持数
 	static int m_bullet;//弾丸の弾数 リボルバー
 	static int m_bullet_held;//弾丸の所持数　リボルバー
 
@@ -118,4 +116,5 @@ private:
 
 	//踏んでいるblockの種類を確認用
 	int m_block_type;
+
 };

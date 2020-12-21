@@ -150,9 +150,12 @@ void CObjHero::Action()
 
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 
+	CObjItem* item = (CObjItem*)Objs::GetObj(OBJ_ITEM);//アイテム
+
 	//移動ベクトルの破棄
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
 	if (!block) {
 		if (Input::GetVKey('A') == true)
 		{
@@ -177,6 +180,13 @@ void CObjHero::Action()
 		else
 		{
 			gun_Kama = 1;
+		}
+	}
+
+	if (item != nullptr)
+	{
+		if (item->Get_M_Bullet_Item_Flag() == true) {
+			m_bullet_held += item->Get_M_Bullet_Item();
 		}
 	}
 

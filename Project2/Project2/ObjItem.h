@@ -17,6 +17,9 @@ public:
 	static int Get_M_Bullet_Item() { return m_bullet_item; }//弾丸所持数をわたす
 	void Set_M_Bullet_Item(int b) { m_bullet_item = b; };
 
+	int Get_M_Bullet_Item_Flag() { return item_flag; }//アイテムをとるとフラグ
+	void Set_M_Bullet_Item_Flag(bool b) { item_flag = b; };
+
 private:
 	float m_x; //Itemのx方向の位置
 	float m_y; //Itemのy方向の位置
@@ -24,4 +27,6 @@ private:
 	static int m_bullet_item;//弾丸の所持数　リボルバー
 
 	int m_id;
+
+	bool item_flag;
 };

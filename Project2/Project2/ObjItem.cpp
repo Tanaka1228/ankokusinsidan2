@@ -51,6 +51,8 @@ void CObjItem::Init()
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
 	}
+
+	item_flag = false;
 }
 
 int CObjItem::m_bullet_item = 0;//弾丸の所持数
@@ -62,8 +64,6 @@ void CObjItem::Action()
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);//拠点
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
-	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
-
 
 
 
@@ -77,6 +77,7 @@ void CObjItem::Action()
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
 			Set_M_Bullet_Item(12);
+			Set_M_Bullet_Item_Flag(true);
 			Audio::Start(9);
 
 			this->SetStatus(false);
@@ -94,6 +95,7 @@ void CObjItem::Action()
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
 			Set_M_Bullet_Item(12);
+			Set_M_Bullet_Item_Flag(true);
 			Audio::Start(9);
 
 			this->SetStatus(false);

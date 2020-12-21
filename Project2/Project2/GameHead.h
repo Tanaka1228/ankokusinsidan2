@@ -132,6 +132,9 @@ enum OBJ_NAME
 					OBJ_DRUG_CAMPANY_ROOM23,
 					OBJ_DRUG_CAMPANY_ROOM24,
 					//-------------------------------------
+					OBJ_ITEM,//アイテム
+
+
 };
 //------------------------------------------------
 
@@ -277,6 +280,7 @@ struct UserData
 #include"ObjHospitalRoom3.h"
 #include"ObjHospitalRoom4.h"
 
+#include"ObjItem.h"
 
 
 //------------------------------------------------

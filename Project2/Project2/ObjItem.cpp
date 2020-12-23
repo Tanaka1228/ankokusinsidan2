@@ -76,7 +76,7 @@ void CObjItem::Action()
 		//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
-			Set_M_Bullet_Item(12);
+			Set_M_Bullet_Item(8);
 			Set_M_Bullet_Item_Flag(true);
 			Audio::Start(9);
 
@@ -94,7 +94,7 @@ void CObjItem::Action()
 		//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
 		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
-			Set_M_Bullet_Item(12);
+			Set_M_Bullet_Item(8);
 			Set_M_Bullet_Item_Flag(true);
 			Audio::Start(9);
 

@@ -22,8 +22,6 @@ CObjGun::CObjGun()//コンストラクタで受け取った情報を変数に送る
 void CObjGun::Init()
 {
 	m_ani_frame = 2;
-	//m_bullet = 6;
-	//m_bullet_held = 30;
 	m_gun = 0;
 	m_f =true;
 }

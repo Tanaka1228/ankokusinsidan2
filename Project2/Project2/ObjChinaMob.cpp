@@ -684,7 +684,7 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 470, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
 
 			key_flag =3;
 			fin.close();//ファイルを閉じる
@@ -701,11 +701,12 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f,500, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 230.0f,530, 25, c);// X  Y  大きさ     
 
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
+
 		if (m_sp == 3 && mob_flag == 3)//エンターキーを2回押したとき
 		{
 			sp_flag == true;
@@ -718,7 +719,7 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f,470, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 50.0f,480, 27, c);// X  Y  大きさ     
 
 			key_flag = 4;
 			fin.close();//ファイルを閉じる
@@ -735,9 +736,26 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 128, wstr1, 128);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 235.0f, 510, 27, c);// X  Y  大きさ     
 
 			key_flag =4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[128];//ただの配列
+			wchar_t wstr1[128];
+			fin.seekg(248, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 128, wstr1, 128);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 235.0f, 540, 27, c);// X  Y  大きさ     
+
+			key_flag = 4;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp ==4 && mob_flag == 3)//エンターキーを3回押したとき

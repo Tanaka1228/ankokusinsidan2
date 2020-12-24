@@ -39,7 +39,7 @@ void CObjChinaTown::Init()
 		           {1,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,101,0,0,0,0,0,0,1},
 		           {1,86,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		           {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,86,0,0,1},
-		           {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		           {1,0,0,0,0,0,0,104,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		           {1,86,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,1},
 				   {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1},
 				   {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,1},
@@ -221,7 +221,7 @@ void CObjChinaTown::Action()
 							//右
 							hero->SetRight(true);//主人公の左の部分が衝突している
 							hero->SetX2(x + 40.0f + (mx_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
+							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34|| m_map[i][j] == 104)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -230,7 +230,7 @@ void CObjChinaTown::Action()
 							//上
 							hero->SetDown(true);//主人公の下の部分が衝突している
 							hero->SetY2(y - 40.0f + (my_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
+							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34 || m_map[i][j] == 104)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 
@@ -240,7 +240,7 @@ void CObjChinaTown::Action()
 							//左
 							hero->SetLeft(true);//主人公の右の部分が衝突している
 							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
-							if (m_map[i][j] == 99 || m_map[i][j] == 100 ||m_map[i][j]==83 || m_map[i][j] == 34)
+							if (m_map[i][j] == 99 || m_map[i][j] == 100 ||m_map[i][j]==83 || m_map[i][j] == 34 || m_map[i][j] == 104)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVX(0.0f);//-VX*反発係数
 						}
@@ -249,7 +249,7 @@ void CObjChinaTown::Action()
 							//下
 							hero->SetUp(true);//主人公の上の部分が衝突している
 							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置+主人公の幅
-							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34)
+							if (m_map[i][j] == 99 || m_map[i][j] == 100 || m_map[i][j] == 83 || m_map[i][j] == 34 || m_map[i][j] == 104)
 								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
 							hero->SetVY(0.0f);//-VX*反発係数
 						}
@@ -2038,6 +2038,24 @@ void CObjChinaTown::Draw()
 
 						//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
 						Draw::Draw(1, &src, &dst, c, 0.0f);
+					}
+					if (m_map[i][j] == 104)//操作説明ロボット表示
+					{
+						float c[4] = { 0.5f,1.0f,0.5f,1.0f };
+						//切り取り位置の設定
+						src.m_top = 0.0f;   //y
+						src.m_left = 0.0f;  //x
+						src.m_right = 32.0f; //x
+						src.m_bottom = 32.0f; //y
+
+						//表示位置の設定
+						dst.m_top = i * 32.0f + my_scroll;//y
+						dst.m_left = j * 32.0f + mx_scroll;//x
+						dst.m_right = j * 32.0f + 45.0f + mx_scroll;//x
+						dst.m_bottom = i * 32.0f + 45.0f + my_scroll; //y
+
+						//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
+						Draw::Draw(6, &src, &dst, c, 0.0f);
 					}
 		}
 	}

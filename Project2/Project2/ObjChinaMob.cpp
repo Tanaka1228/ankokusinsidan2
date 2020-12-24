@@ -206,6 +206,58 @@ void CObjChinaMob::Action()
 			}
 		}
 
+		//操作説明モブ
+		if (hero->GetBT() == 104)
+		{
+			mob_flag = 3;
+			if (Input::GetVKey(VK_RETURN) == true) {
+
+				if (m_key_control == true)
+				{
+					Audio::Start(2);
+					if (key_flag == 1)
+					{
+
+						m_sp = 1;
+						sp_flag = true;
+					}
+
+					if (key_flag == 2)
+					{
+						m_sp = 2;
+						sp_flag = true;
+					}
+					if ((key_flag == 3))
+					{
+
+						m_sp = 3;
+						sp_flag = true;
+					}
+					if ((key_flag == 4))
+					{
+						m_sp = 4;
+						sp_flag = true;
+					}
+					if ((key_flag == 5))
+					{
+						m_sp = 5;
+						sp_flag = true;
+					}
+					if ((key_flag == 6))
+					{
+						m_sp = 6;
+						sp_flag = true;
+					}
+					m_key_control = false;
+				}
+
+			}
+			else
+			{
+				m_key_control = true;
+			}
+		}
+
 	}
 
 	if (chinatown != nullptr)
@@ -572,6 +624,74 @@ void CObjChinaMob::Draw()
 			key_flag = 1;//会話の順番
 		}
 	}
+
+	//操作説明モブ
+	if (chinatown != nullptr && mob_flag == 3)
+	{
+		if (m_sp == 0 && mob_flag == 3)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
+		if (m_sp == 1 && mob_flag == 3)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[128];//ただの配列
+			wchar_t wstr1[128];
+			fin.seekg(0, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 128, wstr1, 128);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+
+			key_flag = 2;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 2 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(46, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+
+			key_flag = 3;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(46, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+
+			key_flag =4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==4 && mob_flag == 3)//エンターキーを3回押したとき
+		{
+			sp_flag = false;
+
+			key_flag = 1;
+		}
+	}
+
 	if (chinatown != nullptr && mob_flag == 4)
 	{
 		if (m_sp == 0 && mob_flag == 4)//エンターキーを3回押したとき
@@ -579,7 +699,7 @@ void CObjChinaMob::Draw()
 			sp_flag = false;//背景
 			key_flag = 1;//会話の順番
 		}
-		if (m_sp == 1&&mob_flag==4)//エンターキーを一回押したとき
+		if (m_sp == 1 && mob_flag == 4)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
 

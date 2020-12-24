@@ -260,7 +260,7 @@ void CObjChinaEvent::Draw()
 	    if (m_sp == 7)
 	    {
 	    	sp_flag = false;
-	    	Scene::SetScene(new CSceneBlock());//拠点にシーン切り替え
+	    	Scene::SetScene(new CSceneChinaTown());//チャイナタウンにシーン切り替え
 	    }
 	}
 	

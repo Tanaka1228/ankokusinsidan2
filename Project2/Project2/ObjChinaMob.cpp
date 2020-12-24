@@ -248,6 +248,11 @@ void CObjChinaMob::Action()
 						m_sp = 6;
 						sp_flag = true;
 					}
+					if ((key_flag ==7))
+					{
+						m_sp = 7;
+						sp_flag = true;
+					}
 					m_key_control = false;
 				}
 
@@ -645,9 +650,26 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 128, wstr1, 128);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 30.0f, 470, 30, c);// X  Y  大きさ     
 
 			key_flag = 2;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 1 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(36, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 60.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag =2;
 			fin.close();//ファイルを閉じる
 		}
 		if (m_sp == 2 && mob_flag == 3)//エンターキーを2回押したとき
@@ -657,12 +679,29 @@ void CObjChinaMob::Draw()
 			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
 			char str1[64];//ただの配列
 			wchar_t wstr1[64];
-			fin.seekg(46, ios::cur);//0バイト数進める
+			fin.seekg(70, ios::cur);//0バイト数進める
 			fin >> str1;//str1にテキストを入れる
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 50.0f, 470, 25, c);// X  Y  大きさ     
+
+			key_flag =3;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 2 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(132, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f,500, 25, c);// X  Y  大きさ     
 
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
@@ -674,7 +713,24 @@ void CObjChinaMob::Draw()
 			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
 			char str1[64];//ただの配列
 			wchar_t wstr1[64];
-			fin.seekg(46, ios::cur);//0バイト数進める
+			fin.seekg(170, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f,470, 25, c);// X  Y  大きさ     
+
+			key_flag = 4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==3 && mob_flag == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("操作説明モブ.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(212, ios::cur);//0バイト数進める
 			fin >> str1;//str1にテキストを入れる
 
 			sprintf_s(str1, "%s", str1);//出力

@@ -83,7 +83,7 @@ void CSceneChinaTown::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 5); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//チャイナタウンオブジェクト作成
 	CObjChinaTown* objc = new CObjChinaTown(); //チャイナタウンオブジェクト作成

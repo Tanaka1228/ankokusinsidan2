@@ -650,7 +650,7 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 128, wstr1, 128);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 30.0f, 470, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 30.0f, 500, 30, c);// X  Y  大きさ     
 
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
@@ -667,7 +667,7 @@ void CObjChinaMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 60.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 240.0f, 530, 30, c);// X  Y  大きさ     
 
 			key_flag =2;
 			fin.close();//ファイルを閉じる

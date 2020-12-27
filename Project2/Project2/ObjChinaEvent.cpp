@@ -109,15 +109,6 @@ void CObjChinaEvent::Action()
 
 			}
 		}
-		if (second == 13)//秒たつと
-		{
-			if ((key_flag ==7))
-			{
-				m_sp = 7;
-				sp_flag = false;
-
-			}
-		}
 
 
 	/*	if (Input::GetVKey(VK_RETURN) == true) {
@@ -253,11 +244,6 @@ void CObjChinaEvent::Draw()
 	    	fin.close();//ファイルを閉じる
 	    }
 	    if (m_sp == 6)
-	    {
-			sp_flag = false;
-	    	key_flag =7;
-	    }
-	    if (m_sp == 7)
 	    {
 	    	sp_flag = false;
 	    	Scene::SetScene(new CSceneChinaTown());//チャイナタウンにシーン切り替え

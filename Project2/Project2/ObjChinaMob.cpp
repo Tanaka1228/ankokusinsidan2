@@ -205,6 +205,72 @@ void CObjChinaMob::Action()
 				m_key_control = true;
 			}
 		}
+		//ピンクロボ
+		if (hero->GetBT() == 101)
+		{
+			mob_flag = 6;
+			if (Input::GetVKey(VK_RETURN) == true) {
+
+				if (m_key_control == true)
+				{
+					Audio::Start(2);
+					if (key_flag == 1)
+					{
+
+						m_sp = 1;
+						sp_flag = true;
+					}
+
+					if (key_flag == 2)
+					{
+						m_sp = 2;
+						sp_flag = true;
+					}
+					if ((key_flag == 3))
+					{
+
+						m_sp = 3;
+						sp_flag = true;
+					}
+					if ((key_flag == 4))
+					{
+						m_sp = 4;
+						sp_flag = true;
+					}
+					if ((key_flag == 5))
+					{
+						m_sp = 5;
+						sp_flag = true;
+					}
+					if ((key_flag == 6))
+					{
+						m_sp = 6;
+						sp_flag = true;
+					}
+					if ((key_flag == 7))
+					{
+						m_sp = 7;
+						sp_flag = true;
+					}
+					if ((key_flag == 8))
+					{
+						m_sp = 8;
+						sp_flag = true;
+					}
+					if ((key_flag ==9))
+					{
+						m_sp = 9;
+						sp_flag = true;
+					}
+					m_key_control = false;
+				}
+
+			}
+			else
+			{
+				m_key_control = true;
+			}
+		}
 
 		//操作説明モブ
 		if (hero->GetBT() == 104)
@@ -451,65 +517,6 @@ void CObjChinaMob::Action()
 		}
 	}
 
-	
-		//チャイナタウンのB
-		/*if (chinatown_b != nullptr)
-		{
-			if (hero->GetBT() == 97)
-			{
-				mob_flag == 1;
-				if (Input::GetVKey(VK_RETURN) == true) {
-					
-					if (m_key_control == true)
-					{
-						Audio::Start(2);
-						if (key_flag == 1)
-						{
-							m_sp = 1;
-							sp_flag = true;
-						}
-
-						if (key_flag == 2)
-						{
-							m_sp = 2;
-							sp_flag = true;
-						}
-						if ((key_flag == 3))
-						{
-
-							m_sp = 3;
-							sp_flag = true;
-						}
-						if ((key_flag == 4))
-						{
-							m_sp = 4;
-							sp_flag = true;
-						}
-						if ((key_flag == 5))
-						{
-							m_sp = 5;
-							sp_flag = true;
-						}
-						if ((key_flag == 6))
-						{
-							m_sp = 6;
-							sp_flag = true;
-						}
-						m_key_control = false;
-					}
-
-				}
-				else
-				{
-					m_key_control = true;
-				}
-			}
-		}*/
-	
-	
-	
-	
-	
 
 }
 
@@ -630,6 +637,199 @@ void CObjChinaMob::Draw()
 		}
 	}
 
+	if (chinatown != nullptr && mob_flag == 6)//ピンクロボ
+	{
+		if (m_sp == 0 && mob_flag == 6)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
+		if (m_sp == 1 && mob_flag == 6)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(0, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 2;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 2 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(36, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 3;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(58, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 4 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(102, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 5 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(140, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 490, 26, c);// X  Y  大きさ     
+
+
+			key_flag = 6;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==5 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(198, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 205.0f, 530,26, c);// X  Y  大きさ     
+
+
+			key_flag =6;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 6 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(242, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 7;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==7 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(262, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 48.0f, 490, 26, c);// X  Y  大きさ     
+
+
+			key_flag =8;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 7 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(322, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 205.0f, 530, 26, c);// X  Y  大きさ     
+
+
+			key_flag = 8;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==8 && mob_flag == 6)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("ピンクロボ会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(358, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 510, 30, c);// X  Y  大きさ     
+
+
+			key_flag = 9;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp ==9&& mob_flag == 6)//エンターキーを3回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
+	}
 	//操作説明モブ
 	if (chinatown != nullptr && mob_flag == 3)
 	{

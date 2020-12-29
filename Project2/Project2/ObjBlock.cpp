@@ -21,8 +21,8 @@ extern int ChinaTown_Hero_x;
 //イニシャライズ
 void CObjBlock::Init()
 {
-	mx_scroll = 0.0f;
-	my_scroll = 20.0f;
+	mx_scroll = 260.0f;
+	my_scroll = -110.0f;
 
 	ChinaTown_Hero_x = 0;
 	//マップ情報

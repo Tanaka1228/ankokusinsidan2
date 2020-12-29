@@ -48,12 +48,6 @@ void CSceneChinaTown::InitScene()
 	//外部グラフィックファイルを読み込み4番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"チャイナタウン.png", 4, TEX_SIZE_512);
 
-	//外部グラフィックファイルを読み込み16番に登録(512×512ピクセル)あまり関係ないらしい
-	Draw::LoadImage(L"チャイナタウンのボス戦フィールド.png", 16, TEX_SIZE_512);
-
-	//外部グラフィックファイルを読み込み17番に登録(512×512ピクセル)あまり関係ないらしい
-	Draw::LoadImage(L"チャイナタウンボス戦フィールドの素材.png", 17, TEX_SIZE_512);
-
 	//外部グラフィックファイルを読み込み3番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"製薬会社　床.png", 5, TEX_SIZE_512);//グラフィック
 
@@ -64,10 +58,19 @@ void CSceneChinaTown::InitScene()
 	Draw::LoadImage(L"会話.png", 7, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"BARロゴ.png", 8, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"マップa.png", 15, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み16番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"チャイナタウンのボス戦フィールド.png", 16, TEX_SIZE_512);
+
+	//外部グラフィックファイルを読み込み17番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"チャイナタウンボス戦フィールドの素材.png", 17, TEX_SIZE_512);
 
 	//　銃　音楽情報の読み込み
 	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発

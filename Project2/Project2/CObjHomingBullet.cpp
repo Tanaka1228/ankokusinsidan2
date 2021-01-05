@@ -43,144 +43,144 @@ void CObjHomingBullet::Action()
 	//チャイナタウンBOSSの情報
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 
-	if (rooftop != nullptr)
-	{
-		//病院の屋上の情報
-		CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);
+	//if (rooftop != nullptr)
+	//{
+	//	//病院の屋上の情報
+	//	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);
 
-		//主人公機が存在する場合、誘導角度の計算する
-		if (obj != nullptr)
-		{
-			float x = obj->GetX() - m_x;
-			float y = obj->GetY() - m_y;
-			float ar = GetAtan2Angle(x, -y);//主人公機と弾丸の角度
-
-
-			//弾丸の現在の向いている角度を取る
-			float br = GetAtan2Angle(m_vx, -m_vy);
+	//	//主人公機が存在する場合、誘導角度の計算する
+	//	if (obj != nullptr)
+	//	{
+	//		float x = obj->GetX() - m_x;
+	//		float y = obj->GetY() - m_y;
+	//		float ar = GetAtan2Angle(x, -y);//主人公機と弾丸の角度
 
 
-
-			//主人公機と敵機角度があまりにもかけ離れたら
-			if (ar - br > 20)
-			{
-				//移動方向を主人公機の方向にする
-				m_vx = cos(3.14 / 180 * ar);
-				m_vy = -sin(3.14 / 180 * ar);
-			}
-
-			float r = 3.14 / 180.0f;//角度１°
-
-			if (ar < br)
-			{
-				//移動方向に＋１°加える
-				m_vx = m_vx * cos(r) - m_vy * sin(r);
-				m_vy = m_vy * cos(r) + m_vx * sin(r);
-			}
-			else
-			{
-				//移動方向に-１°加える
-				m_vx = m_vx * cos(-r) - m_vy * sin(-r);
-				m_vy = m_vy * cos(-r) + m_vx * sin(-r);
-			}
-			UnitVec(&m_vx, &m_vy);
-			//移動
-			m_x += m_vx * 5.0f;
-			m_y += m_vy * 5.0f;
-
-
-			//敵機弾丸のHitBox更新用ポインター取得
-			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
-			hit->SetPos(m_x + rooftop->GetScroll(), m_y + rooftop->GetScroll2());
-
-
-			//敵機が完全に領域外に出たら敵機を破棄する
-			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2655.0f, 1057.0f);
-
-			if (check == false)
-			{
-				this->SetStatus(false);//自身に削除命令
-				Hits::DeleteHitBox(this);
-			}
-
-			//敵機オブジェクトと接触したら弾丸削除
-			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
-			{
-				this->SetStatus(false);   //自身に削除命令を出す。
-				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
-			}
-		}
-	}
-	if (chinatownboss != nullptr)
-	{
-		//病院の屋上の情報
-		CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
-
-		//主人公機が存在する場合、誘導角度の計算する
-		if (obj != nullptr)
-		{
-			float x = obj->GetX() - m_x;
-			float y = obj->GetY() - m_y;
-			float ar = GetAtan2Angle(x, -y);//主人公機と弾丸の角度
-
-
-			//弾丸の現在の向いている角度を取る
-			float br = GetAtan2Angle(m_vx, -m_vy);
+	//		//弾丸の現在の向いている角度を取る
+	//		float br = GetAtan2Angle(m_vx, -m_vy);
 
 
 
-			//主人公機と敵機角度があまりにもかけ離れたら
-			if (ar - br > 20)
-			{
-				//移動方向を主人公機の方向にする
-				m_vx = cos(3.14 / 180 * ar);
-				m_vy = -sin(3.14 / 180 * ar);
-			}
+	//		//主人公機と敵機角度があまりにもかけ離れたら
+	//		if (ar - br > 20)
+	//		{
+	//			//移動方向を主人公機の方向にする
+	//			m_vx = cos(3.14 / 180 * ar);
+	//			m_vy = -sin(3.14 / 180 * ar);
+	//		}
 
-			float r = 3.14 / 180.0f;//角度１°
+	//		float r = 3.14 / 180.0f;//角度１°
 
-			if (ar < br)
-			{
-				//移動方向に＋１°加える
-				m_vx = m_vx * cos(r) - m_vy * sin(r);
-				m_vy = m_vy * cos(r) + m_vx * sin(r);
-			}
-			else
-			{
-				//移動方向に-１°加える
-				m_vx = m_vx * cos(-r) - m_vy * sin(-r);
-				m_vy = m_vy * cos(-r) + m_vx * sin(-r);
-			}
-			UnitVec(&m_vx, &m_vy);
-			//移動
-			m_x += m_vx * 5.0f;
-			m_y += m_vy * 5.0f;
-
-
-			//敵機弾丸のHitBox更新用ポインター取得
-			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
-			hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
+	//		if (ar < br)
+	//		{
+	//			//移動方向に＋１°加える
+	//			m_vx = m_vx * cos(r) - m_vy * sin(r);
+	//			m_vy = m_vy * cos(r) + m_vx * sin(r);
+	//		}
+	//		else
+	//		{
+	//			//移動方向に-１°加える
+	//			m_vx = m_vx * cos(-r) - m_vy * sin(-r);
+	//			m_vy = m_vy * cos(-r) + m_vx * sin(-r);
+	//		}
+	//		UnitVec(&m_vx, &m_vy);
+	//		//移動
+	//		m_x += m_vx * 5.0f;
+	//		m_y += m_vy * 5.0f;
 
 
-			//敵機が完全に領域外に出たら敵機を破棄する
-			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2655.0f, 1057.0f);
-
-			if (check == false)
-			{
-				this->SetStatus(false);//自身に削除命令
-				Hits::DeleteHitBox(this);
-			}
-
-			//敵機オブジェクトと接触したら弾丸削除
-			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
-			{
-				this->SetStatus(false);   //自身に削除命令を出す。
-				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
-			}
-		}
+	//		//敵機弾丸のHitBox更新用ポインター取得
+	//		CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+	//		hit->SetPos(m_x + rooftop->GetScroll(), m_y + rooftop->GetScroll2());
 
 
-	}
+	//		//敵機が完全に領域外に出たら敵機を破棄する
+	//		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2655.0f, 1057.0f);
+
+	//		if (check == false)
+	//		{
+	//			this->SetStatus(false);//自身に削除命令
+	//			Hits::DeleteHitBox(this);
+	//		}
+
+	//		//敵機オブジェクトと接触したら弾丸削除
+	//		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	//		{
+	//			this->SetStatus(false);   //自身に削除命令を出す。
+	//			Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+	//		}
+	//	}
+	//}
+	//if (chinatownboss != nullptr)
+	//{
+	//	//病院の屋上の情報
+	//	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
+
+	//	//主人公機が存在する場合、誘導角度の計算する
+	//	if (obj != nullptr)
+	//	{
+	//		float x = obj->GetX() - m_x;
+	//		float y = obj->GetY() - m_y;
+	//		float ar = GetAtan2Angle(x, -y);//主人公機と弾丸の角度
+
+
+	//		//弾丸の現在の向いている角度を取る
+	//		float br = GetAtan2Angle(m_vx, -m_vy);
+
+
+
+	//		//主人公機と敵機角度があまりにもかけ離れたら
+	//		if (ar - br > 20)
+	//		{
+	//			//移動方向を主人公機の方向にする
+	//			m_vx = cos(3.14 / 180 * ar);
+	//			m_vy = -sin(3.14 / 180 * ar);
+	//		}
+
+	//		float r = 3.14 / 180.0f;//角度１°
+
+	//		if (ar < br)
+	//		{
+	//			//移動方向に＋１°加える
+	//			m_vx = m_vx * cos(r) - m_vy * sin(r);
+	//			m_vy = m_vy * cos(r) + m_vx * sin(r);
+	//		}
+	//		else
+	//		{
+	//			//移動方向に-１°加える
+	//			m_vx = m_vx * cos(-r) - m_vy * sin(-r);
+	//			m_vy = m_vy * cos(-r) + m_vx * sin(-r);
+	//		}
+	//		UnitVec(&m_vx, &m_vy);
+	//		//移動
+	//		m_x += m_vx * 5.0f;
+	//		m_y += m_vy * 5.0f;
+
+
+	//		//敵機弾丸のHitBox更新用ポインター取得
+	//		CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+	//		hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
+
+
+	//		//敵機が完全に領域外に出たら敵機を破棄する
+	//		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2655.0f, 1057.0f);
+
+	//		if (check == false)
+	//		{
+	//			this->SetStatus(false);//自身に削除命令
+	//			Hits::DeleteHitBox(this);
+	//		}
+
+	//		//敵機オブジェクトと接触したら弾丸削除
+	//		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	//		{
+	//			this->SetStatus(false);   //自身に削除命令を出す。
+	//			Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+	//		}
+	//	}
+
+
+	//}
 }
 
 

@@ -21,10 +21,12 @@ extern int ChinaTown_Hero_x;
 //イニシャライズ
 void CObjBlock::Init()
 {
-	mx_scroll = 260.0f;
-	my_scroll = -110.0f;
+	if (ChinaTown_Hero_x == 1) {
+		mx_scroll = 260.0f;
+		my_scroll = -110.0f;
+	}
 
-	ChinaTown_Hero_x = 0;
+	ChinaTown_Hero_x = 11;
 	//マップ情報
 	int block_data[25][25] =
 	{

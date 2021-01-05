@@ -22,10 +22,15 @@ void CObjChinaTown::Init()
 		mx_scroll = -200.0f;
 		my_scroll = -1600.0f;
 	}
+	if (ChinaTown_Hero_x == 11)
+	{
+		mx_scroll = -1040.0f;
+		my_scroll = -840.0f;
+	}
 	if (ChinaTown_Hero_x == 0)
 	{
 		mx_scroll = -200.0f;
-		my_scroll = +230.0f;
+		my_scroll = 100.0f;
 	}
 	
 	ChinaTown_Hero_x = 1;

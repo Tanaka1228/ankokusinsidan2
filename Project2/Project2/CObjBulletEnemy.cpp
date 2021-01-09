@@ -37,7 +37,14 @@ void CObjBulletEnemy::Init()
 			//当たり判定用HitBoxを作成
 			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
 		}
-	
+		if (m_id == 3)//チャイナタウンの雑魚
+		{
+			m_vx = -1.0f;
+			m_vy = 0.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+
 	
 }
 
@@ -45,6 +52,8 @@ void CObjBulletEnemy::Init()
 void CObjBulletEnemy::Action()
 {
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
+	//チャイナタウンの情報
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
 		if (m_id == 1)
 		{
 			//移動
@@ -98,7 +107,32 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
 			}
 		}
-	
+		if (m_id == 3)
+		{
+			//移動
+			m_x += m_vx * 5.0f;
+			m_y += m_vy * 5.0f;
+
+			//弾丸のHitBox更新用ポインター取得
+			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+			hit->SetPos(m_x + chinatown->GetScroll(), m_y + chinatown->GetScroll2());
+
+
+			//敵機が完全に領域外に出たら敵機を破棄する
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//自身に削除命令
+				Hits::DeleteHitBox(this);
+			}
+
+			//敵機オブジェクトと接触したら弾丸削除
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //自身に削除命令を出す。
+				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+			}
+		}
 }
 
 //ドロー
@@ -115,6 +149,8 @@ void CObjBulletEnemy::Draw()
 	src.m_right = 96.0f; //x 
 	src.m_bottom = 32.0f; //y
 
+	//チャイナタウンの情報
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
 	//チャイナタウンBOSSの情報
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 	CObjChinaAtkEnemy* chinaatkenemy = (CObjChinaAtkEnemy*)Objs::GetObj(OBJ_CHINA_ATK_ENEMY);
@@ -143,8 +179,15 @@ void CObjBulletEnemy::Draw()
 			Draw::Draw(3, &src, &dst, c, 0.0f);
 		}
 	}
-	
+	if (m_id == 3)
+	{
+		//表示位置の設定
+		dst.m_top = -10.0f + m_y + chinatown->GetScroll2();
+		dst.m_left = -5.0f + m_x + chinatown->GetScroll();
+		dst.m_right = 45.0f + m_x + chinatown->GetScroll();
+		dst.m_bottom = 32.0f + m_y + chinatown->GetScroll2();
 
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+	}
 
-	
 }

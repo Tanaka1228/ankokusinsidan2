@@ -134,7 +134,7 @@ void CSceneChinaTownBoss::Scene()
 	if (m_time == 51)
 	{
 		//誘導敵機オブジェクト作成
-		CObjChinaAtkEnemy* obja = new CObjChinaAtkEnemy(2950.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
+		CObjChinaAtkEnemy* obja = new CObjChinaAtkEnemy(2950.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2(),2); //敵機オブジェクト作成
 		Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
 	}
 	if (m_time == 52)

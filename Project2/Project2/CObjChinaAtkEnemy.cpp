@@ -29,8 +29,22 @@ void CObjChinaAtkEnemy::Init()
 	//　弾丸が敵に当たった　音楽情報の読み込み
 	Audio::LoadAudio(6, L"金属.wav", EFFECT);//単発
 
-	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+
+	if (m_id == 1)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
+	if (m_id == 2)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
+	if (m_id == 3)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
 }
 
 //アクション
@@ -116,41 +130,44 @@ void CObjChinaAtkEnemy::Action()
 			Audio::Start(5);
 		}
 	}
-	//チャイナタウン b の雑魚
-	if (m_id == 3) 
+	if (chinatownb != nullptr)
 	{
-		m_time++;//1加算
-
-		if (m_time > 100)//弾丸を発射する間隔
+		//チャイナタウン b の雑魚
+		if (m_id == 3)
 		{
-			m_time = 0;
+			m_time++;//1加算
 
-			//弾丸敵機オブジェクト
-			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 4);
-			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
-		}
+			if (m_time > 100)//弾丸を発射する間隔
+			{
+				m_time = 0;
+
+				//弾丸敵機オブジェクト
+				CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 4);
+				Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+			}
 
 
-		//敵機が完全に領域外に出たら敵機を破棄する
-		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
-		if (check == false)
-		{
-			this->SetStatus(false);//自身に削除命令
-			Hits::DeleteHitBox(this);
+			//敵機が完全に領域外に出たら敵機を破棄する
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//自身に削除命令
+				Hits::DeleteHitBox(this);
 
-			return;
-		}
+				return;
+			}
 
-		//HitBoxの内容を更新
-		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_x + chinatownb->GetScroll(), m_y + chinatownb->GetScroll2());
+			//HitBoxの内容を更新
+			CHitBox* hit = Hits::GetHitBox(this);
+			hit->SetPos(m_x + chinatownb->GetScroll(), m_y + chinatownb->GetScroll2());
 
-		//弾丸と接触してるかどうか調べる
-		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			Audio::Start(5);
+			//弾丸と接触してるかどうか調べる
+			if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+			{
+				this->SetStatus(false);
+				Hits::DeleteHitBox(this);
+				Audio::Start(5);
+			}
 		}
 	}
 }

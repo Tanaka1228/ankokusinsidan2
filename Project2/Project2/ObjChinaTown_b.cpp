@@ -247,20 +247,20 @@ void CObjChinaTown_b::Action()
 		}
 	}
 
-	//敵出現ライン
-	float xline = hx + (-mx_scroll) + 400.0f;
-	int ex = ((int)xline) / 32;
-
-
+	
 	for (int i = 0; i <65; i++)
 	{
-		if (m_map[i][ex] == 103)
+		for (int j = 0; j < 54; j++)
 		{
-			//誘導敵機オブジェクト作成
-			//CObjChinaAtkEnemy* obja = new CObjChinaAtkEnemy(ex * 32.0f, i * 32.0f, 3); //敵機オブジェクト作成
-			//Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
 
-			m_map[i][ex] = 0;
+			if (m_map[i][j] == 103)
+			{
+				//誘導敵機オブジェクト作成
+				//CObjChinaAtkEnemy* obja = new CObjChinaAtkEnemy(j * 32.0f, i * 32.0f, 3); //敵機オブジェクト作成
+				//Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
+
+				m_map[i][j] = 0;
+			}
 		}
 		
 	}

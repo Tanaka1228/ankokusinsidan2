@@ -228,24 +228,7 @@ void CObjChinaTown_d::Action()
 			}
 		}
 	}
-	//�G�o�����C��
-	//float Xline = hx + (-mx_scroll) - 1100;
-	//float Yline = hy + (my_scroll)-400;
 
-	//int ex = ((int)Xline) / 32;
-	//int ey = ((int)Yline) / 32;
-
-	//for (int i = 0; i < 65; i++)
-	//{
-	//	for (int j = 0; j < 54; j++)
-
-	//		//if (m_map[i][ex] == 81)
-	//		//	////�U���G�@�I�u�W�F�N�g�쐬
-	//		//	//CObjChinaTownBossBoss* obj_chinatown_boss_boss = new CObjChinaTownBossBoss(ex * 32, i * 32); //�U���G�@�I�u�W�F�N�g�쐬
-	//		//	//Objs::InsertObj(obj_chinatown_boss_boss, OBJ_CHINA_TOWN_BOSS_BOSS, 4); //�U���G�@�I�u�W�F�N�g��I�u�W�F�N�g�}�l�[�W���[�ɓo�^
-
-	//			m_map[i][ex] = 0;		
-	//}
 
 	if (Input::GetVKey('X') == true)
 	{

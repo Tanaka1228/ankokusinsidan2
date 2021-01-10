@@ -196,7 +196,7 @@ void CObjBulletEnemy::Draw()
 
 	if (chinatownboss != nullptr)
 	{
-		if (chinaatkenemy != nullptr)
+		if (m_id==1)
 		{
 			//表示位置の設定
 			dst.m_top = -10.0f + m_y + chinatownboss->GetScroll2();
@@ -206,7 +206,7 @@ void CObjBulletEnemy::Draw()
 
 			Draw::Draw(3, &src, &dst, c, 0.0f);
 		}
-		if (chinaatkenemy2 != nullptr)
+		if (m_id==2)
 		{
 			//表示位置の設定
 			dst.m_top = -10.0f + m_y + chinatownboss->GetScroll2();
@@ -217,24 +217,30 @@ void CObjBulletEnemy::Draw()
 			Draw::Draw(3, &src, &dst, c, 0.0f);
 		}
 	}
-	if (m_id == 3)
+	if (chinatown != nullptr)
 	{
-		//表示位置の設定
-		dst.m_top = -10.0f + m_y + chinatown->GetScroll2();
-		dst.m_left = -5.0f + m_x + chinatown->GetScroll();
-		dst.m_right = 45.0f + m_x + chinatown->GetScroll();
-		dst.m_bottom = 32.0f + m_y + chinatown->GetScroll2();
+		if (m_id == 3)
+		{
+			//表示位置の設定
+			dst.m_top = -10.0f + m_y + chinatown->GetScroll2();
+			dst.m_left = -5.0f + m_x + chinatown->GetScroll();
+			dst.m_right = 45.0f + m_x + chinatown->GetScroll();
+			dst.m_bottom = 32.0f + m_y + chinatown->GetScroll2();
 
-		Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
 	}
-	if (m_id == 4)
+	if (chinatownb != nullptr)
 	{
-		//表示位置の設定
-		dst.m_top = -10.0f + m_y + chinatownb->GetScroll2();
-		dst.m_left = -5.0f + m_x + chinatownb->GetScroll();
-		dst.m_right = 45.0f + m_x + chinatownb->GetScroll();
-		dst.m_bottom = 32.0f + m_y + chinatownb->GetScroll2();
+		if (m_id == 4)
+		{
+			//表示位置の設定
+			dst.m_top = -10.0f + m_y + chinatownb->GetScroll2();
+			dst.m_left = -5.0f + m_x + chinatownb->GetScroll();
+			dst.m_right = 45.0f + m_x + chinatownb->GetScroll();
+			dst.m_bottom = 32.0f + m_y + chinatownb->GetScroll2();
 
-		Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
 	}
 }

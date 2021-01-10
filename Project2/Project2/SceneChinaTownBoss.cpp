@@ -106,42 +106,11 @@ void CSceneChinaTownBoss::InitScene()
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
-	//タイム初期化
-	m_time = 0;
 }
 
 
 //ゲームステージ実行中メソッド
 void CSceneChinaTownBoss::Scene()
 {
-	CObjChinaTownBoss* chinaboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
-
-	m_time++;
-	//if (m_time == 5)
-	//{
-	//	//Itemオブジェクト作成
-	//	CObjItem* objitem = new CObjItem(3000.0f + chinaboss->GetScroll(), 100.0f + chinaboss->GetScroll2());//アイテム
-	//	Objs::InsertObj(objitem, OBJ_ITEM, 5);
-	//}
-
-	if (m_time == 50)
-	{
-		//誘導敵機オブジェクト作成
-		CObjChinaTownBossBoss* objc = new CObjChinaTownBossBoss(2370.0f + chinaboss->GetScroll(), 1300.0f + chinaboss->GetScroll2()); //誘導敵機オブジェクト作成
-		Objs::InsertObj(objc, OBJ_CHINA_TOWN_BOSS_BOSS, 5); //誘導敵機オブジェクトをオブジェクトマネージャーに登録
-
-	}
-	if (m_time == 51)
-	{
-		//誘導敵機オブジェクト作成
-		CObjChinaAtkEnemy* obja = new CObjChinaAtkEnemy(2950.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2(),2); //敵機オブジェクト作成
-		Objs::InsertObj(obja, OBJ_CHINA_ATK_ENEMY, 6); //敵機オブジェクトをオブジェクトマネージャーに登録
-	}
-	if (m_time == 52)
-	{
-		//誘導敵機オブジェクト作成
-		CObjChinaAtkEnemy2* obja2 = new CObjChinaAtkEnemy2(2250.0f + chinaboss->GetScroll(), 2100.0f + chinaboss->GetScroll2()); //敵機オブジェクト作成
-		Objs::InsertObj(obja2, OBJ_CHINA_ATK_ENEMY2, 7); //敵機オブジェクトをオブジェクトマネージャーに登録
-
-	}
+	
 }

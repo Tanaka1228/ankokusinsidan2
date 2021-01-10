@@ -285,7 +285,7 @@ void CObjChinaTown::Action()
 	int ex2 = ((int)xline2) / 32;
 
 
-	for (int i = 0; i < 54; i++)
+	for (int i = 0; i < 65; i++)
 	{
 		if (m_map[i][ex] ==103)
 		{

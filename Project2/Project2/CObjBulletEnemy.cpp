@@ -44,7 +44,13 @@ void CObjBulletEnemy::Init()
 			//当たり判定用HitBoxを作成
 			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
 		}
-
+		if (m_id == 4)//チャイナタウンbの雑魚
+		{
+			m_vx = -1.0f;
+			m_vy = 0.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
 	
 }
 

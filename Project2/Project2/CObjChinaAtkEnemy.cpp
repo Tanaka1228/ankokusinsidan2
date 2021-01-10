@@ -117,7 +117,8 @@ void CObjChinaAtkEnemy::Action()
 		}
 	}
 	//チャイナタウン b の雑魚
-	if (m_id == 3) {
+	if (m_id == 3) 
+	{
 		m_time++;//1加算
 
 		if (m_time > 100)//弾丸を発射する間隔
@@ -125,13 +126,13 @@ void CObjChinaAtkEnemy::Action()
 			m_time = 0;
 
 			//弾丸敵機オブジェクト
-			CObjBulletEnemy* obj_bullte_enemy = new CObjBulletEnemy(m_x, m_y, 4);
-			Objs::InsertObj(obj_bullte_enemy, OBJ_BULLET_ENEMY, 4);
+			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 4);
+			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
 		}
 
 
 		//敵機が完全に領域外に出たら敵機を破棄する
-		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3072.0f, 2752.0f);
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
 		if (check == false)
 		{
 			this->SetStatus(false);//自身に削除命令
@@ -161,6 +162,8 @@ void CObjChinaAtkEnemy::Draw()
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 	//チャイナタウンの情報
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
+	//チャイナタウンbの情報
+	CObjChinaTown_b* chinatownb = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);
 
 	//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 0.5f,2.5f,1.5f,1.0f };
@@ -188,6 +191,14 @@ void CObjChinaAtkEnemy::Draw()
 		dst.m_left = 32.0f + 32.0f + m_x + chinatownboss->GetScroll();
 		dst.m_right = 0.0f + m_x + chinatownboss->GetScroll();
 		dst.m_bottom = 32.0f + 32.0f + m_y + chinatownboss->GetScroll2();
+	}
+	if (m_id == 3)
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_y + chinatownb->GetScroll2();
+		dst.m_left = 32.0f + 32.0f + m_x + chinatownb->GetScroll();
+		dst.m_right = 0.0f + m_x + chinatownb->GetScroll();
+		dst.m_bottom = 32.0f + 32.0f + m_y + chinatownb->GetScroll2();
 	}
 	//0番目に登録したグラフィックをstc・dst・cの情報を元に描画
 	Draw::Draw(1, &src, &dst, c, 0.0f);

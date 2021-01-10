@@ -77,26 +77,26 @@ void CSceneRooftop::InitScene()
 	Audio::Start(0);//音楽スタート
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 800); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 4); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//屋上オブジェクト作成
 	CObjRooftop* objb = new CObjRooftop();
-	Objs::InsertObj(objb, OBJ_ROOF_TOP, 3);
+	Objs::InsertObj(objb, OBJ_ROOF_TOP, 1);
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 5);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//モブオブジェクト追加
 	CObjHosMob* objhosmob = new CObjHosMob();//モブ
-	Objs::InsertObj(objhosmob, OBJ_HOS_MOB, 5);
+	Objs::InsertObj(objhosmob, OBJ_HOS_MOB, 6);
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
-	Objs::InsertObj(objsp, OBJ_SP_BACK, 4); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
 	CObjMap* objm = new CObjMap();//マップ図
-	Objs::InsertObj(objm, OBJ_MAP, 10);
+	Objs::InsertObj(objm, OBJ_MAP, 7);
 }
 
 

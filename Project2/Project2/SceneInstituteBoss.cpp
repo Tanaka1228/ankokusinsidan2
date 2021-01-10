@@ -67,15 +67,15 @@ void CSceneInstituteBoss::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 4); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 5);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//研究所のボス戦フィールドオブジェクト作成
 	CObjInstituteBoss* objb = new CObjInstituteBoss();
-	Objs::InsertObj(objb, OBJ_INSTITUTE_BOSS, 3);
+	Objs::InsertObj(objb, OBJ_INSTITUTE_BOSS, 1);
 
 	//モブオブジェクト追加
 	CObjInstMob* objinstmob = new CObjInstMob();//モブ
@@ -86,7 +86,7 @@ void CSceneInstituteBoss::InitScene()
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
 	CObjMap* objm = new CObjMap();//マップ図
-	Objs::InsertObj(objm, OBJ_MAP, 10);
+	Objs::InsertObj(objm, OBJ_MAP, 7);
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"game_maoudamashii_1_battle23.wav", SOUND_TYPE::BACK_MUSIC);//Loop

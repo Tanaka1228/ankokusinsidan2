@@ -61,7 +61,7 @@ void CSceneInstitute13A::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 5); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 		//マップ図
 	CObjMap* objm = new CObjMap();//マップ図
@@ -69,11 +69,11 @@ void CSceneInstitute13A::InitScene()
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 6);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//研究所オブジェクト作成
 	CObjInstitute13A* obji = new CObjInstitute13A(); //研究所オブジェクト作成
-	Objs::InsertObj(obji, OBJ_INSTITUTE13A, 4); //作った研究所オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obji, OBJ_INSTITUTE13A, 1); //作った研究所オブジェクトをオブジェクトマネージャーに登録
 
 	//モブオブジェクト追加
 	CObjInstMob* objinstmob = new CObjInstMob();//モブ

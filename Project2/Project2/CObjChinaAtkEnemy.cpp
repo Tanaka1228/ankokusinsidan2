@@ -40,11 +40,15 @@ void CObjChinaAtkEnemy::Action()
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“‚Ìî•ñ
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
+	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“b‚Ìî•ñ
+	CObjChinaTown_b* chinatownb = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);
 
+
+	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“ŽG‹›
 	if (m_id == 1) {
 		m_time++;//1‰ÁŽZ
 
-		if (m_time > 100)//’eŠÛ‚ð”­ŽË‚·‚éŠÔŠu
+		if (m_time > 60)//’eŠÛ‚ð”­ŽË‚·‚éŠÔŠu
 		{
 			m_time = 0;
 
@@ -55,7 +59,7 @@ void CObjChinaAtkEnemy::Action()
 
 
 		//“G‹@‚ªŠ®‘S‚É—ÌˆæŠO‚Éo‚½‚ç“G‹@‚ð”jŠü‚·‚é
-		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3072.0f, 2752.0f);
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 4000.0f, 3000.0f);
 		if (check == false)
 		{
 			this->SetStatus(false);//Ž©g‚Éíœ–½—ß
@@ -103,6 +107,42 @@ void CObjChinaAtkEnemy::Action()
 		//HitBox‚Ì“à—e‚ðXV
 		CHitBox* hit = Hits::GetHitBox(this);
 		hit->SetPos(m_x + chinatownboss->GetScroll(), m_y + chinatownboss->GetScroll2());
+
+		//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Audio::Start(5);
+		}
+	}
+	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“ b ‚ÌŽG‹›
+	if (m_id == 3) {
+		m_time++;//1‰ÁŽZ
+
+		if (m_time > 100)//’eŠÛ‚ð”­ŽË‚·‚éŠÔŠu
+		{
+			m_time = 0;
+
+			//’eŠÛ“G‹@ƒIƒuƒWƒFƒNƒg
+			CObjBulletEnemy* obj_bullte_enemy = new CObjBulletEnemy(m_x, m_y, 4);
+			Objs::InsertObj(obj_bullte_enemy, OBJ_BULLET_ENEMY, 4);
+		}
+
+
+		//“G‹@‚ªŠ®‘S‚É—ÌˆæŠO‚Éo‚½‚ç“G‹@‚ð”jŠü‚·‚é
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3072.0f, 2752.0f);
+		if (check == false)
+		{
+			this->SetStatus(false);//Ž©g‚Éíœ–½—ß
+			Hits::DeleteHitBox(this);
+
+			return;
+		}
+
+		//HitBox‚Ì“à—e‚ðXV
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + chinatownb->GetScroll(), m_y + chinatownb->GetScroll2());
 
 		//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚©‚Ç‚¤‚©’²‚×‚é
 		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

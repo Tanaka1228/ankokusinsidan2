@@ -68,19 +68,19 @@ void CSceneInstitute::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 4); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 		//マップ図
 	CObjMap* objm = new CObjMap();//マップ図
-	Objs::InsertObj(objm, OBJ_MAP, 5);
+	Objs::InsertObj(objm, OBJ_MAP, 7);
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 5);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//研究所オブジェクト作成
 	CObjInstitute* obji = new CObjInstitute(); //研究所オブジェクト作成
-	Objs::InsertObj(obji, OBJ_INSTITUTE, 3); //作った研究所オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obji, OBJ_INSTITUTE, 1); //作った研究所オブジェクトをオブジェクトマネージャーに登録
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成

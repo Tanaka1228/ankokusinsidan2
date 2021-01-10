@@ -84,21 +84,21 @@ void CSceneChinaTownBoss::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 7); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//マップ図
 	CObjMap* objma = new CObjMap();//マップ図
-	Objs::InsertObj(objma, OBJ_MAP, 5);
+	Objs::InsertObj(objma, OBJ_MAP, 7);
 
 	//チャイナタウンのボス戦フィールドオブジェクト作成
 	CObjChinaTownBoss* objb = new CObjChinaTownBoss();
-	Objs::InsertObj(objb, OBJ_CHINA_TOWN_BOSS, 3);
+	Objs::InsertObj(objb, OBJ_CHINA_TOWN_BOSS, 1);
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 8);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
-	//チャイナタウンオブジェクト作成
+	//チャイナタウンモブオブジェクト作成
 	CObjChinaMob* objm = new CObjChinaMob(); //チャイナタウンモブオブジェクト作成
 	Objs::InsertObj(objm, OBJ_CHINA_MOB, 6); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
 

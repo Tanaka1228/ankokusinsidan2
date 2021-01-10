@@ -82,19 +82,19 @@ void CSceneHospital::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 2); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 1); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//マップ図
 	CObjMap* objm = new CObjMap();//マップ図
-	Objs::InsertObj(objm, OBJ_MAP, 4);
+	Objs::InsertObj(objm, OBJ_MAP, 7);
 
 	//モブオブジェクト追加
 	CObjHosMob* objhosmob = new CObjHosMob();//モブ
-	Objs::InsertObj(objhosmob, OBJ_HOS_MOB, 4);
+	Objs::InsertObj(objhosmob, OBJ_HOS_MOB, 6);
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 3);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//病院オブジェクト作成
 	CObjHospital* objh = new CObjHospital(); //病院オブジェクト作成
@@ -102,7 +102,7 @@ void CSceneHospital::InitScene()
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
-	Objs::InsertObj(objsp, OBJ_SP_BACK, 3); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 }
 
 

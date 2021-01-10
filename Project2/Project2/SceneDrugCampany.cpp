@@ -72,7 +72,7 @@ void CSceneDrugCampany::InitScene()
 	
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 4); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 3); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//製薬会社のモブオブジェクト追加
 	CObjDrugMob* objdrugmob = new CObjDrugMob();//モブ
@@ -80,15 +80,15 @@ void CSceneDrugCampany::InitScene()
 
 	//マップ図
 	CObjMap* objm = new CObjMap();//マップ図
-	Objs::InsertObj(objm, OBJ_MAP, 4);
+	Objs::InsertObj(objm, OBJ_MAP, 7);
 
 	//銃オブジェクト作成
 	CObjGun* objg = new CObjGun();
-	Objs::InsertObj(objg, OBJ_GUN, 5);
+	Objs::InsertObj(objg, OBJ_GUN, 4);
 
 	//製薬会社オブジェクト作成
 	CObjDrugCampany* objd = new CObjDrugCampany(); //製薬会社オブジェクト作成
-	Objs::InsertObj(objd, OBJ_DRUG_CAMPANY, 3); //作った製薬会社オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(objd, OBJ_DRUG_CAMPANY, 1); //作った製薬会社オブジェクトをオブジェクトマネージャーに登録
 
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成

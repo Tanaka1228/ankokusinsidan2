@@ -195,28 +195,42 @@ void CObjChinaAtkEnemy::Draw()
 	src.m_right = 139.0f; //x
 	src.m_bottom = 131.0f; //y
 
-	if (m_id == 1) {
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y + chinatown->GetScroll2();
-		dst.m_left = 32.0f + 32.0f + m_x + chinatown->GetScroll();
-		dst.m_right = 0.0f + m_x + chinatown->GetScroll();
-		dst.m_bottom = 32.0f + 32.0f + m_y + chinatown->GetScroll2();
+	if (chinatown != nullptr) {
+		if (m_id == 1) {
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + chinatown->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + chinatown->GetScroll();
+			dst.m_right = 0.0f + m_x + chinatown->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + chinatown->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
 	}
-	if (m_id == 2) {
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y + chinatownboss->GetScroll2();
-		dst.m_left = 32.0f + 32.0f + m_x + chinatownboss->GetScroll();
-		dst.m_right = 0.0f + m_x + chinatownboss->GetScroll();
-		dst.m_bottom = 32.0f + 32.0f + m_y + chinatownboss->GetScroll2();
+	if (chinatownboss != nullptr) {
+		if (m_id == 2) {
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + chinatownboss->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + chinatownboss->GetScroll();
+			dst.m_right = 0.0f + m_x + chinatownboss->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + chinatownboss->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
 	}
-	if (m_id == 3)
+	if (chinatownb != nullptr)
 	{
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y + chinatownb->GetScroll2();
-		dst.m_left = 32.0f + 32.0f + m_x + chinatownb->GetScroll();
-		dst.m_right = 0.0f + m_x + chinatownb->GetScroll();
-		dst.m_bottom = 32.0f + 32.0f + m_y + chinatownb->GetScroll2();
+		if (m_id == 3)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + chinatownb->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + chinatownb->GetScroll();
+			dst.m_right = 0.0f + m_x + chinatownb->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + chinatownb->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
 	}
-	//0番目に登録したグラフィックをstc・dst・cの情報を元に描画
-	Draw::Draw(1, &src, &dst, c, 0.0f);
 }

@@ -140,7 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CObjAngleBullet.cpp" />
-    <ClCompile Include="CObjAssBullet.cpp" />
+    <ClCompile Include="CObjAssBullet.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="CObjBullet.cpp" />
     <ClCompile Include="CObjBulletEnemy.cpp" />
     <ClCompile Include="CObjChinaAtkEnemy.cpp">
@@ -345,7 +347,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjAngleBullet.h" />
-    <ClInclude Include="CObjAssBullet.h" />
+    <ClInclude Include="CObjAssBullet.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="CObjBullet.h" />
     <ClInclude Include="CObjBulletEnemy.h" />
     <ClInclude Include="CObjChinaAtkEnemy.h">

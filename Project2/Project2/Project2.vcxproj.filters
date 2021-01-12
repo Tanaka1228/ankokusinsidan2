@@ -378,9 +378,6 @@
     <ClCompile Include="ObjInstitute12.cpp">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
-    <ClCompile Include="ObjInstitute13.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
     <ClCompile Include="ObjInstitute13A.cpp">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
@@ -427,9 +424,6 @@
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
     <ClCompile Include="SceneInstitute12.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute13.cpp">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
     <ClCompile Include="SceneInstitute13A.cpp">
@@ -917,9 +911,6 @@
     <ClInclude Include="ObjInstitute12.h">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
-    <ClInclude Include="ObjInstitute13.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
     <ClInclude Include="ObjInstitute13A.h">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
@@ -966,9 +957,6 @@
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
     <ClInclude Include="SceneInstitute12.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute13.h">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
     <ClInclude Include="SceneInstitute13A.h">

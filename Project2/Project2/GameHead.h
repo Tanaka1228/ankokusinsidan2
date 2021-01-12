@@ -25,7 +25,6 @@ enum OBJ_NAME
 					OBJ_MANU,//メニュー
 					OBJ_HEROINE,//ヒロイン
 					OBJ_GUN,//武器銃
-					OBJ_ASS_BULLET,//アサルトライフルの弾丸
 					OBJ_MAP,//各マップの全体図
 
 					//-----------モブキャラクター-------------------
@@ -48,7 +47,6 @@ enum OBJ_NAME
 					OBJ_CHINA_EVENT,//チャイナタウンのEvent
 					OBJ_CHINA_ATK_ENEMY,//チャイナタウン雑魚
 					OBJ_CHINA_ATK_ENEMY2,//チャイナタウン雑魚
-					//OBJ_CHINA_ATK_ENEMY2,//チャイナタウン雑魚
 					//---------------------------------------------------------
 
 					//-------------研究所----------------------

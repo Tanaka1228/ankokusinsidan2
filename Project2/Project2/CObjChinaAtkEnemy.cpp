@@ -45,6 +45,11 @@ void CObjChinaAtkEnemy::Init()
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
+	if (m_id == 4)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
 }
 
 //アクション
@@ -56,7 +61,8 @@ void CObjChinaAtkEnemy::Action()
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
 	//チャイナタウンbの情報
 	CObjChinaTown_b* chinatownb = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);
-
+	//チャイナタウンcの情報
+	CObjChinaTown_c* chinatownc = (CObjChinaTown_c*)Objs::GetObj(OBJ_CHINA_TOWN_C);
 
 	//チャイナタウン雑魚
 	if (m_id == 1) {
@@ -130,10 +136,49 @@ void CObjChinaAtkEnemy::Action()
 			Audio::Start(5);
 		}
 	}
-	if (chinatownb != nullptr)
-	{
+
 		//チャイナタウン b の雑魚
-		if (m_id == 3)
+		//if (m_id == 3)
+		//{
+		//	m_time++;//1加算
+
+		//	if (m_time > 100)//弾丸を発射する間隔
+		//	{
+		//		m_time = 0;
+
+		//		//弾丸敵機オブジェクト
+		//		CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 4);
+		//		Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+		//	}
+
+
+		//	//敵機が完全に領域外に出たら敵機を破棄する
+		//	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+		//	if (check == false)
+		//	{
+		//		this->SetStatus(false);//自身に削除命令
+		//		Hits::DeleteHitBox(this);
+
+		//		return;
+		//	}
+
+		//	//HitBoxの内容を更新
+		//	CHitBox* hit = Hits::GetHitBox(this);
+		//	hit->SetPos(m_x + chinatownb->GetScroll(), m_y + chinatownb->GetScroll2());
+
+		//	//弾丸と接触してるかどうか調べる
+		//	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		//	{
+		//		this->SetStatus(false);
+		//		Hits::DeleteHitBox(this);
+		//		Audio::Start(5);
+		//	}
+		//}
+	
+	if (chinatownc != nullptr)
+	{
+		//チャイナタウン c の雑魚
+		if (m_id == 4)
 		{
 			m_time++;//1加算
 
@@ -142,7 +187,7 @@ void CObjChinaAtkEnemy::Action()
 				m_time = 0;
 
 				//弾丸敵機オブジェクト
-				CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 4);
+				CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 5);
 				Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
 			}
 
@@ -159,7 +204,7 @@ void CObjChinaAtkEnemy::Action()
 
 			//HitBoxの内容を更新
 			CHitBox* hit = Hits::GetHitBox(this);
-			hit->SetPos(m_x + chinatownb->GetScroll(), m_y + chinatownb->GetScroll2());
+			hit->SetPos(m_x + chinatownc->GetScroll(), m_y + chinatownc->GetScroll2());
 
 			//弾丸と接触してるかどうか調べる
 			if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -181,6 +226,8 @@ void CObjChinaAtkEnemy::Draw()
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
 	//チャイナタウンbの情報
 	CObjChinaTown_b* chinatownb = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);
+	//チャイナタウンcの情報
+	CObjChinaTown_c* chinatownc = (CObjChinaTown_c*)Objs::GetObj(OBJ_CHINA_TOWN_C);
 
 	//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 0.5f,2.5f,1.5f,1.0f };
@@ -228,6 +275,20 @@ void CObjChinaAtkEnemy::Draw()
 			dst.m_left = 32.0f + 32.0f + m_x + chinatownb->GetScroll();
 			dst.m_right = 0.0f + m_x + chinatownb->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + chinatownb->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+	}
+	if (chinatownc != nullptr)
+	{
+		if (m_id == 4)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + chinatownc->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + chinatownc->GetScroll();
+			dst.m_right = 0.0f + m_x + chinatownc->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + chinatownc->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
 			Draw::Draw(1, &src, &dst, c, 0.0f);

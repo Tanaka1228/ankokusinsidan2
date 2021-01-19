@@ -54,7 +54,6 @@ void CSceneChinaTownBoss::InitScene()
 	//外部グラフィックファイルを読み込み10番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"会話.png", 8, TEX_SIZE_512);
 
-
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"弾丸アイテム.png", 12, TEX_SIZE_512);
 

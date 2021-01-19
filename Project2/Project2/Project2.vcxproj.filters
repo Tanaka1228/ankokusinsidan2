@@ -115,6 +115,24 @@
     <Filter Include="ソース ファイル\アイテム">
       <UniqueIdentifier>{aea0aa9c-93c1-470b-b962-a9c415a91e1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\チャイナタウン\チャイナタウン">
+      <UniqueIdentifier>{918bcef5-867a-4b49-8970-bed3d7eeede1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンボス">
+      <UniqueIdentifier>{8319f978-fbd2-46fe-8f50-eca7b9224df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｂ">
+      <UniqueIdentifier>{8a3ed1b1-541d-45df-86c9-a8358c6a49f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｃ">
+      <UniqueIdentifier>{d59ce1b7-8a21-48fa-9003-de2258162346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｄ">
+      <UniqueIdentifier>{72f8fb77-9cc1-40f6-a843-84b9226b2b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29">
+      <UniqueIdentifier>{95b296f3-a1f4-4b53-800b-da6f19269ddb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -180,26 +198,11 @@
     <ClCompile Include="CObjChinaTownBossBoss.cpp">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
     </ClCompile>
-    <ClCompile Include="CObjHomingEnemy.cpp">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClCompile>
     <ClCompile Include="CObjInstituteBossBoss.cpp">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
     </ClCompile>
     <ClCompile Include="CObjRooftopBoss.cpp">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjSinEnemy.cpp">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAttackEnemy.cpp">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjDiffusionEnemy.cpp">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjEnemy.cpp">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
     </ClCompile>
     <ClCompile Include="ObjChinaMob.cpp">
       <Filter>ソース ファイル\キャラクター\チャイナタウンのモブ</Filter>
@@ -236,30 +239,6 @@
     </ClCompile>
     <ClCompile Include="SceneChinaEvent.cpp">
       <Filter>ソース ファイル\ステージマップ\イベントシーン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjChinaTown.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjChinaTown_c.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjChinaTown_d.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjChinaTownBoss.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneChinaTown.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneChinaTown_c.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneChinaTown_d.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneChinaTownBoss.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
     <ClCompile Include="ObjDrugCampany.cpp">
       <Filter>ソース ファイル\ステージマップ\製薬会社</Filter>
@@ -642,11 +621,50 @@
     <ClCompile Include="ObjItem.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="SceneChinaTownBoss.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンボス</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjChinaTownBoss.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンボス</Filter>
+    </ClCompile>
     <ClCompile Include="ObjChinaTown_b.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｂ</Filter>
     </ClCompile>
     <ClCompile Include="SceneChinaTown_b.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｂ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjChinaTown_c.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｃ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChinaTown_c.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｃ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjChinaTown.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウン</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChinaTown.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjChinaTown_d.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｄ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChinaTown_d.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｄ</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjHomingEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjSinEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAttackEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDiffusionEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnemy.cpp">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -713,26 +731,11 @@
     <ClInclude Include="CObjChinaTownBossBoss.h">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
     </ClInclude>
-    <ClInclude Include="CObjHomingEnemy.h">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClInclude>
     <ClInclude Include="CObjInstituteBossBoss.h">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
     </ClInclude>
     <ClInclude Include="CObjRooftopBoss.h">
       <Filter>ソース ファイル\キャラクター\ボス</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjSinEnemy.h">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjAttackEnemy.h">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjDiffusionEnemy.h">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEnemy.h">
-      <Filter>ソース ファイル\キャラクター\敵</Filter>
     </ClInclude>
     <ClInclude Include="ObjChinaMob.h">
       <Filter>ソース ファイル\キャラクター\チャイナタウンのモブ</Filter>
@@ -769,30 +772,6 @@
     </ClInclude>
     <ClInclude Include="SceneChinaEvent.h">
       <Filter>ソース ファイル\ステージマップ\イベントシーン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjChinaTown.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjChinaTown_c.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjChinaTown_d.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjChinaTownBoss.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneChinaTown.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneChinaTown_c.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneChinaTown_d.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneChinaTownBoss.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
     <ClInclude Include="ObjDrugCampany.h">
       <Filter>ソース ファイル\ステージマップ\製薬会社</Filter>
@@ -1175,11 +1154,50 @@
     <ClInclude Include="ObjItem.h">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
+    <ClInclude Include="SceneChinaTownBoss.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンボス</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTownBoss.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンボス</Filter>
+    </ClInclude>
     <ClInclude Include="ObjChinaTown_b.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｂ</Filter>
     </ClInclude>
     <ClInclude Include="SceneChinaTown_b.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｂ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTown_c.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｃ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChinaTown_c.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｃ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTown.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウン</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChinaTown.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTown_d.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｄ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChinaTown_d.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン\チャイナタウンｄ</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjHomingEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjSinEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAttackEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDiffusionEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnemy.h">
+      <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

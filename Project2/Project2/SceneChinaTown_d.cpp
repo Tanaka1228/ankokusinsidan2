@@ -35,6 +35,9 @@ void CSceneChinaTown_d::InitScene()
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
 
 	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"Enemy1.png", 1, TEX_SIZE_512);//敵グラフィック
+
+	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"ハンドガン.png", 2, TEX_SIZE_512);//ハンドガングラフィック
 
 	//外部グラフィックファイルを読み込み3番に登録(512×512ピクセル)あまり関係ないらしい

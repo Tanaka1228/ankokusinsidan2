@@ -175,7 +175,7 @@ void CObjChinaAtkEnemy::Action()
 		{
 			m_time++;//1‰ÁZ
 
-			if (m_time > 100)//’eŠÛ‚ğ”­Ë‚·‚éŠÔŠu
+			if (m_time > 70)//’eŠÛ‚ğ”­Ë‚·‚éŠÔŠu
 			{
 				m_time = 0;
 
@@ -212,7 +212,7 @@ void CObjChinaAtkEnemy::Action()
 		{
 			m_time++;//1‰ÁZ
 
-			if (m_time > 100)//’eŠÛ‚ğ”­Ë‚·‚éŠÔŠu
+			if (m_time > 50)//’eŠÛ‚ğ”­Ë‚·‚éŠÔŠu
 			{
 				m_time = 0;
 

@@ -21,7 +21,7 @@ CObjBulletEnemy::CObjBulletEnemy(float x, float y,int id)//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅŽó‚¯Ž
 //ƒCƒjƒVƒƒƒ‰ƒCƒY
 void CObjBulletEnemy::Init()
 {
-	
+	m_r = 0.0f;
 		
 		if (m_id==1)
 		{
@@ -169,6 +169,7 @@ void CObjBulletEnemy::Action()
 		}
 		if (m_id == 3)
 		{
+			
 			//ˆÚ“®
 			m_x += m_vx * 8.0f;
 			m_y += m_vy * 8.0f;
@@ -196,6 +197,17 @@ void CObjBulletEnemy::Action()
 		//ƒ`ƒƒƒCƒiƒ^ƒEƒ“B
 		if (m_id == 4)
 		{
+			//Šp“x‰ÁŽZ
+			m_r += 12.0f;
+
+			//360‹‚Å‰Šú’l‚É–ß‚·
+			if (m_r > 360.0f)
+				m_r = 0.0f;
+
+			//ˆÚ“®•ûŒü
+			m_vx = -1.0f;
+			m_vy = sin(3.14 / 180.0f * m_r);//sinƒÆ‚ð‹‚ß‚Äm_vy‚É“ü‚ê‚é
+
 			//ˆÚ“®
 			m_x += m_vx * 8.0f;
 			m_y += m_vy * 8.0f;
@@ -223,6 +235,16 @@ void CObjBulletEnemy::Action()
 		//ƒ`ƒƒƒCƒiƒ^ƒEƒ“C
 		if (m_id == 5)
 		{
+			//Šp“x‰ÁŽZ
+			m_r += 8.0f;
+
+			//360‹‚Å‰Šú’l‚É–ß‚·
+			if (m_r > 360.0f)
+				m_r = 0.0f;
+
+			//ˆÚ“®•ûŒü
+			m_vx = -1.0f;
+			m_vy = sin(3.14 / 180.0f * m_r);//sinƒÆ‚ð‹‚ß‚Äm_vy‚É“ü‚ê‚é
 			//ˆÚ“®
 			m_x += m_vx * 8.0f;
 			m_y += m_vy * 8.0f;
@@ -355,7 +377,7 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //’eŠÛ‚ªŠ—L‚·‚éHitBox‚Éíœ‚·‚éB
 			}
 		}
-		//•a‰@‰®ã
+		//ƒ`ƒƒƒCƒiƒ^ƒEƒ“‚„
 		if (m_id == 10)
 		{
 			//ˆÚ“®
@@ -450,7 +472,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + chinatown->GetScroll();
 			dst.m_bottom = 32.0f + m_y + chinatown->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (chinatownb != nullptr)
@@ -463,7 +485,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + chinatownb->GetScroll();
 			dst.m_bottom = 32.0f + m_y + chinatownb->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (chinatownc != nullptr)
@@ -476,7 +498,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + chinatownc->GetScroll();
 			dst.m_bottom = 32.0f + m_y + chinatownc->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (hospital != nullptr)
@@ -489,7 +511,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + hospital->GetScroll();
 			dst.m_bottom = 32.0f + m_y + hospital->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (hospital2 != nullptr)
@@ -502,7 +524,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + hospital2->GetScroll();
 			dst.m_bottom = 32.0f + m_y + hospital2->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (hospital3 != nullptr)
@@ -515,7 +537,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + hospital3->GetScroll();
 			dst.m_bottom = 32.0f + m_y + hospital3->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (rooftop != nullptr)
@@ -528,7 +550,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + rooftop->GetScroll();
 			dst.m_bottom = 32.0f + m_y + rooftop->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 	if (chinatownd != nullptr)
@@ -541,7 +563,7 @@ void CObjBulletEnemy::Draw()
 			dst.m_right = 45.0f + m_x + chinatownd->GetScroll();
 			dst.m_bottom = 32.0f + m_y + chinatownd->GetScroll2();
 
-			Draw::Draw(3, &src, &dst, c, 0.0f);
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 }

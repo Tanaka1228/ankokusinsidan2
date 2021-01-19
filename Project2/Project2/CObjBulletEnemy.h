@@ -20,5 +20,7 @@ private:
 	float m_vy; //オブジェクトの移動用ベクトルY
 
 	int m_id;
+
+	float m_r;//sinカーブの角度
 };
 

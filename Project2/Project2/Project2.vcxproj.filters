@@ -240,9 +240,6 @@
     <ClCompile Include="ObjChinaTown.cpp">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
-    <ClCompile Include="ObjChinaTown_b.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
     <ClCompile Include="ObjChinaTown_c.cpp">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
@@ -250,9 +247,6 @@
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
     <ClCompile Include="ObjChinaTownBoss.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneChinaTown _b.cpp">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
     <ClCompile Include="SceneChinaTown.cpp">
@@ -648,6 +642,15 @@
     <ClCompile Include="ObjItem.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="ObjChinaTown_b2.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjChinaTown_b.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChinaTown_b.cpp">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -773,9 +776,6 @@
     <ClInclude Include="ObjChinaTown.h">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
-    <ClInclude Include="ObjChinaTown_b.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
     <ClInclude Include="ObjChinaTown_c.h">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
@@ -786,9 +786,6 @@
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
     <ClInclude Include="SceneChinaTown.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneChinaTown_b.h">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
     <ClInclude Include="SceneChinaTown_c.h">
@@ -1180,6 +1177,15 @@
     </ClInclude>
     <ClInclude Include="ObjItem.h">
       <Filter>ソース ファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTown_b2.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjChinaTown_b.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChinaTown_b.h">
+      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

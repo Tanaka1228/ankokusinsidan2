@@ -187,6 +187,9 @@
     <ClCompile Include="ObjChinaTown.cpp" />
     <ClCompile Include="ObjChinaTownBoss.cpp" />
     <ClCompile Include="ObjChinaTown_b.cpp" />
+    <ClCompile Include="ObjChinaTown_b2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjChinaTown_c.cpp" />
     <ClCompile Include="ObjChinaTown_d.cpp" />
     <ClCompile Include="ObjDiffusionEnemy.cpp">
@@ -275,9 +278,9 @@
     <ClCompile Include="ObjXRayRoom.cpp" />
     <ClCompile Include="SceneBlock.cpp" />
     <ClCompile Include="SceneChinaEvent.cpp" />
-    <ClCompile Include="SceneChinaTown _b.cpp" />
     <ClCompile Include="SceneChinaTown.cpp" />
     <ClCompile Include="SceneChinaTownBoss.cpp" />
+    <ClCompile Include="SceneChinaTown_b.cpp" />
     <ClCompile Include="SceneChinaTown_c.cpp" />
     <ClCompile Include="SceneChinaTown_d.cpp" />
     <ClCompile Include="SceneDrugCampany.cpp" />
@@ -394,6 +397,9 @@
     <ClInclude Include="ObjChinaTown.h" />
     <ClInclude Include="ObjChinaTownBoss.h" />
     <ClInclude Include="ObjChinaTown_b.h" />
+    <ClInclude Include="ObjChinaTown_b2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjChinaTown_c.h" />
     <ClInclude Include="ObjChinaTown_d.h" />
     <ClInclude Include="ObjDiffusionEnemy.h">

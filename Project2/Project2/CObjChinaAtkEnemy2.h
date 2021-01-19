@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjChinaAtkEnemy2 : public CObj
 {
 public:
-	CObjChinaAtkEnemy2(float x, float y);
+	CObjChinaAtkEnemy2(float x, float y,int id);
 	~CObjChinaAtkEnemy2() {};
 	void Init(); //イニシャライズ
 	void Action(); //アクション
@@ -23,5 +23,5 @@ private:
 
 	int m_time;//攻撃敵機用弾丸発射タイミング用
 
-
+	int m_id;//敵の識別番号
 };

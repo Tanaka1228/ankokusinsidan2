@@ -73,6 +73,9 @@ void CSceneHospital::InitScene()
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"bgm_maoudamashii_healing06.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
+	//爆発
+	Audio::LoadAudio(5, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
+
 	//　ドア　音楽情報の読み込み
 	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発
 

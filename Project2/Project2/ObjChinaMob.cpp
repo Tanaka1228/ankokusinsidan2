@@ -46,9 +46,7 @@ void CObjChinaMob::Action()
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウン
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス
-	CObjChinaTown_b* chinatown_b = (CObjChinaTown_b*)Objs::GetObj(OBJ_CHINA_TOWN_B);//チャイナタウンのB
 
-	
 	//チャイナタウンのモブ
 	if (chinatown != nullptr)
 	{
@@ -1307,71 +1305,5 @@ void CObjChinaMob::Draw()
 
 	}
 	
-	
-
-
-
-
-//if (chinatown_b != nullptr && mob_flag == 1)
-//{
-//	if (m_sp == 0 && mob_flag == 1)//エンターキーを3回押したとき
-//	{
-//		sp_flag = false;//背景
-//		key_flag = 1;//会話の順番
-//	}
-//	if (m_sp == 1)//エンターキーを一回押したとき
-//	{
-//		sp_flag == true;
-//
-//		ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
-//		char str1[64];//ただの配列
-//		wchar_t wstr1[64];
-//		fin.seekg(98, ios::cur);//0バイト数進める
-//		fin >> str1;//str1にテキストを入れる
-//
-//		sprintf_s(str1, "%s", str1);//出力
-//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-//		Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
-//
-//		key_flag = 2;
-//		fin.close();//ファイルを閉じる
-//	}
-//	if (m_sp == 1)//エンターキーを一回押したとき
-//	{
-//		sp_flag == true;
-//
-//		ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
-//		char str1[64];//ただの配列
-//		wchar_t wstr1[64];
-//		fin.seekg(114, ios::cur);//0バイト数進める
-//		fin >> str1;//str1にテキストを入れる
-//
-//		sprintf_s(str1, "%s", str1);//出力
-//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-//		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
-//
-//		key_flag =2;
-//		fin.close();//ファイルを閉じる
-//
-//	}
-//	if (m_sp == 1)//エンターキーを一回押したとき
-//	{
-//		sp_flag == true;
-//
-//		ifstream fin("チャイナタウン会話.txt", ios::in);//テキストデータをを読み込み
-//		char str1[64];//ただの配列
-//		wchar_t wstr1[64];
-//		fin.seekg(124, ios::cur);//0バイト数進める
-//		fin >> str1;//str1にテキストを入れる
-//
-//		sprintf_s(str1, "%s", str1);//出力
-//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-//		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
-//
-//		key_flag = 2;
-//		fin.close();//ファイルを閉じる
-//
-//	}
-//}
 }
 

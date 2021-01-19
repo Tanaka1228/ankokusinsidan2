@@ -642,9 +642,6 @@
     <ClCompile Include="ObjItem.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="ObjChinaTown_b2.cpp">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
-    </ClCompile>
     <ClCompile Include="ObjChinaTown_b.cpp">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClCompile>
@@ -1177,9 +1174,6 @@
     </ClInclude>
     <ClInclude Include="ObjItem.h">
       <Filter>ソース ファイル\アイテム</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjChinaTown_b2.h">
-      <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>
     </ClInclude>
     <ClInclude Include="ObjChinaTown_b.h">
       <Filter>ソース ファイル\ステージマップ\チャイナタウン</Filter>

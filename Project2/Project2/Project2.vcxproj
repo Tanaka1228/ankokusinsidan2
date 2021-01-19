@@ -187,9 +187,6 @@
     <ClCompile Include="ObjChinaTown.cpp" />
     <ClCompile Include="ObjChinaTownBoss.cpp" />
     <ClCompile Include="ObjChinaTown_b.cpp" />
-    <ClCompile Include="ObjChinaTown_b2.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjChinaTown_c.cpp" />
     <ClCompile Include="ObjChinaTown_d.cpp" />
     <ClCompile Include="ObjDiffusionEnemy.cpp">
@@ -397,9 +394,6 @@
     <ClInclude Include="ObjChinaTown.h" />
     <ClInclude Include="ObjChinaTownBoss.h" />
     <ClInclude Include="ObjChinaTown_b.h" />
-    <ClInclude Include="ObjChinaTown_b2.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="ObjChinaTown_c.h" />
     <ClInclude Include="ObjChinaTown_d.h" />
     <ClInclude Include="ObjDiffusionEnemy.h">

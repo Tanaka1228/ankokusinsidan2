@@ -143,8 +143,8 @@ void CObjChinaAtkEnemy::Action()
 		}
 	}
 
-		//チャイナタウン b の雑魚
-		if (m_id == 3)
+	//チャイナタウン b の雑魚
+	if (m_id == 3)
 		{
 			m_time++;//1加算
 
@@ -181,10 +181,8 @@ void CObjChinaAtkEnemy::Action()
 			}
 		}
 	
-	if (chinatownc != nullptr)
-	{
-		//チャイナタウン c の雑魚
-		if (m_id == 4)
+	   //チャイナタウン c の雑魚
+	if (m_id == 4)
 		{
 			m_time++;//1加算
 
@@ -220,7 +218,7 @@ void CObjChinaAtkEnemy::Action()
 				Audio::Start(5);
 			}
 		}
-	}
+	
 
 	//病院一階 の雑魚
 	if (m_id == 5)

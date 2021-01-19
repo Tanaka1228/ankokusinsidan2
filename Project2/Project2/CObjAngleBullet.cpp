@@ -20,7 +20,7 @@ CObjAngleBullet::CObjAngleBullet(float x, float y,float r,float speed)//コンスト
 //イニシャライズ
 void CObjAngleBullet::Init()
 {
-
+	
 	m_vx = cos(3.14f / 180.0f * m_r);
 	m_vy = sin(3.14f / 180.0f * m_r);
 
@@ -43,7 +43,6 @@ void CObjAngleBullet::Action()
 	if (rooftop != nullptr)
 	{
 		
-     	
 			//移動
 			m_x += m_vx * m_speed;
 			m_y -= m_vy * m_speed;

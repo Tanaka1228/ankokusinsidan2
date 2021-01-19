@@ -58,7 +58,28 @@ void CObjBulletEnemy::Init()
 			//“–‚½‚è”»’è—pHitBox‚ðì¬
 			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
 		}
-		if (m_id == 6)//ƒ`ƒƒƒCƒiƒ^ƒEƒ“c‚ÌŽG‹›
+		if (m_id == 6)//•a‰@‚PŠK‚ÌŽG‹›
+		{
+			m_vx = -1.0f;
+			m_vy = 0.0f;
+			//“–‚½‚è”»’è—pHitBox‚ðì¬
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 7)//•a‰@‚QŠK‚ÌŽG‹›
+		{
+			m_vx = -1.0f;
+			m_vy = 0.0f;
+			//“–‚½‚è”»’è—pHitBox‚ðì¬
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 8)//•a‰@3ŠK‚ÌŽG‹›
+		{
+			m_vx = -1.0f;
+			m_vy = 0.0f;
+			//“–‚½‚è”»’è—pHitBox‚ðì¬
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 9)//•a‰@‰®ã‚ÌŽG‹›
 		{
 			m_vx = -1.0f;
 			m_vy = 0.0f;
@@ -78,6 +99,10 @@ void CObjBulletEnemy::Action()
 	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“c‚Ìî•ñ
 	CObjChinaTown_c* chinatownc = (CObjChinaTown_c*)Objs::GetObj(OBJ_CHINA_TOWN_C);
 	CObjHospital* hospital = (CObjHospital*)Objs::GetObj(OBJ_HOSPITAL);//•a‰@‚ÌˆêŠK
+	CObjHospital2* hospital2 = (CObjHospital2*)Objs::GetObj(OBJ_HOSPITAL2);//•a‰@‚Ì2ŠK
+	CObjHospital3* hospital3 = (CObjHospital3*)Objs::GetObj(OBJ_HOSPITAL3);//•a‰@‚Ì3ŠK
+	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);//•a‰@‚Ì‰®ã
+
 
 
 		if (m_id == 1)
@@ -240,6 +265,87 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //’eŠÛ‚ªŠ—L‚·‚éHitBox‚Éíœ‚·‚éB
 			}
 		}
+		//•a‰@2ŠK
+		if (m_id == 7)
+		{
+			//ˆÚ“®
+			m_x -= m_vx * 12.0f;
+			m_y += m_vy * 12.0f;
+
+			//’eŠÛ‚ÌHitBoxXV—pƒ|ƒCƒ“ƒ^[Žæ“¾
+			CHitBox* hit = Hits::GetHitBox(this); //HitBox‚ÌˆÊ’u‚ð’eŠÛ‚ÌˆÊ’u‚ÉXV
+			hit->SetPos(m_x + hospital2->GetScroll(), m_y + hospital2->GetScroll2());
+
+
+			//“G‹@‚ªŠ®‘S‚É—ÌˆæŠO‚Éo‚½‚ç“G‹@‚ð”jŠü‚·‚é
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 1500.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//Ž©g‚Éíœ–½—ß
+				Hits::DeleteHitBox(this);
+			}
+
+			//“G‹@ƒIƒuƒWƒFƒNƒg‚ÆÚG‚µ‚½‚ç’eŠÛíœ
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //Ž©g‚Éíœ–½—ß‚ðo‚·B
+				Hits::DeleteHitBox(this); //’eŠÛ‚ªŠ—L‚·‚éHitBox‚Éíœ‚·‚éB
+			}
+		}
+		//•a‰@3ŠK
+		if (m_id == 8)
+		{
+			//ˆÚ“®
+			m_x += m_vx * 12.0f;
+			m_y += m_vy * 12.0f;
+
+			//’eŠÛ‚ÌHitBoxXV—pƒ|ƒCƒ“ƒ^[Žæ“¾
+			CHitBox* hit = Hits::GetHitBox(this); //HitBox‚ÌˆÊ’u‚ð’eŠÛ‚ÌˆÊ’u‚ÉXV
+			hit->SetPos(m_x + hospital3->GetScroll(), m_y + hospital3->GetScroll2());
+
+
+			//“G‹@‚ªŠ®‘S‚É—ÌˆæŠO‚Éo‚½‚ç“G‹@‚ð”jŠü‚·‚é
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 1500.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//Ž©g‚Éíœ–½—ß
+				Hits::DeleteHitBox(this);
+			}
+
+			//“G‹@ƒIƒuƒWƒFƒNƒg‚ÆÚG‚µ‚½‚ç’eŠÛíœ
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //Ž©g‚Éíœ–½—ß‚ðo‚·B
+				Hits::DeleteHitBox(this); //’eŠÛ‚ªŠ—L‚·‚éHitBox‚Éíœ‚·‚éB
+			}
+		}
+		//•a‰@‰®ã
+		if (m_id == 9)
+		{
+			//ˆÚ“®
+			m_x -= m_vx * 12.0f;
+			m_y += m_vy * 12.0f;
+
+			//’eŠÛ‚ÌHitBoxXV—pƒ|ƒCƒ“ƒ^[Žæ“¾
+			CHitBox* hit = Hits::GetHitBox(this); //HitBox‚ÌˆÊ’u‚ð’eŠÛ‚ÌˆÊ’u‚ÉXV
+			hit->SetPos(m_x + rooftop->GetScroll(), m_y + rooftop->GetScroll2());
+
+
+			//“G‹@‚ªŠ®‘S‚É—ÌˆæŠO‚Éo‚½‚ç“G‹@‚ð”jŠü‚·‚é
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//Ž©g‚Éíœ–½—ß
+				Hits::DeleteHitBox(this);
+			}
+
+			//“G‹@ƒIƒuƒWƒFƒNƒg‚ÆÚG‚µ‚½‚ç’eŠÛíœ
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //Ž©g‚Éíœ–½—ß‚ðo‚·B
+				Hits::DeleteHitBox(this); //’eŠÛ‚ªŠ—L‚·‚éHitBox‚Éíœ‚·‚éB
+			}
+		}
 }
 
 //ƒhƒ[
@@ -267,6 +373,10 @@ void CObjBulletEnemy::Draw()
 	//ƒ`ƒƒƒCƒiƒ^ƒEƒ“c‚Ìî•ñ
 	CObjChinaTown_c* chinatownc = (CObjChinaTown_c*)Objs::GetObj(OBJ_CHINA_TOWN_C);
 	CObjHospital* hospital = (CObjHospital*)Objs::GetObj(OBJ_HOSPITAL);//•a‰@‚ÌˆêŠK
+	CObjHospital2* hospital2 = (CObjHospital2*)Objs::GetObj(OBJ_HOSPITAL2);//•a‰@‚Ì2ŠK
+	CObjHospital3* hospital3 = (CObjHospital3*)Objs::GetObj(OBJ_HOSPITAL3);//•a‰@‚Ì3ŠK
+	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);//•a‰@‚Ì‰®ã
+
 
 
 	if (chinatownboss != nullptr)
@@ -340,6 +450,45 @@ void CObjBulletEnemy::Draw()
 			dst.m_left = -5.0f + m_x + hospital->GetScroll();
 			dst.m_right = 45.0f + m_x + hospital->GetScroll();
 			dst.m_bottom = 32.0f + m_y + hospital->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
+	}
+	if (hospital2 != nullptr)
+	{
+		if (m_id == 7)
+		{
+			//•\Ž¦ˆÊ’u‚ÌÝ’è
+			dst.m_top = -10.0f + m_y + hospital2->GetScroll2();
+			dst.m_left = -5.0f + m_x + hospital2->GetScroll();
+			dst.m_right = 45.0f + m_x + hospital2->GetScroll();
+			dst.m_bottom = 32.0f + m_y + hospital2->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
+	}
+	if (hospital3 != nullptr)
+	{
+		if (m_id == 8)
+		{
+			//•\Ž¦ˆÊ’u‚ÌÝ’è
+			dst.m_top = -10.0f + m_y + hospital3->GetScroll2();
+			dst.m_left = -5.0f + m_x + hospital3->GetScroll();
+			dst.m_right = 45.0f + m_x + hospital3->GetScroll();
+			dst.m_bottom = 32.0f + m_y + hospital3->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
+	}
+	if (rooftop != nullptr)
+	{
+		if (m_id ==9)
+		{
+			//•\Ž¦ˆÊ’u‚ÌÝ’è
+			dst.m_top = -10.0f + m_y + rooftop->GetScroll2();
+			dst.m_left = -5.0f + m_x + rooftop->GetScroll();
+			dst.m_right = 45.0f + m_x + rooftop->GetScroll();
+			dst.m_bottom = 32.0f + m_y + rooftop->GetScroll2();
 
 			Draw::Draw(3, &src, &dst, c, 0.0f);
 		}

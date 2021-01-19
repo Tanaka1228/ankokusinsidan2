@@ -55,11 +55,17 @@ void CSceneHospital2::InitScene()
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"エレベーター.png", 7, TEX_SIZE_512);
 
+	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"Enemy1.png", 11, TEX_SIZE_512);//敵グラフィック
+
 	//　銃　音楽情報の読み込み
 	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"bgm_maoudamashii_healing06.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+	//爆発
+	Audio::LoadAudio(5, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
 
 	//　ドア　音楽情報の読み込み
 	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発

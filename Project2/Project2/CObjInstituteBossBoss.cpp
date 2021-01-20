@@ -23,7 +23,7 @@ void CObjInstituteBossBoss::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_timeboss = 0;
-	m_hp = 18;
+	m_hp = 15;
 	m_time = 0;
 
 	//@’eŠÛ‚ª“G‚É“–‚½‚Á‚½@‰¹Šyî•ñ‚Ì“Ç‚Ýž‚Ý
@@ -41,7 +41,7 @@ void CObjInstituteBossBoss::Action()
 
 	
 	m_timeboss++;
-	if (m_timeboss > 100)
+	if (m_timeboss > 90)
 	{
 		m_timeboss = 0;
 
@@ -119,8 +119,6 @@ void CObjInstituteBossBoss::Draw()
 	src.m_left = 0.0f; //x
 	src.m_right = 139.0f; //x
 	src.m_bottom = 131.0f; //y
-
-	
 
 	dst.m_top = 0.0f + m_y + instituteboss->GetScroll2();
 	dst.m_left = 0.0f + m_x + instituteboss->GetScroll();

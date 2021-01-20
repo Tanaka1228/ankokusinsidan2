@@ -34,12 +34,9 @@ void CObjHomingBullet::Action()
 {
 
 	//主人公機と誘導弾丸で角度をとる
-
 	CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
-
 	//病院の屋上の情報
 	CObjRooftop* rooftop = (CObjRooftop*)Objs::GetObj(OBJ_ROOF_TOP);
-
 	//チャイナタウンBOSSの情報
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);
 

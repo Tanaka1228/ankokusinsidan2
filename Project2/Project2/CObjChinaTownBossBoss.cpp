@@ -24,7 +24,7 @@ void CObjChinaTownBossBoss::Init()
 	m_vy = 0.0f;
 	m_time = 0;
 	m_timeboss = 0;
-	m_hp = 18;
+	m_hp =10;
 
 	//　弾丸が敵に当たった　音楽情報の読み込み
 	Audio::LoadAudio(6, L"金属.wav", EFFECT);//単発
@@ -47,7 +47,7 @@ void CObjChinaTownBossBoss::Action()
 
 		//19発動時発射
 		CObjAngleBullet* obj_b;
-		for (int i = 0; i < 360; i += 10)
+		for (int i = 0; i < 360; i += 20)
 		{
 			//角度iで角度弾丸発射
 			obj_b = new CObjAngleBullet(m_x, m_y, i, 5.0f);

@@ -7,7 +7,6 @@
 
 #include"GameHead.h"
 #include"ObjTitle.h"
-#include"SceneMain.h"
 #include"GameL/UserData.h"
 
 //使用するネームスペース

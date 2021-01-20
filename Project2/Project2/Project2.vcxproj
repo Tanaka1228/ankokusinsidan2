@@ -256,13 +256,7 @@
     <ClCompile Include="ObjInstituteBoss.cpp" />
     <ClCompile Include="ObjInstMob.cpp" />
     <ClCompile Include="ObjItem.cpp" />
-    <ClCompile Include="ObjMain.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjMap.cpp" />
-    <ClCompile Include="ObjMenu.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjOpeRoom.cpp" />
     <ClCompile Include="ObjRooftop.cpp" />
     <ClCompile Include="ObjSpBack.cpp" />
@@ -332,9 +326,6 @@
     <ClCompile Include="SceneInstitute8.cpp" />
     <ClCompile Include="SceneInstitute9.cpp" />
     <ClCompile Include="SceneInstituteBoss.cpp" />
-    <ClCompile Include="SceneMain.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="SceneOpeRoom.cpp" />
     <ClCompile Include="SceneRooftop.cpp" />
     <ClCompile Include="SceneTemplateRoom.cpp" />
@@ -460,13 +451,7 @@
     <ClInclude Include="ObjInstituteBoss.h" />
     <ClInclude Include="ObjInstMob.h" />
     <ClInclude Include="ObjItem.h" />
-    <ClInclude Include="ObjMain.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="ObjMap.h" />
-    <ClInclude Include="ObjMenu.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="ObjOpeRoom.h" />
     <ClInclude Include="ObjRooftop.h" />
     <ClInclude Include="ObjSpBack.h" />
@@ -536,9 +521,6 @@
     <ClInclude Include="SceneInstitute8.h" />
     <ClInclude Include="SceneInstitute9.h" />
     <ClInclude Include="SceneInstituteBoss.h" />
-    <ClInclude Include="SceneMain.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="SceneOpeRoom.h" />
     <ClInclude Include="SceneRooftop.h" />
     <ClInclude Include="SceneTemplateRoom.h" />

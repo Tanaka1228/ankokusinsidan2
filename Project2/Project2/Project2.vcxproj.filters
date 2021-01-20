@@ -489,15 +489,6 @@
     <ClCompile Include="SceneFin.cpp">
       <Filter>ソース ファイル\FIN</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMain.cpp">
-      <Filter>ソース ファイル\使わない</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMenu.cpp">
-      <Filter>ソース ファイル\使わない</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル\使わない</Filter>
-    </ClCompile>
     <ClCompile Include="ObjDrugCampanyRoom19.cpp">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>
     </ClCompile>
@@ -1018,15 +1009,6 @@
     </ClInclude>
     <ClInclude Include="SceneFin.h">
       <Filter>ソース ファイル\FIN</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMain.h">
-      <Filter>ソース ファイル\使わない</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMenu.h">
-      <Filter>ソース ファイル\使わない</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ソース ファイル\使わない</Filter>
     </ClInclude>
     <ClInclude Include="ObjDrugCampanyRoom19.h">
       <Filter>ソース ファイル\ステージマップ\製薬会社\部屋</Filter>

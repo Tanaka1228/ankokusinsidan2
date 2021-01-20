@@ -22,6 +22,6 @@ private:
 	float m_vy; //攻撃する敵機のベクトルy
 
 	int m_time;//攻撃敵機用弾丸発射タイミング用
-	int m_id;
+	int m_id;//敵識別ID
 	
 };

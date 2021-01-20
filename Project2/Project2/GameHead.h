@@ -201,7 +201,6 @@ struct UserData
 #include"ObjChinaTown.h"
 #include"CObjRooftopBoss.h"
 #include"ObjGun.h"
-#include"CObjAssBullet.h"
 #include"ObjDrugCampany.h"
 #include"ObjDrugCampany2.h"
 #include"ObjDrugCampany3.h"

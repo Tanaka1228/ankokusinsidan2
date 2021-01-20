@@ -29,6 +29,4 @@ private:
 
 	bool map_flag;
 	bool map_flag2;
-
-
 };

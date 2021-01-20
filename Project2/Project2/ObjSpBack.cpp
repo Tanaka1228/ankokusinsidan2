@@ -18,12 +18,7 @@ using namespace GameL;
 //コンストラクタ
 CObjSpBack::CObjSpBack()
 {
-	//Heroineのヘッダーを見たらわかる
-	m_sp = false;
-	key_flag = 1;
-	sp_flag = false;
-	m_key_control = true;
-	mob_flag = 0;
+
 }
 
 

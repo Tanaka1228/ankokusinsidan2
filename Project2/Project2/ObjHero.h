@@ -46,7 +46,6 @@ public:
 	int Get_Gun() { return m_gun; }//銃を構えているか構えていないかを返す
 	int Get_Gun_Kama() { return gun_Kama; ; }//構えているかのフラグ
 	int Get_GunType() { return gun_type; }//銃の種類を返す
-	int Get_Gun_Type_Flag() { return gun_type_flag; }//銃の種類フラグ
 
 	int Get_AniFlame() { return m_ani_frame; }
 
@@ -60,16 +59,13 @@ public:
 
 
 private:
-	float m_px; //位置
-	float m_py;
 	float m_x;  //主人公機のx方向移動用変数
 	float m_y;  //主人公機のy方向移動用変数
 	float m_vx; //移動ベクトル
 	float m_vy; //移動ベクトル
 	float m_posture; //横姿勢
 	bool m_f; //弾丸発射制御用
-	bool m_ass_f;
-
+	
 	//---------------------------------------------------
 
 	int m_ani_time=0; //向きアニメーションフレーム動作間隔
@@ -100,7 +96,6 @@ private:
 	int m_gun;//銃の向き
 	int gun_type;//銃の種類
 	int gun_Kama;//銃を構える
-	int gun_type_flag;
 
 	//---------------------------------------------------
 

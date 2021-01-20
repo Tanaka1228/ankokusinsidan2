@@ -78,10 +78,6 @@ void CSceneChinaEvent::InitScene()
 	CObjChinaEvent* objc = new CObjChinaEvent(); //チャイナタウンオブジェクト作成
 	Objs::InsertObj(objc, OBJ_CHINA_EVENT, 6); //作ったチャイナタウンオブジェクトをオブジェクトマネージャーに登録
 
-	//銃オブジェクト作成
-	//CObjGun* objg = new CObjGun();
-	//Objs::InsertObj(objg, OBJ_GUN, 6);
-
 	//会話の背景オブジェクト作成
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録

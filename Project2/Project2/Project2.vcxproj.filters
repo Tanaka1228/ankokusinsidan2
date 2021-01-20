@@ -180,9 +180,6 @@
     <ClCompile Include="CObjAngleBullet.cpp">
       <Filter>ソース ファイル\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="CObjAssBullet.cpp">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClCompile>
     <ClCompile Include="CObjBullet.cpp">
       <Filter>ソース ファイル\Bullet</Filter>
     </ClCompile>
@@ -711,9 +708,6 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="CObjAngleBullet.h">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjAssBullet.h">
       <Filter>ソース ファイル\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="CObjBullet.h">

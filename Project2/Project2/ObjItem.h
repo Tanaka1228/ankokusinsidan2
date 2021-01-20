@@ -26,7 +26,7 @@ private:
 
 	static int m_bullet_item;//弾丸の所持数　リボルバー
 
-	int m_id;
+	int m_id;//アイテム識別Id
 
-	bool item_flag;
+	bool item_flag;//アイテムを拾ったかどうかを
 };

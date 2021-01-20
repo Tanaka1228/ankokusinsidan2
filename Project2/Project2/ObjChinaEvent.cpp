@@ -109,28 +109,6 @@ void CObjChinaEvent::Action()
 
 			}
 		}
-
-
-	/*	if (Input::GetVKey(VK_RETURN) == true) {
-
-			if (m_key_control == true)
-			{
-
-				
-				if ((key_flag == 6))
-				{
-					m_sp = 6;
-					sp_flag = true;
-
-				}
-				m_key_control = false;
-			}
-		}
-		else
-		{
-			m_key_control = true;
-
-		}*/
 	}
 	//------------------------------------------------------
 

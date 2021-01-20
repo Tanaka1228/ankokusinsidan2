@@ -68,8 +68,6 @@ CObjHero::CObjHero(float x, float y)
 //イニシャライズ
 void CObjHero::Init()
 {
-	m_px = 0.0f; //位置
-	m_py = 0.0f;
 	m_vx = 0.0f; //移動ベクトル
 	m_vy = 0.0f; //移動ベクトル
 	m_posture = 0.0f; //右向き0.0f 左向き1.0f
@@ -99,13 +97,10 @@ void CObjHero::Init()
 	m_hp =256.0f;//主人公のHP
 	//--------------------------------------------------------------------
 	m_f = true; //弾丸発射制御
-	m_ass_f = true;
 	m_gun = 0;//銃の構えているか　0が構えていない 　1が構えている
 	gun_type = 0;//　0がリボルバー 1がアサルト
 	
-	gun_Kama = 1;//銃を構えるフラグ
-	gun_type_flag = 1;//銃の種類フラグ
-	
+	gun_Kama = 1;//銃を構えるフラグ	
 	//---------------------------------------------------------------
 
 	//blockとの衝突状態確認用
@@ -133,7 +128,6 @@ void CObjHero::Action()
 	CObjHosMob* hosmob = (CObjHosMob*)Objs::GetObj(OBJ_HOS_MOB);//病院のモブ
 	CObjDrugMob* drugmob = (CObjDrugMob*)Objs::GetObj(OBJ_DRUG_MOB);//チャイナタウンのモブ
 	CObjHeroine* heroine = (CObjHeroine*)Objs::GetObj(OBJ_HEROINE);//ヒロイン
-
 
 	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);//チャイナタウンA
 	CObjChinaTownBoss* chinatownboss = (CObjChinaTownBoss*)Objs::GetObj(OBJ_CHINA_TOWN_BOSS);//チャイナタウンボス

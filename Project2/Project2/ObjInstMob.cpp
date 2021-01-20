@@ -18,7 +18,6 @@ using namespace GameL;
 //コンストラクタ
 CObjInstMob::CObjInstMob()
 {
-	//Heroineのヘッダーを見たらわかる
 	m_sp = false;
 	key_flag = 1;
 	sp_flag = false;

@@ -111,8 +111,6 @@ void CObjDrugMob::Action()
 	}
 
 
-
-
 	if (drug != nullptr)
 	{
 
@@ -143,9 +141,6 @@ void CObjDrugMob::Action()
 
 	}
 
-
-
-
 }
 
 //ドロー
@@ -160,10 +155,10 @@ void CObjDrugMob::Draw()
 	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 
-	if (drug != nullptr && mob_flag == 1)
+	switch (mob_flag)
 	{
-
-		if (m_sp == 0 && mob_flag ==1)//エンターキーを3回押したとき
+	case 1://モブ一階
+		if (m_sp == 0)//エンターキーを3回押したとき
 		{
 			sp_flag = false;//背景
 			key_flag = 1;//会話の順番
@@ -185,25 +180,23 @@ void CObjDrugMob::Draw()
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-	
 		if (m_sp == 2)
 		{
 			sp_flag = false;
 			key_flag = 1;
 		}
-	}
-
-	if(drug != nullptr)
-	{
-		if (m_save_sp == 1 && mob_flag == 5)
+		break;
+	case 5://セーブ
+		if (m_save_sp == 1)
 		{
 			sp_flag = true;
 			Font::StrDraw(L"セーブしました", 100.0f, 490, 40, c);// X  Y  大きさ     
 		}
-		if (m_save_sp == 2 && mob_flag == 5)
+		if (m_save_sp == 2)
 		{
 			sp_flag = false;
 		}
+		break;
 	}
 
 }

@@ -32,17 +32,6 @@ CSceneBlock::~CSceneBlock()
 //ゲームステージ初期化メソッド
 void CSceneBlock::InitScene()
 {
-	//音楽情報の読み込み
-	Audio::LoadAudio(0, L"bgm_maoudamashii_ethnic23 (online-audio-converter.com).wav",BACK_MUSIC);//Loop
-
-	//バックミュージックスタート
-	float v = Audio::VolumeMaster(1.5f);//マスターボリュームを下げる
-
-	//　ドア　音楽情報の読み込み
-	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発
-
-	Audio::Start(0);//音楽スタート
-
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
 
@@ -73,6 +62,16 @@ void CSceneBlock::InitScene()
 	//外部グラフィックファイルを読み込み5番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"拠点のマップ.png", 15, TEX_SIZE_512);
 
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"bgm_maoudamashii_ethnic23 (online-audio-converter.com).wav", BACK_MUSIC);//Loop
+
+	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(0.2f - v);
+	Audio::Start(0);//音楽スタート
+
+	//　ドア　音楽情報の読み込み
+	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

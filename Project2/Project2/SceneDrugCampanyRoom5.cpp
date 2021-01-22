@@ -70,7 +70,7 @@ void CSceneDrugCampanyRoom5::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(1.0 - v);
+	v = Audio::VolumeMaster(0.4 - v);
 
 	Audio::Start(0);//音楽スタート
 }

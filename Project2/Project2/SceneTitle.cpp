@@ -47,7 +47,7 @@ void CSceneTitle::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(1.7 - v);
+	v = Audio::VolumeMaster(0.2f - v);
 
 	Audio::Start(0);//音楽スタート
 

@@ -147,8 +147,8 @@ void CObjHero::Action()
 	CObjItem* item = (CObjItem*)Objs::GetObj(OBJ_ITEM);//アイテム
 
 	//移動ベクトルの破棄
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	//m_vx = 0.0f;
+	//m_vy = 0.0f;
 
 	if (!block) {
 		if (Input::GetVKey('A') == true)
@@ -593,7 +593,6 @@ void CObjHero::Action()
 			Audio::Start(8);
 			m_hp -= 25.6;
 		}
-
 		if (m_hp <= 0)//HPが０になったら破棄
 		{
 			this->SetStatus(false);

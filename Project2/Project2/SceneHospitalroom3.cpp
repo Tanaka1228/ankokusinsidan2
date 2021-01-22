@@ -60,7 +60,7 @@ void CSceneHospitalRoom3::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(1.0 - v);
+	v = Audio::VolumeMaster(0.4 - v);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成

@@ -65,6 +65,8 @@ void CObjAngleBullet::Action()
 			{
 				this->SetStatus(false);   //自身に削除命令を出す。
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+
+				return;
 			}
 		
 	}
@@ -93,6 +95,7 @@ void CObjAngleBullet::Action()
 			{
 				this->SetStatus(false);   //自身に削除命令を出す。
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+				return;
 			}
 	}
 	if (instituteboss != nullptr)
@@ -120,6 +123,7 @@ void CObjAngleBullet::Action()
 		{
 			this->SetStatus(false);   //自身に削除命令を出す。
 			Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+			return;
 		}
 
 

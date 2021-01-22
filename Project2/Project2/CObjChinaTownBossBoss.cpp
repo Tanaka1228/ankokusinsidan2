@@ -24,7 +24,7 @@ void CObjChinaTownBossBoss::Init()
 	m_vy = 0.0f;
 	m_time = 0;
 	m_timeboss = 0;
-	m_hp =10;
+	m_hp =7;
 
 	//　弾丸が敵に当たった　音楽情報の読み込み
 	Audio::LoadAudio(6, L"金属.wav", EFFECT);//単発

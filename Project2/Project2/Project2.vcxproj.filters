@@ -103,9 +103,6 @@
     <Filter Include="ソース ファイル\Title">
       <UniqueIdentifier>{1e0a1b03-86a1-4f5d-88ed-ec6a1fa67e61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\使わない">
-      <UniqueIdentifier>{863b35e7-ba37-494f-8fe2-0fadd2c0dd0e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\ステージマップ\マップ図">
       <UniqueIdentifier>{bf5d2b7d-acd0-4615-ba11-aef982be0cd7}</UniqueIdentifier>
     </Filter>

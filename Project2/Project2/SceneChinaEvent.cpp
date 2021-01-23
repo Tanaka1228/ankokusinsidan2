@@ -68,7 +68,7 @@ void CSceneChinaEvent::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(400, 280); //主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 5); //作った主人公オブジェクトをオブジェクトマネージャーに登録
+	Objs::InsertObj(obj, OBJ_HERO, 1); //作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//モブオブジェクト追加
 	CObjChinaMob* objchinamob = new CObjChinaMob();//モブ

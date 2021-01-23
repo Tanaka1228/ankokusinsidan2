@@ -150,7 +150,7 @@ void CObjHero::Action()
 	//m_vx = 0.0f;
 	//m_vy = 0.0f;
 
-	if (!block) {
+	if ((!block)) {
 		if (Input::GetVKey('A') == true)
 		{
 			if (gun_Kama == 1)
@@ -184,7 +184,7 @@ void CObjHero::Action()
 		}
 	}
 
-	if (m_bullet > 0)//弾数が0以上なら --------------リボルバー--------------------------------------------
+	if (m_bullet > 0&& (!chinaevent))//弾数が0以上なら --------------リボルバー--------------------------------------------
 	{
 		//主人公の弾丸発射
 		if (Input::GetVKey('Z') == true && m_gun == 1)
@@ -302,7 +302,7 @@ void CObjHero::Action()
 		}
 	}
 
-
+	if (!chinaevent) {
 		//----------主人公右移動(アニメーション)-----------------------
 		if (Input::GetVKey(VK_RIGHT) == true) //主人公移動キー 右
 		{
@@ -493,7 +493,7 @@ void CObjHero::Action()
 				}
 			}
 			//-----------------------------
-		
+
 		}
 		else
 		{
@@ -537,7 +537,7 @@ void CObjHero::Action()
 					hosmob->SetM_sp(0);
 				}
 			}
-			if (drug != nullptr) 
+			if (drug != nullptr)
 			{
 				if (drugmob != nullptr)
 				{
@@ -554,7 +554,7 @@ void CObjHero::Action()
 				}
 			}
 			if (block != nullptr)
-			{ 
+			{
 				if (heroine != nullptr)
 				{
 					heroine->SetSp_flag(false);
@@ -578,6 +578,7 @@ void CObjHero::Action()
 			Audio::Start(3);
 			m_ani_frame1 = 0;
 		}
+	}
 
 		//移動ベクトルの正規化
 		UnitVec(&m_vy, &m_vx);

@@ -30,7 +30,7 @@ void CObjChinaTownBossBoss::Init()
 	Audio::LoadAudio(6, L"金属.wav", EFFECT);//単発
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 464, 464, ELEMENT_ENEMY, OBJ_CHINA_TOWN_BOSS_BOSS, 1);
+	Hits::SetHitBox(this, m_x, m_y, 500, 490, ELEMENT_ENEMY, OBJ_CHINA_TOWN_BOSS_BOSS, 1);
 }
 
 //アクション

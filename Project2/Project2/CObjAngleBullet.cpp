@@ -172,10 +172,11 @@ void CObjAngleBullet::Draw()
 
 	if (chinatownboss != nullptr)
 	{
+		float c[4] = { 1.0f,1.0f,1.5f,1.0f };
 		//•\Ž¦ˆÊ’u‚ÌÝ’è
 		dst.m_top = 0.0f + m_y + chinatownboss->GetScroll2();
 		dst.m_left = 0.0f + m_x + chinatownboss->GetScroll();
-		dst.m_right = 45.0f + m_x + chinatownboss->GetScroll();
+		dst.m_right = 32.0f + m_x + chinatownboss->GetScroll();
 		dst.m_bottom = 32.0f + m_y + chinatownboss->GetScroll2();
 
 		Draw::Draw(3, &src, &dst, c, m_r);

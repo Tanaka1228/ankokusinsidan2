@@ -498,7 +498,7 @@ void CObjHosMob::Draw()
 
 				sprintf_s(str1, "%s", str1);//出力
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-				Font::StrDraw(wstr1, 200.0f, 530, 25, c);// X  Y  大きさ     
+				Font::StrDraw(wstr1, 220.0f, 530, 25, c);// X  Y  大きさ     
 
 				key_flag = 3;
 				fin.close();//ファイルを閉じる
@@ -605,7 +605,7 @@ void CObjHosMob::Draw()
 
 				sprintf_s(str1, "%s", str1);//出力
 				MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-				Font::StrDraw(wstr1, 200.0f, 500, 30, c);// X  Y  大きさ     
+				Font::StrDraw(wstr1, 200.0f, 510, 30, c);// X  Y  大きさ     
 
 				key_flag = 2;
 				fin.close();//ファイルを閉じる

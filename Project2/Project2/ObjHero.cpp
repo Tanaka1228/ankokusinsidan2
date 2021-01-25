@@ -113,7 +113,7 @@ void CObjHero::Init()
 
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 34, 34, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_x, m_y, 29, 30, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 int CObjHero::m_bullet = 6;//弾丸の弾数　リボルバー

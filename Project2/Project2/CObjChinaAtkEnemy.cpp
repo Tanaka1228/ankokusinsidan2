@@ -33,47 +33,47 @@ void CObjChinaAtkEnemy::Init()
 	if (m_id == 1)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 2)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 3)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 4)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 5)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 6)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 7)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 8)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 	if (m_id == 9)
 	{
 		//当たり判定用HitBoxを作成
-		Hits::SetHitBox(this, m_x, m_y, 64, 64, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
 }
 

@@ -139,31 +139,30 @@ void CObjHeroine::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 480, 25, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 30.0f, 500, 25, c);// X  Y  大きさ     
 
 
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp == 1)
+		if (m_sp == 2)
 		{
 			sp_flag == true;
 
 			ifstream fin("会話.txt", ios::in);
 			char str1[64];//本体
 			wchar_t wstr1[64];
-			fin.seekg(48, ios::cur);
+			fin.seekg(20, ios::cur);
 			fin >> str1;
 
 			sprintf_s(str1, "%s", str1);
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);
-			Font::StrDraw(wstr1, 50.0f, 510, 25, c);// X  Y  大きさ 
+			Font::StrDraw(wstr1, 30.0f, 500, 25, c);// X  Y  大きさ 
 
 
 			key_flag = 2;
 			fin.close();
 		}
-
 		if (m_sp == 2)
 		{
 			sp_flag == true;
@@ -171,27 +170,27 @@ void CObjHeroine::Draw()
 			ifstream fin("会話.txt", ios::in);
 			char str3[64];//本体
 			wchar_t wstr3[64];
-			fin.seekg(94, ios::cur);
+			fin.seekg(76, ios::cur);
 			fin >> str3;
 			sprintf_s(str3, "%s", str3);
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str3, 64, wstr3, 64);
-			Font::StrDraw(wstr3, 40.0f, 480, 25, c);// X  Y  大きさ
+			Font::StrDraw(wstr3, 170.0f, 530, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
 			fin.close();
 		}
-		if (m_sp == 2)
+		if (m_sp == 3)
 		{
 			sp_flag == true;
 
 			ifstream fin("会話.txt", ios::in);
 			char str3[64];//本体
 			wchar_t wstr3[64];
-			fin.seekg(158, ios::cur);
+			fin.seekg(110, ios::cur);
 			fin >> str3;
 			sprintf_s(str3, "%s", str3);
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str3, 64, wstr3, 64);
-			Font::StrDraw(wstr3, 40.0f, 510, 25, c);// X  Y  大きさ
+			Font::StrDraw(wstr3, 30.0f,500, 25, c);// X  Y  大きさ
 
 			key_flag = 3;
 			fin.close();
@@ -203,11 +202,11 @@ void CObjHeroine::Draw()
 			ifstream fin("会話.txt", ios::in);
 			char str3[64];//本体
 			wchar_t wstr3[64];
-			fin.seekg(194, ios::cur);
+			fin.seekg(172, ios::cur);
 			fin >> str3;
 			sprintf_s(str3, "%s", str3);
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str3, 64, wstr3, 64);
-			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
+			Font::StrDraw(wstr3, 170.0f, 530, 25, c);// X  Y  大きさ
 
 			key_flag = 4;
 			fin.close();
@@ -218,11 +217,26 @@ void CObjHeroine::Draw()
 			ifstream fin("会話.txt", ios::in);
 			char str3[64];//本体
 			wchar_t wstr3[64];
-			fin.seekg(239, ios::cur);
+			fin.seekg(218, ios::cur);
 			fin >> str3;
 			sprintf_s(str3, "%s", str3);
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str3, 64, wstr3, 64);
-			Font::StrDraw(wstr3, 50.0f, 480, 25, c);// X  Y  大きさ
+			Font::StrDraw(wstr3, 30.0f,500, 25, c);// X  Y  大きさ
+
+			key_flag = 5;
+			fin.close();
+		}
+		if (m_sp == 4)
+		{
+			sp_flag == true;
+			ifstream fin("会話.txt", ios::in);
+			char str3[64];//本体
+			wchar_t wstr3[64];
+			fin.seekg(266, ios::cur);
+			fin >> str3;
+			sprintf_s(str3, "%s", str3);
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str3, 64, wstr3, 64);
+			Font::StrDraw(wstr3, 30.0f, 530, 25, c);// X  Y  大きさ
 
 			key_flag = 5;
 			fin.close();

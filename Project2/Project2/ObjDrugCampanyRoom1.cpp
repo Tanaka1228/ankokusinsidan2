@@ -191,29 +191,6 @@ void CObjDrugCampanyRoom1::Action()
 		}
 	}
 
-	//?G?o?????C??
-	//float Xline = hx + (-mx_scroll) + 400;
-	//float Yline = hy + (my_scroll)-100;
-
-	//int ex = ((int)Xline) / 32;
-	//int ey = ((int)Yline) / 32;
-
-	//for (int i = 0; i < 25; i++)
-	//{
-	//	for (int j = 0; j < 25; j++)
-
-	//		if (m_map[i][ex] == 15)
-	//		{
-	//			//?U???G?@?I?u?W?F?N?g??
-	//			CObjRooftopBoss* obj_rooftop_boss = new CObjRooftopBoss(ex * 32, i * 32); //?U???G?@?I?u?W?F?N?g??
-	//			Objs::InsertObj(obj_rooftop_boss, OBJ_ROOF_TOP_BOSS, 4); //?U???G?@?I?u?W?F?N?g??I?u?W?F?N?g?}?l?[?W???[??o?^
-
-	//			m_map[i][ex] = 0;
-	//		}
-
-
-	//}
-
 }
 //?h???[
 void CObjDrugCampanyRoom1::Draw()
@@ -231,8 +208,8 @@ void CObjDrugCampanyRoom1::Draw()
 
 	dst.m_top = 0.0f + my_scroll;
 	dst.m_left = 0.0f + mx_scroll;
-	dst.m_right = 4400.0f + mx_scroll;
-	dst.m_bottom = 4400.0 + my_scroll;
+	dst.m_right = 1024.0f + mx_scroll;
+	dst.m_bottom = 400.0 + my_scroll;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 
 	//?}?b?v?`?b?v????block??u

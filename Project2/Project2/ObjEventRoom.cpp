@@ -286,7 +286,7 @@ void CObjEventRoom::Draw()
 
 		sprintf_s(str1, "%s", str1);//出力
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-		Font::StrDraw(wstr1, 110.0f, 50, 25, c);// X  Y  大きさ     
+		Font::StrDraw(wstr1, 110.0f, 70, 25, c);// X  Y  大きさ     
 
 
 		key_flag = 2;
@@ -303,7 +303,7 @@ void CObjEventRoom::Draw()
 
 		sprintf_s(str1, "%s", str1);//出力
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
-		Font::StrDraw(wstr1, 14.0f, 50, 23, c);// X  Y  大きさ     
+		Font::StrDraw(wstr1, 14.0f, 70, 23, c);// X  Y  大きさ     
 
 
 		key_flag = 3;
@@ -320,7 +320,7 @@ void CObjEventRoom::Draw()
 
 		sprintf_s(str1, "%s", str1);//出力
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
-		Font::StrDraw(wstr1,110.0f, 50, 25, c);// X  Y  大きさ     
+		Font::StrDraw(wstr1,110.0f, 70, 25, c);// X  Y  大きさ     
 
 
 		key_flag =4;
@@ -337,7 +337,7 @@ void CObjEventRoom::Draw()
 
 		sprintf_s(str1, "%s", str1);//出力
 		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
-		Font::StrDraw(wstr1, 110.0f, 50, 25, c);// X  Y  大きさ     
+		Font::StrDraw(wstr1, 110.0f, 70, 25, c);// X  Y  大きさ     
 
 
 		key_flag = 5;

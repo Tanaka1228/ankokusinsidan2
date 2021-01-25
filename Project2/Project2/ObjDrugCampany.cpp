@@ -259,20 +259,11 @@ void CObjDrugCampany::Action()
 		}
 	}
 
-
-
-
-
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
 	hero->SetDown(false);
 	hero->SetLeft(false);
 	hero->SetRight(false);
-
-
-
-
-
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 200; i++)
@@ -452,9 +443,9 @@ void CObjDrugCampany::Draw()
 	src.m_bottom = 500.0f;// Y 
 
 	dst.m_top = 0.0f + my_scroll;
-	dst.m_left = 0.0f + mx_scroll;
-	dst.m_right = 4400.0f + mx_scroll;
-	dst.m_bottom = 4400.0 + my_scroll;
+	dst.m_left = 30.0f + mx_scroll;
+	dst.m_right = 2950.0f + mx_scroll;
+	dst.m_bottom = 3330.0 + my_scroll;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 
 	//マップチップによるblock設置

@@ -76,7 +76,7 @@ void CSceneChinaTown_c::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.9f - v);
+	v = Audio::VolumeMaster(0.8f - v);
 
 	Audio::Start(0);//音楽スタート
 

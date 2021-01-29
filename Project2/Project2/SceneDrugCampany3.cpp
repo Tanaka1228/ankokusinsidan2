@@ -35,6 +35,9 @@ void CSceneDrugCampany3::InitScene()
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
 
 	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"Enemy1.png", 1, TEX_SIZE_512);//敵グラフィック
+
+	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"ハンドガン.png", 2, TEX_SIZE_512);//ハンドガングラフィック
 
 	//外部グラフィックファイルを読み込み3番に登録(512×512ピクセル)あまり関係ないらしい
@@ -54,6 +57,10 @@ void CSceneDrugCampany3::InitScene()
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber19.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+		//　敵爆発　音楽情報の読み込み
+	Audio::LoadAudio(5, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
+
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる

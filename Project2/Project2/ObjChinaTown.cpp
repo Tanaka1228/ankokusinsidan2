@@ -134,7 +134,6 @@ void CObjChinaTown::Action()
 			mx_scroll -= -6.0f + hero->GetVX(); //主人公は本来動くべき分の値をm_scrollに加える
 		}
 	}
-
 	if (hero->GetLeft() == false)
 	{
 		//前方スクロールライン →
@@ -145,7 +144,6 @@ void CObjChinaTown::Action()
 
 		}
 	}
-
 	if (hero->GetDown() == false)
 	{
 		//スクロールライン　↑
@@ -156,7 +154,6 @@ void CObjChinaTown::Action()
 
 		}
 	}
-
 	if (hero->GetUp() == false)
 	{
 		//スクロールライン　↓
@@ -167,20 +164,11 @@ void CObjChinaTown::Action()
 		}
 	}
 
-
-
-
-
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
 	hero->SetDown(false);
 	hero->SetLeft(false);
 	hero->SetRight(false);
-
-
-
-
-
 
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 65; i++)

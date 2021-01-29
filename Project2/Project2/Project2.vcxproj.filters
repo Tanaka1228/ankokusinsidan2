@@ -130,6 +130,12 @@
     <Filter Include="ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29">
       <UniqueIdentifier>{95b296f3-a1f4-4b53-800b-da6f19269ddb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\研究所\広場">
+      <UniqueIdentifier>{37a3ed97-f148-4c37-be50-4adf3d94cdb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージマップ\研究所\部屋">
+      <UniqueIdentifier>{92109966-69b4-4942-9876-60de991210d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -306,97 +312,7 @@
     <ClCompile Include="SceneDrugCampany3.cpp">
       <Filter>ソース ファイル\ステージマップ\製薬会社</Filter>
     </ClCompile>
-    <ClCompile Include="ObjInstitute.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute1.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute2.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute3.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute4.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute5.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute6.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute7.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute8.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute9.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute10.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute11.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute12.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute13A.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjInstitute14.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
     <ClCompile Include="ObjInstituteBoss.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute1.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute2.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute3.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute4.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute5.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute6.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute7.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute8.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute9.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute10.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute11.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute12.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute13A.cpp">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneInstitute14.cpp">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClCompile>
     <ClCompile Include="SceneInstituteBoss.cpp">
@@ -651,6 +567,96 @@
     <ClCompile Include="ObjEnemy.cpp">
       <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
     </ClCompile>
+    <ClCompile Include="ObjInstitute.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute13A.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute14.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute13A.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute14.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute1.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute2.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute3.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute4.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute5.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute6.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute7.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute8.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute9.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute10.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute11.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjInstitute12.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute1.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute2.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute3.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute4.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute5.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute6.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute7.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute8.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute9.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute10.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute11.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneInstitute12.cpp">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -827,97 +833,7 @@
     <ClInclude Include="SceneDrugCampany3.h">
       <Filter>ソース ファイル\ステージマップ\製薬会社</Filter>
     </ClInclude>
-    <ClInclude Include="ObjInstitute.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute1.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute2.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute3.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute4.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute5.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute6.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute7.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute8.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute9.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute10.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute11.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute12.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute13A.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjInstitute14.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
     <ClInclude Include="ObjInstituteBoss.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute1.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute2.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute3.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute4.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute5.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute6.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute7.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute8.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute9.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute10.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute11.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute12.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute13A.h">
-      <Filter>ソース ファイル\ステージマップ\研究所</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneInstitute14.h">
       <Filter>ソース ファイル\ステージマップ\研究所</Filter>
     </ClInclude>
     <ClInclude Include="SceneInstituteBoss.h">
@@ -1171,6 +1087,96 @@
     </ClInclude>
     <ClInclude Include="ObjEnemy.h">
       <Filter>ソース ファイル\キャラクター\敵\テンプレ敵%28使わな%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute13A.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute14.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute13A.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute14.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\広場</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute1.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute2.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute3.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute4.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute5.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute6.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute7.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute8.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute9.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute10.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute11.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInstitute12.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute1.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute2.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute3.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute4.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute5.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute6.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute7.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute8.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute9.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute10.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute11.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneInstitute12.h">
+      <Filter>ソース ファイル\ステージマップ\研究所\部屋</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

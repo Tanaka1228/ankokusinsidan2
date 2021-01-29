@@ -109,6 +109,27 @@ void CObjBulletEnemy::Init()
 		}
 		if (m_id == 13)//製薬会社3階
 		{
+			m_vx = -2.0f;
+			m_vy = 0.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 14)//研究所１
+		{
+			m_vx = -2.0f;
+			m_vy = 0.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 15)//研究所2
+		{
+			m_vx = +2.0f;
+			m_vy = 0.0f;
+			//当たり判定用HitBoxを作成
+			Hits::SetHitBox(this, m_x, m_y, 30, 20, ELEMENT_ENEMY, OBJ_BULLET_ENEMY, 1);
+		}
+		if (m_id == 16)//研究所14
+		{
 			m_vx = +2.0f;
 			m_vy = 0.0f;
 			//当たり判定用HitBoxを作成
@@ -135,6 +156,9 @@ void CObjBulletEnemy::Action()
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 	CObjDrugCampany2* drug2 = (CObjDrugCampany2*)Objs::GetObj(OBJ_DRUG_CAMPANY2);//製薬会社の2階
 	CObjDrugCampany3* drug3 = (CObjDrugCampany3*)Objs::GetObj(OBJ_DRUG_CAMPANY3);//製薬会社の3階
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
 
 
 
@@ -509,6 +533,97 @@ void CObjBulletEnemy::Action()
 				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
 			}
 		}
+		//研究所１
+		if (m_id == 14)
+		{
+			//移動
+			m_x += m_vx * 12.0f;
+			m_y += m_vy * 12.0f;
+
+			//弾丸のHitBox更新用ポインター取得
+			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+			hit->SetPos(m_x + inst->GetScroll(), m_y + inst->GetScroll2());
+
+
+			//敵機が完全に領域外に出たら敵機を破棄する
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2900.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//自身に削除命令
+				Hits::DeleteHitBox(this);
+			}
+
+			//敵機オブジェクトと接触したら弾丸削除
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //自身に削除命令を出す。
+				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+			}
+		}
+		//研究所2
+		if (m_id == 15)
+		{
+			//移動
+			m_x += m_vx * 12.0f;
+			m_y += m_vy * 12.0f;
+
+			//弾丸のHitBox更新用ポインター取得
+			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+			hit->SetPos(m_x + inst13a->GetScroll(), m_y + inst13a->GetScroll2());
+
+
+			//敵機が完全に領域外に出たら敵機を破棄する
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2900.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//自身に削除命令
+				Hits::DeleteHitBox(this);
+			}
+
+			//敵機オブジェクトと接触したら弾丸削除
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //自身に削除命令を出す。
+				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+			}
+		}
+		//研究所14
+		if (m_id == 16)
+		{
+			//角度加算
+			m_r += 8.0f;
+
+			//360°で初期値に戻す
+			if (m_r > 360.0f)
+				m_r = 0.0f;
+
+			//移動方向
+			m_vx = +2.0f;
+			m_vy = sin(3.14 / 180.0f * m_r);//sinθを求めてm_vyに入れる
+			//移動
+			m_x += m_vx * 8.0f;
+			m_y += m_vy * 8.0f;
+
+			//弾丸のHitBox更新用ポインター取得
+			CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を弾丸の位置に更新
+			hit->SetPos(m_x + inst14->GetScroll(), m_y + inst14->GetScroll2());
+
+
+			//敵機が完全に領域外に出たら敵機を破棄する
+			bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 2900.0f, 3000.0f);
+			if (check == false)
+			{
+				this->SetStatus(false);//自身に削除命令
+				Hits::DeleteHitBox(this);
+			}
+
+			//敵機オブジェクトと接触したら弾丸削除
+			if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				this->SetStatus(false);   //自身に削除命令を出す。
+				Hits::DeleteHitBox(this); //弾丸が所有するHitBoxに削除する。
+			}
+		}
 }
 
 //ドロー
@@ -544,6 +659,9 @@ void CObjBulletEnemy::Draw()
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 	CObjDrugCampany2* drug2 = (CObjDrugCampany2*)Objs::GetObj(OBJ_DRUG_CAMPANY2);//製薬会社の2階
 	CObjDrugCampany3* drug3 = (CObjDrugCampany3*)Objs::GetObj(OBJ_DRUG_CAMPANY3);//製薬会社の3階
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
 
 
 
@@ -711,6 +829,45 @@ void CObjBulletEnemy::Draw()
 			dst.m_bottom = 32.0f + m_y + drug3->GetScroll2();
 
 			Draw::Draw(3, &src, &dst, c, 0.0f);
+		}
+	}
+	if (inst != nullptr)
+	{
+		if (m_id == 14)
+		{
+			//表示位置の設定
+			dst.m_top = -10.0f + m_y + inst->GetScroll2();
+			dst.m_left = -5.0f + m_x + inst->GetScroll();
+			dst.m_right = 45.0f + m_x + inst->GetScroll();
+			dst.m_bottom = 32.0f + m_y + inst->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 90.0f);
+		}
+	}
+	if (inst13a != nullptr)
+	{
+		if (m_id == 15)
+		{
+			//表示位置の設定
+			dst.m_top = -10.0f + m_y + inst13a->GetScroll2();
+			dst.m_left = -5.0f + m_x + inst13a->GetScroll();
+			dst.m_right = 45.0f + m_x + inst13a->GetScroll();
+			dst.m_bottom = 32.0f + m_y + inst13a->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 90.0f);
+		}
+	}
+	if (inst14 != nullptr)
+	{
+		if (m_id == 16)
+		{
+			//表示位置の設定
+			dst.m_top = -10.0f + m_y + inst14->GetScroll2();
+			dst.m_left = -5.0f + m_x + inst14->GetScroll();
+			dst.m_right = 45.0f + m_x + inst14->GetScroll();
+			dst.m_bottom = 32.0f + m_y + inst14->GetScroll2();
+
+			Draw::Draw(3, &src, &dst, c, 90.0f);
 		}
 	}
 }

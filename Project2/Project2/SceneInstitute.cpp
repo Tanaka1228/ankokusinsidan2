@@ -35,6 +35,9 @@ void CSceneInstitute::InitScene()
 	//外部グラフィックファイルを読み込み0番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"Hero.png", 0, TEX_SIZE_512);//主人公グラフィック
 
+		//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
+	Draw::LoadImage(L"Enemy1.png", 1, TEX_SIZE_512);//敵グラフィック
+
 	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)あまり関係ないらしい
 	Draw::LoadImage(L"ハンドガン.png", 2, TEX_SIZE_512);//ハンドガングラフィック
 
@@ -62,6 +65,18 @@ void CSceneInstitute::InitScene()
 	//　銃　音楽情報の読み込み
 	Audio::LoadAudio(1, L"se_maoudamashii_battle_gun01.wav", EFFECT);//単発
 
+		//　敵爆発　音楽情報の読み込み
+	Audio::LoadAudio(5, L"se_maoudamashii_explosion05.wav", EFFECT);//単発
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber22.wav", SOUND_TYPE::BACK_MUSIC);//Loop
+
+	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
+	v = Audio::VolumeMaster(0.4 - v);
+
+	Audio::Start(0);//音楽スタート
+
 	//モブオブジェクト追加
 	CObjInstMob* objinstmob = new CObjInstMob();//モブ
 	Objs::InsertObj(objinstmob, OBJ_INST_MOB, 6);
@@ -86,14 +101,7 @@ void CSceneInstitute::InitScene()
 	CObjSpBack* objsp = new CObjSpBack(); //会話の背景作成
 	Objs::InsertObj(objsp, OBJ_SP_BACK, 5); //作った会話の背景オブジェクトをオブジェクトマネージャーに登録
 
-		//音楽情報の読み込み
-	Audio::LoadAudio(0, L"bgm_maoudamashii_cyber22.wav", SOUND_TYPE::BACK_MUSIC);//Loop
 
-	//バックミュージックスタート
-	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.4 - v);
-
-	Audio::Start(0);//音楽スタート
 
 }
 

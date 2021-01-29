@@ -90,6 +90,21 @@ void CObjChinaAtkEnemy::Init()
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
+	if (m_id == 13)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
+	if (m_id == 14)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
+	if (m_id == 15)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
 }
 
 //アクション
@@ -113,6 +128,9 @@ void CObjChinaAtkEnemy::Action()
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 	CObjDrugCampany2* drug2 = (CObjDrugCampany2*)Objs::GetObj(OBJ_DRUG_CAMPANY2);//製薬会社の2階
 	CObjDrugCampany3* drug3 = (CObjDrugCampany3*)Objs::GetObj(OBJ_DRUG_CAMPANY3);//製薬会社の3階
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
 
 	//----------------------------------------------
 
@@ -564,6 +582,123 @@ void CObjChinaAtkEnemy::Action()
 
 
 	}
+	//研究所１ の雑魚
+	if (m_id == 13)
+	{
+		m_time++;//1加算
+
+		if (m_time > 100)//弾丸を発射する間隔
+		{
+			m_time = 0;
+
+			//弾丸敵機オブジェクト
+			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 14);
+			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+		}
+
+
+		//敵機が完全に領域外に出たら敵機を破棄する
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+		if (check == false)
+		{
+			this->SetStatus(false);//自身に削除命令
+			Hits::DeleteHitBox(this);
+
+			return;
+		}
+
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + inst->GetScroll(), m_y + inst->GetScroll2());
+
+		//弾丸と接触してるかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Audio::Start(5);
+		}
+
+
+	}
+	//研究所2 の雑魚
+	if (m_id == 14)
+	{
+		m_time++;//1加算
+
+		if (m_time > 100)//弾丸を発射する間隔
+		{
+			m_time = 0;
+
+			//弾丸敵機オブジェクト
+			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 15);
+			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+		}
+
+
+		//敵機が完全に領域外に出たら敵機を破棄する
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+		if (check == false)
+		{
+			this->SetStatus(false);//自身に削除命令
+			Hits::DeleteHitBox(this);
+
+			return;
+		}
+
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + inst13a->GetScroll(), m_y + inst13a->GetScroll2());
+
+		//弾丸と接触してるかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Audio::Start(5);
+		}
+
+
+	}
+	//研究所14 の雑魚
+	if (m_id == 15)
+	{
+		m_time++;//1加算
+
+		if (m_time > 100)//弾丸を発射する間隔
+		{
+			m_time = 0;
+
+			//弾丸敵機オブジェクト
+			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 16);
+			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+		}
+
+
+		//敵機が完全に領域外に出たら敵機を破棄する
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+		if (check == false)
+		{
+			this->SetStatus(false);//自身に削除命令
+			Hits::DeleteHitBox(this);
+
+			return;
+		}
+
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + inst14->GetScroll(), m_y + inst14->GetScroll2());
+
+		//弾丸と接触してるかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Audio::Start(5);
+		}
+
+
+	}
 }
 //ドロー
 void CObjChinaAtkEnemy::Draw()
@@ -585,6 +720,9 @@ void CObjChinaAtkEnemy::Draw()
 	CObjDrugCampany* drug = (CObjDrugCampany*)Objs::GetObj(OBJ_DRUG_CAMPANY);//製薬会社の一階
 	CObjDrugCampany2* drug2 = (CObjDrugCampany2*)Objs::GetObj(OBJ_DRUG_CAMPANY2);//製薬会社の2階
 	CObjDrugCampany3* drug3 = (CObjDrugCampany3*)Objs::GetObj(OBJ_DRUG_CAMPANY3);//製薬会社の3階
+	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
+	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
+	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
 
 
 	//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
@@ -759,6 +897,48 @@ void CObjChinaAtkEnemy::Draw()
 			dst.m_left = 32.0f + 32.0f + m_x + drug3->GetScroll();
 			dst.m_right = 0.0f + m_x + drug3->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + drug3->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+	}
+	if (inst != nullptr)
+	{
+		if (m_id == 13)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + inst->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + inst->GetScroll();
+			dst.m_right = 0.0f + m_x + inst->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + inst->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+	}
+	if (inst13a != nullptr)
+	{
+		if (m_id == 14)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + inst13a->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + inst13a->GetScroll();
+			dst.m_right = 0.0f + m_x + inst13a->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + inst13a->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+	}
+	if (inst14 != nullptr)
+	{
+		if (m_id == 15)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + inst14->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + inst14->GetScroll();
+			dst.m_right = 0.0f + m_x + inst14->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + inst14->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
 			Draw::Draw(1, &src, &dst, c, 0.0f);

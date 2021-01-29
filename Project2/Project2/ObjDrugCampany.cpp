@@ -347,7 +347,6 @@ void CObjDrugCampany::Action()
 						{
 							Scene::SetScene(new CSceneDrugCampany2());
 						}
-
 						if (m_map[i][j] == 8)//扉を開けると部屋1に移動
 						{
 							Scene::SetScene(new CSceneDrugCampanyRoom1());
@@ -395,17 +394,13 @@ void CObjDrugCampany::Action()
 						if (m_map[i][j] == 20)//扉を開けると部屋12に移動
 						{
 							Scene::SetScene(new CSceneDrugCampanyRoom12());
-						}
-						
+						}					
 						if (m_map[i][j] == 11)//製薬会社をでるとチャイナタウン
 						{
 							Scene::SetScene(new CSceneChinaTown_c());
 						}
 					}
 				}
-
-
-
 			}
 		}
 	}
@@ -425,7 +420,6 @@ void CObjDrugCampany::Action()
 		}
 
 	}
-
 
 
 	if (Input::GetVKey('X') == true)

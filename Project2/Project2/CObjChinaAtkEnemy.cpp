@@ -786,10 +786,20 @@ void CObjChinaAtkEnemy::Draw()
 
 	if (chinatown != nullptr) {
 		if (m_id == 1) {
+
+			//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
+			float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+			//切り取り位置の設定
+			src.m_top = 184.0f; //y
+			src.m_left = 365.0f; //x
+			src.m_right = 383.0f; //x
+			src.m_bottom = 208.0f; //y
+
 			//表示位置の設定
 			dst.m_top = 0.0f + m_y + chinatown->GetScroll2();
-			dst.m_left = 32.0f + 32.0f + m_x + chinatown->GetScroll();
-			dst.m_right = 0.0f + m_x + chinatown->GetScroll();
+			dst.m_left = 0.0f + 0.0f + m_x + chinatown->GetScroll();
+			dst.m_right = 32.0f +32.0f+ m_x + chinatown->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + chinatown->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
@@ -798,10 +808,20 @@ void CObjChinaAtkEnemy::Draw()
 	}
 	if (chinatownboss != nullptr) {
 		if (m_id == 2) {
+
+			//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
+			float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+			//切り取り位置の設定
+			src.m_top = 155.0f;   //y
+			src.m_left = 133.0f;  //x
+			src.m_right = 168.0f; //x
+			src.m_bottom = 182.0f; //y
+
 			//表示位置の設定
 			dst.m_top = 0.0f + m_y + chinatownboss->GetScroll2();
-			dst.m_left = 32.0f + 32.0f + m_x + chinatownboss->GetScroll();
-			dst.m_right = 0.0f + m_x + chinatownboss->GetScroll();
+			dst.m_left = 0.0f + 0.0f + m_x + chinatownboss->GetScroll();
+			dst.m_right = 32.0f +32.0f+ m_x + chinatownboss->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + chinatownboss->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
@@ -840,10 +860,19 @@ void CObjChinaAtkEnemy::Draw()
 	{
 		if (m_id == 5)
 		{
+			//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
+			float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+			//切り取り位置の設定
+			src.m_top = 211.0f; //y
+			src.m_left = 17.0f; //x
+			src.m_right = 46.0f; //x
+			src.m_bottom = 229.0f; //y
+
 			//表示位置の設定
 			dst.m_top = 0.0f + m_y + hospital->GetScroll2();
-			dst.m_left = 32.0f + 32.0f + m_x + hospital->GetScroll();
-			dst.m_right = 0.0f + m_x + hospital->GetScroll();
+			dst.m_left = 0.0f + 0.0f + m_x + hospital->GetScroll();
+			dst.m_right = 32.0f +32.0f+ m_x + hospital->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + hospital->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
@@ -882,10 +911,19 @@ void CObjChinaAtkEnemy::Draw()
 	{
 		if (m_id ==8)
 		{
+			//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
+			float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+			//切り取り位置の設定
+			src.m_top = 236.0f; //y
+			src.m_left = 135.0f; //x
+			src.m_right = 161.0f; //x
+			src.m_bottom = 266.0f; //y
+
 			//表示位置の設定
 			dst.m_top = 0.0f + m_y + rooftop->GetScroll2();
-			dst.m_left = 32.0f + 32.0f + m_x + rooftop->GetScroll();
-			dst.m_right = 0.0f + m_x + rooftop->GetScroll();
+			dst.m_left = 0.0f + 0.0f + m_x + rooftop->GetScroll();
+			dst.m_right = 32.0f + 32.0f + m_x + rooftop->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + rooftop->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
@@ -994,10 +1032,19 @@ void CObjChinaAtkEnemy::Draw()
 	{
 		if (m_id == 16)
 		{
+			//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
+			float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+			//切り取り位置の設定
+			src.m_top = 210.0f; //y
+			src.m_left = 83.0f; //x
+			src.m_right = 113.0f; //x
+			src.m_bottom = 229.0f; //y
+
 			//表示位置の設定
 			dst.m_top = 0.0f + m_y + instboss->GetScroll2();
-			dst.m_left = 32.0f + 32.0f + m_x + instboss->GetScroll();
-			dst.m_right = 0.0f + m_x + instboss->GetScroll();
+			dst.m_left =0.0f + 0.0f + m_x + instboss->GetScroll();
+			dst.m_right = 32.0f +32.0f + m_x + instboss->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + instboss->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画

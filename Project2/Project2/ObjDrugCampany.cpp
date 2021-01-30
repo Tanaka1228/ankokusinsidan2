@@ -454,9 +454,9 @@ void CObjDrugCampany::Draw()
 	src.m_right = 500.0f; // X
 	src.m_bottom = 500.0f;// Y 
 
-	dst.m_top = 0.0f + my_scroll;
+	dst.m_top = 160.0f + my_scroll;
 	dst.m_left = 30.0f + mx_scroll;
-	dst.m_right = 2950.0f + mx_scroll;
+	dst.m_right = 2940.0f + mx_scroll;
 	dst.m_bottom = 3330.0 + my_scroll;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 

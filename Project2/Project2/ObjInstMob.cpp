@@ -290,7 +290,7 @@ void CObjInstMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 470, 30, c);// X  Y  大きさ     ---------------〇-------------------
+			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     ---------------〇-------------------
 
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
@@ -307,7 +307,7 @@ void CObjInstMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 250.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 250.0f, 530, 30, c);// X  Y  大きさ     
 
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
@@ -324,7 +324,7 @@ void CObjInstMob::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 470, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
 
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
@@ -347,70 +347,6 @@ void CObjInstMob::Draw()
 			sp_flag = false;
 		}
 	}
-
-	//----------------2体目の会話-----------------------------------------------------------------------
-	//if (inst != nullptr && mob_flag == 2)
-	//{
-	//	if (m_sp == 1)//エンターキーを一回押したとき
-	//	{
-	//		sp_flag == true;
-
-	//		ifstream fin("研究所の会話.txt", ios::in);//テキストデータをを読み込み
-	//		char str1[64];//ただの配列
-	//		wchar_t wstr1[64];
-	//		fin.seekg(162, ios::cur);//0バイト数進める
-	//		fin >> str1;//str1にテキストを入れる
-
-	//		sprintf_s(str1, "%s", str1);//出力
-	//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-	//		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
-
-
-	//		key_flag = 2;
-	//		fin.close();//ファイルを閉じる
-	//	}
-	//	if (m_sp == 2)//エンターキーを一回押したとき
-	//	{
-	//		sp_flag == true;
-
-	//		ifstream fin("研究所の会話.txt", ios::in);//テキストデータをを読み込み
-	//		char str1[64];//ただの配列
-	//		wchar_t wstr1[64];
-	//		fin.seekg(222, ios::cur);//0バイト数進める
-	//		fin >> str1;//str1にテキストを入れる
-
-	//		sprintf_s(str1, "%s", str1);//出力
-	//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-	//		Font::StrDraw(wstr1, 50.0f, 500, 25, c);// X  Y  大きさ     
-
-
-	//		key_flag = 3;
-	//		fin.close();//ファイルを閉じる
-	//	}
-	//	if (m_sp == 3)//エンターキーを一回押したとき
-	//	{
-	//		sp_flag == true;
-
-	//		ifstream fin("研究所の会話.txt", ios::in);//テキストデータをを読み込み
-	//		char str1[100];//ただの配列
-	//		wchar_t wstr1[100];
-	//		fin.seekg(260, ios::cur);//0バイト数進める
-	//		fin >> str1;//str1にテキストを入れる
-
-	//		sprintf_s(str1, "%s", str1);//出力
-	//		MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 100, wstr1, 100);//文字をユニコードに変換する
-	//		Font::StrDraw(wstr1, 40.0f, 500, 22, c);// X  Y  大きさ     
-
-
-	//		key_flag = 4;
-	//		fin.close();//ファイルを閉じる
-	//	}
-	//	if (m_sp == 4)
-	//	{
-	//		Font::StrDraw(L"", 200.0f, 530, 25, c);// X  Y  大きさ    
-	//		key_flag = 1;
-	//	}
-	//}
 
 	//------地下2階--------------------------------------------------------------------------------------------------
 	if (inst13a != nullptr && mob_flag == 1)

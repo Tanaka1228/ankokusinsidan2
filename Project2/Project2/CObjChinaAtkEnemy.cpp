@@ -105,6 +105,11 @@ void CObjChinaAtkEnemy::Init()
 		//当たり判定用HitBoxを作成
 		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
 	}
+	if (m_id == 16)
+	{
+		//当たり判定用HitBoxを作成
+		Hits::SetHitBox(this, m_x, m_y, 64, 60, ELEMENT_ENEMY, OBJ_CHINA_ATK_ENEMY, 1);
+	}
 }
 
 //アクション
@@ -131,6 +136,7 @@ void CObjChinaAtkEnemy::Action()
 	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
 	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
 	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
+	CObjInstituteBoss* instboss = (CObjInstituteBoss*)Objs::GetObj(OBJ_INSTITUTE_BOSS);//研究所階
 
 	//----------------------------------------------
 
@@ -699,6 +705,45 @@ void CObjChinaAtkEnemy::Action()
 
 
 	}
+	//研究所ボス の雑魚
+	if (m_id == 16)
+	{
+		m_time++;//1加算
+
+		if (m_time > 100)//弾丸を発射する間隔
+		{
+			m_time = 0;
+
+			//弾丸敵機オブジェクト
+			CObjBulletEnemy* obj_bullet_enemy = new CObjBulletEnemy(m_x, m_y, 17);
+			Objs::InsertObj(obj_bullet_enemy, OBJ_BULLET_ENEMY, 4);
+		}
+
+
+		//敵機が完全に領域外に出たら敵機を破棄する
+		bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 3000.0f, 3000.0f);
+		if (check == false)
+		{
+			this->SetStatus(false);//自身に削除命令
+			Hits::DeleteHitBox(this);
+
+			return;
+		}
+
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x + instboss->GetScroll(), m_y + instboss->GetScroll2());
+
+		//弾丸と接触してるかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Audio::Start(5);
+		}
+
+
+	}
 }
 //ドロー
 void CObjChinaAtkEnemy::Draw()
@@ -723,6 +768,7 @@ void CObjChinaAtkEnemy::Draw()
 	CObjInstitute* inst = (CObjInstitute*)Objs::GetObj(OBJ_INSTITUTE);//研究所1階
 	CObjInstitute13A* inst13a = (CObjInstitute13A*)Objs::GetObj(OBJ_INSTITUTE13A);//研究所地下2階
 	CObjInstitute14* inst14 = (CObjInstitute14*)Objs::GetObj(OBJ_INSTITUTE14);//研究所階
+	CObjInstituteBoss* instboss = (CObjInstituteBoss*)Objs::GetObj(OBJ_INSTITUTE_BOSS);//研究所階
 
 
 	//描画カラー情報　R=RED G=Green B=Blue A=alpha(透過情報)
@@ -939,6 +985,20 @@ void CObjChinaAtkEnemy::Draw()
 			dst.m_left = 32.0f + 32.0f + m_x + inst14->GetScroll();
 			dst.m_right = 0.0f + m_x + inst14->GetScroll();
 			dst.m_bottom = 32.0f + 32.0f + m_y + inst14->GetScroll2();
+
+			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+	}
+	if (instboss != nullptr)
+	{
+		if (m_id == 16)
+		{
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y + instboss->GetScroll2();
+			dst.m_left = 32.0f + 32.0f + m_x + instboss->GetScroll();
+			dst.m_right = 0.0f + m_x + instboss->GetScroll();
+			dst.m_bottom = 32.0f + 32.0f + m_y + instboss->GetScroll2();
 
 			//1番目に登録したグラフィックをstc・dst・cの情報を元に描画
 			Draw::Draw(1, &src, &dst, c, 0.0f);

@@ -180,7 +180,92 @@ void CObjDrugMob::Draw()
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-		if (m_sp == 2)
+		if (m_sp == 2)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("製薬会社の会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[16];//ただの配列
+			wchar_t wstr1[16];
+			fin.seekg(42, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 16, wstr1, 16);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag = 3;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("製薬会社の会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[32];//ただの配列
+			wchar_t wstr1[32];
+			fin.seekg(56, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 32, wstr1, 32);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag = 4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 4)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("製薬会社の会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(82, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 28, c);// X  Y  大きさ     
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 4)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("製薬会社の会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(136, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1,162.0f, 530, 28, c);// X  Y  大きさ     
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 5)//エンターキーを2回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("製薬会社の会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(170, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 50.0f, 500, 28, c);// X  Y  大きさ     
+
+			key_flag = 6;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 6)
 		{
 			sp_flag = false;
 			key_flag = 1;

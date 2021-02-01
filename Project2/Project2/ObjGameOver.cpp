@@ -43,9 +43,9 @@ void CObjGameOver::Action()
 	{
 		m_y = 349;
 	}
-	if (m_y > 450)
+	if (m_y >400)
 	{
-		m_y = 450;
+		m_y = 400;
 	}
 
 	//カーソルの位置とプッシュする場所で当たり判定
@@ -61,49 +61,9 @@ void CObjGameOver::Action()
 		}
 	}
 
-	//ロード
+	//エンターキーが押されたらシャットダウンに還移
 	if (m_x > 200 && m_x < 550 && m_y>370 && m_y < 430)
 	{
-		//エンターキーが押されたらロードに還移
-		if (m_key_enter == true)
-		{
-			Save::Open();
-			if (((UserData*)Save::GetData())->mStage == 0)//拠点ニューゲーム
-			{
-				Audio::Start(1);
-				Sleep(300);
-				Scene::SetScene(new CSceneChinaEvent());
-			}
-			if (((UserData*)Save::GetData())->mStage == 1)//チャイナタウン
-			{
-				Audio::Start(1);
-				Sleep(300);
-				Scene::SetScene(new CSceneChinaTown());
-			}
-			if (((UserData*)Save::GetData())->mStage == 2)//病院1階
-			{
-				Audio::Start(1);
-				Sleep(300);
-				Scene::SetScene(new CSceneHospital());
-			}
-			if (((UserData*)Save::GetData())->mStage == 3)//製薬会社一階
-			{
-				Audio::Start(1);
-				Sleep(300);
-				Scene::SetScene(new CSceneDrugCampany());
-			}
-			if (((UserData*)Save::GetData())->mStage == 8)//研究所
-			{
-				Audio::Start(1);
-				Sleep(300);
-				Scene::SetScene(new CSceneInstitute());
-			}
-		}
-	}
-
-	if (m_x > 200 && m_x < 550 && m_y>440 && m_y < 470)
-	{
-		//エンターキーが押されたらシャットダウンに還移
 		if (m_key_enter == true)
 		{
 			Audio::Start(1);
@@ -112,21 +72,8 @@ void CObjGameOver::Action()
 		}
 	}
 
+	
 
-	//エンターキーを押してシーン：ゲームTitleに移行する
-	/*if (Input::GetVKey(VK_RETURN) == true)
-	{
-		if (m_key_flag == true)
-		{
-			Scene::SetScene(new CSceneTitle());
-			m_key_flag = false;
-		}
-		
-	}
-	else
-	{
-		m_key_flag = true;
-	}*/
 }
 
 //ドロー
@@ -142,10 +89,10 @@ void CObjGameOver::Draw()
 	Font::StrDraw(L"◆    タイトル ", 250, 350, 32, c);
 
 	////ロード画面に移行
-	Font::StrDraw(L"◆     ロード    ", 250, 400, 32, c);
+	//Font::StrDraw(L"◆     ロード    ", 250, 400, 32, c);
 
 	//設定画面に移行
-	Font::StrDraw(L"◆ シャットダウン", 250, 450, 32, c);
+	Font::StrDraw(L"◆ シャットダウン", 250, 400, 32, c);
 
 
 

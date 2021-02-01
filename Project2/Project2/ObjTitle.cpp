@@ -26,6 +26,9 @@ void CObjTitle::Init()
 //アクション
 void CObjTitle::Action()
 {
+	CObjChinaTown* chinatown = (CObjChinaTown*)Objs::GetObj(OBJ_CHINA_TOWN);
+
+
 	 //矢印キーの位置取得
 	 m_key_uy = (float)Input::GetVKey(VK_UP);
 	 m_key_dy = (float)Input::GetVKey(VK_DOWN);

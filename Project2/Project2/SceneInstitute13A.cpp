@@ -98,7 +98,7 @@ void CSceneInstitute13A::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.4 - v);
+	v = Audio::Volume(0.4 - v, 0);
 
 	Audio::Start(0);//音楽スタート
 }

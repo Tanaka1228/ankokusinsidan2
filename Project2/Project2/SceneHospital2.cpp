@@ -70,9 +70,9 @@ void CSceneHospital2::InitScene()
 	//　ドア　音楽情報の読み込み
 	Audio::LoadAudio(4, L"ドア.wav", EFFECT);//単発
 
-	//バックミュージックスタート
+		//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.4 - v);
+	v = Audio::VolumeMaster(0.6 - v);
 
 	Audio::Start(0);//音楽スタート
 

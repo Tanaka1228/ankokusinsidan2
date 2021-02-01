@@ -81,7 +81,7 @@ void CSceneHospital::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.4 - v);
+	v = Audio::VolumeMaster(0.6 - v);
 
 	Audio::Start(0);//音楽スタート
 

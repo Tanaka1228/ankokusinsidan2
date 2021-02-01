@@ -67,7 +67,7 @@ void CSceneBlock::InitScene()
 
 	//バックミュージックスタート
 	float v = Audio::VolumeMaster(0);//マスターボリュームを下げる
-	v = Audio::VolumeMaster(0.2f - v);
+	v = Audio::Volume(0.2f - v,0);
 	Audio::Start(0);//音楽スタート
 
 	//　ドア　音楽情報の読み込み

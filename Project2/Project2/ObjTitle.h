@@ -22,5 +22,8 @@ class CObjTitle : public CObj
 		
 		int m_x;
 		int m_y;//カーソル移動
+
+		float m_color;
+		bool color_flag;//αブレンドを管理
 		
 };

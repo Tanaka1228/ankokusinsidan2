@@ -21,6 +21,8 @@ void CObjTitle::Init()
 	 m_key_uy = 0.0f;
 	 m_key_dy = 0.0f;
 	 m_key_enter = false;
+	 m_color = 1.0f;
+	 color_flag = true;
 }
 
 //アクション
@@ -120,47 +122,31 @@ void CObjTitle::Action()
 		 }
 	 }
 
+	 if (color_flag == true)
+	 {
+		 m_color -= 0.02f;
 
+		 if (m_color < 0.4f)
+		 {
+			 color_flag = false;
+		 }
+	 }
+	 if (color_flag == false)
+	 {
+		 m_color += 0.02f;
 
-	//if (m_mou_x > 250 && m_mou_x < 500 && m_mou_y>380 && m_mou_y < 430)
-	//{
-	//	 //マウスボタンが押されたらメインに還移
-	//	 if (m_mou_r == true || m_mou_l == true)
-	//	 {
-	//		Scene::SetScene(new CScene());
-	//	 }
-	//}
-	//
-	// if (m_mou_x > 250 && m_mou_x < 500 && m_mou_y>440 && m_mou_y < 470)
-	// {
-	//	 //マウスボタンが押されたらメインに還移
-	//	 if (m_mou_r == true || m_mou_l == true)
-	//	 {
-	//		 Scene::SetScene(new ());
-	//	 }
-	// }
-	// 
-
-	////エンターキーを押してシーン：ゲームTitleに移行する
-	//if (Input::GetVKey(VK_RETURN) == true)
-	//{
-	//	if (m_key_flag == true)
-	//	{
-	//		Scene::SetScene(new CSceneMain());
-	//		m_key_flag = false;
-	//	}
-
-	//}
-	//else
-	//{
-	//	m_key_flag = true;
-	//}
+		 if (m_color > 1.0f)
+		 {
+			 color_flag = true;
+		 }
+	 }
 }
 
 //ドロー
 void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	float ca[4] = { 1.0f,1.0f,1.0f,m_color, };
 	RECT_F src;
 	RECT_F dst;
 
@@ -178,12 +164,8 @@ void CObjTitle::Draw()
 	//設定画面に移行
 	Font::StrDraw(L"◆ シャットダウン", 250, 450, 32, c);
 	//
-	
 
-	//仮矢印位置表示
-	//wchar_t str[256];
-	//swprintf_s(str, L"X %d  下 = %d", m_x, m_y);
-	//Font::StrDraw(str, m_x, m_y, 32, c);// X  Y  大きさ 
+	Font::StrDraw(L"★↑or↓キーでカーソル移動 ", 550, 570, 18, c);
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;   //y
@@ -200,11 +182,18 @@ void CObjTitle::Draw()
 	//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 
-	
-	//仮矢印のボタンの状態
-	/*if (m_key_enter == true)
-		Font::StrDraw(L"決定=押している", 20, 20, 12, c);
-	else
-		Font::StrDraw(L"決定=押していない", 20, 20, 12, c);*/
+	//切り取り位置の設定
+	src.m_top = 0.0f;   //y
+	src.m_left = 0.0f;  //x
+	src.m_right = 128.0f; //x
+	src.m_bottom = 64.0f; //y
 
+	//表示位置の設定
+	dst.m_top = 0.0f+270.0f;//y
+	dst.m_left =0.0f+300.0f;//x
+	dst.m_right = 128.0f +300+32.0f;//x
+	dst.m_bottom = 64.0f +270.0f; //y
+
+	//5番目に登録したグラフィックをstc・dst・cの情報を元に描画
+	Draw::Draw(7, &src, &dst, ca, 0.0f);
 }

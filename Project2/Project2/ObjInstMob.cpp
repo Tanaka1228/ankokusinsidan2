@@ -138,7 +138,7 @@ void CObjInstMob::Action()
 	{
 		if (hero->GetBT() == 70)//主人公が数字(ブロック)に触れていれば
 		{
-			mob_flag = 1;
+			mob_flag = 2;
 
 			if (Input::GetVKey(VK_RETURN) == true) {
 
@@ -150,7 +150,6 @@ void CObjInstMob::Action()
 						m_sp = 1;
 						sp_flag = true;
 					}
-
 					if (key_flag == 2)
 					{
 						m_sp = 2;
@@ -196,7 +195,7 @@ void CObjInstMob::Action()
 	{
 		if (hero->GetBT() == 99)//主人公が数字(ブロック)に触れていれば
 		{
-			mob_flag = 1;
+			mob_flag = 3;
 
 			if (Input::GetVKey(VK_RETURN) == true) {
 
@@ -271,8 +270,9 @@ void CObjInstMob::Draw()
 
 
 	//------------地上1階の一体目----------------------------------------------------------------------------
-	if (inst != nullptr && mob_flag == 1)
+	switch (mob_flag)
 	{
+	case 1:
 		if (m_sp == 0)//エンターキーを3回押したとき
 		{
 			sp_flag = false;//背景
@@ -334,23 +334,19 @@ void CObjInstMob::Draw()
 			sp_flag = false;
 			key_flag = 1;
 		}
-	}
-
-	if (inst != nullptr) {
-		if (m_save_sp == 1 && mob_flag == 5)
+		break;
+	case 5://セーブ
+		if (m_save_sp == 1)
 		{
 			sp_flag = true;
 			Font::StrDraw(L"セーブしました", 100.0f, 490, 40, c);// X  Y  大きさ     
 		}
-		if (m_save_sp == 2 && mob_flag == 5)
+		if (m_save_sp == 2)
 		{
 			sp_flag = false;
 		}
-	}
-
-	//------地下2階--------------------------------------------------------------------------------------------------
-	if (inst13a != nullptr && mob_flag == 1)
-	{
+		break;
+	case 2://------地下2階---
 		if (m_sp == 0)//エンターキーを0回押したとき
 		{
 			sp_flag = false;//背景
@@ -390,16 +386,18 @@ void CObjInstMob::Draw()
 			key_flag = 3;
 			fin.close();//ファイルを閉じる
 		}
-	
 		if (m_sp == 3)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
 			key_flag = 1;
 		}
-	}
-	//----------------------------------------------------------------------------------------
-	if (instituteboss != nullptr && mob_flag == 1)
-	{
+		break;
+	case 3://ボビー
+		if (m_sp == 0)//エンターキーを0回押したとき
+		{
+			sp_flag = false;//背景
+			key_flag = 1;//会話の順番
+		}
 		if (m_sp == 1)//エンターキーを一回押したとき
 		{
 			sp_flag == true;
@@ -417,11 +415,79 @@ void CObjInstMob::Draw()
 			key_flag = 2;
 			fin.close();//ファイルを閉じる
 		}
-
 		if (m_sp == 2)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("研究所ボス戦フィールドの会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(24, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 40.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag = 3;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("研究所ボス戦フィールドの会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(60, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 40.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag = 4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 3)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("研究所ボス戦フィールドの会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(112, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 160.0f, 530, 30, c);// X  Y  大きさ     
+
+			key_flag = 4;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 4)//エンターキーを一回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("研究所ボス戦フィールドの会話.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(126, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 40.0f, 500, 30, c);// X  Y  大きさ     
+
+			key_flag = 5;
+			fin.close();//ファイルを閉じる
+		}
+		if (m_sp == 5)//エンターキーを一回押したとき
 		{
 			sp_flag = false;
 			key_flag = 1;
 		}
+		break;
 	}
 }

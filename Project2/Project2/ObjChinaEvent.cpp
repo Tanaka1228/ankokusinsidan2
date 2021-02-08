@@ -109,6 +109,15 @@ void CObjChinaEvent::Action()
 
 			}
 		}
+		if (second == 14)//秒たつと
+		{
+			if ((key_flag == 7))
+			{
+				m_sp = 7;
+				sp_flag = true;
+
+			}
+		}
 	}
 	//------------------------------------------------------
 
@@ -143,7 +152,7 @@ void CObjChinaEvent::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 20.0f, 510, 30, c);// X  Y  大きさ     
 
 
 			key_flag = 2;
@@ -161,7 +170,7 @@ void CObjChinaEvent::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 20.0f, 510, 30, c);// X  Y  大きさ     
 
 
 			key_flag = 3;
@@ -179,7 +188,7 @@ void CObjChinaEvent::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 20.0f, 510, 30, c);// X  Y  大きさ     
 
 
 			key_flag = 4;
@@ -197,31 +206,49 @@ void CObjChinaEvent::Draw()
 
 			sprintf_s(str1, "%s", str1);//出力
 			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-			Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+			Font::StrDraw(wstr1, 20.0f, 510, 30, c);// X  Y  大きさ     
 
 
 			key_flag = 5;
 			fin.close();//ファイルを閉じる
 		}
-	    if (m_sp == 5)//エンターキーを3回押したとき
+		if (m_sp == 5)//エンターキーを3回押したとき
+		{
+			sp_flag == true;
+
+			ifstream fin("チャイナタウンイベント.txt", ios::in);//テキストデータをを読み込み
+			char str1[64];//ただの配列
+			wchar_t wstr1[64];
+			fin.seekg(130, ios::cur);//0バイト数進める
+			fin >> str1;//str1にテキストを入れる
+
+			sprintf_s(str1, "%s", str1);//出力
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
+			Font::StrDraw(wstr1, 20.0f, 510, 28, c);// X  Y  大きさ     
+
+
+			key_flag = 6;
+			fin.close();//ファイルを閉じる
+		}
+	    if (m_sp == 6)//エンターキーを3回押したとき
 	    {
 	    	sp_flag == true;
 	    
 	    	ifstream fin("チャイナタウンイベント.txt", ios::in);//テキストデータをを読み込み
 	    	char str1[64];//ただの配列
 	    	wchar_t wstr1[64];
-	    	fin.seekg(130, ios::cur);//0バイト数進める
+	    	fin.seekg(188, ios::cur);//0バイト数進める
 	    	fin >> str1;//str1にテキストを入れる
 	    
 	    	sprintf_s(str1, "%s", str1);//出力
 	    	MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str1, 64, wstr1, 64);//文字をユニコードに変換する
-	    	Font::StrDraw(wstr1, 50.0f, 500, 30, c);// X  Y  大きさ     
+	    	Font::StrDraw(wstr1, 20.0f, 510, 30, c);// X  Y  大きさ     
 	    
 	    
-	    	key_flag = 6;
+	    	key_flag = 7;
 	    	fin.close();//ファイルを閉じる
 	    }
-	    if (m_sp == 6)
+	    if (m_sp == 7)
 	    {
 	    	sp_flag = false;
 	    	Scene::SetScene(new CSceneChinaTown());//チャイナタウンにシーン切り替え
